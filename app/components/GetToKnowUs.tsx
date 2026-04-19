@@ -160,7 +160,7 @@ export default function GetToKnowUs() {
              <p ref={textRef} className='text-[26px] font-bold leading-[1.4] mb-4 w-[400px]'>
                {renderAnimatedText("Sunbrilo Technologies is an innovative IT solutions provider, offering a comprehensive suite of services to propel businesses into the digital age. we empower organizations to thrive in a dynamic technological landscape.")}
              </p>
-             <p className='w-[400px]'>
+             <p className='w-[400px] text-black'>
               Our dedicated team of professionals combines advanced technology with strategic insights to deliver solutions that enhance efficiency, boost productivity, and accelerate growth. Whether you need consultation, execution, or ongoing support, Sunbrilo Technologies is your trusted partner for success.
              </p>
             </div>
