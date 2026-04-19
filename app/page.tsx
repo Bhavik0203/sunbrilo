@@ -13,7 +13,7 @@ import Banner from "./components/Banner";
 
 export default function Home() {
   return (
-   <div>
+   <div className="bg-[#f5f3f3]">
     <Header />
       
        <Banner/>
