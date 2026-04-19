@@ -1,0 +1,31 @@
+import Image from "next/image";
+import Header from "./components/Header";
+import GetToKnowUs from './components/GetToKnowUs';
+import Solutions from './components/solutions';
+import Services from './components/services';
+import Testimonials from './components/testimonials';
+import ExpertTeam from './components/hometeam';
+import ClientsSection from './components/clints';
+import BlogSection from './components/blog';
+import Footer from './components/footer';
+import Banner from "./components/Banner";
+
+
+export default function Home() {
+  return (
+   <div>
+    <Header />
+      
+       <Banner/>
+     
+       <GetToKnowUs />
+       <Solutions/>
+       <Services/>
+       <Testimonials/>
+       <ExpertTeam/>
+       <ClientsSection/>
+       <BlogSection/>
+       <Footer />
+   </div>
+  );
+}
