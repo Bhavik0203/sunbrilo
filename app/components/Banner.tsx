@@ -39,13 +39,13 @@ export default function Banner() {
           className="w-full h-full object-cover scale-105"
           style={{ objectPosition: 'center' }}
         >
-          <source src="/images/video1.mp4" type="video/mp4" />
+          <source src="/images/sunbirlovideo.mp4" type="video/mp4" />
         </video>
       </div>
       {/* Edge masks to remove blur/glow at top and bottom */}
-      <div className="absolute top-0 left-0 right-0 h-4 bg-black z-1"></div>
+      {/* <div className="absolute top-0 left-0 right-0 h-4 bg-black z-1"></div>
       <div className="absolute bottom-0 left-0 right-0 h-4 bg-black z-1"></div>
-      <div className="absolute inset-0 z-1 bg-black/50"></div>
+      <div className="absolute inset-0 z-1 bg-black/50"></div> */}
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
