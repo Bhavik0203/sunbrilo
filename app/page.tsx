@@ -9,6 +9,8 @@ import ClientsSection from './components/clints';
 import BlogSection from './components/blog';
 import Footer from './components/footer';
 import Banner from "./components/Banner";
+import Servicesone from "./components/solutionone";
+import SolutionsScroll from "./components/Solutionsweprovide";
 
 
 export default function Home() {
@@ -19,7 +21,7 @@ export default function Home() {
        <Banner/>
      
        <GetToKnowUs />
-       <Solutions/>
+       <SolutionsScroll />
        <Services/>
        <Testimonials/>
        <ExpertTeam/>
