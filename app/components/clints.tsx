@@ -142,7 +142,7 @@ export default function ClientsSection() {
       `}</style>
 
       <section className="w-full  py-12 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch gap-6 rounded-2xl overflow-hidden ">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch gap-6 overflow-hidden ">
 
           {/* ── Left: scrolling logo grid ── */}
           <div className="flex-1  ">
@@ -161,7 +161,7 @@ export default function ClientsSection() {
 
           {/* ── Right: dark panel ── */}
           <div
-            className="flex-1 relative flex flex-col justify-center px-10 py-10 rounded-2xl overflow-hidden"
+            className="flex-1 relative flex flex-col justify-center pl-10 py-10  overflow-hidden"
             style={{ background: "linear-gradient(135deg, #0a1628 0%, #0d1f3c 60%, #091525 100%)" }}
           >
             <NetworkBg />
@@ -169,7 +169,7 @@ export default function ClientsSection() {
             <div className="relative z-10">
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-8 h-px bg-blue-400 opacity-80" />
-                <span className="text-blue-300 text-sm font-semibold uppercase tracking-widest">
+                <span className="text-blue-300 text-sm font-semibold uppercase tracking-widest font-raleway">
                   Clients
                 </span>
               </div>
@@ -178,19 +178,19 @@ export default function ClientsSection() {
                 className="text-white font-black leading-tight"
                 style={{
                   fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
-                  fontFamily: "'Georgia', serif",
+                  fontFamily: "'Raleway', sans-serif",
                 }}
               >
                 Trusted by the best<br />
-                <span className="text-blue-300">in the industry</span>
+                <span className="text-white">in the industry</span>
               </h2>
 
-              <p className="mt-4 text-blue-200/70 text-sm max-w-xs leading-relaxed">
+              <p className="mt-4 text-white text-sm max-w-xs leading-relaxed font-raleway">
                 Partnering with forward-thinking brands to deliver impactful digital experiences.
               </p>
 
               <button
-                className="mt-6 px-5 py-2 rounded-full text-sm font-semibold text-white border border-blue-500/50 hover:bg-blue-500/20 transition-all duration-300"
+                className="mt-6 px-5 py-2 rounded-full text-sm font-semibold text-white border border-blue-500/50 hover:bg-blue-500/20 transition-all duration-300 font-raleway"
                 style={{ letterSpacing: "0.04em" }}
               >
                 View all clients →

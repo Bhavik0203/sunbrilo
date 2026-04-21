@@ -36,13 +36,13 @@ export default function BlogSection() {
       <div className="max-w-6xl mx-auto">
         {/* Label */}
         <div className="flex justify-center mb-4">
-          <span className="text-sm font-medium text-gray-800 tracking-wide pb-1 border-b-2 border-gray-800">
-            Blog
+          <span className="text-sm font-semibold text-gray-700 tracking-widest uppercase border-b-2 border-gray-800 pb-1 font-raleway">
+           Blog
           </span>
         </div>
 
         {/* Title */}
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12 font-raleway">
           Latest Insides From Blog
         </h2>
 
@@ -65,35 +65,32 @@ export default function BlogSection() {
               {/* Blog Content */}
               <div className="py-4">
                 {/* Date */}
-                <p className="text-sm font-semibold text-blue-900 mb-3">
+                <p className="text-sm font-semibold text-blue-900 mb-3 font-raleway">
                   {post.date}
                 </p>
 
                 {/* Title */}
-                <h3 className="text-base font-semibold text-gray-900 mb-4 line-clamp-2 leading-snug group-hover:text-blue-700 transition-colors duration-200">
+                <h3 className="text-base font-semibold text-gray-900 mb-4 line-clamp-2 leading-snug group-hover:text-blue-700 transition-colors duration-200 font-raleway">
                   {post.title}
                 </h3>
 
                 {/* Read More Link */}
-                <a
-                  href="#"
-                  className="inline-flex items-center text-sm font-medium text-blue-700 hover:text-blue-900 transition-colors duration-200"
-                >
+                  <button className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 hover:translate-x-1 transform font-raleway">
                   Read More
-                  <svg
-                    className="ml-1 w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
+                  <svg 
+                    className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" 
+                    fill="none" 
+                    stroke="currentColor" 
                     viewBox="0 0 24 24"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M9 5l7 7-7 7" 
                     />
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
           ))}

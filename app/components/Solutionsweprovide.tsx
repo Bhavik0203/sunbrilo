@@ -372,7 +372,7 @@ export default function SolutionsScroll() {
   const { x: ax, y: ay } = angleToXY(DOT_ANGLES[activeDotSlot]);
 
   return (
-    <div >
+    <div  >
       {/* Left side - Solar Services */}
       {/* <SolarServicesComponent /> */}
       
@@ -380,13 +380,13 @@ export default function SolutionsScroll() {
       {/* Right side - Solutions Ring */}
       <div className="relative " style={{ height: `${N * 200}px` }}>
         <div
-          className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden"
+          className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden "
         >
        
-          <div className="relative flex items-center justify-start w-full max-w-6xl px-6 py-20">
+          <div className="relative flex items-center justify-start w-full max-w-6xl px-6 pt-16 py-30">
               {/* Heading */}
-              <div className="absolute top-6 left-10 text-right ">
-                <h2 className="text-3xl font-bold text-gray-800 underline ">Solutions We Provide</h2>
+              <div className="absolute top-10 left-0 text-right ">
+                <h2 className="text-3xl font-bold text-gray-800 font-raleway">Solutions We Provide</h2>
               </div>
               
               {/* Main container for both solar services and SVG ring */}
@@ -423,7 +423,7 @@ export default function SolutionsScroll() {
                     <g key={d}>
                       {isActive && <circle cx={x} cy={y} r={12} fill="none" stroke="#3b82f6" strokeWidth={1} opacity={0.35} />}
                       <circle cx={x} cy={y} r={isActive ? 7 : 5} fill={fill} stroke={isActive ? "#2563eb" : "none"} strokeWidth={isActive ? 2 : 0} style={{ transition: "all 0.4s ease" }} />
-                      <text x={lx} y={ly} textAnchor={anchor} fontSize={9} fill="#64748b" fontFamily="DM Sans,sans-serif">P{solIdx + 1}</text>
+                      <text x={lx} y={ly} textAnchor={anchor} fontSize={9} fill="#64748b" fontFamily="Raleway, sans-serif">P{solIdx + 1}</text>
                     </g>
                   );
                 })}
@@ -490,7 +490,7 @@ export default function SolutionsScroll() {
               </div>
 
               {/* Solution Cards - Outer Layer */}
-              <div className="absolute inset-0 pointer-events-none z-30">
+              <div className="absolute inset-0 pointer-events-none z-30 ">
                 {solutions.map((s, i) => {
                   const isActive = i === activeIdx;
                   const isVisible = i >= visStart && i < visStart + VISIBLE;
@@ -518,9 +518,9 @@ export default function SolutionsScroll() {
                           transform: `scale(${isActive ? 1.05 : 1})`,
                         }}
                       >
-                        <p className="text-[10px] font-semibold uppercase tracking-widest mb-1" style={{ color: isActive ? "#1d4ed8" : "#94a3b8", fontFamily: "Sora,sans-serif" }}>{s.label}</p>
-                        <p className="text-[12px] font-bold text-slate-800 leading-tight mb-1" style={{ fontFamily: "Sora,sans-serif" }}>{s.title}</p>
-                        <p className="text-[12px] text-slate-500 leading-relaxed line-clamp-2" style={{ fontFamily: "DM Sans,sans-serif" }}>{s.desc}</p>
+                        <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 font-raleway" style={{ color: isActive ? "#1d4ed8" : "#94a3b8" }}>{s.label}</p>
+                        <p className="text-xs font-bold text-slate-800 leading-tight mb-1 font-raleway">{s.title}</p>
+                        <p className="text-[12px] text-slate-500 leading-relaxed line-clamp-2 font-raleway">{s.desc}</p>
                       </div>
                     </div>
                   );

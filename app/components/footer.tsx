@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="relative">
       {/* Background Image Section */}
       <div 
-        className="relative min-h-[500px] bg-cover bg-center py-16"
+        className="relative min-h-[320px] bg-cover bg-center pt-16"
         style={{
           backgroundImage: 'url("/images/footer.png")',
         }}
@@ -19,15 +19,15 @@ export default function Footer() {
               <div className="mb-4">
                 <img src="/images/logo.png" alt="Sunbrilo Technologies" className="h-8" />
               </div>
-              <p className="text-sm text-black">
+              <p className="text-sm text-black font-raleway">
                 Transforming businesses through innovative technology solutions and digital excellence.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-semibold mb-4 text-black">Quick Links</h3>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <h3 className="font-semibold mb-4 text-black font-raleway">Quick Links</h3>
+              <ul className="space-y-2 text-sm text-gray-700 font-raleway">
                 <li><a href="#" className="hover:text-black transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-black transition-colors">Services</a></li>
                 <li><a href="#" className="hover:text-black transition-colors">Solutions</a></li>
@@ -37,8 +37,8 @@ export default function Footer() {
 
             {/* Services */}
             <div>
-              <h3 className="font-semibold mb-4 text-black">Services</h3>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <h3 className="font-semibold mb-4 text-black font-raleway">Services</h3>
+              <ul className="space-y-2 text-sm text-gray-700 font-raleway">
                 <li><a href="#" className="hover:text-black transition-colors">Web Development</a></li>
                 <li><a href="#" className="hover:text-black transition-colors">Mobile Apps</a></li>
                 <li><a href="#" className="hover:text-black transition-colors">Cloud Solutions</a></li>
@@ -48,8 +48,8 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div>
-              <h3 className="font-semibold mb-4 text-black">Contact Info</h3>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <h3 className="font-semibold mb-4 text-black font-raleway">Contact Info</h3>
+              <ul className="space-y-2 text-sm text-gray-700 font-raleway">
                 <li className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
@@ -74,8 +74,8 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-gray-600 mt-8 pt-6 text-center text-sm text-gray-700">
-            <p>&copy; 2023 Sunbrilo Technologies. All rights reserved.</p>
+          <div className="border-t border-gray-600 mt-8 pt-6 text-center text-sm text-gray-700 font-raleway">
+            <p>&copy; 2026 Sunbrilo Technologies. All rights reserved.</p>
           </div>
         </div>
       </div>

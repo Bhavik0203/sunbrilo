@@ -62,22 +62,22 @@ export default function Header() {
   return (
     <header className="absolute top-0 left-0 w-full z-50 py-6 mt-2">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between bg-black rounded-full py-3 px-8 ">
+        <div className="flex items-center justify-between bg-blue/700 rounded-full py-3 px-8 ">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Image
               src="/images/white-logo.png"
               alt="Sunbrilo Technologies"
-              width={140}
-              height={60}
-              className="h-10 w-auto object-contain"
+              width={160}
+              height={80}
+              className="h-14 w-auto object-contain"
             />
           </div>
 
           {/* Navigation (Desktop) */}
           <nav className="hidden lg:flex space-x-8">
             {navItems.map((item) => (
-              <a key={item.name} href={item.href} className="text-white text-base font-medium hover:text-[#ffee50] transition-colors duration-300 flex items-center">
+              <a key={item.name} href={item.href} className="text-white text-base font-medium hover:text-[#ffee50] transition-colors duration-300 flex items-center font-raleway">
                 {item.name}
                 {item.hasDropdown && (
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -98,7 +98,7 @@ export default function Header() {
               type="button"
               onClick={openModal}
               onMouseEnter={handleMouseEnter}
-              className="group relative hidden overflow-hidden rounded-full bg-[#ffee50] px-2 py-1.5 text-[14px] font-semibold text-[#3B3808]  transition-all md:block cursor-pointer"
+              className="group relative hidden overflow-hidden rounded-full bg-[#ffee50] px-2 py-1.5 text-[14px] font-semibold text-[#3B3808]  transition-all md:block cursor-pointer font-raleway"
             >
               <span
                 className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B3808] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"
@@ -139,7 +139,7 @@ export default function Header() {
           <div className="lg:hidden mt-4 bg-gray-800 rounded-2xl p-6 border border-gray-700 shadow-lg">
             <nav className="space-y-4">
               {navItems.map((item) => (
-                <a key={item.name} href={item.href} className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300 flex items-center justify-between">
+                <a key={item.name} href={item.href} className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300 flex items-center justify-between font-raleway">
                   {item.name}
                   {item.hasDropdown && (
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -151,7 +151,7 @@ export default function Header() {
                   type="button"
                   onClick={openModal}
                   onMouseEnter={handleMouseEnter}
-                  className="w-full group relative overflow-hidden rounded-full bg-[#ffee50] px-2 py-1.5 text-[14px] font-semibold text-[#3B3808] group-hover:bg-[#3B3808] group-hover:text-[#ffee50] transition-all cursor-pointer"
+                  className="w-full group relative overflow-hidden rounded-full bg-[#ffee50] px-2 py-1.5 text-[14px] font-semibold text-[#3B3808] group-hover:bg-[#3B3808] group-hover:text-[#ffee50] transition-all cursor-pointer font-raleway"
                 >
                   <span
                     className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0c1622] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"

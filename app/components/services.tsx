@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 const Services = () => {
@@ -55,10 +57,10 @@ const Services = () => {
   return (
     <div className="py-20 px-4 ">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4 font-raleway">
           Our Services
         </h2>
-        <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto">
+        <p className="text-center text-gray-600 mb-16 max-w-3xl mx-auto font-raleway">
           We offer a comprehensive range of technology services to help your business thrive in the digital age
         </p>
         
@@ -70,25 +72,46 @@ const Services = () => {
             >
               {/* Service Image */}
               <div 
-                className="h-64 flex items-center justify-center relative"
+                className="h-64 flex items-center justify-center relative overflow-hidden group"
                 style={{
                   backgroundImage: `url("${service.image}")`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
+                  transition: 'transform 0.3s ease, filter 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                  e.currentTarget.style.filter = 'brightness(0.8)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.filter = 'brightness(1)';
                 }}
               >
-                {/* <div className="absolute inset-0 bg-black bg-opacity-40"></div> */}
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Icon or text on hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-white text-center">
+                    <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <p className="text-sm font-medium font-raleway">View Details</p>
+                  </div>
+                </div>
               </div>
               
               {/* Service Content */}
               <div className="py-6 ">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 hover:text-blue-600 transition-colors duration-200 cursor-pointer">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3 hover:text-blue-600 transition-colors duration-200 cursor-pointer font-raleway">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3 hover:text-gray-800 transition-colors duration-200">
+                <p className="text-gray-600 mb-4 line-clamp-3 hover:text-gray-800 transition-colors duration-200 font-raleway">
                   {service.description}
                 </p>
-                <button className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 hover:translate-x-1 transform">
+                <button className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 hover:translate-x-1 transform font-raleway">
                   Read More
                   <svg 
                     className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" 

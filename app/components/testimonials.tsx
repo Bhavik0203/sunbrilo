@@ -55,13 +55,13 @@ const Testimonials = () => {
 
         {/* Section Label */}
         <div className="flex justify-center mb-4">
-          <span className="text-sm font-semibold text-gray-700 tracking-widest uppercase border-b-2 border-gray-800 pb-1">
+          <span className="text-sm font-semibold text-gray-700 tracking-widest uppercase border-b-2 border-gray-800 pb-1 font-raleway">
             Testimonials
           </span>
         </div>
 
         {/* Title */}
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-10 font-raleway">
           Hear From Our Clients
         </h2>
 
@@ -84,43 +84,27 @@ const Testimonials = () => {
           <div className="w-1/2 bg-white px-8 py-7 flex flex-col mt-12 -ml-20 z-10 relative" style={{ height: '300px' }}>
             
             {/* Profile Section - Center Top */}
-            <div className="flex items-center justify-center mb-6 -mt-16">
-              <div className="flex items-center">
-                {/* Circular Profile Image with Blue Border */}
-                <div className="w-16 h-16 rounded-full border-4 border-blue-900 overflow-hidden bg-gray-200 flex-shrink-0">
-                  <img 
-                    src={`https://ui-avatars.com/api/?name=${encodeURIComponent(t.name)}&background=random&color=fff&size=128`}
-                    alt={t.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Blue Name Badge */}
-                <div className="bg-blue-400 text-white px-6 py-2 rounded-full text-sm font-medium -ml-4 pl-8">
-                  {t.name}
-                </div>
-              </div>
-            </div>
-
+          
             {/* Testimonial Content */}
             <div className="flex-1 mb-6">
-              <p className="text-gray-700 text-base leading-relaxed mb-6">
+              <p className="text-gray-700 text-base leading-relaxed mb-6 font-raleway">
                 {t.content}
               </p>
 
               {/* Client Info */}
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 font-semibold mr-4">
+                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 font-semibold mr-4 font-raleway">
                   {initials}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800">
+                  <h4 className="font-semibold text-gray-800 font-raleway">
                     {t.name}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 font-raleway">
                     {t.role}
                   </p>
                   {t.company && (
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-500 font-raleway">
                       {t.company}
                     </p>
                   )}

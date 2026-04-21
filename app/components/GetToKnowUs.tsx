@@ -80,19 +80,19 @@ export default function GetToKnowUs() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
           <div className="space-y-6">
             <div>
-              <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2">Get to know us</h2>
+              <h2 className="text-sm font-bold  uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-raleway">Get to know us</h2>
               <div className="w-20 h-0.5 bg-[#3B3808] mb-6"></div>
             </div>
-            <h3 ref={textRef} className='text-[32px] lg:text-[40px] font-bold leading-[1.2] text-[#1a1a1a]'>
+            <h3 ref={textRef} className='text-4xl font-bold leading-[1.2] text-[#1a1a1a] font-raleway'>
               {renderAnimatedText("We can help turn your ideas into reality!")}
             </h3>
-            <p className="text-[#666666] leading-relaxed">
+            <p className="text-[#666666] leading-relaxed font-raleway">
               Sunbrilo Technologies is an innovative IT solutions provider, offering a comprehensive suite of services to propel businesses into the digital age. we empower organizations to thrive in a dynamic technological landscape. Our dedicated team of professionals combines advanced technology with strategic insights to deliver solutions that enhance efficiency, boost productivity, and accelerate growth. Whether you need consultation, execution, or ongoing support, Sunbrilo Technologies is your trusted partner for success.
             </p>
             <button
               type="button"
               onMouseMove={handleMouseMove}
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-6 py-3 text-sm font-semibold text-[#3B3808] transition-all hover:text-white"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-6 py-3 text-sm font-semibold text-[#3B3808] transition-all hover:text-white font-raleway"
             >
               {/* Hover Background Effect */}
               <span

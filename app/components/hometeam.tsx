@@ -36,14 +36,14 @@ export default function ExpertTeam() {
   }));
 
   return (
-    <section className=" py-16 px-5 flex flex-col items-center">
+    <section className=" pb-16 px-5 flex flex-col items-center">
       {/* Label */}
-      <span className="text-[13px] font-medium text-gray-500 tracking-wide pb-1.5 border-b-2 border-gray-800 mb-4">
-        Team Member
+       <span className="text-sm font py-4 font-semibold text-gray-700 tracking-widest uppercase border-b-2 border-gray-800 pb-1 font-raleway">
+           Team Member
       </span>
 
       {/* Title */}
-      <h2 className="text-4xl font-bold text-gray-900 mb-11 text-center font-serif">
+      <h2 className="text-3xl font-bold text-gray-900 mb-11 text-center font-raleway">
         Our Expert Team
       </h2>
 
@@ -71,16 +71,16 @@ export default function ExpertTeam() {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-48 h-48 rounded-xl object-cover mx-auto mb-6"
+                className="w-48 h-48  object-cover mx-auto mb-6"
               />
 
               {/* Name */}
-              <p className="text-base font-semibold text-gray-900 mb-1.5">
+              <p className="text-base font-semibold text-gray-900 mb-1.5 font-raleway">
                 {member.name}
               </p>
 
               {/* Role */}
-              <p className="text-[13px] text-gray-400 font-normal">
+              <p className="text-[13px] text-gray-900 font-normal font-raleway">
                 {member.role}
               </p>
             </div>
