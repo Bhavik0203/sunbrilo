@@ -39,14 +39,14 @@ export default function Banner() {
           className="w-full h-full object-cover scale-105"
           style={{ objectPosition: 'center' }}
         >
-          <source src="/images/sunbirlovideo.mp4" type="video/mp4" />
+          <source src="/images/sunbirlovideo1.mp4" type="video/mp4" />
         </video>
       </div>
       {/* Edge masks to remove blur/glow at top and bottom */}
       {/* <div className="absolute top-0 left-0 right-0 h-4 bg-black z-1"></div>
       <div className="absolute bottom-0 left-0 right-0 h-4 bg-black z-1"></div>
       <div className="absolute inset-0 z-1 bg-black/50"></div> */}
-
+<div className="absolute inset-0 z-1 bg-black/20"></div> 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-6 lg:px-12 xl:px-20">
@@ -54,10 +54,10 @@ export default function Banner() {
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white mb-6 leading-tight tracking-tight">
               Driving
+              
+              Innovation 
               <br />
-              Innovation in the
-              <br />
-              Digital Era
+             in the Digital Era
             </h1>
 
             {/* Subtitle */}
