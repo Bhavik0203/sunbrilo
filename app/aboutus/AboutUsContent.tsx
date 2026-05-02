@@ -466,49 +466,14 @@ export default function AboutUsContent() {
 </section>
 
       {/* Section 5: Our Global Footprint */}
-      <section className="py-20 px-4 ">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-raleway">
-              Powering Innovation Across Industries
-            </h2>
-            <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-              From helping real estate developers in Pune manage multi-project leads to scaling cloud infrastructure for US logistics firms, our impact is global. We are more than a vendor; we are a digital transformation partner committed to your long-term success.
-            </p>
-          </div>
-          
-          {/* Map or visual representation could go here */}
-          <div className="bg-white p-12 rounded-xl shadow-lg text-center">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div>
-                <div className="text-3xl font-bold text-[#3B3808] mb-2 font-raleway">USA</div>
-                <div className="text-gray-600 font-raleway">North America</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[#3B3808] mb-2 font-raleway">Europe</div>
-                <div className="text-gray-600 font-raleway">UK & EU</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[#3B3808] mb-2 font-raleway">Asia</div>
-                <div className="text-gray-600 font-raleway">APAC Region</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-[#3B3808] mb-2 font-raleway">India</div>
-                <div className="text-gray-600 font-raleway">HQ - Pune</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    
 <section className="py-20 px-4">
   <div className="max-w-6xl mx-auto">
 
     {/* Top: heading + body */}
     <div className="flex flex-wrap gap-8 items-start pb-10 border-b border-gray-200 mb-10">
       <div className="flex-shrink-0 w-[280px]">
-        <p className="text-xs font-semibold tracking-widest uppercase text-[#3B3808] mb-2 font-raleway">
-          Our global footprint
-        </p>
+      
         <h2 className="text-4xl font-bold text-gray-900 leading-tight font-raleway">
           Powering innovation<br />across industries
         </h2>
