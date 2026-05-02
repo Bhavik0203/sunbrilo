@@ -155,9 +155,9 @@ export default function AboutUsContent() {
               </h1>
 
               {/* Sub-headline */}
-              <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed max-w-4xl mx-auto font-raleway">
+              {/* <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed max-w-4xl mx-auto font-raleway">
                 Sunbrilo Technologies was founded on a single conviction: that complex technical challenges deserve elegant, scalable, and secure solutions. As a premier global IT managed services company, we bridge the gap between visionary strategy and flawless engineering execution.
-              </p>
+              </p> */}
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -112,7 +112,7 @@ export default function SupportForm() {
                 {/* Background Image */}
                 <div className="absolute inset-0">
                     <Image
-                        src="/images/contact/contact3.png"
+                        src="/images/contactus.png"
                         alt="Contact us banner with team"
                         fill
                         className="object-cover"
@@ -135,65 +135,14 @@ export default function SupportForm() {
                             Contact us
                         </h1>
 
-                        {/* Yellow-Orange Subtitle */}
-                        <h2 className="text-2xl md:text-3xl font-semibold text-[#FFB800]">
-                            Let's Engineer Your Next Competitive Advantage.
-                        </h2>
-
+                    
                         {/* Description Paragraph */}
                         <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
                             Transform your business with our cutting-edge technology solutions. Our expert team specializes in custom software development, cloud infrastructure, and digital transformation strategies that drive growth and innovation. Let us help you build the future of your enterprise.
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center mt-10">
-                            <button
-                                type="button"
-                                onMouseMove={handleMouseMove}
-                                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer"
-                            >
-                                {/* Hover Background Effect */}
-                                <span
-                                  className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B3808] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"
-                                  style={{
-                                    left: `${mousePosition.x}%`,
-                                    top: `${mousePosition.y}%`,
-                                    width: '100px',
-                                    height: '100px',
-                                  }}
-                                />
-                                <div className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                                  <span>Request a Custom CRM Demo</span>
-                                  <span className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-500 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
-                                    <ArrowUpRightIcon className="group-hover:hidden" />
-                                    <ArrowRightIcon className="hidden group-hover:block" />
-                                  </span>
-                                </div>
-                            </button>
-                            <button
-                                type="button"
-                                onMouseMove={handleMouseMove}
-                                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer"
-                            >
-                                {/* Hover Background Effect */}
-                                <span
-                                  className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B3808] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"
-                                  style={{
-                                    left: `${mousePosition.x}%`,
-                                    top: `${mousePosition.y}%`,
-                                    width: '100px',
-                                    height: '100px',
-                                  }}
-                                />
-                                <div className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                                  <span>View Core CRM Features</span>
-                                  <span className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-500 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
-                                    <ArrowUpRightIcon className="group-hover:hidden" />
-                                    <ArrowRightIcon className="hidden group-hover:block" />
-                                  </span>
-                                </div>
-                            </button>
-                        </div>
+                   
                     </motion.div>
                 </div>
 
@@ -323,7 +272,7 @@ export default function SupportForm() {
                     </motion.div>
                 </div>
             </div>
-            <div className="min-h-screen bg-[#f4f5f7] py-20 px-6 md:px-12 font-sans text-gray-900 overflow-hidden">
+            <div className="min-h-screen bg-[#f4f5f7] py-6 px-6 md:px-12 font-sans text-gray-900 overflow-hidden">
                 <div className="max-w-[1200px] mx-auto">
 
                     {/* Header Section */}
@@ -456,7 +405,7 @@ export default function SupportForm() {
                     </div>
                 </div>
             </div>
-            <div className="min-h-screen bg-[#f4f5f7] py-20 px-6 md:px-12 font-sans text-gray-900 flex flex-col items-center">
+            <div className="min-h-screen bg-[#f4f5f7] pt-20 px-6 md:px-12 font-sans text-gray-900 flex flex-col items-center">
 
                 {/* Header Section */}
                 <motion.div

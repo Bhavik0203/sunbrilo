@@ -97,7 +97,7 @@ export default function DevelopmentTestingPage() {
 
       <div className="min-h-screen">
         {/* Section 1: Hero */}
-        <section className="relative min-h-[500px] py-20 px-4 text-white">
+        <section className="relative min-h-[500px] py-20 px-4 text-white flex items-center justify-center">
           {/* Background Image Container */}
           <div 
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
@@ -114,9 +114,9 @@ export default function DevelopmentTestingPage() {
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-raleway">
                 Custom Enterprise Software Development & Rigorous QA Testing
               </h1>
-              <p className="text-xl leading-relaxed mb-10 max-w-4xl mx-auto opacity-90 font-raleway">
+              {/* <p className="text-xl leading-relaxed mb-10 max-w-4xl mx-auto opacity-90 font-raleway">
                 We engineer resilient, high-performance applications tailored to your exact market demands. From complex backend architecture to intuitive front-end UX, our scalable web and mobile app development ensures your digital product is built for global scale and zero downtime.
-              </p>
+              </p> */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   type="button"
@@ -306,10 +306,11 @@ export default function DevelopmentTestingPage() {
         {/* Main Image */}
         <div className="rounded-2xl overflow-hidden w-full h-[360px] relative">
           <img
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
+            src="/images/faq.png"
             alt="Professional"
             className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-black/60"></div>
           {/* Overlay text */}
           <div className="absolute top-6 left-6">
             <h2 className="text-white font-bold text-3xl leading-tight font-raleway drop-shadow-lg">
