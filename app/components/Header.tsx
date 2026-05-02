@@ -79,7 +79,7 @@ export default function Header() {
   };
 
   const navItems = [
-    // { name: 'About us', href: '/aboutus', hasDropdown: false },
+    { name: 'About us', href: '/aboutus', hasDropdown: false },
     { 
       name: 'Services', 
       href: '/services', 
