@@ -199,14 +199,14 @@ export default function AboutUsContent() {
 
     
 
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 ">
   <div className="max-w-6xl mx-auto">
 
     {/* Top row: Bold heading + paragraph */}
     <div className="flex flex-col md:flex-row gap-10 items-start  ">
       <div className="md:w-[260px] shrink-0">
-        <h2 className="text-4xl font-bold text-gray-900 leading-tight font-raleway">
-          Built for Scale.<br />
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-raleway">
+                Built for Scale.<br />
           Tested for<br />
           Perfection.
         </h2>
@@ -220,7 +220,7 @@ export default function AboutUsContent() {
     </div>
 
     {/* Bottom row: two images + text */}
-    <div className="flex flex-col md:flex-row gap-8 items-center pt-10">
+    <div className="flex flex-col md:flex-row gap-8 items-center pt-6">
 
       {/* Rectangular photo */}
       <div className="shrink-0 w-[200px] h-[140px] rounded-xl overflow-hidden">
@@ -276,8 +276,8 @@ export default function AboutUsContent() {
 
       {/* Body text */}
       <div className="flex-1">
-        <p className="text-gray-600 leading-relaxed text-sm font-raleway">
-          We do not believe in fragmented development cycles. Whether you are building a secure
+        <p className="text-lg text-gray-600 pb-4 leading-relaxed max-w-4xl mx-auto font-raleway">
+            We do not believe in fragmented development cycles. Whether you are building a secure
           corporate portal, a high-volume SaaS platform, or a proprietary internal tool, our
           dedicated engineering pods integrate development and quality assurance from day one.
           The result is secure, lightning-fast software that performs flawlessly under immense
@@ -409,8 +409,8 @@ export default function AboutUsContent() {
       
     
       {/* Heading */}
-      <h2 className="text-4xl font-normal text-gray-900 mb-2 leading-tight font-raleway">
-          Your Global Technology Partner
+     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-raleway">
+                 Your Global Technology Partner
       </h2>
         <p className="text-lg text-gray-600 pb-4 leading-relaxed max-w-4xl mx-auto font-raleway">
               Why do international brands choose Sunbrilo over traditional outsourcing firms? Because we operate as a true extension of your team.
@@ -474,13 +474,13 @@ export default function AboutUsContent() {
     <div className="flex flex-wrap gap-8 items-start pb-10 border-b border-gray-200 mb-10">
       <div className="flex-shrink-0 w-[280px]">
       
-        <h2 className="text-4xl font-bold text-gray-900 leading-tight font-raleway">
-          Powering innovation<br />across industries
+       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-raleway">
+                Powering innovation<br />across industries
         </h2>
       </div>
       <div className="flex-1 min-w-[220px] pt-8">
-        <p className="text-sm text-gray-600 leading-relaxed font-raleway">
-          From helping real estate developers in Pune manage multi-project leads to scaling cloud
+       <p className="text-lg text-gray-600 pb-4 leading-relaxed max-w-4xl mx-auto font-raleway">
+           From helping real estate developers in Pune manage multi-project leads to scaling cloud
           infrastructure for US logistics firms, our impact is global. We are more than a vendor —
           we are a digital transformation partner committed to your long-term success.
         </p>
