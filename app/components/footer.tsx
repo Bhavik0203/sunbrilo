@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="relative">
+    <footer className="relative bg-white">
       {/* Background Image Section */}
       <div 
         className="relative min-h-[320px] bg-cover bg-center pt-16"
