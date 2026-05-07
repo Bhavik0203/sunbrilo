@@ -92,7 +92,7 @@ export default function Header() {
         // { name: 'UI/UX Design', href: '/services/ui-ux-design' },
       ]
     },
-    // { name: 'Our Solutions', href: '#', hasDropdown: true },
+    { name: 'Solutions', href: 'solutions', hasDropdown: true },
     { name: 'Blog', href: '/blogs', hasDropdown: false },
     // { name: 'Career', href: '#', hasDropdown: false },
     { name: 'Contact us', href: '/contact-us', hasDropdown: false },
