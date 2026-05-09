@@ -242,7 +242,7 @@ export default function Header() {
                   {/* Dropdown Menu */}
                   {item.hasDropdown && item.dropdownItems && openDropdown === item.name && showScrollHeader && (
                     <div 
-                      className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50"
+                      className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-lg py-2 z-50"
                       onMouseEnter={() => setOpenDropdown(item.name)}
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
