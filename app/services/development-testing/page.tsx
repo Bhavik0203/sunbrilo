@@ -99,7 +99,7 @@ export default function DevelopmentTestingPage() {
         {/* Section 1: Hero */}
         <section className="relative min-h-[500px] py-20 px-4 text-white flex items-center justify-center">
           {/* Background Image Container */}
-          <div 
+          <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: 'url("/images/services/servicebanner1.png")',
@@ -108,7 +108,7 @@ export default function DevelopmentTestingPage() {
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
           </div>
-          
+
           <div className="relative z-10 max-w-6xl mx-auto">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-raleway">
@@ -197,9 +197,9 @@ export default function DevelopmentTestingPage() {
                   style={{ zIndex: 0 }}
                 >
                   <svg width="96" height="96" viewBox="0 0 96 96" fill="none">
-                    {[0,16,32,48,64,80].map(x =>
-                      [0,16,32,48,64,80].map(y => (
-                        <circle key={`${x}-${y}`} cx={x+8} cy={y+8} r="2.5" fill="#5BA3E8" fillOpacity="0.25" />
+                    {[0, 16, 32, 48, 64, 80].map(x =>
+                      [0, 16, 32, 48, 64, 80].map(y => (
+                        <circle key={`${x}-${y}`} cx={x + 8} cy={y + 8} r="2.5" fill="#5BA3E8" fillOpacity="0.25" />
                       ))
                     )}
                   </svg>
@@ -211,181 +211,104 @@ export default function DevelopmentTestingPage() {
         </section>
 
 
-      
 
-                    <CaseStudiesPage/>
 
-                    {/* Section 4: Testing Protocol */}
-<section className="py-20 px-4 bg-white">
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-raleway">
-        How We Guarantee Flawless Deployments
-      </h2>
-      <p className="text-lg text-gray-600 max-w-3xl mx-auto font-raleway">
-        We don't just write code; our QA teams actively try to break it. By utilizing a hybrid testing environment, we ensure your software is impenetrable and user-ready.
-      </p>
-    </div>
+        <CaseStudiesPage />
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {/* Testing Method 1 */}
-      <div
-        className="relative p-8 rounded-2xl overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #cce8f4 0%, #e8f5fb 60%, #f0faff 100%)",
-        }}
-      >
-        <span
-          className="absolute top-4 right-6 font-raleway font-extrabold text-[#3B3808] select-none"
-          style={{ fontSize: "5rem", lineHeight: 1, opacity: 0.18 }}
-        >
-          1
-        </span>
-        <h3 className="text-lg font-bold text-gray-900 mb-4 font-raleway leading-snug relative z-10">
-          Automated<br />Regression Testing
-        </h3>
-        <p className="text-gray-600 leading-relaxed font-raleway text-sm relative z-10">
-          We script automated tests within our deployment pipelines to instantly catch codebase conflicts and ensure new features never break existing functionality.
-        </p>
-      </div>
 
-      {/* Testing Method 2 */}
-      <div
-        className="relative p-8 rounded-2xl overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #cce8f4 0%, #e8f5fb 60%, #f0faff 100%)",
-        }}
-      >
-        <span
-          className="absolute top-4 right-6 font-raleway font-extrabold text-[#3B3808] select-none"
-          style={{ fontSize: "5rem", lineHeight: 1, opacity: 0.18 }}
-        >
-          2
-        </span>
-        <h3 className="text-lg font-bold text-gray-900 mb-4 font-raleway leading-snug relative z-10">
-          Manual & Exploratory<br />Testing
-        </h3>
-        <p className="text-gray-600 leading-relaxed font-raleway text-sm relative z-10">
-          Our QA specialists conduct deep-dive manual testing to validate nuanced UI/UX elements, accessibility standards, and edge-case user scenarios that automated bots might miss.
-        </p>
-      </div>
 
-      {/* Testing Method 3 */}
-      <div
-        className="relative p-8 rounded-2xl overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #cce8f4 0%, #e8f5fb 60%, #f0faff 100%)",
-        }}
-      >
-        <span
-          className="absolute top-4 right-6 font-raleway font-extrabold text-[#3B3808] select-none"
-          style={{ fontSize: "5rem", lineHeight: 1, opacity: 0.18 }}
-        >
-          3
-        </span>
-        <h3 className="text-lg font-bold text-gray-900 mb-4 font-raleway leading-snug relative z-10">
-          Load & Security<br />Stress Testing
-        </h3>
-        <p className="text-gray-600 leading-relaxed font-raleway text-sm relative z-10">
-          Every solution we build is designed to scale effortlessly from thousands to millions of concurrent users.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
-      
 
-      {/* Section 5: FAQ */}
-<section className="py-20 px-4 bg-gray-100">
-  <div className="max-w-6xl mx-auto">
-    <div className="flex flex-col md:flex-row gap-10 items-start">
+        {/* Section 5: FAQ */}
+        <section className="py-20 px-4 bg-gray-100">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-10 items-start">
 
-      {/* Left: Image + CTA Card */}
-      <div className="relative w-full md:w-[420px] flex-shrink-0 rounded-2xl overflow-visible">
-        {/* Main Image */}
-        <div className="rounded-2xl overflow-hidden w-full h-[360px] relative">
-          <img
-            src="/images/faq.png"
-            alt="Professional"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/60"></div>
-          {/* Overlay text */}
-          <div className="absolute top-6 left-6">
-            <h2 className="text-white font-bold text-3xl leading-tight font-raleway drop-shadow-lg">
-              Need Help? Start<br />Here..
-            </h2>
-          </div>
-        </div>
-
-        {/* Teal CTA Card — overlaps image bottom-right */}
-        <div
-          className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#2a8a8a] rounded-2xl p-6 w-52 z-10 shadow-xl"
-        >
-          <p className="text-white font-bold text-lg font-raleway leading-snug mb-4">
-            Get Started<br />Free Call?
-          </p>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">
-              {/* Phone icon */}
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
-            <a href="tel:18884521505" className="text-white font-semibold text-sm underline font-raleway">
-              1-888-452-1505
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Right: FAQ Accordion */}
-      <div className="flex-1 space-y-3 md:pt-0 pt-8">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
-          >
-            <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-            >
-              <span className="text-base font-bold text-gray-900 font-raleway pr-4">
-                {faq.question}
-              </span>
-              {/* Circle +/- icon */}
-              <span className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#2a8a8a] flex items-center justify-center">
-                {openFAQ === index ? (
-                  <svg className="w-4 h-4 text-[#2a8a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M20 12H4" />
-                  </svg>
-                ) : (
-                  <svg className="w-4 h-4 text-[#2a8a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
-                  </svg>
-                )}
-              </span>
-            </button>
-
-            {openFAQ === index && (
-              <>
-                {/* Dashed divider */}
-                <div className="mx-6 border-t border-dashed border-gray-300" />
-                <div className="px-6 py-5">
-                  <p className="text-gray-500 leading-relaxed font-raleway text-sm">
-                    {faq.answer}
-                  </p>
+              {/* Left: Image + CTA Card */}
+              <div className="relative w-full md:w-[420px] flex-shrink-0 rounded-2xl overflow-visible">
+                {/* Main Image */}
+                <div className="rounded-2xl overflow-hidden w-full h-[360px] relative">
+                  <img
+                    src="/images/faq.png"
+                    alt="Professional"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/60"></div>
+                  {/* Overlay text */}
+                  <div className="absolute top-6 left-6">
+                    <h2 className="text-white font-bold text-3xl leading-tight font-raleway drop-shadow-lg">
+                      Need Help? Start<br />Here..
+                    </h2>
+                  </div>
                 </div>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
 
-    </div>
-  </div>
-</section>
+                {/* Teal CTA Card — overlaps image bottom-right */}
+                <div
+                  className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#2a8a8a] rounded-2xl p-6 w-52 z-10 shadow-xl"
+                >
+                  <p className="text-white font-bold text-lg font-raleway leading-snug mb-4">
+                    Get Started<br />Free Call?
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">
+                      {/* Phone icon */}
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <a href="tel:18884521505" className="text-white font-semibold text-sm underline font-raleway">
+                      1-888-452-1505
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: FAQ Accordion */}
+              <div className="flex-1 space-y-3 md:pt-0 pt-8">
+                {faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
+                  >
+                    <button
+                      onClick={() => toggleFAQ(index)}
+                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    >
+                      <span className="text-base font-bold text-gray-900 font-raleway pr-4">
+                        {faq.question}
+                      </span>
+                      {/* Circle +/- icon */}
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#2a8a8a] flex items-center justify-center">
+                        {openFAQ === index ? (
+                          <svg className="w-4 h-4 text-[#2a8a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M20 12H4" />
+                          </svg>
+                        ) : (
+                          <svg className="w-4 h-4 text-[#2a8a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
+                          </svg>
+                        )}
+                      </span>
+                    </button>
+
+                    {openFAQ === index && (
+                      <>
+                        {/* Dashed divider */}
+                        <div className="mx-6 border-t border-dashed border-gray-300" />
+                        <div className="px-6 py-5">
+                          <p className="text-gray-500 leading-relaxed font-raleway text-sm">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </div>
+        </section>
         {/* Section 6: CTA */}
         {/* <section className="py-20 px-4 bg-[#3B3808] text-white">
           <div className="max-w-4xl mx-auto text-center">
@@ -417,78 +340,78 @@ export default function DevelopmentTestingPage() {
             </button>
           </div>
         </section> */}
-           <section className="py-20 px-4 bg-[#f5f3f3]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Images */}
-          
+        <section className="py-20 px-4 bg-[#f5f3f3]">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Images */}
 
-            {/* Right Side - Content */}
-            <div className="lg:pl-8">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight font-raleway mb-6 text-gray-900">
-                Ready to Build Your Next Enterprise Application?
-              </h1>
-              
-              <p className="text-lg text-gray-600 leading-relaxed mb-8 font-raleway">
+
+              {/* Right Side - Content */}
+              <div className="lg:pl-8">
+                <h1 className="text-4xl md:text-5xl font-bold leading-tight font-raleway mb-6 text-gray-900">
+                  Ready to Build Your Next Enterprise Application?
+                </h1>
+
+                <p className="text-lg text-gray-600 leading-relaxed mb-8 font-raleway">
                   Partner with a global engineering team that prioritizes code quality, rapid deployment, and uncompromising security.
                 </p>
-              
-              {/* CTA Button */}
-              <button
-            type="button"
-            onMouseMove={handleMouseMove}
-            className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
-          >
-            {/* Hover Background Effect */}
-            <span
-              className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B3808] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"
-              style={{
-                left: `${mousePosition.x}%`,
-                top: `${mousePosition.y}%`,
-                width: '100px',
-                height: '100px',
-              }}
-            />
-            <div className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-              <span>Schedule a Technical Architecture Call</span>
-              <span className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-500 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
-                <ArrowUpRightIcon className="group-hover:hidden" />
-                <ArrowRightIcon className="hidden group-hover:block" />
-              </span>
-            </div>
-          </button>
-            </div>
+
+                {/* CTA Button */}
+                <button
+                  type="button"
+                  onMouseMove={handleMouseMove}
+                  className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
+                >
+                  {/* Hover Background Effect */}
+                  <span
+                    className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B3808] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"
+                    style={{
+                      left: `${mousePosition.x}%`,
+                      top: `${mousePosition.y}%`,
+                      width: '100px',
+                      height: '100px',
+                    }}
+                  />
+                  <div className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
+                    <span>Schedule a Technical Architecture Call</span>
+                    <span className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-500 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
+                      <ArrowUpRightIcon className="group-hover:hidden" />
+                      <ArrowRightIcon className="hidden group-hover:block" />
+                    </span>
+                  </div>
+                </button>
+              </div>
               <div className="relative">
-              {/* Main Image */}
-              <div className="relative overflow-hidden ">
-                <img
-                  src="/images/services/servicemain2.png"
-                  alt="Team Collaboration"
-                  className="w-full h-[400px] object-cover"
-                />
-                {/* Tech overlay pattern */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#3B3808]/20 to-transparent"></div>
-              </div>
-              
-              {/* Circular Tech Icons Image - positioned overlapping */}
-              <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full overflow-hidden  border-white">
-                <img
-                src="/images/services/servicemain1.png"
-                  alt="Technology Icons"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Small accent element */}
-              {/* <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#ffee50] rounded-full flex items-center justify-center shadow-lg">
+                {/* Main Image */}
+                <div className="relative overflow-hidden ">
+                  <img
+                    src="/images/services/servicemain2.png"
+                    alt="Team Collaboration"
+                    className="w-full h-[400px] object-cover"
+                  />
+                  {/* Tech overlay pattern */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#3B3808]/20 to-transparent"></div>
+                </div>
+
+                {/* Circular Tech Icons Image - positioned overlapping */}
+                <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full overflow-hidden  border-white">
+                  <img
+                    src="/images/services/servicemain1.png"
+                    alt="Technology Icons"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Small accent element */}
+                {/* <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#ffee50] rounded-full flex items-center justify-center shadow-lg">
                 <svg className="w-10 h-10 text-[#3B3808]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div> */}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
       </div>
     </>
   );
