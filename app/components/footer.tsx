@@ -14,7 +14,7 @@ const marqueeWords = [
 
 export default function Footer() {
   return (
-    <footer className="relative "
+    <footer className="relative bg-[#f5f3f3] bg-cover bg-center bg-no-repeat"
     style={{ backgroundImage: 'url("/images/footer.png")' }}>
 
       {/* ── Background Image Grid Section ── */}

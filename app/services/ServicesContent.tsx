@@ -159,12 +159,12 @@ export default function ServicesContent() {
             {/* Right Side - Content */}
             <div className="lg:pl-8">
               <h2 ref={textRef} className="text-4xl md:text-5xl font-bold leading-tight font-raleway mb-6">
-                {renderAnimatedText("End-to-End Technology Solutions for Global Scale.")}
+                {renderAnimatedText("Comprehensive Digital Solutions for the Modern Enterprise.")}
               </h2>
               
               <p className="text-lg text-gray-600 leading-relaxed mb-8 font-raleway">
-                We don't just write code; we architect operational dominance. As a leading custom IT services company, Sunbrilo partners with global enterprises to design, deploy, and manage mission-critical technology ecosystems.
-              </p>
+               From strategic consulting to complex implementation and managed services, Sunbrilo delivers end-to-end capabilities that drive sustainable growth and operational dominance.
+  </p>
               
               {/* CTA Button */}
               <button
@@ -183,7 +183,7 @@ export default function ServicesContent() {
                   }}
                 />
                 <div className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  <span>Discuss Your IT Requirements</span>
+                  <span>Partner with Sunbrilo</span>
                   <span className="relative z-10 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-500 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
                     <ArrowUpRightIcon className="group-hover:hidden" />
                     <ArrowRightIcon className="hidden group-hover:block" />
@@ -200,10 +200,10 @@ export default function ServicesContent() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 font-raleway">
-              How We Deliver Engineering Excellence
-            </h2>
+            The Architecture of Success
+             </h2>
             <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-              When you partner with a global IT managed services provider, you expect more than just technical proficiency. You expect strategic alignment. Our delivery models are built for zero friction and maximum ROI.
+            As a strategic partner, we ensure technology investments translate directly to business value.
             </p>
           </div>
           
@@ -213,13 +213,13 @@ export default function ServicesContent() {
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 bg-[#5BA3E8] rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-sm font-bold text-gray-900 font-raleway">Cloud-Native Scalability</h3>
+                <h3 className="text-sm font-bold text-gray-900 font-raleway">Agile by Design</h3>
               </div>
               <p className="text-gray-600 leading-relaxed font-raleway text-sm">
-                Every solution we build is designed to scale effortlessly from thousands to millions of concurrent users.
+                High-velocity sprints mapped to global time zones for continuous, 24/7 innovation and delivery.
               </p>
             </div>
 
@@ -231,10 +231,10 @@ export default function ServicesContent() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="text-sm font-bold text-gray-900 font-raleway">Ironclad Security & Compliance</h3>
+                <h3 className="text-sm font-bold text-gray-900 font-raleway">Zero-Trust Security &amp; Compliance</h3>
               </div>
               <p className="text-gray-600 leading-relaxed font-raleway text-sm">
-                We embed advanced cybersecurity protocols into our CI/CD pipelines, ensuring strict adherence to global data standards (SOC2, GDPR, HIPAA).
+                Military-grade cybersecurity embedded at the core of our CI/CD pipelines, ensuring global regulatory adherence.
               </p>
             </div>
 
@@ -243,13 +243,13 @@ export default function ServicesContent() {
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 bg-[#5BA3E8] rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                   </svg>
                 </div>
-                <h3 className="text-sm font-bold text-gray-900 font-raleway">High-Velocity Agile Delivery</h3>
+                <h3 className="text-sm font-bold text-gray-900 font-raleway">Future-Ready Scalability</h3>
               </div>
               <p className="text-gray-600 leading-relaxed font-raleway text-sm">
-                We utilize overlapping global time zones and rigorous sprint cycles to accelerate your time-to-market.
+                Every line of code and cloud architecture is designed to handle exponential growth and technological shifts.
               </p>
             </div>
           </div>

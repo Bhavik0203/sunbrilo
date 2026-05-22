@@ -29,9 +29,9 @@ export const caseStudies: CaseStudy[] = [
     id: 1,
     slug: "custom-web-mobile-development",
     label: "ENGINEERING CAPABILITY",
-    heading: "Custom Web & Mobile App Development",
+    heading: "Digital Experience Development",
     description:
-      "We build responsive, feature-rich applications utilizing modern, agile frameworks (React, Angular, Node.js, Python). Our architectures are explicitly designed to deliver a flawless, intuitive user experience across all devices and operating systems.",
+      "Responsive, intuitive interfaces built on modern frameworks (React, Angular) ensuring seamless omnichannel engagement.",
     image: case1,
     sections: {
       overview:
@@ -52,9 +52,9 @@ export const caseStudies: CaseStudy[] = [
     id: 2,
     slug: "enterprise-api-integration",
     label: "ENGINEERING CAPABILITY",
-    heading: "Enterprise API Integration & Modernization",
+    heading: "Enterprise Integration & APIs",
     description:
-      "Siloed data stalls growth. We seamlessly connect your newly developed software with legacy ERPs, CRMs, and third-party tools via custom APIs, creating a unified, highly efficient operational ecosystem.",
+      "Unify your digital ecosystem. We orchestrate complex integrations across legacy ERPs, CRMs, and emerging platforms.",
     image: case2,
     sections: {
       overview:
@@ -75,9 +75,9 @@ export const caseStudies: CaseStudy[] = [
     id: 3,
     slug: "offshore-qa-testing",
     label: "ENGINEERING CAPABILITY",
-    heading: "Offshore QA and Software Testing Services",
+    heading: "Continuous Quality Engineering",
     description:
-      "Quality is not an afterthought; it is embedded in our CI/CD pipelines. Our dedicated offshore QA engineers deploy rigorous testing protocols to guarantee a 99.9% bug-free deployment upon launch.",
+      "Move beyond traditional QA. We implement automated regression, security stress testing, and performance validation within your deployment pipeline.",
     image: case3,
     sections: {
       overview:
