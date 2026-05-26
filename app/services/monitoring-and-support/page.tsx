@@ -75,25 +75,25 @@ export default function DevelopmentTestingPage() {
 
   const faqs = [
     {
-      question: "Do you provide automated or manual QA testing?",
-      answer: "Sunbrilo provides comprehensive offshore QA and software testing services that utilize a hybrid approach. We implement automated testing for rapid regression cycles and manual testing for detailed UI/UX validation and complex user flows."
+      question: "Which cloud platforms does Sunbrilo specialize in?",
+      answer: " Sunbrilo provides expert AWS Azure migration for enterprises, as well as deep architectural consulting for Google Cloud Platform (GCP). We are platform-agnostic, recommending the best environment for your specific technical requirements."
     },
     {
-      question: "Can you rescue an ongoing software development project that is failing?",
-      answer: "Yes. Our senior architects specialize in codebase audits and project turnarounds. We refactor legacy code, resolve structural vulnerabilities, and stabilize the architecture to successfully launch stalled enterprise applications."
+      question: "How do you ensure data security during a cloud migration?",
+      answer: "We utilize end-to-end encryption (both in transit and at rest), automated vulnerability scanning, and isolated sandbox staging environments. This ensures your data remains completely secure and structurally intact throughout the entire migration process."
     },
     {
-      question: "What tech stacks do you specialize in for enterprise development?",
-      answer: "We utilize highly scalable, modern tech stacks including MERN/MEAN for web development, React Native and Flutter for cross-platform mobile apps, and robust backend languages like Python, Java, and Node.js."
+      question: "Can you help lower our existing AWS or Azure bills?",
+      answer: "Absolutely. Through our FinOps and cloud cost optimization services, we identify zombie assets, underutilized instances, and inefficient storage tiers, often reducing enterprise cloud spending by 30% to 50% without sacrificing performance."
     }
   ];
 
   return (
     <>
       <Head>
-        <title> Next-Generation Software Engineering & Quality Assurance.</title>
-        <meta name="description" content="Partner with a top B2B software development agency in India. Sunbrilo delivers scalable web and mobile app development alongside rigorous offshore QA testing services." />
-        <meta name="keywords" content="Custom enterprise software development, Offshore QA and software testing services, B2B software development agency India, Scalable web and mobile app development, Enterprise API integration" />
+        <title> Cognitive IT Monitoring & SLA-Backed Enterprise Support | Sunbrilo</title>
+        <meta name="description" content="Achieve zero-friction operations with Sunbrilo’s Cognitive IT Monitoring. We deliver Global NOC services, AIOps-driven incident management, and L1-L3 SLA-backed application support for predictable TCO." />
+        <meta name="keywords" content="Cognitive IT monitoring, AIOps incident management, SLA-backed application support, Proactive system performance tuning, Global Network Operations Center (GNOC)." />
       </Head>
 
       <div className="min-h-screen">
@@ -113,8 +113,8 @@ export default function DevelopmentTestingPage() {
           <div className="relative z-10 max-w-6xl mx-auto">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-raleway">
-                 Next-Generation Software Engineering & Quality Assurance.
-              </h1>
+            Operational Command Center: Cognitive Monitoring & SLA-Backed Enterprise 
+            </h1>
               {/* <p className="text-xl leading-relaxed mb-10 max-w-4xl mx-auto opacity-90 font-raleway">
                 We engineer resilient, high-performance applications tailored to your exact market demands. From complex backend architecture to intuitive front-end UX, our scalable web and mobile app development ensures your digital product is built for global scale and zero downtime.
               </p> */}
@@ -134,13 +134,13 @@ export default function DevelopmentTestingPage() {
                     }}
                   />
                   <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                    Discuss Your Development Project
+                Initiate a Zero-Downtime Assessment
                     {/* <ArrowUpRightIcon className="group-hover:hidden" />
                     <ArrowRightIcon className="hidden group-hover:block" /> */}
                   </span>
                 </button>
                 <button className="inline-flex items-center gap-2 rounded-full border-2 border-white px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-[#3B3808] transition-all font-raleway">
-                  Explore Our QA Methodologies
+              View Global SLA Framework
                   {/* <ArrowRightIcon /> */}
                 </button>
               </div>
@@ -156,12 +156,14 @@ export default function DevelopmentTestingPage() {
               {/* LEFT: Heading + Text */}
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 font-raleway">
-                  Engineered for Agility.<br />Tested for Certainty.
+                   Eliminating Operational<br />Blind Spots with AIOps
                 </h2>
                 <p className="text-base leading-relaxed text-gray-600 mb-6 font-raleway">
-                In the digital economy, software failures mean severe reputational and financial loss. Sunbrilo mitigates risk through "Shift-Left" testing and continuous integration. We don't just write code; we architect bulletproof digital foundations capable of handling massive transactional volumes without degradation.
-                  </p>
-               
+           For global enterprises, system failure is a catastrophic business interruption, not merely a technical issue. Traditional IT incident management services are too slow, relying on human-intensive ticket escalation which guarantees costly latency. This manual approach is a relic in the age of hyperscale infrastructure.
+             </p>
+               <p className="text-base leading-relaxed text-gray-600 mb-6 font-raleway">
+          Sunbrilo’s Global Network Operations Center (GNOC) is built on an AIOps incident management framework. We don’t just watch; we predict. By ingesting trillions of data points from your hybrid cloud and application layers, our cognitive engine identifies pre-failure indicators. This allows our L1-L3 application support teams to perform proactive system performance tuning and maintenance, transforming operational risk into guaranteed resilience.
+           </p>
               </div>
 
               {/* RIGHT: Two staggered overlapping images */}
@@ -308,37 +310,7 @@ export default function DevelopmentTestingPage() {
             </div>
           </div>
         </section>
-        {/* Section 6: CTA */}
-        {/* <section className="py-20 px-4 bg-[#3B3808] text-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-raleway">
-              Ready to Build Your Next Enterprise Application?
-            </h2>
-            <p className="text-xl leading-relaxed mb-10 font-raleway opacity-90">
-              Partner with a global engineering team that prioritizes code quality, rapid deployment, and uncompromising security.
-            </p>
-            <button
-              type="button"
-              onMouseMove={handleMouseMove}
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
-            >
-              <span
-                className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B3808] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"
-                style={{
-                  left: `${mousePosition.x}px`,
-                  top: `${mousePosition.y}px`,
-                  width: "100px",
-                  height: "100px",
-                }}
-              />
-              <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                Schedule a Technical Architecture Call
-                <ArrowUpRightIcon className="group-hover:hidden" />
-                <ArrowRightIcon className="hidden group-hover:block" />
-              </span>
-            </button>
-          </div>
-        </section> */}
+       
         <section className="py-20 px-4 bg-[#f5f3f3]">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -347,12 +319,12 @@ export default function DevelopmentTestingPage() {
 
               {/* Right Side - Content */}
               <div className="lg:pl-8">
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight font-raleway mb-6 text-gray-900">
-                  Ready to Build Your Next Enterprise Application?
-                </h1>
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight font-raleway mb-6 text-gray-900">
+              Ready to Modernize Your Infrastructure?
+                </h2>
 
                 <p className="text-lg text-gray-600 leading-relaxed mb-8 font-raleway">
-                  Partner with a global engineering team that prioritizes code quality, rapid deployment, and uncompromising security.
+             Partner with certified cloud architects to build a secure, resilient, and cost-effective digital foundation for your enterprise.
                 </p>
 
                 {/* CTA Button */}
@@ -372,7 +344,7 @@ export default function DevelopmentTestingPage() {
                     }}
                   />
                   <div className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                    <span>Schedule a Technical Architecture Call</span>
+                    <span>Schedule a Free Cloud Readiness Audit</span>
                     <span className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-500 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
                       <ArrowUpRightIcon className="group-hover:hidden" />
                       <ArrowRightIcon className="hidden group-hover:block" />

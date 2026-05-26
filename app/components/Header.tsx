@@ -86,13 +86,25 @@ export default function Header() {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Development & Testing', href: '/services/development-testing' },
-        // { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
-        // { name: 'Mobile App Development', href: '/services/mobile-development' },
-        // { name: 'Web Development', href: '/services/web-development' },
-        // { name: 'UI/UX Design', href: '/services/ui-ux-design' },
+        { name: 'Offshoring Services', href: '/services/offshoring-services'},
+        { name: 'Managed IT Services', href: '/services/managed-it-services' },
+        { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
+        { name: 'Data Analytics', href: '/services/data-analytics'},
+        { name: 'Implementation services', href: '/services/implementation-services'},
+        { name: 'Cyber Security', href: '/services/cybersecurity'},
+        { name: 'Monitoring and Support', href: '/services/monitoring-and-support'}
+      
       ]
     },
-    { name: 'Solutions', href: 'solutions', hasDropdown: true },
+    { 
+      name: 'Solutions', 
+      href: '/solutions', 
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Custom CRM Software', href: '/solutions' },
+        { name: 'Logistics & Supply Chain', href: '/solutions/logistic-and-supply-chain-solutions' }
+      ]
+    },
     { name: 'Blog', href: '/blogs', hasDropdown: false },
     // { name: 'Career', href: '#', hasDropdown: false },
     { name: 'Contact us', href: '/contact-us', hasDropdown: false },

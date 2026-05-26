@@ -27,11 +27,11 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    slug: "custom-web-mobile-development",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Digital Experience Development",
+    slug: "global-network-operations-center",
+    label: "MONITORING AND SUPPORT",
+    heading: "Global Network Operations Center (GNOC)",
     description:
-      "Responsive, intuitive interfaces built on modern frameworks (React, Angular) ensuring seamless omnichannel engagement.",
+      "24/7/365, \"follow-the-sun\" surveillance using predictive analytics. We monitor end-to-end user experience, network latency, and infrastructure health to preemptively isolate and resolve anomalies, guaranteeing compliance with high-availability SLAs.",
     image: case1,
     sections: {
       overview:
@@ -50,11 +50,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 2,
-    slug: "enterprise-api-integration",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Enterprise Integration & APIs",
+    slug: "tiered-sla-backed-support",
+    label: "MONITORING AND SUPPORT",
+    heading: "Tiered SLA-Backed Application Support",
     description:
-      "Unify your digital ecosystem. We orchestrate complex integrations across legacy ERPs, CRMs, and emerging platforms.",
+      "Our expert L1-L3 application support teams are structured for rapid resolution. From immediate user triage (L1) to deep root cause analysis (RCA) and source code patching (L3), we provide fully documented, rapid resolutions for custom and commercial enterprise applications.",
     image: case2,
     sections: {
       overview:
@@ -73,11 +73,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 3,
-    slug: "offshore-qa-testing",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Continuous Quality Engineering",
+    slug: "proactive-system-performance-tuning",
+    label: "MONITORING AND SUPPORT",
+    heading: "Proactive System Performance Tuning",
     description:
-      "Move beyond traditional QA. We implement automated regression, security stress testing, and performance validation within your deployment pipeline.",
+      "We continuously refine the digital backbone of your business. Our senior engineers execute routine optimization of database query efficiency, cloud resource allocation (FinOps alignment), and code redundancy reduction to ensure peak performance, making scalability a non-issue.",
     image: case3,
     sections: {
       overview:
@@ -94,29 +94,29 @@ export const caseStudies: CaseStudy[] = [
         "99.9% bug-free deployments, enhanced user satisfaction, improved security posture, and reduced maintenance costs through proactive quality assurance.",
     },
   }
-  //   {
-  //     id: 4,
-  //     slug: "full-lifecycle-development",
-  //     label: "ENGINEERING CAPABILITY",
-  //     heading: "Full-Lifecycle Development & Testing Services",
-  //     description:
-  //       "We take absolute ownership of your product from the first line of code to the final stress test, ensuring comprehensive development and testing coverage throughout the entire software lifecycle.",
-  //     image: case4,
-  //     sections: {
-  //       overview:
-  //         "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
-  //       client:
-  //         "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
-  //       strategiesDescribed:
-  //         "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
-  //       clientChallenges:
-  //         "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
-  //       solutionProvider:
-  //         "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
-  //       outcome:
-  //         "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
-  //     },
-  //   },
+//   {
+//     id: 4,
+//     slug: "full-lifecycle-development",
+//     label: "ENGINEERING CAPABILITY",
+//     heading: "Full-Lifecycle Development & Testing Services",
+//     description:
+//       "We take absolute ownership of your product from the first line of code to the final stress test, ensuring comprehensive development and testing coverage throughout the entire software lifecycle.",
+//     image: case4,
+//     sections: {
+//       overview:
+//         "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
+//       client:
+//         "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
+//       strategiesDescribed:
+//         "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
+//       clientChallenges:
+//         "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
+//       solutionProvider:
+//         "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
+//       outcome:
+//         "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
+//     },
+//   },
 ];
 
 export const caseStudyMap = Object.fromEntries(

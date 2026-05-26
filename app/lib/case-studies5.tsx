@@ -27,11 +27,11 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    slug: "custom-web-mobile-development",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Digital Experience Development",
+    slug: "operational-readiness-blueprinting",
+    label: "IMPLEMENTATION SERVICES",
+    heading: "Operational Readiness & Blueprinting",
     description:
-      "Responsive, intuitive interfaces built on modern frameworks (React, Angular) ensuring seamless omnichannel engagement.",
+      "We conduct rigorous, multi-layered environment audits and create an immutable data migration blueprint for every project. This pre-deployment governance is critical for successful legacy system migration and guarantees that system dependencies are mapped and mitigated before any code moves to production.",
     image: case1,
     sections: {
       overview:
@@ -50,11 +50,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 2,
-    slug: "enterprise-api-integration",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Enterprise Integration & APIs",
+    slug: "enterprise-api-led-integration",
+    label: "IMPLEMENTATION SERVICES",
+    heading: "Enterprise API-Led Integration & Interoperability",
     description:
-      "Unify your digital ecosystem. We orchestrate complex integrations across legacy ERPs, CRMs, and emerging platforms.",
+      "We solve the \"last mile\" problem of new systems communicating with entrenched infrastructure. Our specialized engineers construct high-performance, secure, and custom middleware solutions to ensure real-time, bi-directional data flow between your new applications and mission-critical legacy financial, supply chain, and CRM platforms.",
     image: case2,
     sections: {
       overview:
@@ -73,11 +73,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 3,
-    slug: "offshore-qa-testing",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Continuous Quality Engineering",
+    slug: "cognitive-adoption-ocm",
+    label: "IMPLEMENTATION SERVICES",
+    heading: "Cognitive Adoption & Organizational Change Management (OCM)",
     description:
-      "Move beyond traditional QA. We implement automated regression, security stress testing, and performance validation within your deployment pipeline.",
+      "Implementation success is measured by user engagement, not just server uptime. Our OCM specialists partner with your teams to create role-specific training curricula, digital adoption platforms, and a comprehensive communication strategy to ensure immediate, high-fidelity usage across your entire global organization.",
     image: case3,
     sections: {
       overview:
@@ -94,29 +94,29 @@ export const caseStudies: CaseStudy[] = [
         "99.9% bug-free deployments, enhanced user satisfaction, improved security posture, and reduced maintenance costs through proactive quality assurance.",
     },
   }
-  //   {
-  //     id: 4,
-  //     slug: "full-lifecycle-development",
-  //     label: "ENGINEERING CAPABILITY",
-  //     heading: "Full-Lifecycle Development & Testing Services",
-  //     description:
-  //       "We take absolute ownership of your product from the first line of code to the final stress test, ensuring comprehensive development and testing coverage throughout the entire software lifecycle.",
-  //     image: case4,
-  //     sections: {
-  //       overview:
-  //         "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
-  //       client:
-  //         "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
-  //       strategiesDescribed:
-  //         "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
-  //       clientChallenges:
-  //         "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
-  //       solutionProvider:
-  //         "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
-  //       outcome:
-  //         "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
-  //     },
-  //   },
+//   {
+//     id: 4,
+//     slug: "full-lifecycle-development",
+//     label: "ENGINEERING CAPABILITY",
+//     heading: "Full-Lifecycle Development & Testing Services",
+//     description:
+//       "We take absolute ownership of your product from the first line of code to the final stress test, ensuring comprehensive development and testing coverage throughout the entire software lifecycle.",
+//     image: case4,
+//     sections: {
+//       overview:
+//         "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
+//       client:
+//         "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
+//       strategiesDescribed:
+//         "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
+//       clientChallenges:
+//         "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
+//       solutionProvider:
+//         "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
+//       outcome:
+//         "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
+//     },
+//   },
 ];
 
 export const caseStudyMap = Object.fromEntries(

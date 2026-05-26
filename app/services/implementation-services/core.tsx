@@ -11,23 +11,23 @@ export default function QualityEngineering() {
   const qualityItems = [
     {
       index: "01",
-      title: "Automated Regression & Pipeline Testing",
-      tagline: "Continuous Integration Standard",
-      content: "We script automated tests within deployment pipelines to instantly catch codebase conflicts and ensure new features never break existing functionality.",
+      title: "Minimal Viable Product Rollouts",
+      tagline: "Precision Over Scope",
+      content: "We favor precision over scope. We define minimal, high-value deployment zones (by geography or business unit) to quickly generate early ROI, prove system stability, and integrate user feedback before scaling globally.",
       Icon: Terminal,
     },
     {
       index: "02",
-      title: "Security Stress Testing",
-      tagline: "Vulnerability Threat Simulation",
-      content: "We deploy ethical hacking techniques and simulate massive concurrent user traffic surges to expose and patch security vulnerabilities before go-live.",
+      title: "Dark Launch & Parallel Validation",
+      tagline: "Zero Downtime Guarantee",
+      content: "To guarantee zero downtime, we deploy new systems alongside, but initially hidden from, existing operations (Dark Launch). We then use automated tools to run parallel transactions through both environments, validating data accuracy and performance metrics before the final switchover.",
       Icon: ShieldCheck,
     },
     {
       index: "03",
-      title: "Exploratory QA & User Validation",
-      tagline: "Nuanced UX & Accessibility Audit",
-      content: "Our specialists conduct deep-dive manual testing to validate nuanced UI/UX elements, accessibility standards, and complex user scenarios that automated tools might miss.",
+      title: "Dedicated 90-Day Hypercare",
+      tagline: "Post-Launch Issue Resolution",
+      content: "Our commitment extends well beyond \"go-live.\" We provide a dedicated 90-day hypercare engagement with embedded specialists for rapid, post-launch issue resolution, followed by rigorous knowledge transfer to enable your internal IT teams for self-sufficiency.",
       Icon: Layers,
     },
   ];
@@ -82,13 +82,16 @@ export default function QualityEngineering() {
         
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
-              Continuous <br />
-              <span className="text-gray-500">Quality Engineering.</span>
+              A Structured Approach <br />
+              <span className="text-gray-500">for Zero-Downtime Rollout</span>
             </h2>
 
-            <p className="text-gray-600 max-w-xl mb-12 text-base leading-relaxed font-medium">
-              Quality is not an afterthought; it is embedded directly in our CI/CD pipelines. Our QA teams actively try to break the code, utilizing a hybrid testing environment to guarantee ultimate security and enterprise readiness.
-            </p>
+            <div className="text-gray-600 max-w-xl mb-12 text-base leading-relaxed font-medium space-y-4">
+              <p>
+                Our unique &apos;Assurance-Led&apos; Methodology is designed to minimize risk, isolate variables, and deliver predictable results for digital transformation rollout projects.
+              </p>
+             
+            </div>
 
             {/* Tabbed Interactive System Layout */}
             <div className="flex flex-col md:flex-row gap-6 items-start">

@@ -151,8 +151,8 @@ export default function AboutUsContent() {
             <div className="max-w-5xl text-center">
               {/* Main Heading */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight font-raleway">
-                Engineering the Future of Global Enterprise.
-              </h1>
+             Co-Architecting Operational Dominance for Global Enterprise.
+ </h1>
 
               {/* Sub-headline */}
               {/* <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed max-w-4xl mx-auto font-raleway">
@@ -178,7 +178,7 @@ export default function AboutUsContent() {
                     }}
                   />
                   <div className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                    <span>Meet Our Leadership</span>
+                    <span>Meet Our Executive Leadership</span>
                     <span className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-500 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
                       <ArrowUpRightIcon className="group-hover:hidden" />
                       <ArrowRightIcon className="hidden group-hover:block" />
@@ -188,7 +188,7 @@ export default function AboutUsContent() {
 
                 {/* Secondary Button */}
                 <button className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white hover:text-[#3B3808] font-raleway">
-                  View Our Core Values
+                 Explore Our Governance Framework
                   <ArrowRightIcon />
                 </button>
               </div>
@@ -206,15 +206,15 @@ export default function AboutUsContent() {
     <div className="flex flex-col md:flex-row gap-10 items-start  ">
       <div className="md:w-[260px] shrink-0">
       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-raleway">
-                Built for Scale.<br />
-          Tested for<br />
-          Perfection.
+                Pune-Powered.<br />
+       Globally Certified.
+         
         </h2>
       </div>
  
       <div className="flex-1 border-b border-gray-200 pb-10">
         <p ref={textRef2} className="text-gray-600 leading-relaxed font-raleway" style={{ fontSize: '24px' }}>
-          {renderAnimatedText("Launching software with critical bugs or poor architectural foundations can cost an enterprise millions in lost revenue, security breaches, and diminished brand trust. As a leading B2B software development agency in India, Sunbrilo eliminates technical debt before it happens.", scrollProgress2)}
+          {renderAnimatedText("Operating from the strategic technology corridor of Pune, India, Sunbrilo has evolved into a high-velocity enterprise software engineering hub, serving clients across North America, EMEA, and APAC. We are not just vendors; we are digital architects committed to zero-friction scalability.", scrollProgress2)}
         </p>
       </div>
     </div>
@@ -277,11 +277,7 @@ export default function AboutUsContent() {
       {/* Body text */}
       <div className="flex-1">
         <p className="text-lg text-gray-600 pb-4 leading-relaxed max-w-4xl mx-auto font-raleway">
-            We do not believe in fragmented development cycles. Whether you are building a secure
-          corporate portal, a high-volume SaaS platform, or a proprietary internal tool, our
-          dedicated engineering pods integrate development and quality assurance from day one.
-          The result is secure, lightning-fast software that performs flawlessly under immense
-          operational pressure.
+           We specialize in mission-critical environments—from real-time data ingestion for logistics and PropTech to automated manufacturing and highly secure HRMS ecosystems. Our multidisciplinary team of enterprise architects, certified security experts, and senior developers is dedicated to one goal: ensuring your digital infrastructure is a perpetual source of revenue and competitive advantage.
         </p>
       </div>
 
@@ -290,16 +286,16 @@ export default function AboutUsContent() {
 </section>
 
       {/* Section 3: The Sunbrilo Pillars */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-20 px-4 ">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
             {/* Left Side - Heading and Description (Sticky) */}
             <div className="lg:w-2/6 lg:sticky lg:top-24 lg:h-fit">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-raleway">
-                The Principles That Power Our Progress
+                Principles of Precision: Our Non-Negotiable Standards
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed font-raleway">
-                Our culture is defined by four non-negotiable standards that ensure every line of code we write adds measurable value to your enterprise.
+               Our culture is defined by four non-negotiable principles that embed measurable value into every solution, ensuring predictable outcomes for your enterprise.
               </p>
             </div>
             
@@ -316,10 +312,10 @@ export default function AboutUsContent() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-raleway">Architectural Integrity</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-raleway">Design for Dominance (Architectural Integrity)</h3>
                       <p className="text-gray-600 leading-relaxed font-raleway">
-                        We don't build "quick fixes." We engineer scalable, cloud-native architectures designed to handle millions of transactions and years of growth without collapsing under technical debt.
-                      </p>
+                      We reject tactical fixes. We engineer composable, cloud-native architectures designed to process millions of transactions and guarantee years of sustainable growth without accumulating technical debt.
+                       </p>
                     </div>
                   </div>
                 </div>
@@ -337,10 +333,10 @@ export default function AboutUsContent() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-raleway">Radical Transparency</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-raleway">Data-Driven Transparency (Radical Visibility)</h3>
                       <p className="text-gray-600 leading-relaxed font-raleway">
-                        Whether you utilize our agile offshore development center or our managed services, you have 100% visibility into our sprints, codebases, and project timelines.
-                      </p>
+                   Whether utilizing our agile offshore development center or our managed services, you receive 100% real-time visibility into performance metrics, CI/CD pipelines, and project accountability via client-standard toolchains.
+                     </p>
                     </div>
                   </div>
                 </div>
@@ -357,9 +353,9 @@ export default function AboutUsContent() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-raleway">Security-First Mindset</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-raleway">Defense by Default (Security-First Mindset)</h3>
                       <p className="text-gray-600 leading-relaxed font-raleway">
-                        In an era of global threats, security is not a feature; it is our foundation. We embed military-grade encryption and compliance protocols into every deployment.
+                     Security is the foundation, not an afterthought. We embed Zero-Trust principles, military-grade encryption, and compliance protocols (SOC 2, ISO) into the core of every deployment, protecting your intellectual property.
                       </p>
                     </div>
                   </div>
@@ -377,9 +373,9 @@ export default function AboutUsContent() {
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-raleway">Relentless Innovation</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3 font-raleway">Deliberate Innovation (Relentless Agility)</h3>
                       <p className="text-gray-600 leading-relaxed font-raleway">
-                        The tech landscape shifts daily. We continuously upskill our engineers in AI, machine learning, and serverless computing to keep your business ahead of the curve.
+                    The technology landscape is fluid. We mandate continuous upskilling in high-impact domains—AI, GenAI, Machine Learning, and Serverless—to ensure your business remains perpetually ahead of the competitive curve.
                       </p>
                     </div>
                   </div>
@@ -410,11 +406,11 @@ export default function AboutUsContent() {
     
       {/* Heading */}
      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-raleway">
-                 Your Global Technology Partner
+               The Strategic Advantage of True Partnership
       </h2>
         <p className="text-lg text-gray-600 pb-4 leading-relaxed max-w-4xl mx-auto font-raleway">
-              Why do international brands choose Sunbrilo over traditional outsourcing firms? Because we operate as a true extension of your team.
-            </p>
+           International brands choose Sunbrilo because we transcend the traditional outsourcing model. We operate as a seamless, high-caliber extension of your internal team and strategic vision.
+           </p>
 
       {/* Item 1 */}
       <div className="border-t border-[#c5cec9] pt-5 mb-5 flex gap-4 items-start">
@@ -424,10 +420,10 @@ export default function AboutUsContent() {
           </svg>
         </div>
         <div>
-          <h3 className="text-base font-semibold text-gray-900 mb-1 font-raleway">Elite Technical Talent</h3>
+          <h3 className="text-base font-semibold text-gray-900 mb-1 font-raleway">Elite Technical Talent (Top 1%)</h3>
           <p className="text-sm text-gray-600 leading-relaxed font-raleway">
-            We source the top 1% of engineering talent in Pune, ensuring your projects are handled by experts in React, Node.js, Python, and Cloud Architecture.
-          </p>
+          We leverage rigorous proprietary vetting to source the top 1% of engineering talent in Pune, specializing in high-demand stacks: React, Node.js, Python, and Multi-Cloud Architecture (AWS/Azure/GCP).
+           </p>
         </div>
       </div>
 
@@ -441,7 +437,7 @@ export default function AboutUsContent() {
         <div>
           <h3 className="text-base font-semibold text-gray-900 mb-1 font-raleway">Time-Zone Optimized Delivery</h3>
           <p className="text-sm text-gray-600 leading-relaxed font-raleway">
-            We utilize overlapping global working hours to ensure seamless communication and daily stand-ups with your headquarters.
+          We align core operational hours with global markets to ensure synchronous, real-time collaboration, daily stand-ups, and frictionless communication with your headquarters.
           </p>
         </div>
       </div>
@@ -454,10 +450,10 @@ export default function AboutUsContent() {
           </svg>
         </div>
         <div>
-          <h3 className="text-base font-semibold text-gray-900 mb-1 font-raleway">End-to-End Ownership</h3>
+          <h3 className="text-base font-semibold text-gray-900 mb-1 font-raleway">End-to-End Strategic Ownership</h3>
           <p className="text-sm text-gray-600 leading-relaxed font-raleway">
-            From the initial discovery phase to post-launch 24/7 IT monitoring and support, we take full accountability for the success of your digital product.
-          </p>
+        From initial discovery and architectural blueprinting to post-launch 24/7 IT monitoring and support, we assume full, documented accountability for the successful business outcome of your digital product roadmap.
+  </p>
         </div>
       </div>
 
@@ -471,93 +467,36 @@ export default function AboutUsContent() {
   <div className="max-w-6xl mx-auto">
 
     {/* Top: heading + body */}
-    <div className="flex flex-wrap gap-8 items-start pb-10 border-b border-gray-200 mb-10">
-      <div className="flex-shrink-0 w-[280px]">
-      
-       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-raleway">
-                Powering innovation<br />across industries
+    <div className="flex flex-col md:flex-row gap-10 lg:gap-16 items-start">
+      <div className="w-full md:w-1/3">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight font-raleway">
+          Your Global Digital Transformation Partner
         </h2>
       </div>
-      <div className="flex-1 min-w-[220px] pt-8">
-       <p className="text-lg text-gray-600 pb-4 leading-relaxed max-w-4xl mx-auto font-raleway">
-           From helping real estate developers in Pune manage multi-project leads to scaling cloud
-          infrastructure for US logistics firms, our impact is global. We are more than a vendor —
-          we are a digital transformation partner committed to your long-term success.
+      
+      <div className="w-full md:w-2/3 md:pt-2">
+        <p className="text-lg text-gray-600 pb-8 leading-relaxed font-raleway">
+          From optimizing complex multi-project property management for Pune-based real estate giants to architecting hyper-scale cloud infrastructure for NASDAQ-listed US logistics firms, our certified impact is global. We are not a vendor; we are a digital transformation partner committed to ensuring your long-term technological and financial success.
         </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200 border-t border-gray-200 mt-10">
-      {[
-        { value: "10+", label: "Countries served" },
-        { value: "50+", label: "Projects delivered" },
-        { value: "3", label: "Continents" },
-        { value: "24/7", label: "Support coverage" },
-      ].map(({ value, label }) => (
-        <div key={label} className="px-6 py-5">
-          <p className="text-3xl font-bold text-[#3B3808] font-raleway">{value}</p>
-          <p className="text-xs text-gray-600 mt-1 font-raleway">{label}</p>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 border-t border-gray-200 pt-8 gap-y-8">
+          {[
+            { value: "10+", label: "Countries served" },
+            { value: "50+", label: "Projects delivered" },
+            { value: "3", label: "Continents" },
+            { value: "24/7", label: "Support coverage" },
+          ].map(({ value, label }) => (
+            <div key={label} className="pr-4 border-r border-gray-200 last:border-r-0 md:pl-6 md:first:pl-0">
+              <p className="text-3xl font-bold text-[#3B3808] font-raleway">{value}</p>
+              <p className="text-sm text-gray-600 mt-1 font-raleway font-medium">{label}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
       </div>
     </div>
 
     {/* Region columns */}
-    <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200 max-w-6xl items-center mx-auto">
-      {[
-        {
-          label: "HQ",
-          region: "Pune",
-          sub: "India",
-          tags: ["Real Estate", "Manufacturing", "HRMS"],
-          hq: true,
-        },
-        {
-          label: "Client region",
-          region: "USA",
-          sub: "North America",
-          tags: ["Logistics", "Fintech", "PropTech"],
-        },
-        {
-          label: "Client region",
-          region: "Europe",
-          sub: "UK & EU",
-          tags: ["SaaS", "HRMS", "Enterprise"],
-        },
-        {
-          label: "Client region",
-          region: "Asia",
-          sub: "APAC Region",
-          tags: ["Manufacturing", "Cloud", "IoT"],
-        },
-      ].map(({ label, region, sub, tags, hq }) => (
-        <div key={region} className="px-6 py-7">
-          <div
-            className={`w-9 h-9 rounded-full flex items-center justify-center mb-5 ${
-              hq ? "bg-[#3B3808]" : "bg-[#1a2a24]"
-            }`}
-          >
-            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="10" r="3" strokeWidth="2" />
-              <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M12 2a8 8 0 0 0-8 8c0 5.25 8 13 8 13s8-7.75 8-13a8 8 0 0 0-8-8z" />
-            </svg>
-          </div>
-          <p className="text-[10px] font-semibold tracking-widest uppercase text-gray-600 mb-1 font-raleway">
-            {label}
-          </p>
-          <p className="text-xl font-bold text-gray-900 mb-0.5 font-raleway">{region}</p>
-          <p className="text-xs text-gray-600 mb-4 font-raleway">{sub}</p>
-          <div className="flex flex-col gap-1.5">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-[11px] px-2 py-0.5 rounded bg-[#ffee50]/20 text-[#3B3808] font-raleway"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
+    
 
     {/* Stats bar */}
   

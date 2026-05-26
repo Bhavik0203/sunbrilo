@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { SectionReveal } from "./SectionReveal";
 
-import { caseStudies } from "../../lib/case-studies";
+import { caseStudies } from "../../lib/case-studies1";
 
 export default function CaseStudiesPage() {
   return (
@@ -27,11 +27,10 @@ export default function CaseStudiesPage() {
         </SectionReveal> */}
           <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-raleway">
-             Full-Lifecycle Development & Testing Services
-              </h2>
+          Engagement Models Aligned with Your Strategic Roadmap   </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto font-raleway">
-              We provide end-to-end solutions, ensuring architectural integrity from the first commit to continuous deployment.
-               </p>
+             Our flexible models are designed for precise integration into enterprise-grade operations, offering strategic solutions for every phase of your product lifecycle.
+              </p>
             </div>
 
         {/* Cards */}

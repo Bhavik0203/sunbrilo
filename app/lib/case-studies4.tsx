@@ -27,11 +27,11 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    slug: "custom-web-mobile-development",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Digital Experience Development",
+    slug: "cognitive-security-operations-center",
+    label: "CYBERSECURITY",
+    heading: "24/7 Cognitive Security Operations Center (SOC)",
     description:
-      "Responsive, intuitive interfaces built on modern frameworks (React, Angular) ensuring seamless omnichannel engagement.",
+      "We leverage AIOps and machine learning to analyze trillions of data points in real-time. Our global analysts execute predictive threat hunting, drastically reducing mean-time-to-detect (MTTD) and mean-time-to-respond (MTTR) across cloud and on-premise environments.",
     image: case1,
     sections: {
       overview:
@@ -50,11 +50,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 2,
-    slug: "enterprise-api-integration",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Enterprise Integration & APIs",
+    slug: "vulnerability-management-penetration-testing",
+    label: "CYBERSECURITY",
+    heading: "Vulnerability Management & Penetration Testing",
     description:
-      "Unify your digital ecosystem. We orchestrate complex integrations across legacy ERPs, CRMs, and emerging platforms.",
+      "Our certified Red Team experts conduct rigorous, proprietary vulnerability and penetration testing (VAPT) focused on critical business logic and cloud configuration errors, providing actionable remediation roadmaps to close high-severity gaps.",
     image: case2,
     sections: {
       overview:
@@ -73,11 +73,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 3,
-    slug: "offshore-qa-testing",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Continuous Quality Engineering",
+    slug: "global-regulatory-compliance-risk-quantification",
+    label: "CYBERSECURITY",
+    heading: "Global Regulatory Compliance & Risk Quantification",
     description:
-      "Move beyond traditional QA. We implement automated regression, security stress testing, and performance validation within your deployment pipeline.",
+      "We treat compliance as a business advantage. Beyond SOC2 compliance consulting, we manage complex data sovereignty (GDPR) and industry-specific regulations (HIPAA, ISO 27001), ensuring continuous audit readiness and reducing legal exposure.",
     image: case3,
     sections: {
       overview:
@@ -93,30 +93,30 @@ export const caseStudies: CaseStudy[] = [
       outcome:
         "99.9% bug-free deployments, enhanced user satisfaction, improved security posture, and reduced maintenance costs through proactive quality assurance.",
     },
-  }
-  //   {
-  //     id: 4,
-  //     slug: "full-lifecycle-development",
-  //     label: "ENGINEERING CAPABILITY",
-  //     heading: "Full-Lifecycle Development & Testing Services",
-  //     description:
-  //       "We take absolute ownership of your product from the first line of code to the final stress test, ensuring comprehensive development and testing coverage throughout the entire software lifecycle.",
-  //     image: case4,
-  //     sections: {
-  //       overview:
-  //         "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
-  //       client:
-  //         "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
-  //       strategiesDescribed:
-  //         "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
-  //       clientChallenges:
-  //         "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
-  //       solutionProvider:
-  //         "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
-  //       outcome:
-  //         "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
-  //     },
-  //   },
+  },
+  {
+    id: 4,
+    slug: "unified-endpoint-detection-response",
+    label: "CYBERSECURITY",
+    heading: "Unified Endpoint Detection & Response (XDR)",
+    description:
+      "Secure the hybrid workforce. Our extended detection and response (XDR) solutions provide centralized, AI-powered protection across servers, endpoints, cloud workloads, and email, neutralizing ransomware and phishing campaigns at the earliest possible stage.",
+    image: case4,
+    sections: {
+      overview:
+        "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
+      client:
+        "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
+      strategiesDescribed:
+        "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
+      clientChallenges:
+        "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
+      solutionProvider:
+        "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
+      outcome:
+        "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
+    },
+  },
 ];
 
 export const caseStudyMap = Object.fromEntries(

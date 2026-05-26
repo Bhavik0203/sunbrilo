@@ -27,11 +27,11 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     id: 1,
-    slug: "custom-web-mobile-development",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Digital Experience Development",
+    slug: "cognitive-infrastructure-management",
+    label: "MANAGED IT SERVICES",
+    heading: "24/7 Cognitive Infrastructure Management",
     description:
-      "Responsive, intuitive interfaces built on modern frameworks (React, Angular) ensuring seamless omnichannel engagement.",
+      "We deploy advanced AIOps and predictive monitoring platforms across servers, networks, and hybrid cloud environments. We not only detect anomalies but use machine learning to predict and automatically resolve 85%+ of infrastructure incidents before users are impacted.",
     image: case1,
     sections: {
       overview:
@@ -50,11 +50,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 2,
-    slug: "enterprise-api-integration",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Enterprise Integration & APIs",
+    slug: "cloud-hybrid-environment-optimization",
+    label: "MANAGED IT SERVICES",
+    heading: "Cloud & Hybrid Environment Optimization",
     description:
-      "Unify your digital ecosystem. We orchestrate complex integrations across legacy ERPs, CRMs, and emerging platforms.",
+      "Guarantee high availability and performance across your distributed environment. We provide proactive patching, configuration management, and optimization for AWS, Azure, GCP, and on-premise assets, ensuring perpetual alignment with FinOps principles.",
     image: case2,
     sections: {
       overview:
@@ -73,11 +73,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: 3,
-    slug: "offshore-qa-testing",
-    label: "ENGINEERING CAPABILITY",
-    heading: "Continuous Quality Engineering",
+    slug: "elite-corporate-it-support",
+    label: "MANAGED IT SERVICES",
+    heading: "Elite 24/7 Corporate IT Support & End-User Enablement",
     description:
-      "Move beyond traditional QA. We implement automated regression, security stress testing, and performance validation within your deployment pipeline.",
+      "Empower a seamless global workforce with high-velocity 24/7 corporate IT support. Our certified L1-L3 engineers provide rapid remote device provisioning, secure access management, and deep application troubleshooting, all measured against guaranteed response times.",
     image: case3,
     sections: {
       overview:
@@ -93,30 +93,30 @@ export const caseStudies: CaseStudy[] = [
       outcome:
         "99.9% bug-free deployments, enhanced user satisfaction, improved security posture, and reduced maintenance costs through proactive quality assurance.",
     },
-  }
-  //   {
-  //     id: 4,
-  //     slug: "full-lifecycle-development",
-  //     label: "ENGINEERING CAPABILITY",
-  //     heading: "Full-Lifecycle Development & Testing Services",
-  //     description:
-  //       "We take absolute ownership of your product from the first line of code to the final stress test, ensuring comprehensive development and testing coverage throughout the entire software lifecycle.",
-  //     image: case4,
-  //     sections: {
-  //       overview:
-  //         "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
-  //       client:
-  //         "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
-  //       strategiesDescribed:
-  //         "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
-  //       clientChallenges:
-  //         "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
-  //       solutionProvider:
-  //         "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
-  //       outcome:
-  //         "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
-  //     },
-  //   },
+  },
+  {
+    id: 4,
+    slug: "vcio-consulting-it-governance",
+    label: "MANAGED IT SERVICES",
+    heading: "vCIO Consulting & IT Governance",
+    description:
+      "Elevate IT management to a board-level function. Our Virtual Chief Information Officers (vCIOs) provide the strategic foresight needed for budget management, vendor rationalization, long-term technology roadmapping, and maximizing ROI from IT investments.",
+    image: case4,
+    sections: {
+      overview:
+        "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
+      client:
+        "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
+      strategiesDescribed:
+        "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
+      clientChallenges:
+        "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
+      solutionProvider:
+        "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
+      outcome:
+        "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
+    },
+  },
 ];
 
 export const caseStudyMap = Object.fromEntries(
