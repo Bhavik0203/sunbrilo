@@ -22,44 +22,44 @@ export default function LogisticsSolutionsPage() {
   const features = [
     {
       step: '01',
-      title: 'Real-Time Freight & Fleet Tracking',
-      desc: 'Gain absolute control over your assets. Our real-time freight tracking software integrates via advanced GPS and IoT APIs, giving your dispatchers live location data, predictive ETAs, and instant geofencing alerts for thousands of vehicles simultaneously.',
+      title: 'AI/ML Predictive Failure Modeling:',
+      desc: 'We analyze multivariate sensor data to identify the earliest indicators of degradation. Our system moves past simple alerts to provide prescriptive recommendations—telling you what maintenance to perform, when, and why it maximizes asset lifespan, transforming Industrial IoT asset orchestration.',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '02',
-      title: 'Intelligent Routing & Dispatch Automation',
-      desc: 'Stop wasting fuel and driver hours. Our AI-driven algorithms automatically calculate the most efficient delivery routes considering live traffic, vehicle load capacity, and strict delivery windows, drastically reducing your cost-per-mile.',
+      title: 'Zero-Friction Work Order & Field Service Automation:',
+      desc: 'Automatically trigger dynamic work orders, assigning tasks based on technician geospatial proximity, certification, and required tools. Technicians use intuitive, secure mobile interfaces to complete compliance logging, access AR-enabled diagnostics, and log resolution times instantly.',
       image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '03',
-      title: 'Integrated Warehouse Management (WMS)',
-      desc: 'Bridge the gap between storage and transit. Seamlessly connect your transit data with warehouse inventory levels. Automate dock scheduling, implement smart barcode/RFID scanning, and trigger automated reorder protocols to permanently prevent stockouts.',
+      title: 'Integrated Supply Chain & Inventory Optimization:',
+      desc: 'Leverage machine learning to forecast precise spare parts demand based on predictive maintenance schedules, ensuring 100% availability of critical components while drastically reducing capital locked up in excess inventory and eliminating costly expedited shipping.',
       image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
   const faqs = [
     {
-      question: 'Why should we invest in custom logistics software instead of an off-the-shelf TMS (Transportation Management System)?',
-      answer: 'Off-the-shelf TMS platforms charge heavy monthly licensing fees and force you to adapt your unique operational workflows to fit their rigid structures. A custom logistics software development build from Sunbrilo involves no per-user fees, maps exactly to your specific global routing needs, and gives you 100% ownership of your proprietary data.',
+      question: 'How quickly can your APM solution integrate with our existing brownfield infrastructure (e.g., legacy PLC/SCADA systems)?',
+      answer: 'Sunbrilo specializes in building lightweight, non-intrusive data ingestion layers. We utilize modern protocols (MQTT, OPC UA) to securely integrate with disparate legacy systems and normalize the data streams, rapidly establishing the central intelligence core without requiring a disruptive plant-wide hardware overhaul.',
     },
     {
-      question: 'Can your software integrate directly with our trucks\' ELD (Electronic Logging Device) hardware?',
-      answer: 'Yes. We build custom API integrations that connect directly with major ELD providers and onboard telematics hardware, pulling real-time engine diagnostics, driver Hours of Service (HOS), and fuel consumption data straight into your central dashboard.',
+      question: 'What is the measurable ROI of shifting to an AI-driven prescriptive model versus a preventive one?',
+      answer: 'Preventive maintenance still wastes resources by fixing machines before they need it. Our prescriptive, AI-driven predictive maintenance targets maintenance only when necessary, typically resulting in a 15-25% reduction in scheduled maintenance costs and a documented 50%+ reduction in catastrophic failure downtime.',
     },
     {
-      question: 'Is the platform accessible on mobile devices for our drivers?',
-      answer: 'Absolutely. We develop highly secure, cross-platform mobile companion apps (iOS and Android) for your drivers. This allows them to receive route updates, capture electronic Proof of Delivery (ePOD) signatures, and report delays instantly from the field.',
+      question: 'How does this platform support strategic risk mitigation across a multi-site global operation?',
+      answer: 'The platform aggregates risk scoring in real-time, providing executive dashboards with a quantified view of operational risk across all sites. This allows VPs of Operations to strategically allocate high-skill labor and capital investment to the assets and locations posing the highest immediate threat to production output.',
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Custom Logistics &amp; Supply Chain Software Solutions | Sunbrilo</title>
-        <meta name="description" content="Optimize global operations with Sunbrilo. We engineer custom logistics software and enterprise supply chain IT solutions for real-time tracking and automation." />
+        <title>AI-Driven Asset Performance &amp; Maintenance 4.0 | Enterprise CMMS Solutions | Sunbrilo</title>
+        <meta name="description" content="Transform capital asset risk into predictable value. Sunbrilo delivers Intelligent APM solutions powered by AI/ML for prescriptive maintenance, TCO optimization, and achieving Maintenance 4.0 standards." />
       </Head>
 
       <div className="min-h-screen">
@@ -76,7 +76,7 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-              Intelligent Logistics &amp; Supply Chain Solutions.
+            Intelligent Asset Performance: Engineering Maintenance 4.0.
             </h1>
 
 
@@ -91,7 +91,7 @@ export default function LogisticsSolutionsPage() {
                   style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
                 />
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  Request a Supply Chain Audit
+                  Initiate a Predictive ROI Assessment
                 </span>
               </button>
 
@@ -101,7 +101,7 @@ export default function LogisticsSolutionsPage() {
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  View Core Logistics Features
+                  Download the Maintenance 4.0 Whitepaper
                 </span>
               </button>
             </div>
@@ -114,13 +114,12 @@ export default function LogisticsSolutionsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  Eliminate Blind Spots. Accelerate Global Delivery.
-                </h2>
+                From Cost Center to Strategic Asset Intelligence</h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In global logistics, inefficiency costs millions. Legacy systems and fragmented spreadsheets create massive blind spots—leading to lost inventory, delayed shipping routes, and cripplingly high operational costs. You cannot scale a modern supply chain on outdated technology.
-                </p>
+                 For asset-intensive enterprises (manufacturing, energy, infrastructure), unplanned downtime is not merely a technical failure; it is a critical erosion of shareholder value, market trust, and competitive agility. Traditional, reactive CMMS solutions merely track failures; they do not predict them, prevent them, or correlate them to the Strategic Total Cost of Ownership (TCO) optimization of your fleet.
+                 </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                  Sunbrilo builds enterprise supply chain IT solutions designed for scale and resilience. Whether you are managing cross-border US freight networks or optimizing domestic last-mile delivery fleets, our platforms act as your centralized command center. We replace operational chaos with intelligent, AI-driven automation, ensuring you always know exactly where your assets are and how they are performing.
+               Sunbrilo architects AI-driven predictive maintenance platforms designed for the highest level of industrial complexity. We unify siloed data—from SCADA, MES, and IoT streams—into a prescriptive intelligence layer. This enables your organization to execute next-gen enterprise CMMS solutions, ensuring every maintenance decision is financially optimized and performance-driven.
                 </p>
 
 
@@ -143,11 +142,10 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 font-raleway">
-                Engineered for Complex Global Logistics
+             Prescriptive Intelligence for Unrivaled Uptime
               </h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-                We strip away the bloat of off-the-shelf software and build exactly what your operations team needs to move faster.
-              </p>
+             Our platform is engineered to deliver strategic outcomes across the entire asset lifecycle: </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -205,10 +203,10 @@ export default function LogisticsSolutionsPage() {
               <div className="lg:col-span-5 lg:sticky lg:top-24">
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 font-raleway">
-                  Flawless Integration with Your Existing Ecosystem.
-                </h2>
+               Unified Asset View: Enabling Financial and Operational Coherence
+                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                  A supply chain visibility platform must connect your entire business. We build secure, custom APIs to ensure your new logistics software communicates flawlessly with your existing enterprise architecture, eliminating data silos instantly.
+                Our solution ensures that asset health directly informs financial reporting and long-term capital planning. We specialize in custom CMMS integrations that provide a single, unified data model.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
@@ -250,10 +248,10 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; Financial Syncing</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; EAM Synchronization:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Automatically push freight bills, invoicing data, and driver payroll directly into your enterprise resource planning (ERP) systems like SAP, Oracle, or Microsoft Dynamics. No manual data entry required.
-                    </p>
+                    Achieve seamless two-way data flow with major EAM (IBM Maximo, SAP EAM) and ERP systems (SAP S/4HANA, Oracle), guaranteeing real-time synchronization of labor costs, depreciation data, and budget adherence for streamlined audits and capital planning.
+                     </p>
                   </div>
                 </div>
 
@@ -275,10 +273,10 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Third-Party Carrier Integration</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Data Governance and Compliance: </h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Seamlessly ingest EDI (Electronic Data Interchange) and API feeds from external shipping partners, customs brokers, and international freight forwarders into a single, unified dashboard.
-                    </p>
+                  The system provides full, auditable traceability for every maintenance event, part replacement, and compliance check, ensuring adherence to strict regulatory standards (e.g., ISO 55000, specialized industry regulations) across all global operating units.
+                   </p>
                   </div>
                 </div>
 
@@ -376,11 +374,11 @@ export default function LogisticsSolutionsPage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">
-              Ready to Command Your Supply Chain?
+              ecure Your Future Operational Performance.
             </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-              Equip your logistics teams with the technology they need to lower costs, improve delivery times, and scale operations globally.
-            </p>
+             Partner with Sunbrilo to deploy an Intelligent Asset Performance Management solution that translates operational data into sustained financial outperformance and guaranteed uptime.
+              </p>
 
             <button
               type="button"
@@ -392,7 +390,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-                Schedule a Logistics Architecture Consultation
+              Schedule a Technical Architecture Deep Dive
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

@@ -22,44 +22,44 @@ export default function LogisticsSolutionsPage() {
   const features = [
     {
       step: '01',
-      title: 'Real-Time Freight & Fleet Tracking',
-      desc: 'Gain absolute control over your assets. Our real-time freight tracking software integrates via advanced GPS and IoT APIs, giving your dispatchers live location data, predictive ETAs, and instant geofencing alerts for thousands of vehicles simultaneously.',
+      title: 'Dynamic Revenue Assurance (Automated Billing):',
+      desc: 'Eliminate revenue leakage. The platform autonomously manages tiered, dynamic, and usage-based billing logic. It instantly generates compliant, granular invoices based on integrated telematics data, ensuring automated leasing billing software is always accurate.',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '02',
-      title: 'Intelligent Routing & Dispatch Automation',
-      desc: 'Stop wasting fuel and driver hours. Our AI-driven algorithms automatically calculate the most efficient delivery routes considering live traffic, vehicle load capacity, and strict delivery windows, drastically reducing your cost-per-mile.',
+      title: 'Integrated IoT Telematics & Predictive Intelligence:',
+      desc: 'Gain real-time command over thousands of deployed assets. Our system uses advanced geofencing and IoT data feeds to provide live utilization, performance diagnostics, and location tracking, enabling true predictive maintenance forecasting.',
       image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '03',
-      title: 'Integrated Warehouse Management (WMS)',
-      desc: 'Bridge the gap between storage and transit. Seamlessly connect your transit data with warehouse inventory levels. Automate dock scheduling, implement smart barcode/RFID scanning, and trigger automated reorder protocols to permanently prevent stockouts.',
+      title: 'Asset Lifecycle Risk Mitigation:',
+      desc: 'Preserve capital assets. The system enforces mandatory, digital inspection workflows upon return and proactively schedules AI-driven maintenance windows, minimizing capital depreciation and ensuring maximum asset uptime.',
       image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
   const faqs = [
     {
-      question: 'Why should we invest in custom logistics software instead of an off-the-shelf TMS (Transportation Management System)?',
-      answer: 'Off-the-shelf TMS platforms charge heavy monthly licensing fees and force you to adapt your unique operational workflows to fit their rigid structures. A custom logistics software development build from Sunbrilo involves no per-user fees, maps exactly to your specific global routing needs, and gives you 100% ownership of your proprietary data.',
+      question: 'How does a custom platform deliver a better ROI than COTS (Commercial Off-the-Shelf) solutions?',
+      answer: 'COTS platforms introduce architectural debt, charge per-user/per-asset fees that erode margins, and lack the flexibility to encode unique, complex financial models (like custom tax jurisdictions or specific usage-based formulas). Sunbrilos custom equipment leasing software is a zero-license proprietary asset that maps perfectly to your core business logic, maximizing long-term TCO benefits and data ownership.',
     },
     {
-      question: 'Can your software integrate directly with our trucks\' ELD (Electronic Logging Device) hardware?',
-      answer: 'Yes. We build custom API integrations that connect directly with major ELD providers and onboard telematics hardware, pulling real-time engine diagnostics, driver Hours of Service (HOS), and fuel consumption data straight into your central dashboard.',
+      question: 'Does the platform offer functionality for financial depreciation and regulatory compliance tracking (e.g., IFRS/GAAP)?',
+      answer: 'Yes. Our asset lifecycle management system automatically logs every financial event—from repair costs to utilization hours—against the asset. It calculates precise depreciation schedules and supports configuration for major financial compliance standards (IFRS 16, GAAP), providing the CFO with the necessary financial intelligence for regulatory assurance.',
     },
     {
-      question: 'Is the platform accessible on mobile devices for our drivers?',
-      answer: 'Absolutely. We develop highly secure, cross-platform mobile companion apps (iOS and Android) for your drivers. This allows them to receive route updates, capture electronic Proof of Delivery (ePOD) signatures, and report delays instantly from the field.',
+      question: 'Can the platform handle large-scale fleet deployments globally?',
+      answer: 'Absolutely. The architecture is built on scalable cloud-native principles, designed to manage telematics data feeds, maintenance alerts, and contract lifecycles for thousands of assets distributed across multiple geographies and time zones.',
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Custom Logistics &amp; Supply Chain Software Solutions | Sunbrilo</title>
-        <meta name="description" content="Optimize global operations with Sunbrilo. We engineer custom logistics software and enterprise supply chain IT solutions for real-time tracking and automation." />
+        <title>Cognitive Asset Orchestration Platform | Enterprise Leasing & Financial Performance | Sunbrilo</title>
+        <meta name="description" content="Achieve Strategic Velocity in high-value asset leasing. Sunbrilo engineers a proprietary platform for automated usage-based billing, real-time IoT financial intelligence, and predictive asset lifecycle management." />
       </Head>
 
       <div className="min-h-screen">
@@ -76,8 +76,7 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-              Intelligent Logistics &amp; Supply Chain Solutions.
-            </h1>
+             Cognitive Asset Orchestration: The Enterprise Leasing Platform. </h1>
 
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -91,8 +90,7 @@ export default function LogisticsSolutionsPage() {
                   style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
                 />
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  Request a Supply Chain Audit
-                </span>
+                Schedule a Financial Performance Consultation </span>
               </button>
 
               <button
@@ -101,8 +99,7 @@ export default function LogisticsSolutionsPage() {
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  View Core Logistics Features
-                </span>
+               View Asset Risk Mitigation Case Studies  </span>
               </button>
             </div>
           </div>
@@ -114,14 +111,14 @@ export default function LogisticsSolutionsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  Eliminate Blind Spots. Accelerate Global Delivery.
+             Transition from Tracking Assets to Orchestrating Value.
                 </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In global logistics, inefficiency costs millions. Legacy systems and fragmented spreadsheets create massive blind spots—leading to lost inventory, delayed shipping routes, and cripplingly high operational costs. You cannot scale a modern supply chain on outdated technology.
+              In high-stakes B2B leasing—spanning heavy machinery to complex IT infrastructure—fragmented operations are a silent destroyer of Total Cost of Ownership (TCO) and shareholder value. Manual reconciliation of complex contracts, overlooked maintenance, and inaccurate usage calculations translate directly into catastrophic revenue leakage and compliance exposure.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                  Sunbrilo builds enterprise supply chain IT solutions designed for scale and resilience. Whether you are managing cross-border US freight networks or optimizing domestic last-mile delivery fleets, our platforms act as your centralized command center. We replace operational chaos with intelligent, AI-driven automation, ensuring you always know exactly where your assets are and how they are performing.
-                </p>
+                Sunbrilo engineers a proprietary B2B rental management platform designed as your strategic digital core. We move beyond simple asset tracking to provide Financial Performance Intelligence. From quote generation and digital contract enforcement to preventive maintenance scheduling and real-time ledger synchronization, we deliver the precision required for global operational dominance and regulatory adherence.
+                  </p>
 
 
               </div>
@@ -143,10 +140,10 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 font-raleway">
-                Engineered for Complex Global Logistics
-              </h2>
+                Built for Audit-Proof, High-Volume Leasing Cycles
+                </h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-                We strip away the bloat of off-the-shelf software and build exactly what your operations team needs to move faster.
+              We deliver a solution that dictates your success, not a constrained software package. Key capabilities include:
               </p>
             </div>
 
@@ -198,17 +195,17 @@ export default function LogisticsSolutionsPage() {
             <div className="absolute top-[40%] -right-[10%] w-[40%] h-[40%] rounded-full bg-gradient-to-tl from-[#ffee50]/10 to-transparent blur-3xl" />
           </div> */}
 
-          <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
 
               {/* Left: Heading and Text (Sticky) */}
               <div className="lg:col-span-5 lg:sticky lg:top-24">
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 font-raleway">
-                  Flawless Integration with Your Existing Ecosystem.
+               Secure, Seamless Integration into Your Digital Ecosystem
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                  A supply chain visibility platform must connect your entire business. We build secure, custom APIs to ensure your new logistics software communicates flawlessly with your existing enterprise architecture, eliminating data silos instantly.
+              True enterprise value is realized when operational data flows instantly into financial reporting. We build secure, resilient APIs to ensure zero-friction integration with your mission-critical systems.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
@@ -250,10 +247,9 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; Financial Syncing</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP & Financial Ledger Synchronization: </h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Automatically push freight bills, invoicing data, and driver payroll directly into your enterprise resource planning (ERP) systems like SAP, Oracle, or Microsoft Dynamics. No manual data entry required.
-                    </p>
+                   Achieve real-time, audit-ready financial reporting. Automatically push revenue recognition, tax data, depreciation schedules, and cost of repair logs directly into enterprise platforms (SAP, Oracle, NetSuite) for unified corporate accounting. </p>
                   </div>
                 </div>
 
@@ -275,10 +271,9 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Third-Party Carrier Integration</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Strategic Velocity through CRM & Digital Contracts: </h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Seamlessly ingest EDI (Electronic Data Interchange) and API feeds from external shipping partners, customs brokers, and international freight forwarders into a single, unified dashboard.
-                    </p>
+                    Accelerate time-to-deployment. Integration with major CRMs (Salesforce) and E-signature suites (DocuSign) streamlines quote-to-contract closure, empowering your sales team with self-service contract generation and rapid deployment capabilities.</p>
                   </div>
                 </div>
 
@@ -376,11 +371,10 @@ export default function LogisticsSolutionsPage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">
-              Ready to Command Your Supply Chain?
-            </h2>
+          Ready to Achieve Financial and Operational Precision?
+  </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-              Equip your logistics teams with the technology they need to lower costs, improve delivery times, and scale operations globally.
-            </p>
+        Leverage Sunbrilo’s digital engineering expertise to transform your leasing operations into a high-margin, predictable financial engine.  </p>
 
             <button
               type="button"
@@ -392,7 +386,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-                Schedule a Logistics Architecture Consultation
+               Engage Our Digital Engineering Team
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

@@ -22,44 +22,44 @@ export default function LogisticsSolutionsPage() {
   const features = [
     {
       step: '01',
-      title: 'Real-Time Freight & Fleet Tracking',
-      desc: 'Gain absolute control over your assets. Our real-time freight tracking software integrates via advanced GPS and IoT APIs, giving your dispatchers live location data, predictive ETAs, and instant geofencing alerts for thousands of vehicles simultaneously.',
+      title: 'Multi-Echelon Order Aggregation:',
+      desc: 'Instantly unify all demand signals. Our platform standardizes and ingests complex orders from D2C e-commerce, global EDI feeds, marketplace APIs, and B2B portal transactions into a single, real-time demand ledger.',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '02',
-      title: 'Intelligent Routing & Dispatch Automation',
-      desc: 'Stop wasting fuel and driver hours. Our AI-driven algorithms automatically calculate the most efficient delivery routes considering live traffic, vehicle load capacity, and strict delivery windows, drastically reducing your cost-per-mile.',
+      title: 'Real-Time Inventory and ATP (Available-to-Promise) Logic:',
+      desc: 'Achieve perfect order accuracy. The system leverages predictive analytics to maintain a single source of inventory truth across all locations (including in-transit) and calculates the Available-to-Promise date instantly, guaranteeing fulfillment integrity.',
       image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '03',
-      title: 'Integrated Warehouse Management (WMS)',
-      desc: 'Bridge the gap between storage and transit. Seamlessly connect your transit data with warehouse inventory levels. Automate dock scheduling, implement smart barcode/RFID scanning, and trigger automated reorder protocols to permanently prevent stockouts.',
+      title: 'Dynamic Fulfillment Routing (DFR):',
+      desc: 'Minimize shipping costs and maximize speed. The platform applies custom, AI-driven rules to automatically route each order based on TCO, customer SLA, nearest fulfillment point (warehouse/store), and carrier capacity/cost in real time.',
       image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
   const faqs = [
     {
-      question: 'Why should we invest in custom logistics software instead of an off-the-shelf TMS (Transportation Management System)?',
-      answer: 'Off-the-shelf TMS platforms charge heavy monthly licensing fees and force you to adapt your unique operational workflows to fit their rigid structures. A custom logistics software development build from Sunbrilo involves no per-user fees, maps exactly to your specific global routing needs, and gives you 100% ownership of your proprietary data.',
+      question: 'How does Sunbrilos OMS ensure compliance and audit readiness in complex B2B scenarios?',
+      answer: 'Our platform provides an immutable, time-stamped audit trail for every action—from initial order submission to financial recognition. The custom logic engine enforces tiered approval workflows, ensuring that every B2B transaction adheres to pre-set contractual and regulatory compliance mandates (e.g., custom tax rules, multi-level payment approval).',
     },
     {
-      question: 'Can your software integrate directly with our trucks\' ELD (Electronic Logging Device) hardware?',
-      answer: 'Yes. We build custom API integrations that connect directly with major ELD providers and onboard telematics hardware, pulling real-time engine diagnostics, driver Hours of Service (HOS), and fuel consumption data straight into your central dashboard.',
+      question: 'Can the platform support global expansion into new markets and logistics partners?',
+      answer: 'Yes. The OMS is architected on a microservices, cloud-native foundation, allowing you to rapidly onboard new international warehouses, regional 3PLs, and localized carrier APIs without disrupting core operations or requiring extensive re-coding.',
     },
     {
-      question: 'Is the platform accessible on mobile devices for our drivers?',
-      answer: 'Absolutely. We develop highly secure, cross-platform mobile companion apps (iOS and Android) for your drivers. This allows them to receive route updates, capture electronic Proof of Delivery (ePOD) signatures, and report delays instantly from the field.',
+      question: 'What is the measurable P&L impact of implementing a custom OMS?',
+      answer: 'The measurable benefits include a guaranteed reduction in split-shipment costs, a 15-20% average decrease in mis-picks and stock-outs, and a significant improvement in Order-to-Cash cycle time by automating manual reconciliation and accelerating accurate billing.',
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Custom Logistics &amp; Supply Chain Software Solutions | Sunbrilo</title>
-        <meta name="description" content="Optimize global operations with Sunbrilo. We engineer custom logistics software and enterprise supply chain IT solutions for real-time tracking and automation." />
+        <title>Supply Chain Orchestration & Revenue Assurance | Cognitive OMS | Sunbrilo</title>
+        <meta name="description" content="Achieve zero-latency fulfillment. Sunbrilo builds custom, AI-driven Order Management Software (OMS) that automates dynamic routing, optimizes multi-echelon inventory, and guarantees revenue assurance across complex global channels." />
       </Head>
 
       <div className="min-h-screen">
@@ -76,8 +76,7 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-              Intelligent Logistics &amp; Supply Chain Solutions.
-            </h1>
+             Supply Chain Orchestration: The Cognitive Order Management System (OMS). </h1>
 
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -91,7 +90,7 @@ export default function LogisticsSolutionsPage() {
                   style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
                 />
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  Request a Supply Chain Audit
+                  Schedule a Fulfillment P&L Review
                 </span>
               </button>
 
@@ -101,7 +100,7 @@ export default function LogisticsSolutionsPage() {
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  View Core Logistics Features
+                 Download the OMS Resilience Framework
                 </span>
               </button>
             </div>
@@ -114,14 +113,12 @@ export default function LogisticsSolutionsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  Eliminate Blind Spots. Accelerate Global Delivery.
-                </h2>
+                From Fragmentation to Full Fulfillment Accountability </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In global logistics, inefficiency costs millions. Legacy systems and fragmented spreadsheets create massive blind spots—leading to lost inventory, delayed shipping routes, and cripplingly high operational costs. You cannot scale a modern supply chain on outdated technology.
-                </p>
+                In global enterprise commerce, every single order lifecycle—from click to delivery—carries significant P&L risk. Fragmented systems lead to phantom inventory, excessive split-shipment costs, and a loss of customer trust. The true cost of fragmented fulfillment is measured in eroded margins and compromised shareholder value. </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                  Sunbrilo builds enterprise supply chain IT solutions designed for scale and resilience. Whether you are managing cross-border US freight networks or optimizing domestic last-mile delivery fleets, our platforms act as your centralized command center. We replace operational chaos with intelligent, AI-driven automation, ensuring you always know exactly where your assets are and how they are performing.
-                </p>
+                Sunbrilo delivers Enterprise Inventory Optimization through a single, unified command platform. Our solution acts as the central intelligence layer for your entire commerce ecosystem, dynamically resolving complex fulfillment scenarios (e.g., ship-from-store, BOPIS, 3PL routing). We don't just manage orders; we optimize your flow of capital and inventory velocity to drive Revenue Assurance.
+ </p>
 
 
               </div>
@@ -143,10 +140,10 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 font-raleway">
-                Engineered for Complex Global Logistics
-              </h2>
+            Engineered for Zero-Latency Global Commerce
+             </h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-                We strip away the bloat of off-the-shelf software and build exactly what your operations team needs to move faster.
+              Our custom-built OMS strips away the constraints of rigid legacy platforms and provides the flexibility required for true supply chain resilience. Key capabilities include:
               </p>
             </div>
 
@@ -205,10 +202,10 @@ export default function LogisticsSolutionsPage() {
               <div className="lg:col-span-5 lg:sticky lg:top-24">
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 font-raleway">
-                  Flawless Integration with Your Existing Ecosystem.
-                </h2>
+                Building a Seamless Bridge Between Commerce and Logistics
+                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                  A supply chain visibility platform must connect your entire business. We build secure, custom APIs to ensure your new logistics software communicates flawlessly with your existing enterprise architecture, eliminating data silos instantly.
+                The Sunbrilo methodology ensures the OMS integrates as a native component of your existing technology stack, guaranteeing end-to-end data flow and governance.
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
@@ -250,10 +247,10 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; Financial Syncing</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Core System Synchronization:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Automatically push freight bills, invoicing data, and driver payroll directly into your enterprise resource planning (ERP) systems like SAP, Oracle, or Microsoft Dynamics. No manual data entry required.
-                    </p>
+                    Achieve unified financial closure. We ensure bi-directional, synchronous data exchange with your WMS for immediate pick-pack-ship instructions and automated reconciliation with your enterprise ERP (SAP, Oracle, NetSuite) for perfect cost accounting and revenue recognition.
+                      </p>
                   </div>
                 </div>
 
@@ -275,10 +272,10 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Third-Party Carrier Integration</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Advanced Reverse Logistics & Refurbishment Workflow:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Seamlessly ingest EDI (Electronic Data Interchange) and API feeds from external shipping partners, customs brokers, and international freight forwarders into a single, unified dashboard.
-                    </p>
+                   Transform returns from a cost center into a predictable process. The system automates RMA generation, intelligently routes returned goods to the optimal inspection or refurbishment center, and provides instant financial triggers for compliant customer credit issuance.
+                     </p>
                   </div>
                 </div>
 
@@ -376,11 +373,10 @@ export default function LogisticsSolutionsPage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">
-              Ready to Command Your Supply Chain?
+              Ready to Command Your Fulfillment Economy?
             </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-              Equip your logistics teams with the technology they need to lower costs, improve delivery times, and scale operations globally.
-            </p>
+            Partner with Sunbrilo to implement a proprietary Order Management System that scales with your growth, minimizes financial risk, and guarantees perfect order execution globally.  </p>
 
             <button
               type="button"
@@ -392,7 +388,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-                Schedule a Logistics Architecture Consultation
+               Engage Our Fulfillment Digital Strategy Team
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

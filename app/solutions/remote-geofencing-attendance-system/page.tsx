@@ -22,44 +22,44 @@ export default function LogisticsSolutionsPage() {
   const features = [
     {
       step: '01',
-      title: 'Real-Time Freight & Fleet Tracking',
-      desc: 'Gain absolute control over your assets. Our real-time freight tracking software integrates via advanced GPS and IoT APIs, giving your dispatchers live location data, predictive ETAs, and instant geofencing alerts for thousands of vehicles simultaneously.',
+      title: 'Dynamic Geofence & iBeacon Support for Precision',
+      desc: 'Define infinite, dynamic zones (polygons, corridors) for every client site, service route, or regional hub. Integrate with Bluetooth Low Energy (iBeacon) for ultra-high-precision verification in sensitive or indoor locations where GPS falters. The anti-spoofing time-tracking engine guarantees accuracy within a 5-meter radius.',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '02',
-      title: 'Intelligent Routing & Dispatch Automation',
-      desc: 'Stop wasting fuel and driver hours. Our AI-driven algorithms automatically calculate the most efficient delivery routes considering live traffic, vehicle load capacity, and strict delivery windows, drastically reducing your cost-per-mile.',
+      title: 'Cognitive Anti-Spoofing & Behavioral Analytics',
+      desc: 'Beyond mock location detection, our system employs machine learning to flag anomalous clock-in patterns, sudden long-distance jumps, and abnormal device settings (rooting, jailbreaking). This field force integrity management capability preemptively stops fraud, safeguarding your payroll.',
       image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '03',
-      title: 'Integrated Warehouse Management (WMS)',
-      desc: 'Bridge the gap between storage and transit. Seamlessly connect your transit data with warehouse inventory levels. Automate dock scheduling, implement smart barcode/RFID scanning, and trigger automated reorder protocols to permanently prevent stockouts.',
+      title: 'Automated Workflow & Task-to-Time Mapping',
+      desc: 'Move beyond simple clock-in/out. Link attendance events directly to assigned operational tasks (e.g., Site Inspection A or Client Meeting B). The system provides a detailed audit trail of time spent on specific duties, enhancing performance review accuracy and granular operational TCO reduction.',
       image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
   const faqs = [
     {
-      question: 'Why should we invest in custom logistics software instead of an off-the-shelf TMS (Transportation Management System)?',
-      answer: 'Off-the-shelf TMS platforms charge heavy monthly licensing fees and force you to adapt your unique operational workflows to fit their rigid structures. A custom logistics software development build from Sunbrilo involves no per-user fees, maps exactly to your specific global routing needs, and gives you 100% ownership of your proprietary data.',
+      question: 'How does Sunbrilo ensure data privacy compliance across different regions (GDPR, CCPA)?',
+      answer: 'We operate on a Privacy by Design principle. Our configurations allow granular control over data retention and tracking sensitivity. The system supports a "location-on-event" model, where tracking is only active during clocked-in periods, strictly adhering to local labor and data privacy laws.',
     },
     {
-      question: 'Can your software integrate directly with our trucks\' ELD (Electronic Logging Device) hardware?',
-      answer: 'Yes. We build custom API integrations that connect directly with major ELD providers and onboard telematics hardware, pulling real-time engine diagnostics, driver Hours of Service (HOS), and fuel consumption data straight into your central dashboard.',
+      question: 'What is the systems resilience in low-connectivity or deep-indoor environments?',
+      answer: 'Our platform utilizes an encrypted, patented offline-sync architecture. If network connectivity is lost, attendance and location data are securely time-stamped and cached locally. Upon network restoration, the system automatically validates and syncs the records, ensuring no data loss and continuous operation.',
     },
     {
-      question: 'Is the platform accessible on mobile devices for our drivers?',
-      answer: 'Absolutely. We develop highly secure, cross-platform mobile companion apps (iOS and Android) for your drivers. This allows them to receive route updates, capture electronic Proof of Delivery (ePOD) signatures, and report delays instantly from the field.',
+      question: 'What is the estimated Total Cost of Ownership (TCO) reduction after deployment?',
+      answer: 'Our clients typically report a 4-10% immediate reduction in monthly payroll costs due to the elimination of fraud, coupled with a significant decrease in administrative time spent on manual timesheet reconciliation and expense validation. We provide a pre-implementation ROI forecast based on your current operational metrics.',
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Custom Logistics &amp; Supply Chain Software Solutions | Sunbrilo</title>
-        <meta name="description" content="Optimize global operations with Sunbrilo. We engineer custom logistics software and enterprise supply chain IT solutions for real-time tracking and automation." />
+        <title>Enterprise Geospatial Compliance & Workforce Integrity | Sunbrilo</title>
+        <meta name="description" content="Secure your payroll and operational compliance with Sunbrilo's Enterprise Geospatial Compliance Platform. Leverage anti-spoofing location validation, real-time activity intelligence, and seamless ERP/HRMS integration for remote workforces." />
       </Head>
 
       <div className="min-h-screen">
@@ -76,8 +76,8 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-              Intelligent Logistics &amp; Supply Chain Solutions.
-            </h1>
+        Geospatial Compliance. Enterprise Workforce Integrity.
+ </h1>
 
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -91,8 +91,7 @@ export default function LogisticsSolutionsPage() {
                   style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
                 />
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  Request a Supply Chain Audit
-                </span>
+              Request a Compliance Audit & TCO Analysis </span>
               </button>
 
               <button
@@ -101,7 +100,7 @@ export default function LogisticsSolutionsPage() {
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  View Core Logistics Features
+              Platform Architecture Overview
                 </span>
               </button>
             </div>
@@ -114,16 +113,13 @@ export default function LogisticsSolutionsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  Eliminate Blind Spots. Accelerate Global Delivery.
-                </h2>
+             From Attendance Tracking to Workforce Mobilization Intelligence </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In global logistics, inefficiency costs millions. Legacy systems and fragmented spreadsheets create massive blind spots—leading to lost inventory, delayed shipping routes, and cripplingly high operational costs. You cannot scale a modern supply chain on outdated technology.
-                </p>
-                <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                  Sunbrilo builds enterprise supply chain IT solutions designed for scale and resilience. Whether you are managing cross-border US freight networks or optimizing domestic last-mile delivery fleets, our platforms act as your centralized command center. We replace operational chaos with intelligent, AI-driven automation, ensuring you always know exactly where your assets are and how they are performing.
-                </p>
-
-
+               In high-volume, distributed environments—including logistics, infrastructure maintenance, and essential services—location transparency is a strategic asset. Reliance on simple GPS or legacy systems exposes the organization to systemic fraud ("buddy punching," location spoofing) and costly labor disputes.
+ </p>
+                <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
+            Sunbrilos solution transforms the smartphone into a secure enterprise location validation node. Our platform utilizes a fusion of GPS, Wi-Fi fingerprinting, and dynamic IP correlation, creating a secure digital perimeter (geofence) around critical work zones. This level of verification ensures 100% data integrity, converting attendance into auditable, business-critical intelligence for compliance and risk teams.
+ </p>
               </div>
 
               <div className="relative h-[400px] lg:h-[500px]">
@@ -143,11 +139,10 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 font-raleway">
-                Engineered for Complex Global Logistics
-              </h2>
+           Core Pillars of High-Integrity Field Management  </h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-                We strip away the bloat of off-the-shelf software and build exactly what your operations team needs to move faster.
-              </p>
+          Our platform is purpose-built to manage complex, global operational dynamics from a unified command center.
+ </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -198,18 +193,16 @@ export default function LogisticsSolutionsPage() {
             <div className="absolute top-[40%] -right-[10%] w-[40%] h-[40%] rounded-full bg-gradient-to-tl from-[#ffee50]/10 to-transparent blur-3xl" />
           </div> */}
 
-          <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
 
               {/* Left: Heading and Text (Sticky) */}
               <div className="lg:col-span-5 lg:sticky lg:top-24">
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 font-raleway">
-                  Flawless Integration with Your Existing Ecosystem.
-                </h2>
+              Architected for Flawless Data Convergence (HRMS, ERP, Finance) </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                  A supply chain visibility platform must connect your entire business. We build secure, custom APIs to ensure your new logistics software communicates flawlessly with your existing enterprise architecture, eliminating data silos instantly.
-                </p>
+             True enterprise value is unlocked when geospatial data is integrated with core business systems. We architect secure, bidirectional API endpoints to ensure zero-friction data flow.</p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
                     {/* overlapping decorative circles */}
@@ -250,10 +243,9 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; Financial Syncing</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Financial and Payroll Data Synchronization: </h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Automatically push freight bills, invoicing data, and driver payroll directly into your enterprise resource planning (ERP) systems like SAP, Oracle, or Microsoft Dynamics. No manual data entry required.
-                    </p>
+                  Real-time, validated attendance logs, including complex rules for shift differentials and premium time, are pushed directly into your existing ERP (e.g., SAP, Oracle) or native HRMS. This eliminates the financial risk associated with manual data entry.</p>
                   </div>
                 </div>
 
@@ -275,10 +267,9 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Third-Party Carrier Integration</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Automated Mileage & Expense Compliance:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Seamlessly ingest EDI (Electronic Data Interchange) and API feeds from external shipping partners, customs brokers, and international freight forwarders into a single, unified dashboard.
-                    </p>
+                    Integrate GPS-tracked route data with your expense management system to automate mileage claims based on the most efficient and validated path between geofenced locations. This ensures compliance and reduces administrative overhead.</p>
                   </div>
                 </div>
 
@@ -376,12 +367,11 @@ export default function LogisticsSolutionsPage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">
-              Ready to Command Your Supply Chain?
-            </h2>
+        Turn Mobile Operations into a Strategic Advantage.
+ </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-              Equip your logistics teams with the technology they need to lower costs, improve delivery times, and scale operations globally.
-            </p>
-
+        Partner with Sunbrilo to deploy a high-integrity workforce platform that guarantees compliance, optimizes field performance, and delivers measurable cost reduction.
+</p>
             <button
               type="button"
               onMouseMove={handleMouseMove}
@@ -392,7 +382,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-                Schedule a Logistics Architecture Consultation
+            Initiate a Workforce Mobilization Strategy Session
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

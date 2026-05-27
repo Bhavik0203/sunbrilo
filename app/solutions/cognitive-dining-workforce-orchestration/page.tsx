@@ -22,44 +22,44 @@ export default function LogisticsSolutionsPage() {
   const features = [
     {
       step: '01',
-      title: 'Real-Time Freight & Fleet Tracking',
-      desc: 'Gain absolute control over your assets. Our real-time freight tracking software integrates via advanced GPS and IoT APIs, giving your dispatchers live location data, predictive ETAs, and instant geofencing alerts for thousands of vehicles simultaneously.',
+      title: 'Advanced Cashless & Biometric Authentication:',
+      desc: 'Guarantee ultra-secure and high-speed throughput. The platform supports federated authentication methods including SSO, mobile QR, and enterprise-grade biometric recognition, ensuring full integration with employee lifecycle management.',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '02',
-      title: 'Intelligent Routing & Dispatch Automation',
-      desc: 'Stop wasting fuel and driver hours. Our AI-driven algorithms automatically calculate the most efficient delivery routes considering live traffic, vehicle load capacity, and strict delivery windows, drastically reducing your cost-per-mile.',
+      title: 'AI-Driven Demand Forecasting & Waste Mitigation:',
+      desc: 'Leverage machine learning models to analyze historical consumption, weather patterns, and meeting schedules to predict daily meal demand with over 95% accuracy. This enables AI-driven food waste reduction and optimizes catering procurement, driving substantial margin improvement.',
       image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '03',
-      title: 'Integrated Warehouse Management (WMS)',
-      desc: 'Bridge the gap between storage and transit. Seamlessly connect your transit data with warehouse inventory levels. Automate dock scheduling, implement smart barcode/RFID scanning, and trigger automated reorder protocols to permanently prevent stockouts.',
+      title: 'Global Subsidy & Compliance Engine:',
+      desc: 'Manage complex, dynamic subsidy rules across different geographies (e.g., tax-exempt meals, varying shift entitlements, regulatory meal caps). The system automatically generates compliance reports for local tax authorities and internal auditing.',
       image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
   const faqs = [
     {
-      question: 'Why should we invest in custom logistics software instead of an off-the-shelf TMS (Transportation Management System)?',
-      answer: 'Off-the-shelf TMS platforms charge heavy monthly licensing fees and force you to adapt your unique operational workflows to fit their rigid structures. A custom logistics software development build from Sunbrilo involves no per-user fees, maps exactly to your specific global routing needs, and gives you 100% ownership of your proprietary data.',
+      question: 'How does Sunbrilo solution address data privacy and compliance for biometric or RFID data?',
+      answer: 'Data security is paramount. Our architecture utilizes advanced encryption and anonymization protocols compliant with global standards (GDPR, CCPA). Biometric data is stored as encrypted templates, not raw images, ensuring the highest level of employee data protection and regulatory adherence.',
     },
     {
-      question: 'Can your software integrate directly with our trucks\' ELD (Electronic Logging Device) hardware?',
-      answer: 'Yes. We build custom API integrations that connect directly with major ELD providers and onboard telematics hardware, pulling real-time engine diagnostics, driver Hours of Service (HOS), and fuel consumption data straight into your central dashboard.',
+      question: 'Beyond food waste, what is the key financial benefit of adopting this cognitive platform?',
+      answer: 'The core benefit is Corporate TCO optimization. By automating subsidy calculation, eliminating manual reconciliation errors, predicting demand to prevent over-procurement, and maximizing employee productivity through reduced queue times, the platform delivers a measurable return on investment typically within the first 18 months.',
     },
     {
-      question: 'Is the platform accessible on mobile devices for our drivers?',
-      answer: 'Absolutely. We develop highly secure, cross-platform mobile companion apps (iOS and Android) for your drivers. This allows them to receive route updates, capture electronic Proof of Delivery (ePOD) signatures, and report delays instantly from the field.',
+      question: 'Can the platform support food ordering for remote workers or specialized in-office events?',
+      answer: 'Yes. The unified mobile experience includes modules for pre-ordering, dark kitchen fulfillment, and dedicated catering management for executive meetings or large corporate events, all linked back to the central subsidy and payroll engine.',
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Custom Logistics &amp; Supply Chain Software Solutions | Sunbrilo</title>
-        <meta name="description" content="Optimize global operations with Sunbrilo. We engineer custom logistics software and enterprise supply chain IT solutions for real-time tracking and automation." />
+        <title>Cognitive Dining Orchestration &amp; Strategic Employee Experience | Sunbrilo</title>
+        <meta name="description" content="Transform employee dining into a strategic HCM pillar. Sunbrilo delivers AI-driven solutions for cashless payment, global compliance, and data-led workforce wellness and productivity." />
       </Head>
 
       <div className="min-h-screen">
@@ -76,7 +76,7 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-              Intelligent Logistics &amp; Supply Chain Solutions.
+             Cognitive Dining Orchestration: A Strategic Pillar of Workforce Management.
             </h1>
 
 
@@ -91,7 +91,7 @@ export default function LogisticsSolutionsPage() {
                   style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
                 />
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  Request a Supply Chain Audit
+                  Schedule a Strategic Workforce Productivity Review
                 </span>
               </button>
 
@@ -101,7 +101,7 @@ export default function LogisticsSolutionsPage() {
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  View Core Logistics Features
+                 View Global Implementation Framework
                 </span>
               </button>
             </div>
@@ -114,14 +114,14 @@ export default function LogisticsSolutionsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  Eliminate Blind Spots. Accelerate Global Delivery.
+                  Re-engineering Corporate Dining for Strategic Value.
                 </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In global logistics, inefficiency costs millions. Legacy systems and fragmented spreadsheets create massive blind spots—leading to lost inventory, delayed shipping routes, and cripplingly high operational costs. You cannot scale a modern supply chain on outdated technology.
-                </p>
+                For global enterprises, the cafeteria is a critical touchpoint impacting employee experience, productivity, and organizational TCO. Relying on legacy systems creates exposure: manual reconciliations introduce financial risk, lack of dietary data impacts employee wellness and retention, and inefficient operations erode administrative budget.
+                 </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                  Sunbrilo builds enterprise supply chain IT solutions designed for scale and resilience. Whether you are managing cross-border US freight networks or optimizing domestic last-mile delivery fleets, our platforms act as your centralized command center. We replace operational chaos with intelligent, AI-driven automation, ensuring you always know exactly where your assets are and how they are performing.
-                </p>
+              Sunbrilo architects a scalable, future-ready platform that treats dining as a component of workforce dining orchestration. We shift the focus from transactional POS management to strategic value creation. Our platform provides a single source of truth for consumption data, enabling HR to link dietary patterns to wellness programs and providing finance with auditable, automated subsidy and vendor management for guaranteed compliance and cost control.
+               </p>
 
 
               </div>
@@ -143,11 +143,11 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 font-raleway">
-                Engineered for Complex Global Logistics
+                Engineered for Global Scale, Compliance, and Data Precision
               </h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-                We strip away the bloat of off-the-shelf software and build exactly what your operations team needs to move faster.
-              </p>
+              Our solution is designed to handle the complexity and regulatory mandates of a multinational workforce:
+               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -198,7 +198,7 @@ export default function LogisticsSolutionsPage() {
             <div className="absolute top-[40%] -right-[10%] w-[40%] h-[40%] rounded-full bg-gradient-to-tl from-[#ffee50]/10 to-transparent blur-3xl" />
           </div> */}
 
-          <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
 
               {/* Left: Heading and Text (Sticky) */}
@@ -208,7 +208,7 @@ export default function LogisticsSolutionsPage() {
                   Flawless Integration with Your Existing Ecosystem.
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                  A supply chain visibility platform must connect your entire business. We build secure, custom APIs to ensure your new logistics software communicates flawlessly with your existing enterprise architecture, eliminating data silos instantly.
+                The strategic value of our solution lies in its ability to eliminate data silos and function as a true enterprise HRMS integration. We provide secure, proprietary API frameworks for critical data flow:
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
@@ -250,9 +250,9 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; Financial Syncing</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Centralized Payroll &amp; Financial Ledger Synchronization</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Automatically push freight bills, invoicing data, and driver payroll directly into your enterprise resource planning (ERP) systems like SAP, Oracle, or Microsoft Dynamics. No manual data entry required.
+                   Ensure audit-proof financial governance. All transactions are immediately tagged and batched for zero-friction integration with SAP SuccessFactors, Oracle HCM, or custom proprietary payroll systems, automating deduction and vendor payment reconciliation.
                     </p>
                   </div>
                 </div>
@@ -275,10 +275,10 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Third-Party Carrier Integration</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Employee Wellness &amp; Experience API:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Seamlessly ingest EDI (Electronic Data Interchange) and API feeds from external shipping partners, customs brokers, and international freight forwarders into a single, unified dashboard.
-                    </p>
+                   Provide anonymized consumption analytics to your HR and wellness teams, allowing them to measure the impact of menu changes, optimize health outcomes, and enhance overall employee satisfaction and retention.
+                     </p>
                   </div>
                 </div>
 
@@ -376,11 +376,11 @@ export default function LogisticsSolutionsPage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">
-              Ready to Command Your Supply Chain?
+           Transform Your Employee Dining into a High-Impact Strategic Asset.
             </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-              Equip your logistics teams with the technology they need to lower costs, improve delivery times, and scale operations globally.
-            </p>
+          Partner with Sunbrilo’s digital engineering team to deploy a Cognitive Dining Orchestration platform that drives productivity, ensures compliance, and optimizes enterprise TCO.
+           </p>
 
             <button
               type="button"
@@ -392,7 +392,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-                Schedule a Logistics Architecture Consultation
+               Engage Our Digital Transformation Experts
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

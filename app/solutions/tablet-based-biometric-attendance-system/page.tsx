@@ -22,44 +22,44 @@ export default function LogisticsSolutionsPage() {
   const features = [
     {
       step: '01',
-      title: 'Real-Time Freight & Fleet Tracking',
-      desc: 'Gain absolute control over your assets. Our real-time freight tracking software integrates via advanced GPS and IoT APIs, giving your dispatchers live location data, predictive ETAs, and instant geofencing alerts for thousands of vehicles simultaneously.',
+      title: 'Cognitive Facial Authentication (Sub-second Verification):',
+      desc: 'Utilizing proprietary AI models for instant, contact-free verification. Liveness Detection is integrated as a baseline security feature, preventing authentication fraud from photos, masks, or recorded video streams.',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '02',
-      title: 'Intelligent Routing & Dispatch Automation',
-      desc: 'Stop wasting fuel and driver hours. Our AI-driven algorithms automatically calculate the most efficient delivery routes considering live traffic, vehicle load capacity, and strict delivery windows, drastically reducing your cost-per-mile.',
+      title: 'Resilient Offline Sync (Offline biometric attendance integration):',
+      desc: ' Maintain 100% operational continuity regardless of network stability. The tablet-based biometric attendance system securely encrypts and time-stamps all data locally, executing an auto-synch protocol the moment a connection is established with your central cloud instance.',
       image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '03',
-      title: 'Integrated Warehouse Management (WMS)',
-      desc: 'Bridge the gap between storage and transit. Seamlessly connect your transit data with warehouse inventory levels. Automate dock scheduling, implement smart barcode/RFID scanning, and trigger automated reorder protocols to permanently prevent stockouts.',
+      title: 'Ruggedized Deployment & Geospatial Integrity: ',
+      desc: ' Our software is optimized for deployment on industrial-grade, drop-resistant tablets. Every transaction is immutably linked to highly accurate, tamper-proof GPS coordinates, providing irrefutable proof of site presence for compliance and auditing.',
       image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
   const faqs = [
     {
-      question: 'Why should we invest in custom logistics software instead of an off-the-shelf TMS (Transportation Management System)?',
-      answer: 'Off-the-shelf TMS platforms charge heavy monthly licensing fees and force you to adapt your unique operational workflows to fit their rigid structures. A custom logistics software development build from Sunbrilo involves no per-user fees, maps exactly to your specific global routing needs, and gives you 100% ownership of your proprietary data.',
+      question: 'What is the TCO (Total Cost of Ownership) versus traditional wall-mounted clocks?',
+      answer: 'The tablet-based biometric attendance system delivers a dramatically lower TCO. It eliminates costly wiring, proprietary hardware lock-in, and the capital expenditure associated with fixed installations, enabling rapid, flexible deployment across all facility types using commercial off-the-shelf (COTS) ruggedized tablets.',
     },
     {
-      question: 'Can your software integrate directly with our trucks\' ELD (Electronic Logging Device) hardware?',
-      answer: 'Yes. We build custom API integrations that connect directly with major ELD providers and onboard telematics hardware, pulling real-time engine diagnostics, driver Hours of Service (HOS), and fuel consumption data straight into your central dashboard.',
+      question: 'How does Sunbrilo ensure biometric data compliance and employee privacy?',
+      answer: 'We adhere to a "privacy-by-design" philosophy, complying with global standards like GDPR and CCPA. We never store raw biometric images. Instead, the system securely generates and stores an irreversible, encrypted mathematical template of the facial structure, which is legally compliant and impossible to reverse-engineer.',
     },
     {
-      question: 'Is the platform accessible on mobile devices for our drivers?',
-      answer: 'Absolutely. We develop highly secure, cross-platform mobile companion apps (iOS and Android) for your drivers. This allows them to receive route updates, capture electronic Proof of Delivery (ePOD) signatures, and report delays instantly from the field.',
+      question: 'Can this solution handle a high-volume factory shift change without queuing?',
+      answer: 'Yes. Optimized for high-traffic industrial environments, our enterprise facial recognition attendance engine guarantees a sub-second processing time per employee, supporting seamless, rapid throughput during peak shift changes and drastically reducing queue times and operational friction.',
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Custom Logistics &amp; Supply Chain Software Solutions | Sunbrilo</title>
-        <meta name="description" content="Optimize global operations with Sunbrilo. We engineer custom logistics software and enterprise supply chain IT solutions for real-time tracking and automation." />
+        <title>Enterprise Biometric Attendance Solutions: Zero-Fraud Workforce Mobility | Sunbrilo</title>
+        <meta name="description" content="Deploy Sunbrilo's tablet-based biometric attendance system for absolute workforce security. Featuring instant enterprise facial recognition attendance, true offline functionality, and seamless HRIS/payroll integration." />
       </Head>
 
       <div className="min-h-screen">
@@ -76,8 +76,7 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-              Intelligent Logistics &amp; Supply Chain Solutions.
-            </h1>
+           Sunbrilo: The Enterprise Solution for Workforce Authentication and Mobility. </h1>
 
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -91,8 +90,7 @@ export default function LogisticsSolutionsPage() {
                   style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
                 />
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  Request a Supply Chain Audit
-                </span>
+               Schedule a Strategic Consultation  </span>
               </button>
 
               <button
@@ -101,7 +99,7 @@ export default function LogisticsSolutionsPage() {
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  View Core Logistics Features
+               Download Enterprise Mobility Whitepaper
                 </span>
               </button>
             </div>
@@ -114,16 +112,10 @@ export default function LogisticsSolutionsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  Eliminate Blind Spots. Accelerate Global Delivery.
-                </h2>
+              From Cost Center to Command Center: Transforming Workforce Time Management  </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In global logistics, inefficiency costs millions. Legacy systems and fragmented spreadsheets create massive blind spots—leading to lost inventory, delayed shipping routes, and cripplingly high operational costs. You cannot scale a modern supply chain on outdated technology.
-                </p>
-                <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                  Sunbrilo builds enterprise supply chain IT solutions designed for scale and resilience. Whether you are managing cross-border US freight networks or optimizing domestic last-mile delivery fleets, our platforms act as your centralized command center. We replace operational chaos with intelligent, AI-driven automation, ensuring you always know exactly where your assets are and how they are performing.
-                </p>
-
-
+                Traditional time-capture methods—from aging wall-mounted units to susceptible paper logs—create exploitable gaps that result in significant payroll leakage, often through "buddy punching" or inaccurate shift reporting. This challenge is amplified in dynamic operations across construction, manufacturing, and logistics where wired infrastructure is impossible. Sunbrilo addresses this critical operational vulnerability by transforming the time clock into a strategic, fully mobile authentication point. Our solution leverages resilient, portable biometric time clock technology deployed on ruggedized tablets, ensuring every punch is verified, auditable, and geographically precise. This shifts time management from a reactive administrative task to a proactive risk-mitigation strategy.
+  </p>
               </div>
 
               <div className="relative h-[400px] lg:h-[500px]">
@@ -143,11 +135,10 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 font-raleway">
-                Engineered for Complex Global Logistics
-              </h2>
+            Next-Generation Biometric Security and Uninterrupted Operational Flow  </h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-                We strip away the bloat of off-the-shelf software and build exactly what your operations team needs to move faster.
-              </p>
+           Our platform is purpose-built for high-throughput, mission-critical environments.
+ </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -198,18 +189,16 @@ export default function LogisticsSolutionsPage() {
             <div className="absolute top-[40%] -right-[10%] w-[40%] h-[40%] rounded-full bg-gradient-to-tl from-[#ffee50]/10 to-transparent blur-3xl" />
           </div> */}
 
-          <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
 
               {/* Left: Heading and Text (Sticky) */}
               <div className="lg:col-span-5 lg:sticky lg:top-24">
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 font-raleway">
-                  Flawless Integration with Your Existing Ecosystem.
-                </h2>
+               Accelerating Time-to-Payroll: Seamless HRIS & ERP Connectivity   </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                  A supply chain visibility platform must connect your entire business. We build secure, custom APIs to ensure your new logistics software communicates flawlessly with your existing enterprise architecture, eliminating data silos instantly.
-                </p>
+             Sunbrilo ensures that accurate attendance data immediately converts into actionable payroll intelligence, eliminating reconciliation errors and accelerating month-end close.</p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
                     {/* overlapping decorative circles */}
@@ -250,10 +239,9 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; Financial Syncing</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Intelligent Payroll Automation: </h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Automatically push freight bills, invoicing data, and driver payroll directly into your enterprise resource planning (ERP) systems like SAP, Oracle, or Microsoft Dynamics. No manual data entry required.
-                    </p>
+                   Biometrically verified data, including complex rules for over-time, shift premiums, and job costing, is automatically fed through certified, secure APIs into major enterprise resource planning (ERP) platforms (SAP SuccessFactors, Oracle HCM Cloud) or legacy HR Management Systems (HRMS).</p>
                   </div>
                 </div>
 
@@ -275,10 +263,10 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Third-Party Carrier Integration</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Unified Access Control Layer:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Seamlessly ingest EDI (Electronic Data Interchange) and API feeds from external shipping partners, customs brokers, and international freight forwarders into a single, unified dashboard.
-                    </p>
+                   Extend the biometric authentication capability beyond time-tracking. Integrate the tablet application with existing physical access control systems (turnstiles, high-security doors) to enforce real-time entry and exit authorization based on validated employee status.
+</p>
                   </div>
                 </div>
 
@@ -376,11 +364,10 @@ export default function LogisticsSolutionsPage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">
-              Ready to Command Your Supply Chain?
-            </h2>
+        From Vulnerability to Verifiable Performance
+ </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-              Equip your logistics teams with the technology they need to lower costs, improve delivery times, and scale operations globally.
-            </p>
+          Engage Sunbrilo to architect a future-proof, mobile workforce authentication strategy that drives compliance, eliminates fraud, and optimizes your operational expense profile.  </p>
 
             <button
               type="button"
@@ -392,7 +379,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-                Schedule a Logistics Architecture Consultation
+             Initiate Proof of Concept (PoC)
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

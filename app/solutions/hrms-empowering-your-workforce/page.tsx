@@ -22,44 +22,51 @@ export default function LogisticsSolutionsPage() {
   const features = [
     {
       step: '01',
-      title: 'Real-Time Freight & Fleet Tracking',
-      desc: 'Gain absolute control over your assets. Our real-time freight tracking software integrates via advanced GPS and IoT APIs, giving your dispatchers live location data, predictive ETAs, and instant geofencing alerts for thousands of vehicles simultaneously.',
+      title: 'Cognitive Compliance & Precision Payroll:',
+      desc: 'Eliminate reconciliation risk. Our Automated Payroll Integration module processes complex global compensation rules, regulatory deductions, and benefits plans, ensuring audit-proof financial data push to all enterprise ledgers (SAP, Oracle, Workday).',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '02',
-      title: 'Intelligent Routing & Dispatch Automation',
-      desc: 'Stop wasting fuel and driver hours. Our AI-driven algorithms automatically calculate the most efficient delivery routes considering live traffic, vehicle load capacity, and strict delivery windows, drastically reducing your cost-per-mile.',
+      title: 'Frictionless Talent Onboarding-to-Offboarding: ',
+      desc: 'Accelerate time-to-value for new hires. The platform uses intelligent workflows to automate IT provisioning, policy acknowledgment, and e-contracting. Offboarding is automated for immediate, compliant access revocation and full asset recovery.',
       image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
     },
     {
       step: '03',
-      title: 'Integrated Warehouse Management (WMS)',
-      desc: 'Bridge the gap between storage and transit. Seamlessly connect your transit data with warehouse inventory levels. Automate dock scheduling, implement smart barcode/RFID scanning, and trigger automated reorder protocols to permanently prevent stockouts.',
+      title: 'Advanced Time, Geofencing, and Attendance Assurance: ',
+      desc: 'Guarantee accountability across manufacturing, field service, and corporate sites. Integrate precise Precision Geofencing Attendance and biometric hardware with complex shift scheduling and overtime matrix policies, eliminating payroll leakage and time theft.',
+      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      step: '04',
+      title: 'Employee Digital Engagement & Experience (DEX): ',
+      desc: 'Centralize all talent interactions. Deploy high-security, intuitive portals for mobile and desktop, enabling employees to manage PTO, access performance reviews, and engage with AI-powered support, dramatically lowering HR overhead.',
       image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
   const faqs = [
     {
-      question: 'Why should we invest in custom logistics software instead of an off-the-shelf TMS (Transportation Management System)?',
-      answer: 'Off-the-shelf TMS platforms charge heavy monthly licensing fees and force you to adapt your unique operational workflows to fit their rigid structures. A custom logistics software development build from Sunbrilo involves no per-user fees, maps exactly to your specific global routing needs, and gives you 100% ownership of your proprietary data.',
+      question: 'How does Sunbrilo’s custom approach compare to licensed mega-suites like SAP SuccessFactors or Oracle HCM?',
+      answer: 'Mega-suites lock you into escalating, unpredictable licensing fees that become punitive as you scale. They force you to alter your unique competitive HR policies to fit their rigid software. Our Cognitive HRMS Development provides a wholly owned, flexible, zero-license asset that maps exactly to your strategic vision, resulting in superior TCO and complete data sovereignty.',
     },
     {
-      question: 'Can your software integrate directly with our trucks\' ELD (Electronic Logging Device) hardware?',
-      answer: 'Yes. We build custom API integrations that connect directly with major ELD providers and onboard telematics hardware, pulling real-time engine diagnostics, driver Hours of Service (HOS), and fuel consumption data straight into your central dashboard.',
+      question: 'Can your platform manage the compliance complexity of global operations (e.g., varying tax codes, multi-currency payroll)?',
+      answer: 'Yes. The platform is designed with a highly configurable compliance engine. It can handle localized tax calculations, multi-jurisdictional labor laws, and different operational hierarchies, providing a centralized control tower for decentralized operations.'
     },
     {
-      question: 'Is the platform accessible on mobile devices for our drivers?',
-      answer: 'Absolutely. We develop highly secure, cross-platform mobile companion apps (iOS and Android) for your drivers. This allows them to receive route updates, capture electronic Proof of Delivery (ePOD) signatures, and report delays instantly from the field.',
+      question: 'What differentiates your attendance management from simple clock-in/out systems?',
+      answer: 'We integrate Precision Geofencing and facial recognition technology that tracks work activity based on authorized zones and schedules, eliminating “buddy punching.” This sophisticated auditing capability ensures strict adherence to labor laws and guarantees that every payroll dollar is justified by validated work presence.',
     },
+   
   ];
 
   return (
     <>
       <Head>
-        <title>Custom Logistics &amp; Supply Chain Software Solutions | Sunbrilo</title>
-        <meta name="description" content="Optimize global operations with Sunbrilo. We engineer custom logistics software and enterprise supply chain IT solutions for real-time tracking and automation." />
+        <title>Strategic Human Capital Management (HCM) Platform | AI Workforce Orchestration | Sunbrilo</title>
+        <meta name="description" content="Transform HR from a cost center to a strategic asset. Sunbrilo delivers custom, AI-driven Human Capital Management (HCM) platforms for compliance-assured payroll, TCO reduction, and hyper-efficient talent lifecycle management." />
       </Head>
 
       <div className="min-h-screen">
@@ -76,8 +83,7 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-              Intelligent Logistics &amp; Supply Chain Solutions.
-            </h1>
+             Strategic Human Capital Management (HCM): Orchestrate Your Workforce.  </h1>
 
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -91,7 +97,7 @@ export default function LogisticsSolutionsPage() {
                   style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
                 />
                 <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  Request a Supply Chain Audit
+                  Initiate a Workforce Strategy Assessment
                 </span>
               </button>
 
@@ -101,7 +107,7 @@ export default function LogisticsSolutionsPage() {
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  View Core Logistics Features
+                 Download the TCW Optimization Blueprint
                 </span>
               </button>
             </div>
@@ -114,14 +120,11 @@ export default function LogisticsSolutionsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  Eliminate Blind Spots. Accelerate Global Delivery.
-                </h2>
+                From HR Chaos to Predictive Human Capital Intelligence. </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In global logistics, inefficiency costs millions. Legacy systems and fragmented spreadsheets create massive blind spots—leading to lost inventory, delayed shipping routes, and cripplingly high operational costs. You cannot scale a modern supply chain on outdated technology.
-                </p>
+               Fragmented legacy HR systems severely restrict enterprise agility, introducing systemic compliance risks, eroding employee experience, and obscuring the true Total Cost of Workforce (TCW). HR leaders are forced into reactive firefighting rather than strategic planning. </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                  Sunbrilo builds enterprise supply chain IT solutions designed for scale and resilience. Whether you are managing cross-border US freight networks or optimizing domestic last-mile delivery fleets, our platforms act as your centralized command center. We replace operational chaos with intelligent, AI-driven automation, ensuring you always know exactly where your assets are and how they are performing.
-                </p>
+                 Sunbrilo implements Strategic Human Capital Management (HCM) platforms designed for the modern, distributed enterprise. Our proprietary, cognitive HRMS acts as the single source of truth for all talent data, leveraging automation and compliance-as-a-service features to deliver measurable financial and operational advantage. </p>
 
 
               </div>
@@ -143,11 +146,10 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 font-raleway">
-                Engineered for Complex Global Logistics
-              </h2>
+              Engineered for Global Talent Lifecycle Mastery</h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-                We strip away the bloat of off-the-shelf software and build exactly what your operations team needs to move faster.
-              </p>
+               We deliver modular, scalable capabilities designed to manage complexity across the entire employee journey:
+               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -198,18 +200,17 @@ export default function LogisticsSolutionsPage() {
             <div className="absolute top-[40%] -right-[10%] w-[40%] h-[40%] rounded-full bg-gradient-to-tl from-[#ffee50]/10 to-transparent blur-3xl" />
           </div> */}
 
-          <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
 
               {/* Left: Heading and Text (Sticky) */}
               <div className="lg:col-span-5 lg:sticky lg:top-24">
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 font-raleway">
-                  Flawless Integration with Your Existing Ecosystem.
-                </h2>
+                 Delivering Compliance-Assured, Unified Financial Synchronization
+                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                  A supply chain visibility platform must connect your entire business. We build secure, custom APIs to ensure your new logistics software communicates flawlessly with your existing enterprise architecture, eliminating data silos instantly.
-                </p>
+                Our platforms are built on a secure, API-first architecture, ensuring all human capital data translates instantly into accurate financial intelligence. </p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
                     {/* overlapping decorative circles */}
@@ -250,10 +251,10 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; Financial Syncing</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">eamless ERP and Financial Ledger Sync:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Automatically push freight bills, invoicing data, and driver payroll directly into your enterprise resource planning (ERP) systems like SAP, Oracle, or Microsoft Dynamics. No manual data entry required.
-                    </p>
+                    Establish a real-time, bi-directional data flow with core financial systems, providing CFOs with instantaneous reporting on workforce costs, labor allocation, and compliance expenditure.
+                     </p>
                   </div>
                 </div>
 
@@ -275,10 +276,9 @@ export default function LogisticsSolutionsPage() {
                       </div> */}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Third-Party Carrier Integration</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Military-Grade Data Sovereignty:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                      Seamlessly ingest EDI (Electronic Data Interchange) and API feeds from external shipping partners, customs brokers, and international freight forwarders into a single, unified dashboard.
-                    </p>
+                    Security is non-negotiable. We implement advanced Role-Based Access Control (RBAC) and high-level encryption (at rest and in transit) to meet and exceed global data privacy standards (GDPR, HIPAA, CCPA), safeguarding sensitive PII and financial records. </p>
                   </div>
                 </div>
 
@@ -376,11 +376,10 @@ export default function LogisticsSolutionsPage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">
-              Ready to Command Your Supply Chain?
+              Ready to Transform Your Human Capital into a Strategic Advantage?
             </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-              Equip your logistics teams with the technology they need to lower costs, improve delivery times, and scale operations globally.
-            </p>
+          Engage Sunbrilo to architect a future-proof HCM platform that enhances employee experience, assures compliance, and converts HR operations into a powerful source of predictive financial insight.  </p>
 
             <button
               type="button"
@@ -392,7 +391,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-                Schedule a Logistics Architecture Consultation
+               Schedule a Strategic HR Technology Briefing
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
