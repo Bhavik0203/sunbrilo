@@ -74,11 +74,11 @@ export default function LogisticsSolutionsPage() {
           </div>
 
           <div className="relative z-10 max-w-6xl mx-auto text-center">
-          
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
               Intelligent Logistics &amp; Supply Chain Solutions.
             </h1>
-          
+
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
@@ -123,18 +123,7 @@ export default function LogisticsSolutionsPage() {
                   Sunbrilo builds enterprise supply chain IT solutions designed for scale and resilience. Whether you are managing cross-border US freight networks or optimizing domestic last-mile delivery fleets, our platforms act as your centralized command center. We replace operational chaos with intelligent, AI-driven automation, ensuring you always know exactly where your assets are and how they are performing.
                 </p>
 
-                <div className="mt-8 grid grid-cols-3 gap-6">
-                  {[
-                    { value: '40%', label: 'Avg. Cost Reduction' },
-                    { value: '99.9%', label: 'Uptime SLA' },
-                    { value: '2×', label: 'Faster Delivery' },
-                  ].map((stat) => (
-                    <div key={stat.label} className="text-center p-4 rounded-2xl bg-gray-50 border border-gray-100">
-                      <div className="text-2xl font-extrabold text-[#3B3808] font-raleway">{stat.value}</div>
-                      <div className="text-xs text-gray-500 mt-1 font-raleway">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
+
               </div>
 
               <div className="relative h-[400px] lg:h-[500px]">
@@ -211,10 +200,10 @@ export default function LogisticsSolutionsPage() {
 
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
-              
+
               {/* Left: Heading and Text (Sticky) */}
               <div className="lg:col-span-5 lg:sticky lg:top-24">
-               
+
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 font-raleway">
                   Flawless Integration with Your Existing Ecosystem.
                 </h2>
@@ -222,31 +211,31 @@ export default function LogisticsSolutionsPage() {
                   A supply chain visibility platform must connect your entire business. We build secure, custom APIs to ensure your new logistics software communicates flawlessly with your existing enterprise architecture, eliminating data silos instantly.
                 </p>
                 <div className="flex items-center gap-4">
-                   <div className="flex -space-x-4">
-                      {/* overlapping decorative circles */}
-                      <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center shadow-sm">
-                        <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
-                      </div>
-                      <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center shadow-sm z-10">
-                        <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
-                      </div>
-                      <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-800 flex items-center justify-center shadow-sm z-20">
-                         <svg className="w-5 h-5 text-[#ffee50]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                      </div>
-                   </div>
-                   <div className="text-sm font-bold text-gray-900 font-raleway">
-                     Seamless Data Flow <br/><span className="text-gray-500 font-medium">Across all platforms</span>
-                   </div>
+                  <div className="flex -space-x-4">
+                    {/* overlapping decorative circles */}
+                    <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center shadow-sm">
+                      <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
+                    </div>
+                    <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center shadow-sm z-10">
+                      <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
+                    </div>
+                    <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-800 flex items-center justify-center shadow-sm z-20">
+                      <svg className="w-5 h-5 text-[#ffee50]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                  </div>
+                  <div className="text-sm font-bold text-gray-900 font-raleway">
+                    Seamless Data Flow <br /><span className="text-gray-500 font-medium">Across all platforms</span>
+                  </div>
                 </div>
               </div>
 
               {/* Right: Integration points (Interactive Cards) */}
               <div className="lg:col-span-7 space-y-6">
-                
+
                 {/* Card 1 */}
                 <div className="group relative p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#ffee50]/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-6">
                       <div className="w-14 h-14 rounded-2xl bg-[#3B3808] flex items-center justify-center group-hover:bg-[#ffee50] transition-colors duration-500 shadow-md">
@@ -260,7 +249,7 @@ export default function LogisticsSolutionsPage() {
                         </svg>
                       </div> */}
                     </div>
-                    
+
                     <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">ERP &amp; Financial Syncing</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
                       Automatically push freight bills, invoicing data, and driver payroll directly into your enterprise resource planning (ERP) systems like SAP, Oracle, or Microsoft Dynamics. No manual data entry required.
@@ -271,7 +260,7 @@ export default function LogisticsSolutionsPage() {
                 {/* Card 2 */}
                 <div className="group relative p-8 rounded-3xl bg-white border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#ffee50]/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-6">
                       <div className="w-14 h-14 rounded-2xl bg-[#3B3808] flex items-center justify-center group-hover:bg-[#ffee50] transition-colors duration-500 shadow-md">
@@ -285,7 +274,7 @@ export default function LogisticsSolutionsPage() {
                         </svg>
                       </div> */}
                     </div>
-                    
+
                     <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Third-Party Carrier Integration</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
                       Seamlessly ingest EDI (Electronic Data Interchange) and API feeds from external shipping partners, customs brokers, and international freight forwarders into a single, unified dashboard.
@@ -383,7 +372,7 @@ export default function LogisticsSolutionsPage() {
 
         {/* ── Section 6: Final CTA ── */}
         <section className="py-24 px-4 bg-[#3B3808] text-white text-center relative overflow-hidden">
-         
+
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">

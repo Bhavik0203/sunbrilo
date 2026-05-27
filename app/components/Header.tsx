@@ -101,8 +101,15 @@ export default function Header() {
       href: '/solutions', 
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Custom CRM Software', href: '/solutions' },
-        { name: 'Logistics & Supply Chain', href: '/solutions/logistic-and-supply-chain-solutions' }
+        // { name: 'Custom CRM Software', href: '/solutions' },
+        { name: 'Cognitive Dining & Workforce', href: '/solutions/cognitive-dining-workforce-orchestration' },
+        { name: 'Equipment Leasing Platform', href: '/solutions/equipment-leasing-platform' },
+        { name: 'HRMS Empowering Workforce', href: '/solutions/hrms-empowering-your-workforce' },
+        { name: 'Asset Performance Management', href: '/solutions/intelligent-asset-performance-management' },
+        { name: 'Logistics & Supply Chain', href: '/solutions/logistic-and-supply-chain-solutions' },
+        { name: 'Order Management', href: '/solutions/order-management' },
+        { name: 'Remote Geofencing Attendance', href: '/solutions/remote-geofencing-attendance-system' },
+        { name: 'Tablet Biometric Attendance', href: '/solutions/tablet-based-biometric-attendance-system' }
       ]
     },
     { name: 'Blog', href: '/blogs', hasDropdown: false },
@@ -119,7 +126,7 @@ export default function Header() {
         }`}
       >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between bg-blue/700 rounded-full py-3 px-8 ">
+        <div className="flex items-center justify-between bg-blue/700 rounded-full py-3 px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
@@ -132,9 +139,9 @@ export default function Header() {
           </Link>
 
           {/* Navigation (Desktop) */}
-          <nav className="hidden lg:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8 relative">
             {navItems.map((item) => (
-              <div key={item.name} className="relative">
+              <div key={item.name}>
                 <Link 
                   href={item.href} 
                   className="text-white text-base font-medium hover:text-[#ffee50] transition-colors duration-300 flex items-center font-raleway"
@@ -150,19 +157,26 @@ export default function Header() {
                 {/* Dropdown Menu */}
                 {item.hasDropdown && item.dropdownItems && openDropdown === item.name && scrollPosition <= heroHeight && (
                   <div 
-                    className="absolute top-full left-0 mt-0 w-64 bg-white rounded-lg shadow-lg py-2 z-50"
+                    className="absolute top-full left-1/2 -translate-x-1/2  z-50"
                     onMouseEnter={() => setOpenDropdown(item.name)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
-                    {item.dropdownItems.map((dropdownItem) => (
-                      <Link
-                        key={dropdownItem.name}
-                        href={dropdownItem.href}
-                        className="block px-4 py-3 text-gray-800 hover:bg-[#f5f3f3] hover:text-[#3B3808] transition-colors duration-200 font-raleway"
-                      >
-                        {dropdownItem.name}
-                      </Link>
-                    ))}
+                    <div className="w-[750px] bg-[#0f172a] rounded-2xl shadow-2xl p-8 border border-gray-800">
+                      <div className="grid grid-cols-4 gap-4">
+                        {item.dropdownItems.map((dropdownItem, idx) => (
+                          <Link
+                            key={dropdownItem.name}
+                            href={dropdownItem.href}
+                            className="group flex flex-col items-center justify-start text-center p-5 rounded-xl bg-[#1e293b] hover:bg-[#334155] transition-all duration-300 border border-transparent hover:border-blue-500/50"
+                          >
+                           
+                            <span className="text-white text-[13px] font-semibold font-raleway leading-snug">
+                              {dropdownItem.name}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
@@ -222,8 +236,8 @@ export default function Header() {
           showScrollHeader ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between rounded-full py-3 px-8">
+        <div className="container mx-auto px-4 ">
+          <div className="flex items-center justify-between rounded-full py-3 px-8 ">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
               <Image
@@ -236,9 +250,9 @@ export default function Header() {
             </Link>
 
             {/* Navigation (Desktop) */}
-            <nav className="hidden lg:flex space-x-8">
+            <nav className="hidden lg:flex space-x-8 relative">
               {navItems.map((item) => (
-                <div key={item.name} className="relative">
+                <div key={item.name}>
                   <Link 
                     href={item.href} 
                     className="text-white text-base font-medium hover:text-[#ffee50] transition-colors duration-300 flex items-center font-raleway"
@@ -254,19 +268,26 @@ export default function Header() {
                   {/* Dropdown Menu */}
                   {item.hasDropdown && item.dropdownItems && openDropdown === item.name && showScrollHeader && (
                     <div 
-                      className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-lg py-2 z-50"
+                      className="absolute top-full left-1/2 -translate-x-1/2  z-50"
                       onMouseEnter={() => setOpenDropdown(item.name)}
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
-                      {item.dropdownItems.map((dropdownItem) => (
-                        <Link
-                          key={dropdownItem.name}
-                          href={dropdownItem.href}
-                          className="block px-4 py-3 text-gray-800 hover:bg-[#f5f3f3] hover:text-[#3B3808] transition-colors duration-200 font-raleway"
-                        >
-                          {dropdownItem.name}
-                        </Link>
-                      ))}
+                      <div className="w-[750px] bg-[#0f172a] rounded-2xl shadow-2xl p-8 border border-gray-800">
+                        <div className="grid grid-cols-4 gap-4">
+                          {item.dropdownItems.map((dropdownItem, idx) => (
+                            <Link
+                              key={dropdownItem.name}
+                              href={dropdownItem.href}
+                              className="group flex flex-col items-center justify-start text-center p-5 rounded-xl bg-[#1e293b] hover:bg-[#334155] transition-all duration-300 border border-transparent hover:border-blue-500/50"
+                            >
+                         
+                              <span className="text-white text-[13px] font-semibold font-raleway leading-snug">
+                                {dropdownItem.name}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
