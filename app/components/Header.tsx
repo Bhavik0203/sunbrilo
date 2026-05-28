@@ -348,46 +348,99 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 bg-gray-800 rounded-2xl p-6 border border-gray-700 shadow-lg">
-            <nav className="space-y-4">
+        <div className="fixed inset-0 z-[110] bg-[#0c1622]/95 backdrop-blur-md lg:hidden">
+          <div className="absolute top-6 right-6">
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-3 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <div className="flex flex-col items-center justify-start h-full p-8 overflow-y-auto pt-24">
+            <nav className="space-y-6 w-full max-w-sm text-center">
               {navItems.map((item) => (
-                <Link key={item.name} href={item.href} className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-300 flex items-center justify-between font-raleway">
-                  {item.name}
-                  {item.hasDropdown && (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                <div key={item.name} className="flex flex-col items-center w-full">
+                  {item.hasDropdown ? (
+                    <>
+                      <div className="flex items-center justify-center gap-2">
+                        <Link 
+                          href={item.href}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setOpenDropdown(null);
+                          }}
+                          className="text-white text-2xl font-bold hover:text-[#ffee50] transition-colors duration-300 font-raleway"
+                        >
+                          {item.name}
+                        </Link>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setOpenDropdown(openDropdown === item.name ? null : item.name);
+                          }}
+                          className="p-2 -mr-2 text-white/70 hover:text-[#ffee50]"
+                        >
+                          <svg className={`w-6 h-6 transition-transform duration-300 ${openDropdown === item.name ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      
+                      <div className={`overflow-hidden transition-all duration-300 w-full ${openDropdown === item.name ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                        <div className="flex flex-col space-y-4 bg-white/5 rounded-2xl p-4 mx-4">
+                          {item.dropdownItems?.map((subItem) => (
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                                setOpenDropdown(null);
+                              }}
+                              className="text-gray-300 text-lg hover:text-[#ffee50] transition-colors duration-200 font-raleway"
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <Link 
+                      href={item.href} 
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setOpenDropdown(null);
+                      }}
+                      className="block text-white text-2xl font-bold hover:text-[#ffee50] transition-colors duration-300 font-raleway"
+                    >
+                      {item.name}
+                    </Link>
                   )}
-                </Link>
+                </div>
               ))}
-              <div className="pt-4 border-t border-gray-700">
+              <div className="pt-8 mt-4 border-t border-gray-700 w-full flex justify-center">
                 <button
                   type="button"
-                  onClick={openModal}
-                  onMouseEnter={handleMouseEnter}
-                  className="w-full group relative overflow-hidden rounded-full bg-[#ffee50] px-2 py-1.5 text-[14px] font-semibold text-[#3B3808] group-hover:bg-[#3B3808] group-hover:text-[#ffee50] transition-all cursor-pointer font-raleway"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    openModal();
+                  }}
+                  className="group relative overflow-hidden rounded-full bg-[#ffee50] px-8 py-3 text-lg font-bold text-[#3B3808] hover:bg-[#ffe500] transition-all cursor-pointer font-raleway w-full max-w-[250px]"
                 >
-                  <span
-                    className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0c1622] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"
-                    style={{
-                      left: "var(--mouse-x, 50%)",
-                      top: "var(--mouse-y, 50%)",
-                      width: "100px",
-                      height: "100px",
-                    }}
-                  />
-                  <div className="relative z-10 flex items-center justify-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-                    <span>let's talk</span>
-                    <span className="relative z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-500 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
-                      <ArrowUpRightIcon className="group-hover:hidden" />
-                      <ArrowRightIcon className="hidden group-hover:block" />
-                    </span>
-                  </div>
+                  Let's Talk
                 </button>
               </div>
             </nav>
           </div>
-        )}
+        </div>
+      )}
 
       {/* Modal */}
       {isModalOpen && (

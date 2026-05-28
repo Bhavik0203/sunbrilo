@@ -41,7 +41,7 @@ export default function QualityEngineering() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-16 items-center">
           
           {/* Left Column: Asymmetric Tech Structural Images */}
-          <div className="lg:col-span-5 relative h-[580px] w-full flex items-center">
+          <div className="lg:col-span-5 relative h-[320px] md:h-[450px] lg:h-[580px] w-full flex items-center justify-center lg:justify-start">
             {/* Primary Background Image */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -94,7 +94,7 @@ export default function QualityEngineering() {
             <div className="flex flex-col md:flex-row gap-6 items-start">
               
               {/* Left Side: Segment Selection Toggles */}
-              <div className="flex flex-row md:flex-col justify-start gap-2 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 border-b md:border-b-0 border-gray-200 md:w-64 shrink-0">
+              <div className="flex flex-row md:flex-col justify-start gap-2 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 border-b md:border-b-0 border-gray-200 md:w-64 shrink-0 w-full scrollbar-hide">
                 {qualityItems.map((item, idx) => (
                   <button
                     key={idx}

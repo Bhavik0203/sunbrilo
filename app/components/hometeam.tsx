@@ -59,11 +59,12 @@ export default function ExpertTeam() {
         </button>
 
         {/* Cards */}
-        <div className="flex flex-1 justify-center gap-6">
+        <div className="flex flex-1 justify-center gap-4 sm:gap-6 overflow-hidden">
           {visibleMembers.map(({ member, position }) => (
             <div
               key={`${member.id}-${position}`}
-              className={` px-8 py-10 w-80 flex-shrink-0 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(74,158,245,0.2)] bg-cover bg-center 
+              className={`px-4 sm:px-8 py-10 w-full max-w-[280px] sm:max-w-[320px] flex-shrink-0 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(74,158,245,0.2)] bg-cover bg-center rounded-2xl ${
+                position === 2 ? 'hidden lg:block' : position === 1 ? 'hidden md:block' : ''
               }`}
               style={{ backgroundImage: `url("${member.bgImage}")` }}
             >
@@ -71,7 +72,7 @@ export default function ExpertTeam() {
               <img
                 src={member.image}
                 alt={member.name}
-                className="w-48 h-48  object-cover mx-auto mb-6"
+                className="w-40 h-40 sm:w-48 sm:h-48 object-cover mx-auto mb-6"
               />
 
               {/* Name */}

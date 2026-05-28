@@ -66,22 +66,21 @@ const Testimonials = () => {
         </h2>
 
         {/* Slider Card */}
-        <div className="flex rounded-xl overflow-hidden   items-start">
+        <div className="flex flex-col md:flex-row rounded-xl overflow-visible items-center md:items-start max-w-5xl mx-auto">
 
           {/* Left: Image Panel */}
           <div
-            className="w-1/2 flex-shrink-0 relative"
+            className="w-full md:w-1/2 flex-shrink-0 relative h-[300px] md:h-[400px] rounded-2xl md:rounded-none md:rounded-l-2xl z-0"
             style={{
               backgroundImage: 'url("/images/testimonial.png")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              height: '400px',
             }}
           >
           </div>
 
           {/* Right: Testimonial Content */}
-          <div className="w-1/2 bg-white px-8 py-7 flex flex-col mt-12 -ml-20 z-10 relative" style={{ height: '300px' }}>
+          <div className="w-[92%] sm:w-[85%] md:w-1/2 bg-white px-6 py-8 md:px-8 md:py-7 flex flex-col -mt-20 md:mt-12 md:-ml-20 z-10 relative rounded-2xl shadow-xl md:shadow-[0_0_40px_rgba(0,0,0,0.05)]" style={{ minHeight: '300px' }}>
             
             {/* Profile Section - Center Top */}
           

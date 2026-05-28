@@ -33,19 +33,19 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'Real-Time Freight & Fleet Tracking',
       desc: 'Gain absolute control over your assets. Our real-time freight tracking software integrates via advanced GPS and IoT APIs, giving your dispatchers live location data, predictive ETAs, and instant geofencing alerts for thousands of vehicles simultaneously.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      image:"/images/solutions/106.jpg"
     },
     {
       step: '02',
       title: 'Intelligent Routing & Dispatch Automation',
       desc: 'Stop wasting fuel and driver hours. Our AI-driven algorithms automatically calculate the most efficient delivery routes considering live traffic, vehicle load capacity, and strict delivery windows, drastically reducing your cost-per-mile.',
-      image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
+      image:"/images/solutions/105.jpg"
     },
     {
       step: '03',
       title: 'Integrated Warehouse Management (WMS)',
       desc: 'Bridge the gap between storage and transit. Seamlessly connect your transit data with warehouse inventory levels. Automate dock scheduling, implement smart barcode/RFID scanning, and trigger automated reorder protocols to permanently prevent stockouts.',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solutions/104.jpg',
     },
   ];
 
@@ -139,7 +139,7 @@ export default function LogisticsSolutionsPage() {
               <div className="relative h-[400px] lg:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffee50]/10 rounded-full -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&q=80"
+                  src="/images/solutions/201.jpg"
                   alt="Global logistics network"
                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
                 />

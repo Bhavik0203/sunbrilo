@@ -33,19 +33,19 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'AI/ML Predictive Failure Modeling:',
       desc: 'We analyze multivariate sensor data to identify the earliest indicators of degradation. Our system moves past simple alerts to provide prescriptive recommendations—telling you what maintenance to perform, when, and why it maximizes asset lifespan, transforming Industrial IoT asset orchestration.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      image: "/images/solutions/image 119.png"
     },
     {
       step: '02',
       title: 'Zero-Friction Work Order & Field Service Automation:',
       desc: 'Automatically trigger dynamic work orders, assigning tasks based on technician geospatial proximity, certification, and required tools. Technicians use intuitive, secure mobile interfaces to complete compliance logging, access AR-enabled diagnostics, and log resolution times instantly.',
-      image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
+      image: "/images/solutions/image 120.png",
     },
     {
       step: '03',
       title: 'Integrated Supply Chain & Inventory Optimization:',
       desc: 'Leverage machine learning to forecast precise spare parts demand based on predictive maintenance schedules, ensuring 100% availability of critical components while drastically reducing capital locked up in excess inventory and eliminating costly expedited shipping.',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+      image: "/images/solutions/image 121.png",
     },
   ];
 
@@ -138,7 +138,7 @@ export default function LogisticsSolutionsPage() {
               <div className="relative h-[400px] lg:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffee50]/10 rounded-full -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&q=80"
+                  src="/images/solutions/image 114.png"
                   alt="Global logistics network"
                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
                 />

@@ -8,7 +8,7 @@ import ClientsSection from './components/clints';
 import BlogSection from './components/blog';
 import Banner from "./components/Banner";
 import SolutionsScroll from "./components/Solutionsweprovide";
-
+import SolutionsWeProvideMobile from "./components/Solutionsweprovidemobile";
 
 export default function Home() {
   return (
@@ -18,7 +18,12 @@ export default function Home() {
        <Banner/>
      
        <GetToKnowUs />
-       <SolutionsScroll />
+       <div className="hidden lg:block">
+         <SolutionsScroll />
+       </div>
+       <div className="block lg:hidden">
+         <SolutionsWeProvideMobile />
+       </div>
        <Services/>
        <Testimonials/>
        <ExpertTeam/>

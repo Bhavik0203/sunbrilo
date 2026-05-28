@@ -33,19 +33,19 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'Multi-Echelon Order Aggregation:',
       desc: 'Instantly unify all demand signals. Our platform standardizes and ingests complex orders from D2C e-commerce, global EDI feeds, marketplace APIs, and B2B portal transactions into a single, real-time demand ledger.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+     image:"/images/solutions/102.jpg"
     },
     {
       step: '02',
       title: 'Real-Time Inventory and ATP (Available-to-Promise) Logic:',
       desc: 'Achieve perfect order accuracy. The system leverages predictive analytics to maintain a single source of inventory truth across all locations (including in-transit) and calculates the Available-to-Promise date instantly, guaranteeing fulfillment integrity.',
-      image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
+      image:"/images/solutions/103.jpg"
     },
     {
       step: '03',
       title: 'Dynamic Fulfillment Routing (DFR):',
       desc: 'Minimize shipping costs and maximize speed. The platform applies custom, AI-driven rules to automatically route each order based on TCO, customer SLA, nearest fulfillment point (warehouse/store), and carrier capacity/cost in real time.',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+      image:"/images/solutions/104.jpg"
     },
   ];
 
@@ -136,7 +136,7 @@ export default function LogisticsSolutionsPage() {
               <div className="relative h-[400px] lg:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffee50]/10 rounded-full -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&q=80"
+                  src="/images/solutions/101.jpg"
                   alt="Global logistics network"
                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
                 />

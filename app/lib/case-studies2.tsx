@@ -1,9 +1,9 @@
 import type { StaticImageData } from "next/image";
 
-import case1 from "../../public/images/services/service1.png";
-import case2 from "../../public/images/services/service2.png";
-import case3 from "../../public/images/services/service3.png";
-import case4 from "../../public/images/services/service4.png";
+import case1 from "../../public/images/services/image 45.png";
+import case2 from "../../public/images/services/image 46.png";
+import case3 from "../../public/images/services/image 47.png";
+import case4 from "../../public/images/services/image 48.png";
 
 export type CaseStudySections = {
   overview: string;

@@ -32,14 +32,14 @@ export default function CaseStudiesPage() {
                 key={study.id}
                 className={`relative mx-auto max-w-6xl bg-white px-6 py-10 md:px-12 md:py-14 overflow-hidden ${
                   isRight
-                    ? "rounded-l-[32px] rounded-r-full bg-[radial-gradient(circle_at_85%_50%,#5BA3E85C,transparent_55%),linear-gradient(to_left,_#5BA3E840_0%,_#5BA3E81F_26%,_#5BA3E80D_48%,_#f0f7ff_64%,_#f5f3f3_78%,_#f5f3f3_100%)]"
-                    : "rounded-r-[32px] rounded-l-full bg-[radial-gradient(circle_at_15%_50%,#5BA3E85C,transparent_55%),linear-gradient(to_right,_#5BA3E840_0%,_#5BA3E81F_26%,_#5BA3E80D_48%,_#f0f7ff_64%,_#f5f3f3_78%,_#f5f3f3_100%)]"
+                    ? "rounded-2xl md:rounded-l-[32px] md:rounded-r-full bg-[radial-gradient(circle_at_85%_50%,#5BA3E85C,transparent_55%),linear-gradient(to_left,_#5BA3E840_0%,_#5BA3E81F_26%,_#5BA3E80D_48%,_#f0f7ff_64%,_#f5f3f3_78%,_#f5f3f3_100%)]"
+                    : "rounded-2xl md:rounded-r-[32px] md:rounded-l-full bg-[radial-gradient(circle_at_15%_50%,#5BA3E85C,transparent_55%),linear-gradient(to_right,_#5BA3E840_0%,_#5BA3E81F_26%,_#5BA3E80D_48%,_#f0f7ff_64%,_#f5f3f3_78%,_#f5f3f3_100%)]"
                 }`}
               >
                 <div className="relative z-10 grid items-center gap-10 md:grid-cols-[0.9fr_1.1fr]">
                   {/* Image */}
                   <div
-                    className={`flex ${
+                    className={`flex justify-center ${
                       isRight
                         ? "md:order-2 md:justify-end"
                         : "md:order-1 md:justify-start"

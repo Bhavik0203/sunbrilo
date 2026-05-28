@@ -183,7 +183,7 @@ export default function DevelopmentTestingPage() {
                   style={{ zIndex: 1 }}
                 >
                   <img
-                    src="/images/services/service1.png"
+                    src="/images/services/image 20.png"
                     alt="Software development team"
                     className="w-full h-full object-cover"
                   />
@@ -195,7 +195,7 @@ export default function DevelopmentTestingPage() {
                   style={{ zIndex: 2, border: '4px solid #ffffff' }}
                 >
                   <img
-                    src="/images/services/service2.png"
+                    src="/images/services/image 21.png"
                     alt="Quality assurance testing"
                     className="w-full h-full object-cover"
                   />
@@ -283,7 +283,7 @@ export default function DevelopmentTestingPage() {
                 {/* Main Image */}
                 <div className="rounded-2xl overflow-hidden w-full h-[360px] relative">
                   <img
-                    src="/images/faq.png"
+                    src="/images/services/hrlp 2.png"
                     alt="Professional"
                     className="w-full h-full object-cover"
                   />
@@ -366,7 +366,7 @@ export default function DevelopmentTestingPage() {
                 {/* Main Image */}
                 <div className="relative overflow-hidden ">
                   <img
-                    src="/images/services/servicemain2.png"
+                    src="/images/services/image 29.png"
                     alt="Team Collaboration"
                     className="w-full h-[400px] object-cover"
                   />

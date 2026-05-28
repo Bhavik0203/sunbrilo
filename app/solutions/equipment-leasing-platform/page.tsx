@@ -33,19 +33,19 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'Dynamic Revenue Assurance (Automated Billing):',
       desc: 'Eliminate revenue leakage. The platform autonomously manages tiered, dynamic, and usage-based billing logic. It instantly generates compliant, granular invoices based on integrated telematics data, ensuring automated leasing billing software is always accurate.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+     image:"/images/solutions/image 105.png",
     },
     {
       step: '02',
       title: 'Integrated IoT Telematics & Predictive Intelligence:',
       desc: 'Gain real-time command over thousands of deployed assets. Our system uses advanced geofencing and IoT data feeds to provide live utilization, performance diagnostics, and location tracking, enabling true predictive maintenance forecasting.',
-      image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
+      image:"/images/solutions/image 106.png",
     },
     {
       step: '03',
       title: 'Asset Lifecycle Risk Mitigation:',
       desc: 'Preserve capital assets. The system enforces mandatory, digital inspection workflows upon return and proactively schedules AI-driven maintenance windows, minimizing capital depreciation and ensuring maximum asset uptime.',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+      image:"/images/solutions/image 107.png",
     },
   ];
 
@@ -136,7 +136,7 @@ export default function LogisticsSolutionsPage() {
               <div className="relative h-[400px] lg:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffee50]/10 rounded-full -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&q=80"
+                  src="/images/solutions/image 104.png"
                   alt="Global logistics network"
                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
                 />

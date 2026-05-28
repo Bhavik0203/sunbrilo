@@ -1,36 +1,11 @@
 "use client";
 
 import React from 'react';
-
-interface BlogPost {
-  id: number;
-  date: string;
-  title: string;
-  image: string;
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    date: "2023-11-10",
-    title: "PHP: The Power Behind Dynamic Websites and Scalable Web Applications",
-    image: "/images/blog1.png"
-  },
-  {
-    id: 2,
-    date: "2023-11-10",
-    title: "Digital Transformation Trends 2023: Unleash the Geek Chic!",
-    image: "/images/blog2.png"
-  },
-  {
-    id: 3,
-    date: "2023-11-10",
-    title: "Unveiling Digital Transformation: Strategies for Success",
-    image: "/images/blog3.png"
-  }
-];
+import Link from 'next/link';
+import { blogPosts } from '../lib/blogData';
 
 export default function BlogSection() {
+  const latestPosts = blogPosts.slice(0, 3);
   return (
     <section className="py-16 px-4 bg-[#f5f5f5]">
       <div className="max-w-6xl mx-auto">
@@ -48,13 +23,14 @@ export default function BlogSection() {
 
         {/* Blog Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {blogPosts.map((post) => (
-            <div
+          {latestPosts.map((post) => (
+            <Link
+              href={`/blogs/${post.slug}`}
               key={post.id}
-              className=" overflow-hidden group cursor-pointer"
+              className=" overflow-hidden group cursor-pointer block"
             >
               {/* Blog Image */}
-              <div className="h-48 overflow-hidden">
+              <div className="h-48 overflow-hidden rounded-xl">
                 <img
                   src={post.image}
                   alt={post.title}
@@ -75,7 +51,7 @@ export default function BlogSection() {
                 </h3>
 
                 {/* Read More Link */}
-                  <button className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 hover:translate-x-1 transform font-raleway">
+                <span className="inline-flex items-center text-blue-600 group-hover:text-blue-800 font-medium transition-colors duration-200 group-hover:translate-x-1 transform font-raleway">
                   Read More
                   <svg 
                     className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" 
@@ -90,9 +66,9 @@ export default function BlogSection() {
                       d="M9 5l7 7-7 7" 
                     />
                   </svg>
-                </button>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

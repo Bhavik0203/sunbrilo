@@ -33,19 +33,19 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'Cognitive Facial Authentication (Sub-second Verification):',
       desc: 'Utilizing proprietary AI models for instant, contact-free verification. Liveness Detection is integrated as a baseline security feature, preventing authentication fraud from photos, masks, or recorded video streams.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      image: "/images/solutions/66.jpg",
     },
     {
       step: '02',
       title: 'Resilient Offline Sync (Offline biometric attendance integration):',
       desc: ' Maintain 100% operational continuity regardless of network stability. The tablet-based biometric attendance system securely encrypts and time-stamps all data locally, executing an auto-synch protocol the moment a connection is established with your central cloud instance.',
-      image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
+         image: "/images/solutions/77.jpg",
     },
     {
       step: '03',
       title: 'Ruggedized Deployment & Geospatial Integrity: ',
       desc: ' Our software is optimized for deployment on industrial-grade, drop-resistant tablets. Every transaction is immutably linked to highly accurate, tamper-proof GPS coordinates, providing irrefutable proof of site presence for compliance and auditing.',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+       image: "/images/solutions/88.jpg",
     },
   ];
 
@@ -131,7 +131,7 @@ export default function LogisticsSolutionsPage() {
               <div className="relative h-[400px] lg:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffee50]/10 rounded-full -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&q=80"
+                  src="/images/solutions/55.jpg"
                   alt="Global logistics network"
                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
                 />
@@ -294,7 +294,7 @@ export default function LogisticsSolutionsPage() {
               <div className="relative w-full md:w-[420px] flex-shrink-0 rounded-2xl overflow-visible">
                 <div className="rounded-2xl overflow-hidden w-full h-[360px] relative">
                   <img
-                    src="/images/faq.png"
+                    src="/images/services/hrlp 2.png"
                     alt="Logistics FAQ"
                     className="w-full h-full object-cover"
                   />

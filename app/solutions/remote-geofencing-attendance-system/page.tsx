@@ -33,19 +33,19 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'Dynamic Geofence & iBeacon Support for Precision',
       desc: 'Define infinite, dynamic zones (polygons, corridors) for every client site, service route, or regional hub. Integrate with Bluetooth Low Energy (iBeacon) for ultra-high-precision verification in sensitive or indoor locations where GPS falters. The anti-spoofing time-tracking engine guarantees accuracy within a 5-meter radius.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      image: "/images/solutions/22.jpg",
     },
     {
       step: '02',
       title: 'Cognitive Anti-Spoofing & Behavioral Analytics',
       desc: 'Beyond mock location detection, our system employs machine learning to flag anomalous clock-in patterns, sudden long-distance jumps, and abnormal device settings (rooting, jailbreaking). This field force integrity management capability preemptively stops fraud, safeguarding your payroll.',
-      image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
+        image: "/images/solutions/33.jpg",
     },
     {
       step: '03',
       title: 'Automated Workflow & Task-to-Time Mapping',
       desc: 'Move beyond simple clock-in/out. Link attendance events directly to assigned operational tasks (e.g., Site Inspection A or Client Meeting B). The system provides a detailed audit trail of time spent on specific duties, enhancing performance review accuracy and granular operational TCO reduction.',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+        image: "/images/solutions/44.jpg",
     },
   ];
 
@@ -135,7 +135,7 @@ export default function LogisticsSolutionsPage() {
               <div className="relative h-[400px] lg:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffee50]/10 rounded-full -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&q=80"
+                   src="/images/solutions/11.jpg"
                   alt="Global logistics network"
                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
                 />

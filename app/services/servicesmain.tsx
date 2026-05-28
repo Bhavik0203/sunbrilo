@@ -120,11 +120,11 @@ export default function EnterpriseCapabilities() {
 
           {/* Main Card */}
           <div
-            className="flex  overflow-hidden shadow-lg"
+            className="flex flex-col lg:flex-row overflow-hidden shadow-lg rounded-2xl"
             style={{ minHeight: 440, border: '1px solid #e5e7eb' }}
           >
             {/* ── LEFT: Image panel ── */}
-            <div className="relative w-[42%] flex-shrink-0 bg-[#080e2a] overflow-hidden flex items-end">
+            <div className="relative w-full lg:w-[42%] h-[240px] lg:h-auto flex-shrink-0 bg-[#080e2a] overflow-hidden flex items-end">
               {/* Background image with crossfade */}
               <img
                 key={imageKey}

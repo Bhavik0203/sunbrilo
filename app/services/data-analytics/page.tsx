@@ -181,7 +181,7 @@ export default function DevelopmentTestingPage() {
                   style={{ zIndex: 1 }}
                 >
                   <img
-                    src="/images/services/service1.png"
+                    src="/images/services/image 53.png"
                     alt="Software development team"
                     className="w-full h-full object-cover"
                   />
@@ -193,7 +193,7 @@ export default function DevelopmentTestingPage() {
                   style={{ zIndex: 2, border: '4px solid #ffffff' }}
                 >
                   <img
-                    src="/images/services/service2.png"
+                    src="/images/services/image 54.png"
                     alt="Quality assurance testing"
                     className="w-full h-full object-cover"
                   />
@@ -364,7 +364,7 @@ export default function DevelopmentTestingPage() {
                 {/* Main Image */}
                 <div className="relative overflow-hidden ">
                   <img
-                    src="/images/services/servicemain2.png"
+                    src="/images/services/image 61.png"
                     alt="Team Collaboration"
                     className="w-full h-[400px] object-cover"
                   />
@@ -375,7 +375,7 @@ export default function DevelopmentTestingPage() {
                 {/* Circular Tech Icons Image - positioned overlapping */}
                 <div className="absolute -bottom-8 -left-8 w-40 h-40 rounded-full overflow-hidden  border-white">
                   <img
-                    src="/images/services/servicemain1.png"
+                    src="/images/services/image 62.png"
                     alt="Technology Icons"
                     className="w-full h-full object-cover"
                   />

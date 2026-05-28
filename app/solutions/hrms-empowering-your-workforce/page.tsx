@@ -33,25 +33,25 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'Cognitive Compliance & Precision Payroll:',
       desc: 'Eliminate reconciliation risk. Our Automated Payroll Integration module processes complex global compensation rules, regulatory deductions, and benefits plans, ensuring audit-proof financial data push to all enterprise ledgers (SAP, Oracle, Workday).',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solutions/image 109.png',
     },
     {
       step: '02',
       title: 'Frictionless Talent Onboarding-to-Offboarding: ',
       desc: 'Accelerate time-to-value for new hires. The platform uses intelligent workflows to automate IT provisioning, policy acknowledgment, and e-contracting. Offboarding is automated for immediate, compliant access revocation and full asset recovery.',
-      image: 'https://images.unsplash.com/photo-1508361001413-7a9dca21d08a?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solutions/image 112.png',
     },
     {
       step: '03',
       title: 'Advanced Time, Geofencing, and Attendance Assurance: ',
       desc: 'Guarantee accountability across manufacturing, field service, and corporate sites. Integrate precise Precision Geofencing Attendance and biometric hardware with complex shift scheduling and overtime matrix policies, eliminating payroll leakage and time theft.',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solutions/image 101.png',
     },
     {
       step: '04',
       title: 'Employee Digital Engagement & Experience (DEX): ',
       desc: 'Centralize all talent interactions. Deploy high-security, intuitive portals for mobile and desktop, enabling employees to manage PTO, access performance reviews, and engage with AI-powered support, dramatically lowering HR overhead.',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solutions/Group 1437255960.png',
     },
   ];
 
@@ -142,7 +142,7 @@ export default function LogisticsSolutionsPage() {
               <div className="relative h-[400px] lg:h-[500px]">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#ffee50]/10 rounded-full -z-10" />
                 <img
-                  src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=800&q=80"
+                  src="/images/solutions/image 108.png"
                   alt="Global logistics network"
                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
                 />

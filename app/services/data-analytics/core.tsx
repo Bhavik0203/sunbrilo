@@ -41,7 +41,7 @@ export default function QualityEngineering() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-16 items-center">
           
           {/* Left Column: Asymmetric Tech Structural Images */}
-          <div className="lg:col-span-5 relative h-[580px] w-full flex items-center">
+          <div className="lg:col-span-5 relative h-[320px] md:h-[450px] lg:h-[580px] w-full flex items-center justify-center lg:justify-start">
             {/* Primary Background Image */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -51,7 +51,7 @@ export default function QualityEngineering() {
               className="relative w-[85%] h-[85%] rounded-[2rem] overflow-hidden border border-gray-200 shadow-2xl z-10"
             >
               <Image
-                src="/images/devpage.png" 
+                src="/images/services/image 59.png" 
                 alt="Continuous Integration Dashboard Visual"
                 fill
                 className="object-cover transition-all duration-700"
@@ -68,7 +68,7 @@ export default function QualityEngineering() {
               className="absolute right-0 bottom-0 w-[45%] h-[45%] rounded-2xl overflow-hidden border-4 border-white  z-20 hidden sm:block"
             >
               <Image
-                src="/images/services/service1.png" 
+                src="/images/services/image 60.png" 
                 alt="Codebase Conflict Validation Screen"
                 fill
                 className="object-cover"
@@ -94,7 +94,7 @@ export default function QualityEngineering() {
             <div className="flex flex-col md:flex-row gap-6 items-start">
               
               {/* Left Side: Segment Selection Toggles */}
-              <div className="flex flex-row md:flex-col justify-start gap-2 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 border-b md:border-b-0 border-gray-200 md:w-64 shrink-0">
+              <div className="flex flex-row md:flex-col justify-start gap-2 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 border-b md:border-b-0 border-gray-200 md:w-64 shrink-0 w-full scrollbar-hide">
                 {qualityItems.map((item, idx) => (
                   <button
                     key={idx}

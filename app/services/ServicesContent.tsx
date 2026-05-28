@@ -132,11 +132,11 @@ export default function ServicesContent() {
              </section>
 
       {/* Hero Section - Two Column Layout */}
-      <section className="py-20 px-4 bg-[#f5f3f3]">
+      <section className="py-4 md:py-16 px-4 bg-[#f5f3f3]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Images */}
-            <div className="relative">
+            <div className="relative hidden lg:block">
               {/* Main Image */}
               <div className="relative overflow-hidden ">
                 <img
@@ -206,7 +206,7 @@ export default function ServicesContent() {
       </section>
 
       {/* Section 2: The Sunbrilo Methodology */}
-      <section className="py-20 px-4 bg-[#f5f3f3]">
+      <section className="py-4 md:py-16 px-4 bg-[#f5f3f3]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 font-raleway">
@@ -269,7 +269,7 @@ export default function ServicesContent() {
      
 
       {/* Section 4: Flexible Engagement Models */}
-      <section className="py-20 px-4 bg-white max-w-6xl mx-auto px-10 shadow-2xl">
+      <section className="py-4 md:py-16 px-4 bg-white max-w-6xl mx-auto px-10 shadow-2xl">
         
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4 font-raleway">

@@ -209,7 +209,7 @@ export default function AboutUsContent() {
 
     
 
-      <section className="py-16 px-4 ">
+      <section className="py-4 md:py-16 px-4 ">
   <div className="max-w-6xl mx-auto">
 
     {/* Top row: Bold heading + paragraph */}
@@ -495,8 +495,14 @@ export default function AboutUsContent() {
             { value: "50+", label: "Projects delivered" },
             { value: "3", label: "Continents" },
             { value: "24/7", label: "Support coverage" },
-          ].map(({ value, label }) => (
-            <div key={label} className="pr-4 border-r border-gray-200 last:border-r-0 md:pl-6 md:first:pl-0">
+          ].map(({ value, label }, index) => (
+            <div 
+              key={label} 
+              className={`flex flex-col items-center md:items-start text-center md:text-left border-gray-200 md:pl-6 md:first:pl-0
+                ${index % 2 === 0 ? 'border-r pr-4' : 'pl-4 md:pr-4'} 
+                md:border-r last:border-r-0 md:last:border-r-0
+              `}
+            >
               <p className="text-3xl font-bold text-[#3B3808] font-raleway">{value}</p>
               <p className="text-sm text-gray-600 mt-1 font-raleway font-medium">{label}</p>
             </div>

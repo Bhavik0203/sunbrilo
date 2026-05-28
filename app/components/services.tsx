@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 const Services = () => {
   const services = [
@@ -8,49 +9,57 @@ const Services = () => {
       id: 1,
       title: "Development & Testing",
       description: "Tailored software solutions and thorough testing to ensure quality and scalability.",
-      image: "/images/Rectangle 199.png"
+      image: "/images/Rectangle 199.png",
+      link: "/services/development-testing"
     },
     {
       id: 2,
       title: "Offshore Services",
       description: "Cost-effective offshoring with global talent for seamless, high-quality delivery.",
-      image: "/images/Rectangle 200.png"
+      image: "/images/Rectangle 200.png",
+      link: "/services/offshoring-services"
     },
     {
       id: 3,
       title: "Data Analytics",
       description: "AI-powered insights to transform raw data into actionable business intelligence.",
-      image: "/images/Rectangle 201.png"
+      image: "/images/Rectangle 201.png",
+      link: "/services/data-analytics"
     },
     {
       id: 4,
       title: "Cloud Solutions",
       description: "Scalable, secure cloud services for seamless operations and significant long-term cost reduction.",
-      image: "/images/Rectangle 202.png"
+      image: "/images/Rectangle 202.png",
+      link: "/services/cloud-solutions"
     },
     {
       id: 5,
       title: "Managed IT Services",
       description: "Comprehensive IT management to ensure smooth operations and minimize downtime.",
-      image: "/images/Rectangle 203.png"
+      image: "/images/Rectangle 203.png",
+      link: "/services/managed-it-services"
     },
     {
       id: 6,
       title: "Cybersecurity",
       description: "Advanced, innovative solutions to safeguard your systems from cyber threats and ensure strict compliance.",
-      image: "/images/Rectangle 204.png"
+      image: "/images/Rectangle 204.png",
+      link: "/services/cybersecurity"
     },
     {
       id: 7,
       title: "Implementation Services",
       description: "IT project implementation with seamless integration to optimize performance.",
-      image: "/images/Rectangle 199.png"
+      image: "/images/Rectangle 199.png",
+      link: "/services/implementation-services"
     },
     {
       id: 8,
       title: "Monitoring and Support",
       description: "24/7 monitoring and support to keep your systems secure and accessible.",
-      image: "/images/Rectangle 200.png"
+      image: "/images/Rectangle 200.png",
+      link: "/services/monitoring-and-support"
     }
   ];
 
@@ -66,9 +75,10 @@ const Services = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
-            <div 
+            <Link 
+              href={service.link}
               key={service.id}
-              className="  overflow-hidden  transition-shadow duration-300"
+              className="group block overflow-hidden transition-shadow duration-300"
             >
               {/* Service Image */}
               <div 
@@ -111,7 +121,7 @@ const Services = () => {
                 <p className="text-gray-600 mb-4 line-clamp-3 hover:text-gray-800 transition-colors duration-200 font-raleway">
                   {service.description}
                 </p>
-                <button className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 hover:translate-x-1 transform font-raleway">
+                <span className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200 hover:translate-x-1 transform font-raleway">
                   Read More
                   <svg 
                     className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" 
@@ -126,9 +136,9 @@ const Services = () => {
                       d="M9 5l7 7-7 7" 
                     />
                   </svg>
-                </button>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
