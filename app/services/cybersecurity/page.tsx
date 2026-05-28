@@ -61,6 +61,15 @@ const ChevronDownIcon = ({ className }: { className?: string }) => (
 export default function DevelopmentTestingPage() {
   const [openFAQ, setOpenFAQ] = useState<number>(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -103,7 +112,7 @@ export default function DevelopmentTestingPage() {
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: 'url("/images/services/servicebanner1.png")',
+              backgroundImage: 'url("/images/services/Cyber Security.jpg")',
             }}
           >
             {/* Dark Overlay */}
@@ -121,6 +130,7 @@ export default function DevelopmentTestingPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   type="button"
+                  onClick={openModal}
                   onMouseMove={handleMouseMove}
                   className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
                 >
@@ -139,10 +149,10 @@ export default function DevelopmentTestingPage() {
                     <ArrowRightIcon className="hidden group-hover:block" /> */}
                   </span>
                 </button>
-                <button className="inline-flex items-center gap-2 rounded-full border-2 border-white px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-[#3B3808] transition-all font-raleway">
+                {/* <button className="inline-flex items-center gap-2 rounded-full border-2 border-white px-8 py-4 text-base font-semibold text-white hover:bg-white hover:text-[#3B3808] transition-all font-raleway">
              Explore Our Managed Security Services (MSS)
-                  {/* <ArrowRightIcon /> */}
-                </button>
+                
+                </button> */}
               </div>
             </div>
           </div>
@@ -330,6 +340,7 @@ export default function DevelopmentTestingPage() {
                 {/* CTA Button */}
                 <button
                   type="button"
+                  onClick={openModal}
                   onMouseMove={handleMouseMove}
                   className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
                 >
@@ -384,6 +395,57 @@ export default function DevelopmentTestingPage() {
           </div>
         </section>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <div className="bg-[#0f172a] rounded-2xl w-full max-w-lg p-8 relative border border-gray-800 shadow-2xl">
+            <button 
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 className="text-3xl font-bold text-white mb-6 font-raleway">Let's Talk</h2>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <input type="text" required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="Your Name" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <input type="email" required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="Your Email" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Mobile Number</label>
+                <input 
+                  type="tel" 
+                  required 
+                  pattern="\d{10}" 
+                  maxLength={10} 
+                  title="Mobile number must be exactly 10 digits"
+                  onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
+                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" 
+                  placeholder="10-digit Mobile Number" 
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                <textarea rows={2} required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="How can we help you?"></textarea>
+              </div>
+              <div className="flex items-start mt-2">
+                <input type="checkbox" id="consent" required className="mt-1 mr-2 bg-[#1e293b] border border-gray-700 rounded text-[#ffee50] focus:ring-1 focus:ring-[#ffee50]" />
+                <label htmlFor="consent" className="text-sm text-gray-300 leading-tight">
+                  I consent to the collection and processing of my details to respond to my inquiry.
+                </label>
+              </div>
+              <button type="submit" className="w-full bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }

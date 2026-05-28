@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const ArrowUpRightIcon = ({ className }: { className?: string }) => (
   <svg
@@ -35,7 +36,7 @@ const ArrowRightIcon = ({ className }: { className?: string }) => (
 export default function Banner() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -78,8 +79,8 @@ export default function Banner() {
         
 
             {/* Get Services Button */}
-            <button
-              type="button"
+            <Link
+              href="/services"
               onMouseMove={handleMouseMove}
               className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-6 py-3 text-sm font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
             >
@@ -100,7 +101,7 @@ export default function Banner() {
                   <ArrowRightIcon className="hidden group-hover:block" />
                 </span>
               </div>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

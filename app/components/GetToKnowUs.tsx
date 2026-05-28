@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
-
+import Link from 'next/link';
 
 const ArrowUpRightIcon = ({ className }: { className?: string }) => (
   <svg
@@ -47,7 +47,7 @@ export default function GetToKnowUs() {
   }, []);
  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -89,8 +89,8 @@ export default function GetToKnowUs() {
             <p className="text-[#666666] leading-relaxed font-raleway">
               Sunbrilo Technologies is an innovative IT solutions provider, offering a comprehensive suite of services to propel businesses into the digital age. we empower organizations to thrive in a dynamic technological landscape. Our dedicated team of professionals combines advanced technology with strategic insights to deliver solutions that enhance efficiency, boost productivity, and accelerate growth. Whether you need consultation, execution, or ongoing support, Sunbrilo Technologies is your trusted partner for success.
             </p>
-            <button
-              type="button"
+            <Link
+              href='/services'
               onMouseMove={handleMouseMove}
               className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-6 py-3 text-sm font-semibold text-[#3B3808] transition-all hover:text-white font-raleway"
             >
@@ -120,7 +120,7 @@ export default function GetToKnowUs() {
               <span className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#3B3808] text-[#ffee50] transition-colors duration-300 group-hover:bg-[#ffee50] group-hover:text-[#3B3808]">
                 <ArrowUpRightIcon />
               </span>
-            </button>
+            </Link>
           </div>
 
           <div className="relative">

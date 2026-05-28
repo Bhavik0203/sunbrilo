@@ -7,6 +7,15 @@ export default function LogisticsSolutionsPage() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -59,7 +68,7 @@ export default function LogisticsSolutionsPage() {
       question: 'What differentiates your attendance management from simple clock-in/out systems?',
       answer: 'We integrate Precision Geofencing and facial recognition technology that tracks work activity based on authorized zones and schedules, eliminating “buddy punching.” This sophisticated auditing capability ensures strict adherence to labor laws and guarantees that every payroll dollar is justified by validated work presence.',
     },
-   
+
   ];
 
   return (
@@ -72,10 +81,10 @@ export default function LogisticsSolutionsPage() {
       <div className="min-h-screen">
 
         {/* ── Section 1: Hero ── */}
-        <section className="relative min-h-[620px] py-24 px-4 text-white flex items-center justify-center">
+        <section className="relative min-h-[520px] py-24 px-4 text-white flex items-center justify-center">
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url("/images/solutions/solutionmainbanner.png")' }}
+            style={{ backgroundImage: 'url("/images/solutions/HRMS Empowering Workforce.jpeg")' }}
           >
             <div className="absolute inset-0 bg-black/72" />
           </div>
@@ -83,12 +92,13 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-             Strategic Human Capital Management (HCM): Orchestrate Your Workforce.  </h1>
+              Strategic Human Capital Management (HCM): Orchestrate Your Workforce.  </h1>
 
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 type="button"
+                onClick={openModal}
                 onMouseMove={handleMouseMove}
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
               >
@@ -101,15 +111,15 @@ export default function LogisticsSolutionsPage() {
                 </span>
               </button>
 
-              <button
+              {/* <button
                 type="button"
                 onMouseMove={handleMouseMove}
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                 Download the TCW Optimization Blueprint
+                  Download the TCW Optimization Blueprint
                 </span>
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
@@ -120,11 +130,11 @@ export default function LogisticsSolutionsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                From HR Chaos to Predictive Human Capital Intelligence. </h2>
+                  From HR Chaos to Predictive Human Capital Intelligence. </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-               Fragmented legacy HR systems severely restrict enterprise agility, introducing systemic compliance risks, eroding employee experience, and obscuring the true Total Cost of Workforce (TCW). HR leaders are forced into reactive firefighting rather than strategic planning. </p>
+                  Fragmented legacy HR systems severely restrict enterprise agility, introducing systemic compliance risks, eroding employee experience, and obscuring the true Total Cost of Workforce (TCW). HR leaders are forced into reactive firefighting rather than strategic planning. </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                 Sunbrilo implements Strategic Human Capital Management (HCM) platforms designed for the modern, distributed enterprise. Our proprietary, cognitive HRMS acts as the single source of truth for all talent data, leveraging automation and compliance-as-a-service features to deliver measurable financial and operational advantage. </p>
+                  Sunbrilo implements Strategic Human Capital Management (HCM) platforms designed for the modern, distributed enterprise. Our proprietary, cognitive HRMS acts as the single source of truth for all talent data, leveraging automation and compliance-as-a-service features to deliver measurable financial and operational advantage. </p>
 
 
               </div>
@@ -146,10 +156,10 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-7xl mx-auto w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 font-raleway">
-              Engineered for Global Talent Lifecycle Mastery</h2>
+                Engineered for Global Talent Lifecycle Mastery</h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-               We deliver modular, scalable capabilities designed to manage complexity across the entire employee journey:
-               </p>
+                We deliver modular, scalable capabilities designed to manage complexity across the entire employee journey:
+              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -207,10 +217,10 @@ export default function LogisticsSolutionsPage() {
               <div className="lg:col-span-5 lg:sticky lg:top-24">
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 font-raleway">
-                 Delivering Compliance-Assured, Unified Financial Synchronization
-                 </h2>
+                  Delivering Compliance-Assured, Unified Financial Synchronization
+                </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                Our platforms are built on a secure, API-first architecture, ensuring all human capital data translates instantly into accurate financial intelligence. </p>
+                  Our platforms are built on a secure, API-first architecture, ensuring all human capital data translates instantly into accurate financial intelligence. </p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
                     {/* overlapping decorative circles */}
@@ -253,8 +263,8 @@ export default function LogisticsSolutionsPage() {
 
                     <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">eamless ERP and Financial Ledger Sync:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                    Establish a real-time, bi-directional data flow with core financial systems, providing CFOs with instantaneous reporting on workforce costs, labor allocation, and compliance expenditure.
-                     </p>
+                      Establish a real-time, bi-directional data flow with core financial systems, providing CFOs with instantaneous reporting on workforce costs, labor allocation, and compliance expenditure.
+                    </p>
                   </div>
                 </div>
 
@@ -278,7 +288,7 @@ export default function LogisticsSolutionsPage() {
 
                     <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Military-Grade Data Sovereignty:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                    Security is non-negotiable. We implement advanced Role-Based Access Control (RBAC) and high-level encryption (at rest and in transit) to meet and exceed global data privacy standards (GDPR, HIPAA, CCPA), safeguarding sensitive PII and financial records. </p>
+                      Security is non-negotiable. We implement advanced Role-Based Access Control (RBAC) and high-level encryption (at rest and in transit) to meet and exceed global data privacy standards (GDPR, HIPAA, CCPA), safeguarding sensitive PII and financial records. </p>
                   </div>
                 </div>
 
@@ -379,10 +389,11 @@ export default function LogisticsSolutionsPage() {
               Ready to Transform Your Human Capital into a Strategic Advantage?
             </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-          Engage Sunbrilo to architect a future-proof HCM platform that enhances employee experience, assures compliance, and converts HR operations into a powerful source of predictive financial insight.  </p>
+              Engage Sunbrilo to architect a future-proof HCM platform that enhances employee experience, assures compliance, and converts HR operations into a powerful source of predictive financial insight.  </p>
 
             <button
               type="button"
+              onClick={openModal}
               onMouseMove={handleMouseMove}
               className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-10 py-5 text-lg font-bold text-[#3B3808] transition-all cursor-pointer font-raleway shadow-[0_0_40px_rgba(255,238,80,0.3)]"
             >
@@ -391,7 +402,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-               Schedule a Strategic HR Technology Briefing
+                Schedule a Strategic HR Technology Briefing
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -401,6 +412,57 @@ export default function LogisticsSolutionsPage() {
         </section>
 
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <div className="bg-[#0f172a] rounded-2xl w-full max-w-lg p-8 relative border border-gray-800 shadow-2xl">
+            <button 
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 className="text-3xl font-bold text-white mb-6 font-raleway">Let's Talk</h2>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <input type="text" required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="Your Name" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <input type="email" required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="Your Email" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Mobile Number</label>
+                <input 
+                  type="tel" 
+                  required 
+                  pattern="\d{10}" 
+                  maxLength={10} 
+                  title="Mobile number must be exactly 10 digits"
+                  onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
+                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" 
+                  placeholder="10-digit Mobile Number" 
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                <textarea rows={2} required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="How can we help you?"></textarea>
+              </div>
+              <div className="flex items-start mt-2">
+                <input type="checkbox" id="consent" required className="mt-1 mr-2 bg-[#1e293b] border border-gray-700 rounded text-[#ffee50] focus:ring-1 focus:ring-[#ffee50]" />
+                <label htmlFor="consent" className="text-sm text-gray-300 leading-tight">
+                  I consent to the collection and processing of my details to respond to my inquiry.
+                </label>
+              </div>
+              <button type="submit" className="w-full bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }

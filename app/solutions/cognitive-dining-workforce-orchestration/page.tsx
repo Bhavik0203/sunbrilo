@@ -7,6 +7,15 @@ export default function LogisticsSolutionsPage() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -65,10 +74,10 @@ export default function LogisticsSolutionsPage() {
       <div className="min-h-screen">
 
         {/* ── Section 1: Hero ── */}
-        <section className="relative min-h-[620px] py-24 px-4 text-white flex items-center justify-center">
+        <section className="relative min-h-[520px] py-24 px-4 text-white flex items-center justify-center">
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: 'url("/images/solutions/solutionmainbanner.png")' }}
+            style={{ backgroundImage: 'url("/images/solutions/Cognitive Dining & Workforce.jpg")' }}
           >
             <div className="absolute inset-0 bg-black/72" />
           </div>
@@ -76,13 +85,14 @@ export default function LogisticsSolutionsPage() {
           <div className="relative z-10 max-w-6xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-raleway">
-             Cognitive Dining Orchestration: A Strategic Pillar of Workforce Management.
+              Cognitive Dining Orchestration: A Strategic Pillar of Workforce Management.
             </h1>
 
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 type="button"
+                onClick={openModal}
                 onMouseMove={handleMouseMove}
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
               >
@@ -95,15 +105,15 @@ export default function LogisticsSolutionsPage() {
                 </span>
               </button>
 
-              <button
+              {/* <button
                 type="button"
                 onMouseMove={handleMouseMove}
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border-2 border-white/50 px-8 py-4 text-base font-semibold text-white transition-all cursor-pointer font-raleway hover:border-[#ffee50] hover:text-[#ffee50]"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                 View Global Implementation Framework
+                  View Global Implementation Framework
                 </span>
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
@@ -117,11 +127,11 @@ export default function LogisticsSolutionsPage() {
                   Re-engineering Corporate Dining for Strategic Value.
                 </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                For global enterprises, the cafeteria is a critical touchpoint impacting employee experience, productivity, and organizational TCO. Relying on legacy systems creates exposure: manual reconciliations introduce financial risk, lack of dietary data impacts employee wellness and retention, and inefficient operations erode administrative budget.
-                 </p>
+                  For global enterprises, the cafeteria is a critical touchpoint impacting employee experience, productivity, and organizational TCO. Relying on legacy systems creates exposure: manual reconciliations introduce financial risk, lack of dietary data impacts employee wellness and retention, and inefficient operations erode administrative budget.
+                </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
-              Sunbrilo architects a scalable, future-ready platform that treats dining as a component of workforce dining orchestration. We shift the focus from transactional POS management to strategic value creation. Our platform provides a single source of truth for consumption data, enabling HR to link dietary patterns to wellness programs and providing finance with auditable, automated subsidy and vendor management for guaranteed compliance and cost control.
-               </p>
+                  Sunbrilo architects a scalable, future-ready platform that treats dining as a component of workforce dining orchestration. We shift the focus from transactional POS management to strategic value creation. Our platform provides a single source of truth for consumption data, enabling HR to link dietary patterns to wellness programs and providing finance with auditable, automated subsidy and vendor management for guaranteed compliance and cost control.
+                </p>
 
 
               </div>
@@ -146,8 +156,8 @@ export default function LogisticsSolutionsPage() {
                 Engineered for Global Scale, Compliance, and Data Precision
               </h2>
               <p className="text-base text-gray-600 leading-relaxed max-w-3xl mx-auto font-raleway">
-              Our solution is designed to handle the complexity and regulatory mandates of a multinational workforce:
-               </p>
+                Our solution is designed to handle the complexity and regulatory mandates of a multinational workforce:
+              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
@@ -208,7 +218,7 @@ export default function LogisticsSolutionsPage() {
                   Flawless Integration with Your Existing Ecosystem.
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed font-raleway mb-8">
-                The strategic value of our solution lies in its ability to eliminate data silos and function as a true enterprise HRMS integration. We provide secure, proprietary API frameworks for critical data flow:
+                  The strategic value of our solution lies in its ability to eliminate data silos and function as a true enterprise HRMS integration. We provide secure, proprietary API frameworks for critical data flow:
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-4">
@@ -252,7 +262,7 @@ export default function LogisticsSolutionsPage() {
 
                     <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Centralized Payroll &amp; Financial Ledger Synchronization</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                   Ensure audit-proof financial governance. All transactions are immediately tagged and batched for zero-friction integration with SAP SuccessFactors, Oracle HCM, or custom proprietary payroll systems, automating deduction and vendor payment reconciliation.
+                      Ensure audit-proof financial governance. All transactions are immediately tagged and batched for zero-friction integration with SAP SuccessFactors, Oracle HCM, or custom proprietary payroll systems, automating deduction and vendor payment reconciliation.
                     </p>
                   </div>
                 </div>
@@ -277,8 +287,8 @@ export default function LogisticsSolutionsPage() {
 
                     <h3 className="text-2xl font-bold text-gray-900 font-raleway mb-3 group-hover:text-[#3B3808] transition-colors">Employee Wellness &amp; Experience API:</h3>
                     <p className="text-base text-gray-500 leading-relaxed font-raleway">
-                   Provide anonymized consumption analytics to your HR and wellness teams, allowing them to measure the impact of menu changes, optimize health outcomes, and enhance overall employee satisfaction and retention.
-                     </p>
+                      Provide anonymized consumption analytics to your HR and wellness teams, allowing them to measure the impact of menu changes, optimize health outcomes, and enhance overall employee satisfaction and retention.
+                    </p>
                   </div>
                 </div>
 
@@ -376,14 +386,15 @@ export default function LogisticsSolutionsPage() {
 
           <div className="relative z-10 max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5 font-raleway">
-           Transform Your Employee Dining into a High-Impact Strategic Asset.
+              Transform Your Employee Dining into a High-Impact Strategic Asset.
             </h2>
             <p className="text-lg leading-relaxed mb-10 opacity-85 font-raleway max-w-2xl mx-auto">
-          Partner with Sunbrilo’s digital engineering team to deploy a Cognitive Dining Orchestration platform that drives productivity, ensures compliance, and optimizes enterprise TCO.
-           </p>
+              Partner with Sunbrilo’s digital engineering team to deploy a Cognitive Dining Orchestration platform that drives productivity, ensures compliance, and optimizes enterprise TCO.
+            </p>
 
             <button
               type="button"
+              onClick={openModal}
               onMouseMove={handleMouseMove}
               className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-10 py-5 text-lg font-bold text-[#3B3808] transition-all cursor-pointer font-raleway shadow-[0_0_40px_rgba(255,238,80,0.3)]"
             >
@@ -392,7 +403,7 @@ export default function LogisticsSolutionsPage() {
                 style={{ left: `${mousePosition.x}%`, top: `${mousePosition.y}%`, width: '100px', height: '100px' }}
               />
               <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#3B3808]">
-               Engage Our Digital Transformation Experts
+                Engage Our Digital Transformation Experts
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -402,6 +413,57 @@ export default function LogisticsSolutionsPage() {
         </section>
 
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <div className="bg-[#0f172a] rounded-2xl w-full max-w-lg p-8 relative border border-gray-800 shadow-2xl">
+            <button 
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 className="text-3xl font-bold text-white mb-6 font-raleway">Let's Talk</h2>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <input type="text" required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="Your Name" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <input type="email" required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="Your Email" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Mobile Number</label>
+                <input 
+                  type="tel" 
+                  required 
+                  pattern="\d{10}" 
+                  maxLength={10} 
+                  title="Mobile number must be exactly 10 digits"
+                  onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
+                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" 
+                  placeholder="10-digit Mobile Number" 
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                <textarea rows={2} required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="How can we help you?"></textarea>
+              </div>
+              <div className="flex items-start mt-2">
+                <input type="checkbox" id="consent" required className="mt-1 mr-2 bg-[#1e293b] border border-gray-700 rounded text-[#ffee50] focus:ring-1 focus:ring-[#ffee50]" />
+                <label htmlFor="consent" className="text-sm text-gray-300 leading-tight">
+                  I consent to the collection and processing of my details to respond to my inquiry.
+                </label>
+              </div>
+              <button type="submit" className="w-full bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 }

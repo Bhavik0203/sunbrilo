@@ -46,7 +46,7 @@ export default function SolutionsPage() {
 
       <div className="min-h-screen">
         {/* Banner Section */}
-        <section className="relative min-h-[600px] py-20 px-4 text-white flex items-center justify-center">
+        <section className="relative min-h-[440px] py-20 px-4 rounded-2xl m-4 text-white flex items-center justify-center">
           {/* Background Image Container */}
           <div 
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
