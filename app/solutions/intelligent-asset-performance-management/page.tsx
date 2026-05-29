@@ -1,13 +1,56 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 
 export default function LogisticsSolutionsPage() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [activeFeature, setActiveFeature] = useState(0);
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const textRef = useRef<HTMLHeadingElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+
+      if (textRef.current) {
+        const rect = textRef.current.getBoundingClientRect();
+        const elementTop = rect.top;
+        const elementHeight = rect.height;
+        const start = windowHeight;
+        const end = -elementHeight * 0.5;
+        const progress = Math.max(0, Math.min(1, (start - elementTop) / (start - end)));
+        setScrollProgress(progress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const renderAnimatedText = (text: string, progress: number) => {
+    const totalChars = text.length;
+    return text.split('').map((char, index) => {
+      const charThreshold = index / totalChars;
+      const isHighlighted = progress > charThreshold;
+
+      return (
+        <span
+          key={index}
+          className="transition-colors duration-75"
+          style={{
+            color: isHighlighted ? '#111827' : '#9ca3af',
+          }}
+        >
+          {char}
+        </span>
+      );
+    });
+  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -32,7 +75,7 @@ export default function LogisticsSolutionsPage() {
     {
       step: '01',
       title: 'AI/ML Predictive Failure Modeling:',
-      desc: 'We analyze multivariate sensor data to identify the earliest indicators of degradation. Our system moves past simple alerts to provide prescriptive recommendations—telling you what maintenance to perform, when, and why it maximizes asset lifespan, transforming Industrial IoT asset orchestration.',
+      desc: 'We analyze multivariate sensor data to identify the earliest indicators of degradation. Our system moves past simple alerts to provide prescriptive recommendations-telling you what maintenance to perform, when, and why it maximizes asset lifespan, transforming Industrial IoT asset orchestration.',
       image: "/images/solutions/image 119.png"
     },
     {
@@ -123,13 +166,13 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  From Cost Center to Strategic Asset Intelligence</h2>
+                <h2 ref={textRef} className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-raleway">
+                  {renderAnimatedText("From Cost Center to Strategic Asset Intelligence", scrollProgress)}</h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
                   For asset-intensive enterprises (manufacturing, energy, infrastructure), unplanned downtime is not merely a technical failure; it is a critical erosion of shareholder value, market trust, and competitive agility. Traditional, reactive CMMS solutions merely track failures; they do not predict them, prevent them, or correlate them to the Strategic Total Cost of Ownership (TCO) optimization of your fleet.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
-                  Sunbrilo architects AI-driven predictive maintenance platforms designed for the highest level of industrial complexity. We unify siloed data—from SCADA, MES, and IoT streams—into a prescriptive intelligence layer. This enables your organization to execute next-gen enterprise CMMS solutions, ensuring every maintenance decision is financially optimized and performance-driven.
+                  Sunbrilo architects AI-driven predictive maintenance platforms designed for the highest level of industrial complexity. We unify siloed data-from SCADA, MES, and IoT streams-into a prescriptive intelligence layer. This enables your organization to execute next-gen enterprise CMMS solutions, ensuring every maintenance decision is financially optimized and performance-driven.
                 </p>
 
 
@@ -326,8 +369,8 @@ export default function LogisticsSolutionsPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <a href="tel:18884521505" className="text-black font-semibold text-sm underline font-raleway">
-                      1-888-452-1505
+                    <a href="tel:+918788563349" className="text-black font-semibold text-sm underline font-raleway">
+                      +91-8788563349
                     </a>
                   </div>
                 </div>
@@ -343,7 +386,7 @@ export default function LogisticsSolutionsPage() {
                   >
                     <button
                       onClick={() => toggleFAQ(index)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                      className="w-full cursor-pointer px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                     >
                       <span className="text-base font-bold text-gray-900 font-raleway pr-4">
                         {faq.question}
@@ -416,7 +459,7 @@ export default function LogisticsSolutionsPage() {
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           <div className="bg-[#0f172a] rounded-2xl w-full max-w-lg p-8 relative border border-gray-800 shadow-2xl">
-            <button 
+            <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
             >
@@ -434,15 +477,15 @@ export default function LogisticsSolutionsPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">Mobile Number</label>
-                <input 
-                  type="tel" 
-                  required 
-                  pattern="\d{10}" 
-                  maxLength={10} 
+                <input
+                  type="tel"
+                  required
+                  pattern="\d{10}"
+                  maxLength={10}
                   title="Mobile number must be exactly 10 digits"
                   onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
-                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" 
-                  placeholder="10-digit Mobile Number" 
+                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors"
+                  placeholder="10-digit Mobile Number"
                 />
               </div>
               <div>
@@ -455,7 +498,7 @@ export default function LogisticsSolutionsPage() {
                   I consent to the collection and processing of my details to respond to my inquiry.
                 </label>
               </div>
-              <button type="submit" className="w-full bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
+              <button type="submit" className="w-full cursor-pointer bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
                 Send Message
               </button>
             </form>

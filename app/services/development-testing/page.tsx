@@ -122,7 +122,7 @@ export default function DevelopmentTestingPage() {
           <div className="relative z-10 max-w-6xl mx-auto">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-raleway">
-                 Next-Generation Software Engineering & Quality Assurance.
+                Next-Generation Software Engineering & Quality Assurance.
               </h1>
               {/* <p className="text-xl leading-relaxed mb-10 max-w-4xl mx-auto opacity-90 font-raleway">
                 We engineer resilient, high-performance applications tailored to your exact market demands. From complex backend architecture to intuitive front-end UX, our scalable web and mobile app development ensures your digital product is built for global scale and zero downtime.
@@ -169,9 +169,9 @@ export default function DevelopmentTestingPage() {
                   Engineered for Agility.<br />Tested for Certainty.
                 </h2>
                 <p className="text-base leading-relaxed text-gray-600 mb-6 font-raleway">
-                In the digital economy, software failures mean severe reputational and financial loss. Sunbrilo mitigates risk through "Shift-Left" testing and continuous integration. We don't just write code; we architect bulletproof digital foundations capable of handling massive transactional volumes without degradation.
-                  </p>
-               
+                  In the digital economy, software failures mean severe reputational and financial loss. Sunbrilo mitigates risk through "Shift-Left" testing and continuous integration. We don't just write code; we architect bulletproof digital foundations capable of handling massive transactional volumes without degradation.
+                </p>
+
               </div>
 
               {/* RIGHT: Two staggered overlapping images */}
@@ -225,7 +225,7 @@ export default function DevelopmentTestingPage() {
         <CaseStudiesPage />
 
 
-<QualityEngineering/>
+        <QualityEngineering />
 
 
         {/* Section 5: FAQ */}
@@ -234,7 +234,7 @@ export default function DevelopmentTestingPage() {
             <div className="flex flex-col md:flex-row gap-10 items-start">
 
               {/* Left: Image + CTA Card */}
-             
+
 
               {/* Right: FAQ Accordion */}
               <div className="flex-1 space-y-3 md:pt-0 pt-8">
@@ -245,7 +245,7 @@ export default function DevelopmentTestingPage() {
                   >
                     <button
                       onClick={() => toggleFAQ(index)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                      className="w-full cursor-pointer px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                     >
                       <span className="text-base font-bold text-gray-900 font-raleway pr-4">
                         {faq.question}
@@ -278,7 +278,7 @@ export default function DevelopmentTestingPage() {
                   </div>
                 ))}
               </div>
-                 <div className="relative w-full md:w-[420px] flex-shrink-0 rounded-2xl overflow-visible">
+              <div className="relative w-full md:w-[420px] flex-shrink-0 rounded-2xl overflow-visible">
                 {/* Main Image */}
                 <div className="rounded-2xl overflow-hidden w-full h-[360px] relative">
                   <img
@@ -295,7 +295,7 @@ export default function DevelopmentTestingPage() {
                   </div>
                 </div>
 
-                {/* Teal CTA Card — overlaps image bottom-right */}
+                {/* Teal CTA Card - overlaps image bottom-right */}
                 <div
                   className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#2a8a8a] rounded-2xl p-6 w-52 z-10 shadow-xl"
                 >
@@ -309,8 +309,8 @@ export default function DevelopmentTestingPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <a href="tel:18884521505" className="text-white font-semibold text-sm underline font-raleway">
-                      1-888-452-1505
+                    <a href="tel:+918788563349" className="text-white font-semibold text-sm underline font-raleway">
+                      +91-8788563349
                     </a>
                   </div>
                 </div>
@@ -428,7 +428,7 @@ export default function DevelopmentTestingPage() {
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           <div className="bg-[#0f172a] rounded-2xl w-full max-w-lg p-8 relative border border-gray-800 shadow-2xl">
-            <button 
+            <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
             >
@@ -446,15 +446,15 @@ export default function DevelopmentTestingPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">Mobile Number</label>
-                <input 
-                  type="tel" 
-                  required 
-                  pattern="\d{10}" 
-                  maxLength={10} 
+                <input
+                  type="tel"
+                  required
+                  pattern="\d{10}"
+                  maxLength={10}
                   title="Mobile number must be exactly 10 digits"
                   onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
-                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" 
-                  placeholder="10-digit Mobile Number" 
+                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors"
+                  placeholder="10-digit Mobile Number"
                 />
               </div>
               <div>
@@ -467,7 +467,7 @@ export default function DevelopmentTestingPage() {
                   I consent to the collection and processing of my details to respond to my inquiry.
                 </label>
               </div>
-              <button type="submit" className="w-full bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
+              <button type="submit" className="w-full cursor-pointer bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
                 Send Message
               </button>
             </form>

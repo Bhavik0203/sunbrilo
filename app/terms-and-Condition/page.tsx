@@ -41,7 +41,7 @@ const sections = [
     content: [
       {
         subtitle: 'Sunbrilo Owned Content',
-        body: 'All content on this Website — including but not limited to text, graphics, logos, icons, images, audio clips, and software — is the exclusive property of Sunbrilo Technologies and is protected by applicable copyright, trademark, and intellectual property laws.',
+        body: 'All content on this Website - including but not limited to text, graphics, logos, icons, images, audio clips, and software - is the exclusive property of Sunbrilo Technologies and is protected by applicable copyright, trademark, and intellectual property laws.',
       },
       {
         subtitle: 'Client Deliverables',
@@ -131,7 +131,7 @@ const sections = [
     content: [
       {
         subtitle: '',
-        body: 'To the maximum extent permitted by applicable law, Sunbrilo Technologies and its directors, employees, partners, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages — including but not limited to loss of profits, data, goodwill, or business opportunity — arising out of or related to your use of our Website or services.',
+        body: 'To the maximum extent permitted by applicable law, Sunbrilo Technologies and its directors, employees, partners, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages - including but not limited to loss of profits, data, goodwill, or business opportunity - arising out of or related to your use of our Website or services.',
       },
       {
         subtitle: '',
@@ -179,7 +179,7 @@ const sections = [
     content: [
       {
         subtitle: '',
-        body: 'Sunbrilo reserves the right to suspend or terminate your access to our Website or services at any time, with or without cause, and without prior notice. Upon termination, all rights granted to you under these Terms will immediately cease. Provisions that by their nature should survive termination — including intellectual property, confidentiality, limitation of liability, and indemnification — will remain in effect.',
+        body: 'Sunbrilo reserves the right to suspend or terminate your access to our Website or services at any time, with or without cause, and without prior notice. Upon termination, all rights granted to you under these Terms will immediately cease. Provisions that by their nature should survive termination - including intellectual property, confidentiality, limitation of liability, and indemnification - will remain in effect.',
       },
     ],
   },
@@ -193,7 +193,7 @@ const sections = [
       },
       {
         subtitle: 'Sunbrilo Technologies',
-        body: 'Email: legal@sunbrilotechnologies.com\nPhone: 1-888-452-1505\nWebsite: www.sunbrilotechnologies.com',
+        body: 'Email: legal@sunbrilotechnologies.com\nPhone:+91-8788563349\nWebsite: www.sunbrilotechnologies.com',
       },
     ],
   },

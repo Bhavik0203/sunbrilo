@@ -88,34 +88,34 @@ export const caseStudies: CaseStudy[] = [
       clientChallenges:
         "Navigating complex local labor laws, lack of local market knowledge, high risks in initial setup, and difficulties in establishing a strong initial team culture.",
       solutionProvider:
-        "Sunbrilo handles the entire lifecycle of your offshore establishment—from legal setup and hiring to daily operations—before executing a seamless transfer of ownership.",
+        "Sunbrilo handles the entire lifecycle of your offshore establishment-from legal setup and hiring to daily operations-before executing a seamless transfer of ownership.",
       outcome:
         "Risk-free market entry, rapid establishment of a high-performing offshore center, full operational control post-transfer, and significant cost advantages.",
     },
   }
-//   {
-//     id: 4,
-//     slug: "full-lifecycle-development",
-//     label: "ENGINEERING CAPABILITY",
-//     heading: "Full-Lifecycle Development & Testing Services",
-//     description:
-//       "We take absolute ownership of your product from the first line of code to the final stress test, ensuring comprehensive development and testing coverage throughout the entire software lifecycle.",
-//     image: case4,
-//     sections: {
-//       overview:
-//         "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
-//       client:
-//         "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
-//       strategiesDescribed:
-//         "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
-//       clientChallenges:
-//         "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
-//       solutionProvider:
-//         "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
-//       outcome:
-//         "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
-//     },
-//   },
+  //   {
+  //     id: 4,
+  //     slug: "full-lifecycle-development",
+  //     label: "ENGINEERING CAPABILITY",
+  //     heading: "Full-Lifecycle Development & Testing Services",
+  //     description:
+  //       "We take absolute ownership of your product from the first line of code to the final stress test, ensuring comprehensive development and testing coverage throughout the entire software lifecycle.",
+  //     image: case4,
+  //     sections: {
+  //       overview:
+  //         "Our full-lifecycle services encompass everything from initial concept and design through development, testing, deployment, and ongoing maintenance, providing complete end-to-end solutions.",
+  //       client:
+  //         "Enterprises seeking a single partner for comprehensive software development and testing services with accountability throughout the entire project lifecycle.",
+  //       strategiesDescribed:
+  //         "Integrated development and testing teams, agile methodologies, DevOps practices, and continuous monitoring to ensure seamless delivery and maintenance.",
+  //       clientChallenges:
+  //         "Fragmented development processes, lack of accountability across vendors, inconsistent quality, and difficulty managing complex software projects.",
+  //       solutionProvider:
+  //         "Sunbrilo provides unified teams that handle all aspects of software development and testing, ensuring consistent quality, clear communication, and single-point accountability.",
+  //       outcome:
+  //         "Faster time-to-market, consistent quality across all deliverables, reduced project complexity, and complete visibility into development progress and outcomes.",
+  //     },
+  //   },
 ];
 
 export const caseStudyMap = Object.fromEntries(

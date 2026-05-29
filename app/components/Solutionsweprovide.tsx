@@ -24,11 +24,11 @@ const servicesone = [
     title: "On-Grid Solar System",
     tagline: "Stay Connected. Let the Grid Work for You.",
     description:
-      "On-grid systems are tied directly to the utility grid, allowing seamless power exchange. Generate solar energy during the day and draw from the grid at night — with zero battery required.",
+      "On-grid systems are tied directly to the utility grid, allowing seamless power exchange. Generate solar energy during the day and draw from the grid at night - with zero battery required.",
     image:
       "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80",
     highlights: [
-      "No battery storage needed — lower upfront cost",
+      "No battery storage needed - lower upfront cost",
       "Net metering credits reduce electricity bills",
       "Automatic grid synchronization",
       "Ideal for urban homes & commercial buildings",
@@ -62,7 +62,7 @@ const servicesone = [
     title: "Hybrid Solar System",
     tagline: "Best of Both Worlds. Smart Energy, Always On.",
     description:
-      "Hybrid systems combine on-grid and off-grid advantages — storing excess energy in batteries while staying connected to the grid, ensuring uninterrupted power under any condition.",
+      "Hybrid systems combine on-grid and off-grid advantages - storing excess energy in batteries while staying connected to the grid, ensuring uninterrupted power under any condition.",
     image:
       "https://images.unsplash.com/photo-1473341304170-d9e808231d41?q=80&w=800",
     highlights: [
@@ -332,13 +332,13 @@ function SolarServicesComponent() {
     <section className="relative overflow-hidden bg-[#e9efeb]">
       <div className="mx-auto w-full px-3 sm:px-10">
         <div className="mt-24 sm:mt-32 grid grid-cols-1 gap-10 lg:grid-cols-2 items-center">
-          
 
-      
+
+
         </div>
       </div>
 
-     
+
     </section>
   );
 }
@@ -375,28 +375,28 @@ export default function SolutionsScroll() {
     <div  >
       {/* Left side - Solar Services */}
       {/* <SolarServicesComponent /> */}
-      
-    
+
+
       {/* Right side - Solutions Ring */}
       <div className="relative " style={{ height: `${N * 200}px` }}>
         <div
           className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden "
         >
-       
+
           <div className="relative flex items-center justify-start w-full max-w-6xl px-6 pt-16 py-30">
-              {/* Heading */}
-              <div className="absolute top-10 left-0 text-right ">
-                <h2 className="text-3xl font-bold text-gray-800 font-raleway">Solutions We Provide</h2>
-              </div>
-              
-              {/* Main container for both solar services and SVG ring */}
-              <div className="relative w-[520px] h-[520px]">
-              
+            {/* Heading */}
+            <div className="absolute top-10 left-0 text-right ">
+              <h2 className="text-3xl font-bold text-gray-800 font-raleway">Solutions We Provide</h2>
+            </div>
+
+            {/* Main container for both solar services and SVG ring */}
+            <div className="relative w-[520px] h-[520px]">
+
               {/* SVG Ring - Background Layer */}
               <svg className="absolute inset-0 z-10" width="520" height="520" viewBox="0 0 520 520">
                 <circle cx={CX} cy={CY} r={R} fill="none" stroke="#bfdbfe" strokeWidth={1} strokeDasharray="4 6" opacity={0.5} />
                 <circle cx={CX} cy={CY} r={96} fill="none" stroke="#bfdbfe" strokeWidth={0.5} opacity={0.25} />
-                
+
                 <circle
                   cx={CX} cy={CY} r={R}
                   fill="none" stroke="#3b82f6" strokeWidth={2} strokeLinecap="round"
@@ -405,7 +405,7 @@ export default function SolutionsScroll() {
                   transform={`rotate(-90 ${CX} ${CY})`}
                   style={{ transition: "stroke-dasharray 0.5s ease" }}
                 />
-                
+
                 {Array.from({ length: VISIBLE }).map((_, d) => {
                   const solIdx = visStart + d;
                   const ang = DOT_ANGLES[d];

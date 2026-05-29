@@ -115,7 +115,7 @@ const Testimonials = () => {
             <div className="flex items-center justify-between">
               <button
                 onClick={prev}
-                className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100 transition"
+                className="w-8 h-8 rounded-full cursor-pointer border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100 transition"
               >
                 &#8249;
               </button>
@@ -126,7 +126,7 @@ const Testimonials = () => {
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
+                    className={`w-2 h-2 rounded-full cursor-pointer transition-colors ${
                       i === current ? 'bg-gray-900' : 'bg-gray-300'
                     }`}
                   />
@@ -135,7 +135,7 @@ const Testimonials = () => {
 
               <button
                 onClick={next}
-                className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100 transition"
+                className="w-8 h-8 rounded-full cursor-pointer border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100 transition"
               >
                 &#8250;
               </button>

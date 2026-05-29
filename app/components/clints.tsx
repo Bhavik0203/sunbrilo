@@ -189,12 +189,7 @@ export default function ClientsSection() {
                 Partnering with forward-thinking brands to deliver impactful digital experiences.
               </p>
 
-              <button
-                className="mt-6 px-5 py-2 rounded-full text-sm font-semibold text-white border border-blue-500/50 hover:bg-blue-500/20 transition-all duration-300 font-raleway"
-                style={{ letterSpacing: "0.04em" }}
-              >
-                View all clients →
-              </button>
+            
             </div>
           </div>
 

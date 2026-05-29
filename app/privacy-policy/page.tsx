@@ -35,7 +35,7 @@ const sections = [
       },
       {
         subtitle: 'Marketing & Communications',
-        body: 'To send you relevant industry insights, company updates, or service announcements — only where you have opted in or where we have a legitimate business interest. You may opt out at any time.',
+        body: 'To send you relevant industry insights, company updates, or service announcements - only where you have opted in or where we have a legitimate business interest. You may opt out at any time.',
       },
       {
         subtitle: 'Legal Compliance',
@@ -177,7 +177,7 @@ const sections = [
       },
       {
         subtitle: 'Sunbrilo Technologies',
-        body: 'Email: privacy@sunbrilotechnologies.com\nPhone: 1-888-452-1505\nWebsite: www.sunbrilotechnologies.com',
+        body: 'Email: privacy@sunbrilotechnologies.com\nPhone:+91-8788563349\nWebsite: www.sunbrilotechnologies.com',
       },
     ],
   },

@@ -12,11 +12,11 @@ const servicesone = [
     title: "On-Grid Solar System",
     tagline: "Stay Connected. Let the Grid Work for You.",
     description:
-      "On-grid systems are tied directly to the utility grid, allowing seamless power exchange. Generate solar energy during the day and draw from the grid at night — with zero battery required.",
+      "On-grid systems are tied directly to the utility grid, allowing seamless power exchange. Generate solar energy during the day and draw from the grid at night - with zero battery required.",
     image:
       "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80",
     highlights: [
-      "No battery storage needed — lower upfront cost",
+      "No battery storage needed - lower upfront cost",
       "Net metering credits reduce electricity bills",
       "Automatic grid synchronization",
       "Ideal for urban homes & commercial buildings",
@@ -50,7 +50,7 @@ const servicesone = [
     title: "Hybrid Solar System",
     tagline: "Best of Both Worlds. Smart Energy, Always On.",
     description:
-      "Hybrid systems combine on-grid and off-grid advantages — storing excess energy in batteries while staying connected to the grid, ensuring uninterrupted power under any condition.",
+      "Hybrid systems combine on-grid and off-grid advantages - storing excess energy in batteries while staying connected to the grid, ensuring uninterrupted power under any condition.",
     image:
       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800",
     highlights: [
@@ -416,11 +416,11 @@ export default function Servicesone() {
                 const radius = 240;
                 const x = Math.cos(angle - Math.PI / 2) * radius;
                 const y = Math.sin(angle - Math.PI / 2) * radius;
-                
+
                 // Calculate if this point should be visible (first 4 points)
                 const adjustedIndex = (index - currentSolutionIndex + solutions.length) % solutions.length;
                 const isVisible = adjustedIndex < 4;
-                
+
                 return (
                   <div key={index}>
                     {/* Solution point on ring */}
@@ -434,11 +434,10 @@ export default function Servicesone() {
                         scale: isVisible ? 1 : 0.6,
                       }}
                     >
-                      <div className={`w-4 h-4 rounded-full shadow-lg transition-colors duration-300 border-2 border-white ${
-                        isVisible ? 'bg-blue-500' : 'bg-blue-300'
-                      }`} />
+                      <div className={`w-4 h-4 rounded-full shadow-lg transition-colors duration-300 border-2 border-white ${isVisible ? 'bg-blue-500' : 'bg-blue-300'
+                        }`} />
                     </div>
-                    
+
                     {/* Solution details positioned outward from the point */}
                     {isVisible && (
                       <div
@@ -453,9 +452,9 @@ export default function Servicesone() {
                         <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
                           Part {solution.part}
                         </div>
-                        <img 
-                          src={solution.icon} 
-                          alt={`Solution ${solution.part}`} 
+                        <img
+                          src={solution.icon}
+                          alt={`Solution ${solution.part}`}
                           className="w-6 h-6 object-contain flex-shrink-0"
                         />
                         <div className="text-xs text-gray-700 leading-tight">
@@ -466,7 +465,7 @@ export default function Servicesone() {
                   </div>
                 );
               })}
-              
+
               {/* Main flair circle in center */}
               <div className="flair absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[260px] w-[260px] sm:h-[320px] sm:w-[320px]">
                 <div className="absolute inset-0 rounded-full border-[2px] border-[#a8c559]/45" />
@@ -489,11 +488,11 @@ export default function Servicesone() {
                 {solutions.slice(0, 4).map((solution, index) => {
                   const positions = [
                     'right-[-30%] top-1/3 -translate-y-1/2',
-                    'right-[-30%] top-1/2 -translate-y-1/2', 
+                    'right-[-30%] top-1/2 -translate-y-1/2',
                     'left-1/2 top-[-30%] -translate-x-2/3',
                     'left-1/2 bottom-[8%] -translate-x-1/3'
                   ];
-                  
+
                   return (
                     <div key={solution.part} className={`absolute ${positions[index]} h-3.5 w-3.5 rounded-full bg-[#2f4322] flex items-center justify-center`}>
                       <div className="h-2 w-2 rounded-full bg-[#bddc79]" />
@@ -506,13 +505,13 @@ export default function Servicesone() {
                   );
                 })}
               </div>
-              
+
               {/* Scroll indicators */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                 {Array.from({ length: solutions.length }, (_, i) => (
-                  <div 
-                    key={i} 
-                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${currentSolutionIndex === i ? 'bg-blue-500' : 'bg-gray-300'}`} 
+                  <div
+                    key={i}
+                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${currentSolutionIndex === i ? 'bg-blue-500' : 'bg-gray-300'}`}
                   />
                 ))}
               </div>

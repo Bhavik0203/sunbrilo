@@ -1,13 +1,56 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 
 export default function LogisticsSolutionsPage() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [activeFeature, setActiveFeature] = useState(0);
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const textRef = useRef<HTMLHeadingElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+
+      if (textRef.current) {
+        const rect = textRef.current.getBoundingClientRect();
+        const elementTop = rect.top;
+        const elementHeight = rect.height;
+        const start = windowHeight;
+        const end = -elementHeight * 0.5;
+        const progress = Math.max(0, Math.min(1, (start - elementTop) / (start - end)));
+        setScrollProgress(progress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const renderAnimatedText = (text: string, progress: number) => {
+    const totalChars = text.length;
+    return text.split('').map((char, index) => {
+      const charThreshold = index / totalChars;
+      const isHighlighted = progress > charThreshold;
+
+      return (
+        <span
+          key={index}
+          className="transition-colors duration-75"
+          style={{
+            color: isHighlighted ? '#111827' : '#9ca3af',
+          }}
+        >
+          {char}
+        </span>
+      );
+    });
+  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -33,19 +76,19 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'Dynamic Revenue Assurance (Automated Billing):',
       desc: 'Eliminate revenue leakage. The platform autonomously manages tiered, dynamic, and usage-based billing logic. It instantly generates compliant, granular invoices based on integrated telematics data, ensuring automated leasing billing software is always accurate.',
-     image:"/images/solutions/image 105.png",
+      image: "/images/solutions/image 105.png",
     },
     {
       step: '02',
       title: 'Integrated IoT Telematics & Predictive Intelligence:',
       desc: 'Gain real-time command over thousands of deployed assets. Our system uses advanced geofencing and IoT data feeds to provide live utilization, performance diagnostics, and location tracking, enabling true predictive maintenance forecasting.',
-      image:"/images/solutions/image 106.png",
+      image: "/images/solutions/image 106.png",
     },
     {
       step: '03',
       title: 'Asset Lifecycle Risk Mitigation:',
       desc: 'Preserve capital assets. The system enforces mandatory, digital inspection workflows upon return and proactively schedules AI-driven maintenance windows, minimizing capital depreciation and ensuring maximum asset uptime.',
-      image:"/images/solutions/image 107.png",
+      image: "/images/solutions/image 107.png",
     },
   ];
 
@@ -56,7 +99,7 @@ export default function LogisticsSolutionsPage() {
     },
     {
       question: 'Does the platform offer functionality for financial depreciation and regulatory compliance tracking (e.g., IFRS/GAAP)?',
-      answer: 'Yes. Our asset lifecycle management system automatically logs every financial event—from repair costs to utilization hours—against the asset. It calculates precise depreciation schedules and supports configuration for major financial compliance standards (IFRS 16, GAAP), providing the CFO with the necessary financial intelligence for regulatory assurance.',
+      answer: 'Yes. Our asset lifecycle management system automatically logs every financial event-from repair costs to utilization hours-against the asset. It calculates precise depreciation schedules and supports configuration for major financial compliance standards (IFRS 16, GAAP), providing the CFO with the necessary financial intelligence for regulatory assurance.',
     },
     {
       question: 'Can the platform handle large-scale fleet deployments globally?',
@@ -120,11 +163,11 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  Transition from Tracking Assets to Orchestrating Value.
+                <h2 ref={textRef} className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-raleway">
+                  {renderAnimatedText("Transition from Tracking Assets to Orchestrating Value.", scrollProgress)}
                 </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In high-stakes B2B leasing—spanning heavy machinery to complex IT infrastructure—fragmented operations are a silent destroyer of Total Cost of Ownership (TCO) and shareholder value. Manual reconciliation of complex contracts, overlooked maintenance, and inaccurate usage calculations translate directly into catastrophic revenue leakage and compliance exposure.
+                  In high-stakes B2B leasing-spanning heavy machinery to complex IT infrastructure-fragmented operations are a silent destroyer of Total Cost of Ownership (TCO) and shareholder value. Manual reconciliation of complex contracts, overlooked maintenance, and inaccurate usage calculations translate directly into catastrophic revenue leakage and compliance exposure.
                 </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
                   Sunbrilo engineers a proprietary B2B rental management platform designed as your strategic digital core. We move beyond simple asset tracking to provide Financial Performance Intelligence. From quote generation and digital contract enforcement to preventive maintenance scheduling and real-time ledger synchronization, we deliver the precision required for global operational dominance and regulatory adherence.
@@ -323,8 +366,8 @@ export default function LogisticsSolutionsPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <a href="tel:18884521505" className="text-black font-semibold text-sm underline font-raleway">
-                      1-888-452-1505
+                    <a href="tel:+918788563349" className="text-black font-semibold text-sm underline font-raleway">
+                      +91-8788563349
                     </a>
                   </div>
                 </div>
@@ -340,7 +383,7 @@ export default function LogisticsSolutionsPage() {
                   >
                     <button
                       onClick={() => toggleFAQ(index)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                      className="w-full cursor-pointer px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                     >
                       <span className="text-base font-bold text-gray-900 font-raleway pr-4">
                         {faq.question}
@@ -412,7 +455,7 @@ export default function LogisticsSolutionsPage() {
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           <div className="bg-[#0f172a] rounded-2xl w-full max-w-lg p-8 relative border border-gray-800 shadow-2xl">
-            <button 
+            <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
             >
@@ -430,15 +473,15 @@ export default function LogisticsSolutionsPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">Mobile Number</label>
-                <input 
-                  type="tel" 
-                  required 
-                  pattern="\d{10}" 
-                  maxLength={10} 
+                <input
+                  type="tel"
+                  required
+                  pattern="\d{10}"
+                  maxLength={10}
                   title="Mobile number must be exactly 10 digits"
                   onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
-                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" 
-                  placeholder="10-digit Mobile Number" 
+                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors"
+                  placeholder="10-digit Mobile Number"
                 />
               </div>
               <div>
@@ -451,7 +494,7 @@ export default function LogisticsSolutionsPage() {
                   I consent to the collection and processing of my details to respond to my inquiry.
                 </label>
               </div>
-              <button type="submit" className="w-full bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
+              <button type="submit" className="w-full cursor-pointer bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
                 Send Message
               </button>
             </form>

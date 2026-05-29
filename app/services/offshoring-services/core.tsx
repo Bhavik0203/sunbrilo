@@ -37,9 +37,9 @@ export default function QualityEngineering() {
   return (
     <section className="py-8 bg-[#f5f3f3] text-gray-900 min-h-screen flex items-center overflow-hidden font-raleway">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 lg:gap-16 items-center">
-          
+
           {/* Left Column: Asymmetric Tech Structural Images */}
           <div className="lg:col-span-5 relative h-[320px] md:h-[450px] lg:h-[580px] w-full flex items-center justify-center lg:justify-start">
             {/* Primary Background Image */}
@@ -51,7 +51,7 @@ export default function QualityEngineering() {
               className="relative w-[85%] h-[85%] rounded-[2rem] overflow-hidden border border-gray-200 shadow-2xl z-10"
             >
               <Image
-                src="/images/services/image 26.png" 
+                src="/images/services/image 26.png"
                 alt="Continuous Integration Dashboard Visual"
                 fill
                 className="object-cover transition-all duration-700"
@@ -68,18 +68,18 @@ export default function QualityEngineering() {
               className="absolute right-0 bottom-0 w-[45%] h-[45%] rounded-2xl overflow-hidden border-4 border-white  z-20 hidden sm:block"
             >
               <Image
-                src="/images/services/image 28.png" 
+                src="/images/services/image 28.png"
                 alt="Codebase Conflict Validation Screen"
                 fill
                 className="object-cover"
               />
             </motion.div>
-           
+
           </div>
 
           {/* Right Column: Interactive QA Segment Tabs */}
           <div className="lg:col-span-7 flex flex-col">
-        
+
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
               Zero-Friction Integration. <br />
@@ -87,23 +87,22 @@ export default function QualityEngineering() {
             </h2>
 
             <p className="text-gray-600 max-w-xl mb-12 text-base leading-relaxed font-medium">
-              We mitigate the inherent risks of offshoring—communication latency and code quality inconsistency—by implementing a rigorous, metrics-driven governance framework.
+              We mitigate the inherent risks of offshoring-communication latency and code quality inconsistency-by implementing a rigorous, metrics-driven governance framework.
             </p>
 
             {/* Tabbed Interactive System Layout */}
             <div className="flex flex-col md:flex-row gap-6 items-start">
-              
+
               {/* Left Side: Segment Selection Toggles */}
               <div className="flex flex-row md:flex-col justify-start gap-2 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 border-b md:border-b-0 border-gray-200 md:w-64 shrink-0 w-full scrollbar-hide">
                 {qualityItems.map((item, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveTab(idx)}
-                    className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 text-left shrink-0 md:w-full ${
-                      activeTab === idx
+                    className={`flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-300 text-left shrink-0 md:w-full ${activeTab === idx
                         ? "bg-[#E8F4FD] border-r-2 border-b-2 border-[#5BA3E8] shadow-md text-gray-900"
                         : "hover:bg-gray-100 border border-transparent text-gray-500 hover:text-gray-800"
-                    }`}
+                      }`}
                   >
                     <span className={`text-xs font-mono font-bold ${activeTab === idx ? "text-[#5BA3E8]" : "text-gray-400"}`}>
                       {item.index}
@@ -138,7 +137,7 @@ export default function QualityEngineering() {
                       </p>
                     </div>
 
-               
+
                   </motion.div>
                 </AnimatePresence>
               </div>

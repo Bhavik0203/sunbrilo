@@ -122,7 +122,7 @@ export default function DevelopmentTestingPage() {
           <div className="relative z-10 max-w-6xl mx-auto">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-raleway">
-             Driving Enterprise Value with Scalable Data & AI Transformation.
+                Driving Enterprise Value with Scalable Data & AI Transformation.
               </h1>
               {/* <p className="text-xl leading-relaxed mb-10 max-w-4xl mx-auto opacity-90 font-raleway">
                 We engineer resilient, high-performance applications tailored to your exact market demands. From complex backend architecture to intuitive front-end UX, our scalable web and mobile app development ensures your digital product is built for global scale and zero downtime.
@@ -144,7 +144,7 @@ export default function DevelopmentTestingPage() {
                     }}
                   />
                   <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  nlock Your Data's Potential
+                    nlock Your Data's Potential
                     {/* <ArrowUpRightIcon className="group-hover:hidden" />
                     <ArrowRightIcon className="hidden group-hover:block" /> */}
                   </span>
@@ -166,11 +166,11 @@ export default function DevelopmentTestingPage() {
               {/* LEFT: Heading + Text */}
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 font-raleway">
-                From Data Fragmentation to<br />Intelligent Digital Acceleration.
+                  From Data Fragmentation to<br />Intelligent Digital Acceleration.
                 </h2>
                 <p className="text-base leading-relaxed text-gray-600 mb-6 font-raleway">
-              The competitive global landscape demands immediate data liquidity. Unstructured, siloed data acts as a critical choke point, obstructing strategic planning and delaying time-to-market. Sunbrilo, an AI data analytics consulting firm, provides end-to-end modernization. We architect hyper-scalable data platforms that unify operational, customer, and market data, integrating advanced analytics (Predictive analytics consulting) to establish a continuous feedback loop that drives institutional intelligence, not mere reporting.
-              </p>
+                  The competitive global landscape demands immediate data liquidity. Unstructured, siloed data acts as a critical choke point, obstructing strategic planning and delaying time-to-market. Sunbrilo, an AI data analytics consulting firm, provides end-to-end modernization. We architect hyper-scalable data platforms that unify operational, customer, and market data, integrating advanced analytics (Predictive analytics consulting) to establish a continuous feedback loop that drives institutional intelligence, not mere reporting.
+                </p>
               </div>
 
               {/* RIGHT: Two staggered overlapping images */}
@@ -224,7 +224,7 @@ export default function DevelopmentTestingPage() {
         <CaseStudiesPage />
 
 
-<QualityEngineering/>
+        <QualityEngineering />
 
 
         {/* Section 5: FAQ */}
@@ -233,7 +233,7 @@ export default function DevelopmentTestingPage() {
             <div className="flex flex-col md:flex-row gap-10 items-start">
 
               {/* Left: Image + CTA Card */}
-             
+
 
               {/* Right: FAQ Accordion */}
               <div className="flex-1 space-y-3 md:pt-0 pt-8">
@@ -244,7 +244,7 @@ export default function DevelopmentTestingPage() {
                   >
                     <button
                       onClick={() => toggleFAQ(index)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                      className="w-full cursor-pointer px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                     >
                       <span className="text-base font-bold text-gray-900 font-raleway pr-4">
                         {faq.question}
@@ -277,7 +277,7 @@ export default function DevelopmentTestingPage() {
                   </div>
                 ))}
               </div>
-                 <div className="relative w-full md:w-[420px] flex-shrink-0 rounded-2xl overflow-visible">
+              <div className="relative w-full md:w-[420px] flex-shrink-0 rounded-2xl overflow-visible">
                 {/* Main Image */}
                 <div className="rounded-2xl overflow-hidden w-full h-[360px] relative">
                   <img
@@ -294,7 +294,7 @@ export default function DevelopmentTestingPage() {
                   </div>
                 </div>
 
-                {/* Teal CTA Card — overlaps image bottom-right */}
+                {/* Teal CTA Card - overlaps image bottom-right */}
                 <div
                   className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#2a8a8a] rounded-2xl p-6 w-52 z-10 shadow-xl"
                 >
@@ -308,8 +308,8 @@ export default function DevelopmentTestingPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <a href="tel:18884521505" className="text-white font-semibold text-sm underline font-raleway">
-                      1-888-452-1505
+                    <a href="tel:+918788563349" className="text-white font-semibold text-sm underline font-raleway">
+                      +91-8788563349
                     </a>
                   </div>
                 </div>
@@ -317,7 +317,7 @@ export default function DevelopmentTestingPage() {
             </div>
           </div>
         </section>
-       
+
         <section className="py-20 px-4 bg-[#f5f3f3]">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -327,11 +327,11 @@ export default function DevelopmentTestingPage() {
               {/* Right Side - Content */}
               <div className="lg:pl-8">
                 <h2 className="text-4xl md:text-5xl font-bold leading-tight font-raleway mb-6 text-gray-900">
-               Future-Proof Your Enterprise: Initiate Your Data & AI Transformation.
-                 </h2>
+                  Future-Proof Your Enterprise: Initiate Your Data & AI Transformation.
+                </h2>
 
                 <p className="text-lg text-gray-600 leading-relaxed mb-8 font-raleway">
-               The window for digital advantage is closing. Engage with our elite team of data scientists and certified AI engineers to engineer the cognitive backbone your enterprise needs to dominate its sector.
+                  The window for digital advantage is closing. Engage with our elite team of data scientists and certified AI engineers to engineer the cognitive backbone your enterprise needs to dominate its sector.
                 </p>
 
                 {/* CTA Button */}
@@ -397,7 +397,7 @@ export default function DevelopmentTestingPage() {
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           <div className="bg-[#0f172a] rounded-2xl w-full max-w-lg p-8 relative border border-gray-800 shadow-2xl">
-            <button 
+            <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
             >
@@ -415,15 +415,15 @@ export default function DevelopmentTestingPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">Mobile Number</label>
-                <input 
-                  type="tel" 
-                  required 
-                  pattern="\d{10}" 
-                  maxLength={10} 
+                <input
+                  type="tel"
+                  required
+                  pattern="\d{10}"
+                  maxLength={10}
                   title="Mobile number must be exactly 10 digits"
                   onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
-                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" 
-                  placeholder="10-digit Mobile Number" 
+                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors"
+                  placeholder="10-digit Mobile Number"
                 />
               </div>
               <div>
@@ -436,7 +436,7 @@ export default function DevelopmentTestingPage() {
                   I consent to the collection and processing of my details to respond to my inquiry.
                 </label>
               </div>
-              <button type="submit" className="w-full bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
+              <button type="submit" className="w-full cursor-pointer bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
                 Send Message
               </button>
             </form>

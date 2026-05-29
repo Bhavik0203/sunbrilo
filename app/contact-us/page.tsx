@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const ArrowUpRightIcon = ({ className }: { className?: string }) => (
   <svg
@@ -255,8 +256,8 @@ export default function SupportForm() {
                                         id="terms"
                                         className="w-5 h-5 bg-[#f2f2f2] border-none text-[#56aeff] focus:ring-0 rounded-sm cursor-pointer"
                                     />
-                                    <label htmlFor="terms" className="text-sm font-medium text-gray-800 cursor-pointer">
-                                        Accept terms and conditions
+                                    <label htmlFor="terms" className="text-sm font-medium text-gray-800">
+                                        Accept <Link href="/terms-and-conditions" className="text-[#56aeff] hover:underline">Terms and Conditions</Link> and <Link href="/privacy-policy" className="text-[#56aeff] hover:underline">Privacy Policy</Link>
                                     </label>
                                 </div>
 

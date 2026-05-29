@@ -1,13 +1,56 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 
 export default function LogisticsSolutionsPage() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [activeFeature, setActiveFeature] = useState(0);
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const textRef = useRef<HTMLHeadingElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+
+      if (textRef.current) {
+        const rect = textRef.current.getBoundingClientRect();
+        const elementTop = rect.top;
+        const elementHeight = rect.height;
+        const start = windowHeight;
+        const end = -elementHeight * 0.5;
+        const progress = Math.max(0, Math.min(1, (start - elementTop) / (start - end)));
+        setScrollProgress(progress);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const renderAnimatedText = (text: string, progress: number) => {
+    const totalChars = text.length;
+    return text.split('').map((char, index) => {
+      const charThreshold = index / totalChars;
+      const isHighlighted = progress > charThreshold;
+
+      return (
+        <span
+          key={index}
+          className="transition-colors duration-75"
+          style={{
+            color: isHighlighted ? '#111827' : '#9ca3af',
+          }}
+        >
+          {char}
+        </span>
+      );
+    });
+  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -33,26 +76,26 @@ export default function LogisticsSolutionsPage() {
       step: '01',
       title: 'Multi-Echelon Order Aggregation:',
       desc: 'Instantly unify all demand signals. Our platform standardizes and ingests complex orders from D2C e-commerce, global EDI feeds, marketplace APIs, and B2B portal transactions into a single, real-time demand ledger.',
-     image:"/images/solutions/102.jpg"
+      image: "/images/solutions/102.jpg"
     },
     {
       step: '02',
       title: 'Real-Time Inventory and ATP (Available-to-Promise) Logic:',
       desc: 'Achieve perfect order accuracy. The system leverages predictive analytics to maintain a single source of inventory truth across all locations (including in-transit) and calculates the Available-to-Promise date instantly, guaranteeing fulfillment integrity.',
-      image:"/images/solutions/103.jpg"
+      image: "/images/solutions/103.jpg"
     },
     {
       step: '03',
       title: 'Dynamic Fulfillment Routing (DFR):',
       desc: 'Minimize shipping costs and maximize speed. The platform applies custom, AI-driven rules to automatically route each order based on TCO, customer SLA, nearest fulfillment point (warehouse/store), and carrier capacity/cost in real time.',
-      image:"/images/solutions/104.jpg"
+      image: "/images/solutions/104.jpg"
     },
   ];
 
   const faqs = [
     {
       question: 'How does Sunbrilos OMS ensure compliance and audit readiness in complex B2B scenarios?',
-      answer: 'Our platform provides an immutable, time-stamped audit trail for every action—from initial order submission to financial recognition. The custom logic engine enforces tiered approval workflows, ensuring that every B2B transaction adheres to pre-set contractual and regulatory compliance mandates (e.g., custom tax rules, multi-level payment approval).',
+      answer: 'Our platform provides an immutable, time-stamped audit trail for every action-from initial order submission to financial recognition. The custom logic engine enforces tiered approval workflows, ensuring that every B2B transaction adheres to pre-set contractual and regulatory compliance mandates (e.g., custom tax rules, multi-level payment approval).',
     },
     {
       question: 'Can the platform support global expansion into new markets and logistics partners?',
@@ -122,10 +165,10 @@ export default function LogisticsSolutionsPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
-                  From Fragmentation to Full Fulfillment Accountability </h2>
+                <h2 ref={textRef} className="text-4xl md:text-5xl font-bold leading-tight mb-6 font-raleway">
+                  {renderAnimatedText("From Fragmentation to Full Fulfillment Accountability", scrollProgress)} </h2>
                 <p className="text-base text-gray-600 leading-relaxed mb-4 font-raleway">
-                  In global enterprise commerce, every single order lifecycle—from click to delivery—carries significant P&L risk. Fragmented systems lead to phantom inventory, excessive split-shipment costs, and a loss of customer trust. The true cost of fragmented fulfillment is measured in eroded margins and compromised shareholder value. </p>
+                  In global enterprise commerce, every single order lifecycle-from click to delivery-carries significant P&L risk. Fragmented systems lead to phantom inventory, excessive split-shipment costs, and a loss of customer trust. The true cost of fragmented fulfillment is measured in eroded margins and compromised shareholder value. </p>
                 <p className="text-base text-gray-600 leading-relaxed font-raleway">
                   Sunbrilo delivers Enterprise Inventory Optimization through a single, unified command platform. Our solution acts as the central intelligence layer for your entire commerce ecosystem, dynamically resolving complex fulfillment scenarios (e.g., ship-from-store, BOPIS, 3PL routing). We don't just manage orders; we optimize your flow of capital and inventory velocity to drive Revenue Assurance.
                 </p>
@@ -325,8 +368,8 @@ export default function LogisticsSolutionsPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
-                    <a href="tel:18884521505" className="text-black font-semibold text-sm underline font-raleway">
-                      1-888-452-1505
+                    <a href="tel:+918788563349" className="text-black font-semibold text-sm underline font-raleway">
+                      +91-8788563349
                     </a>
                   </div>
                 </div>
@@ -342,7 +385,7 @@ export default function LogisticsSolutionsPage() {
                   >
                     <button
                       onClick={() => toggleFAQ(index)}
-                      className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                      className="w-full cursor-pointer px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                     >
                       <span className="text-base font-bold text-gray-900 font-raleway pr-4">
                         {faq.question}
@@ -414,7 +457,7 @@ export default function LogisticsSolutionsPage() {
       {isModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
           <div className="bg-[#0f172a] rounded-2xl w-full max-w-lg p-8 relative border border-gray-800 shadow-2xl">
-            <button 
+            <button
               onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
             >
@@ -432,15 +475,15 @@ export default function LogisticsSolutionsPage() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">Mobile Number</label>
-                <input 
-                  type="tel" 
-                  required 
-                  pattern="\d{10}" 
-                  maxLength={10} 
+                <input
+                  type="tel"
+                  required
+                  pattern="\d{10}"
+                  maxLength={10}
                   title="Mobile number must be exactly 10 digits"
                   onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
-                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" 
-                  placeholder="10-digit Mobile Number" 
+                  className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors"
+                  placeholder="10-digit Mobile Number"
                 />
               </div>
               <div>
@@ -453,7 +496,7 @@ export default function LogisticsSolutionsPage() {
                   I consent to the collection and processing of my details to respond to my inquiry.
                 </label>
               </div>
-              <button type="submit" className="w-full bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
+              <button type="submit" className="w-full cursor-pointer bg-[#ffee50] text-[#3B3808] font-bold py-3 rounded-lg hover:bg-[#ffe500] transition-colors mt-4">
                 Send Message
               </button>
             </form>

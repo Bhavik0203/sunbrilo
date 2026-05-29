@@ -73,7 +73,7 @@ export default function BlogsPage() {
 
                   {/* Topics */}
                   <div className="mt-6">
-                    <div className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Topics</div>
+                    <div className="text-xs cursor-pointer font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Topics</div>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {topics.map((t) => (
                         <button

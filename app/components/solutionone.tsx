@@ -12,11 +12,11 @@ const servicesone = [
     title: "On-Grid Solar System",
     tagline: "Stay Connected. Let the Grid Work for You.",
     description:
-      "On-grid systems are tied directly to the utility grid, allowing seamless power exchange. Generate solar energy during the day and draw from the grid at night — with zero battery required.",
+      "On-grid systems are tied directly to the utility grid, allowing seamless power exchange. Generate solar energy during the day and draw from the grid at night - with zero battery required.",
     image:
       "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=80",
     highlights: [
-      "No battery storage needed — lower upfront cost",
+      "No battery storage needed - lower upfront cost",
       "Net metering credits reduce electricity bills",
       "Automatic grid synchronization",
       "Ideal for urban homes & commercial buildings",
@@ -50,7 +50,7 @@ const servicesone = [
     title: "Hybrid Solar System",
     tagline: "Best of Both Worlds. Smart Energy, Always On.",
     description:
-      "Hybrid systems combine on-grid and off-grid advantages — storing excess energy in batteries while staying connected to the grid, ensuring uninterrupted power under any condition.",
+      "Hybrid systems combine on-grid and off-grid advantages - storing excess energy in batteries while staying connected to the grid, ensuring uninterrupted power under any condition.",
     image:
       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800",
     highlights: [
@@ -338,11 +338,11 @@ export default function Servicesone() {
   return (
     <section className="relative overflow-hidden bg-[#e9efeb] ">
       <div className="mx-auto w-full px-3 sm:px-10">
-      
+
 
         {/* Dynamic Details Card */}
         <div className="mt-24 sm:mt-32 grid grid-cols-1 gap-10 lg:grid-cols-2 items-center">
-         <div
+          <div
             id="trigger"
             className="relative flex items-center justify-center min-h-[320px] lg:min-h-[600px]"
           >
@@ -370,9 +370,9 @@ export default function Servicesone() {
               style={{ width: '420px', height: '420px', animation: 'spin 12s linear infinite reverse' }}
             /> */}
 
-            
 
-          
+
+
 
             {/* Small orbiting dot on outer ring */}
             <div className="absolute" style={{ width: '520px', height: '520px', animation: 'spin 18s linear infinite' }}>
@@ -425,14 +425,14 @@ export default function Servicesone() {
   `}</style>
           </div>
 
-           
-      
 
-          
+
+
+
         </div>
 
-      
-       
+
+
       </div>
 
       <style jsx>{`
