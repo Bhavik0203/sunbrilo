@@ -37,14 +37,14 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-4 text-black font-raleway">Quick Links</h3>
               <ul className="space-y-2 text-sm text-gray-700 font-raleway">
-                <li><Link href="/about" className="hover:text-black transition-colors">About Us</Link></li>
+                <li><Link href="/aboutus" className="hover:text-black transition-colors">About Us</Link></li>
                 <li><Link href="/services" className="hover:text-black transition-colors">Services</Link></li>
                 <li><Link href="/solutions" className="hover:text-black transition-colors">Solutions</Link></li>
-                <li><Link href="/blog" className="hover:text-black transition-colors">Blog</Link></li>
+                <li><Link href="/blogs" className="hover:text-black transition-colors">Blog</Link></li>
               </ul>
             </div>
 
-            {/* Services */}
+        
             <div>
               <h3 className="font-semibold mb-4 text-black font-raleway">Services</h3>
               <ul className="space-y-2 text-sm text-gray-700 font-raleway">

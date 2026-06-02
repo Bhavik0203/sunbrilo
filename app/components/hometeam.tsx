@@ -6,16 +6,16 @@ interface TeamMember {
   id: number;
   name: string;
   role: string;
-  image?: string;
+  image: string;
   bgImage: string;
 }
 
 const teamMembers: TeamMember[] = [
-  { id: 1, name: "Nabin Prasad", role: "CTO", image: "/images/team1.png", bgImage: "/images/teambg1.png" },
-  { id: 2, name: "Namrata Kamthe", role: "Head HR", image: "/images/team2.png", bgImage: "/images/teambg2.png" },
-  { id: 3, name: "Sunil Kumar Prasad", role: "CEO", image: "/images/team3.png", bgImage: "/images/teambg1.png" },
-  { id: 4, name: "Priya Sharma", role: "CFO", image: "/images/team1.png", bgImage: "/images/teambg2.png" },
-  { id: 5, name: "Arjun Mehta", role: "COO", image: "/images/team2.png", bgImage: "/images/teambg1.png" },
+   { id: 1, name: "Sunil Kumar", role: "CEO", image: "Sunil kumar.png", bgImage: "/images/teambg1.png" },
+  { id: 2, name: "Nabin Prasad", role: "CTO", image: "Nabin prasad.png", bgImage: "/images/teambg2.png" },
+  { id: 3, name: "Pornima Pujari", role: "CFO", image: "Poornima.png", bgImage: "/images/teambg1.png" },
+   { id: 4, name: "Namrta Khamte", role: "Head HR", image: "Namrata.png", bgImage: "/images/teambg2.png" },
+  { id: 5, name: "Vinod Maru", role: "COO", image: "Vinod maru.png", bgImage: "/images/teambg1.png" },
 ];
 
 export default function ExpertTeam() {
@@ -63,16 +63,16 @@ export default function ExpertTeam() {
           {visibleMembers.map(({ member, position }) => (
             <div
               key={`${member.id}-${position}`}
-              className={`px-4 sm:px-8 py-10 w-full max-w-[280px] sm:max-w-[320px] flex-shrink-0 text-center transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_36px_rgba(74,158,245,0.2)] bg-cover bg-center rounded-2xl ${
+              className={`px-4 sm:px-8 py-10 w-full max-w-[280px] sm:max-w-[320px] flex-shrink-0 text-center transition-all duration-300  hover:shadow-[0_12px_36px_rgba(74,158,245,0.2)] bg-cover bg-center  ${
                 position === 2 ? 'hidden lg:block' : position === 1 ? 'hidden md:block' : ''
               }`}
               style={{ backgroundImage: `url("${member.bgImage}")` }}
             >
-              {/* Avatar */}
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-40 h-40 sm:w-48 sm:h-48 object-cover mx-auto mb-6"
+              {/* Avatar: use background-image cover to ensure consistent fill */}
+              <div
+                className="w-40 h-40 sm:w-48 sm:h-48 mx-auto mb-6  overflow-hidden bg-center bg-cover"
+                style={{ backgroundImage: `url('/images/team/${encodeURIComponent(member.image)}')` }}
+                aria-hidden="true"
               />
 
               {/* Name */}
