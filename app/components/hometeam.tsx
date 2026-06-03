@@ -13,7 +13,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
    { id: 1, name: "Sunil Kumar", role: "CEO", image: "Sunil kumar.png", bgImage: "/images/teambg1.png" },
   { id: 2, name: "Nabin Prasad", role: "CTO", image: "Nabin prasad.png", bgImage: "/images/teambg2.png" },
-  { id: 3, name: "Pornima Pujari", role: "CFO", image: "Poornima.png", bgImage: "/images/teambg1.png" },
+  { id: 3, name: "Poornima Poojari", role: "TA Head", image: "Poornima.png", bgImage: "/images/teambg1.png" },
    { id: 4, name: "Namrta Khamte", role: "Head HR", image: "Namrata.png", bgImage: "/images/teambg2.png" },
   { id: 5, name: "Vinod Maru", role: "COO", image: "Vinod maru.png", bgImage: "/images/teambg1.png" },
 ];
@@ -81,7 +81,7 @@ export default function ExpertTeam() {
               </p>
 
               {/* Role */}
-              <p className="text-[13px] text-gray-900 font-normal font-raleway">
+              <p className="text-[13px] text-gray-900 font-bold font-raleway">
                 {member.role}
               </p>
             </div>
