@@ -102,6 +102,22 @@ export default function Footer() {
                     <span>I-Space IT Park, Ground Floor, Pranjali Patil Nagar, Next to Seigal Maruti Showroom Bavdhan, Pune, MH Pincode- 411021.</span>
                   </a>
                 </li>
+                <li>
+                  <a href="https://maps.google.com/?q=16192+Coastal+Highway,+Lewes,+Delaware,+Zipcode+19956,+USA" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 hover:text-black transition-colors">
+                    <svg className="w-4 h-4 text-black shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                    </svg>
+                    <span>16192 Coastal Highway, Lewes, Delaware, Zipcode 19956, USA</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://maps.google.com/?q=128,+City+Road,+London,+EC1V+2NX,+UNITED+KINGDOM" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 hover:text-black transition-colors">
+                    <svg className="w-4 h-4 text-black shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                    </svg>
+                    <span>128, City Road, London, EC1V 2NX, UNITED KINGDOM</span>
+                  </a>
+                </li>
               </ul>
             </div>
 

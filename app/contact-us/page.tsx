@@ -372,6 +372,21 @@ export default function SupportForm() {
                                     </div>
                                 </div>
                             </motion.div>
+
+                            {/* UK Address Card */}
+                            <motion.div variants={itemVariants}>
+                                <div className="bg-white p-6 rounded shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col space-y-4">
+                                    <div className="flex items-center space-x-3">
+                                        <div className="bg-[#4a9cf2] p-2.5 rounded text-white flex-shrink-0">
+                                            <LocationIcon />
+                                        </div>
+                                        <h3 className="font-semibold text-lg">UK Address</h3>
+                                    </div>
+                                    <div className="text-sm text-black font-medium leading-relaxed">
+                                        <p>UK Address<br />128, City Road, London, EC1V 2NX, UNITED KINGDOM</p>
+                                    </div>
+                                </div>
+                            </motion.div>
                         </motion.div>
 
                         {/* Right Column: Imagery */}
