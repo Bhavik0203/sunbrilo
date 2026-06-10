@@ -226,7 +226,7 @@ export default function Servicesone() {
 
   const solutions = [
     { part: 1, icon: '/images/solutionicon/1.png', name: 'Logistic and Supply Chain Solutions' },
-    { part: 2, icon: '/images/solutionicon/2.png', name: 'Canteen Management System' },
+    { part: 2, icon: '/images/solutionicon/2.png', name: 'Smart Cafeteria System' },
     { part: 3, icon: '/images/solutionicon/3.png', name: 'CMMS: Maximizing Asset Performance' },
     { part: 4, icon: '/images/solutionicon/4.png', name: 'HRMS: Empowering Your Workforce' },
     { part: 5, icon: '/images/solutionicon/5.png', name: 'Equipment Leasing Platform' },

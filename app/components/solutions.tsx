@@ -4,18 +4,18 @@ import { motion as m } from 'framer-motion';
 import React from 'react';
 
 const solutionsTop = [
-  { icon: '/images/solutionicon/1.png', title: "Logistic and Supply Chain Solutions" },
-  { icon: '/images/solutionicon/2.png', title: "Canteen Management System" },
-  { icon: '/images/solutionicon/3.png', title: "CMMS: Maximizing Asset Performance" },
-  { icon: '/images/solutionicon/4.png', title: "HRMS: Empowering Your Workforce" },
-  { icon: '/images/solutionicon/5.png', title: "Equipment Leasing Platform" },
+  { icon: '/images/solutionicon/1.png', title: "Logistic and Supply Chain Solutions", link: "/solutions/logistic-and-supply-chain-solutions" },
+  { icon: '/images/solutionicon/2.png', title: "Smart Cafeteria System", link: "/solutions/cognitive-dining-workforce-orchestration" },
+  { icon: '/images/solutionicon/3.png', title: "CMMS: Maximizing Asset Performance", link: "/solutions/intelligent-asset-performance-management" },
+  { icon: '/images/solutionicon/4.png', title: "HRMS: Empowering Your Workforce", link: "/solutions/hrms-empowering-your-workforce" },
+  { icon: '/images/solutionicon/5.png', title: "Equipment Leasing Platform", link: "/solutions/equipment-leasing-platform" },
 ];
 
 const solutionsBottom = [
-  { icon: '/images/solutionicon/6.png', title: "Equipment Leasing Platform" },
-  { icon: '/images/solutionicon/7.png', title: "Tablet-Based Biometric Attendance System" },
-  { icon: '/images/solutionicon/8.png', title: "Remote (Geofencing) Attendance System" },
-  { icon: '/images/solutionicon/9.png', title: "CRM Software: Smarter Way to Manage Customers" },
+  { icon: '/images/solutionicon/6.png', title: "Order Management System", link: "/solutions/order-management" },
+  { icon: '/images/solutionicon/7.png', title: "Tablet-Based Biometric Attendance System", link: "/solutions/tablet-based-biometric-attendance-system" },
+  { icon: '/images/solutionicon/8.png', title: "Remote (Geofencing) Attendance System", link: "/solutions/remote-geofencing-attendance-system" },
+  { icon: '/images/solutionicon/9.png', title: "CRM Software: Smarter Way to Manage Customers", link: "/solutions" },
 ];
 
 // ── White list panel ────────────────────────────────────────

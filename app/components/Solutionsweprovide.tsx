@@ -4,17 +4,18 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 const solutions = [
-  { label: "Part 1", title: "Logistic & Supply Chain", desc: "End-to-end visibility with real-time tracking, demand forecasting, and intelligent route optimization." },
-  { label: "Part 2", title: "Canteen Management System", desc: "Smart cafeteria ops with digital menus, pre-ordering, dietary tracking, and waste reduction analytics." },
-  { label: "Part 3", title: "CMMS: Asset Performance", desc: "Predict failures, schedule preventive maintenance, and extend asset lifecycle with smart CMMS tools." },
-  { label: "Part 4", title: "HRMS: Workforce Empowerment", desc: "Payroll automation, attendance tracking, performance reviews, and talent development in one platform." },
-  { label: "Part 5", title: "ERP: Business Intelligence", desc: "Unified finance, operations, and customer data for smarter enterprise-wide decision-making." },
-  { label: "Part 6", title: "CRM: Customer Engine", desc: "360° customer view with AI lead scoring, pipeline management, and automated follow-up workflows." },
-  { label: "Part 7", title: "WMS: Warehouse Platform", desc: "Intelligent warehouse management with RFID integration, slot optimization, and real-time accuracy." },
-  { label: "Part 8", title: "BI: Analytics Dashboard", desc: "Customizable dashboards, KPI tracking, and predictive analytics powered by machine learning." },
-  { label: "Part 9", title: "IoT: Smart Facility Mgmt", desc: "Connect every sensor for automated energy management, predictive alerts, and smart access control." },
+  { label: "Part 1", title: "Logistic & Supply Chain", desc: "End-to-end visibility with real-time tracking, demand forecasting, and intelligent route optimization.", link: "/solutions/logistic-and-supply-chain-solutions" },
+  { label: "Part 2", title: "Smart Cafeteria System", desc: "Smart cafeteria ops with digital menus, pre-ordering, dietary tracking, and waste reduction analytics.", link: "/solutions/cognitive-dining-workforce-orchestration" },
+  { label: "Part 3", title: "CMMS: Asset Performance", desc: "Predict failures, schedule preventive maintenance, and extend asset lifecycle with smart CMMS tools.", link: "/solutions/intelligent-asset-performance-management" },
+  { label: "Part 4", title: "HRMS: Workforce Empowerment", desc: "Payroll automation, attendance tracking, performance reviews, and talent development in one platform.", link: "/solutions/hrms-empowering-your-workforce" },
+  { label: "Part 5", title: "Equipment Leasing Platform", desc: "Comprehensive platform to manage equipment leasing operations efficiently.", link: "/solutions/equipment-leasing-platform" },
+  { label: "Part 6", title: "Order Management System", desc: "Achieve zero-latency fulfillment with custom, AI-driven Order Management Software.", link: "/solutions/order-management" },
+  { label: "Part 7", title: "CRM: Customer Engine", desc: "Smarter way to manage customers with custom enterprise CRM software.", link: "/solutions" },
+  { label: "Part 8", title: "Tablet Biometric Attendance", desc: "Reliable and secure tablet-based biometric attendance tracking system.", link: "/solutions/tablet-based-biometric-attendance-system" },
+  { label: "Part 9", title: "Remote Geofencing Attendance", desc: "Track remote workforce attendance accurately using geofencing technology.", link: "/solutions/remote-geofencing-attendance-system" },
 ];
 
 const servicesone = [
@@ -508,20 +509,22 @@ export default function SolutionsScroll() {
                       transform: `translate(${cardX - 112}px, ${cardY - 48}px)`,
                       transition: "all 0.55s cubic-bezier(.4,0,.2,1)"
                     }}>
-                      <div
-                        className="rounded-2xl ml-20 px-4 py-3 border transition-all duration-400 w-136"
-                        style={{
-                          background: isActive ? "rgba(219,234,254,0.9)" : "rgba(255,255,255,0.85)",
-                          borderColor: isActive ? "#3b82f6" : "rgba(191,219,254,0.6)",
-                          boxShadow: isActive ? "0 4px 12px rgba(59,130,246,0.15)" : "0 2px 8px rgba(0,0,0,0.1)",
-                          backdropFilter: "blur(8px)",
-                          transform: `scale(${isActive ? 1.05 : 1})`,
-                        }}
-                      >
-                        <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 font-raleway" style={{ color: isActive ? "#1d4ed8" : "#94a3b8" }}>{s.label}</p>
-                        <p className="text-xs font-bold text-slate-800 leading-tight mb-1 font-raleway">{s.title}</p>
-                        <p className="text-[12px] text-slate-500 leading-relaxed line-clamp-2 font-raleway">{s.desc}</p>
-                      </div>
+                      <Link href={s.link} passHref>
+                        <div
+                          className="rounded-2xl ml-20 px-4 py-3 border transition-all duration-400 w-136 block cursor-pointer"
+                          style={{
+                            background: isActive ? "rgba(219,234,254,0.9)" : "rgba(255,255,255,0.85)",
+                            borderColor: isActive ? "#3b82f6" : "rgba(191,219,254,0.6)",
+                            boxShadow: isActive ? "0 4px 12px rgba(59,130,246,0.15)" : "0 2px 8px rgba(0,0,0,0.1)",
+                            backdropFilter: "blur(8px)",
+                            transform: `scale(${isActive ? 1.05 : 1})`,
+                          }}
+                        >
+                          <p className="text-[9px] font-semibold uppercase tracking-widest mb-1 font-raleway" style={{ color: isActive ? "#1d4ed8" : "#94a3b8" }}>{s.label}</p>
+                          <p className="text-xs font-bold text-slate-800 leading-tight mb-1 font-raleway">{s.title}</p>
+                          <p className="text-[12px] text-slate-500 leading-relaxed line-clamp-2 font-raleway">{s.desc}</p>
+                        </div>
+                      </Link>
                     </div>
                   );
                 })}
