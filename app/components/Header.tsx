@@ -117,7 +117,8 @@ export default function Header() {
       ]
     },
     { name: 'Blog', href: '/blogs', hasDropdown: false },
-    // { name: 'Career', href: '#', hasDropdown: false },
+    { name: 'Newsletters', href: '/newsletters', hasDropdown: false },
+    { name: 'Career', href: '/career', hasDropdown: false },
     { name: 'Contact us', href: '/contact-us', hasDropdown: false },
   ];
 

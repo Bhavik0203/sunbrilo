@@ -1,0 +1,51 @@
+﻿<USER_REQUEST>
+i have to chnage this blogs data as per below data 
+
+export const blogPosts: BlogPost[] = [
+  {
+    id: 1,
+    slug: 'living-and-working-in-gdansk-2026',
+    title: 'Living and working in Gdansk as a student in 2026: Is it worth it?',
+    tag: 'Living in GdaÅ„sk',
+    excerpt:
+      'Discover the costs, work opportunities, and lifestyle pros & cons to help you decide if moving is the right step.',
+    date: 'Mar 12, 2026',
+    readTime: '6 min read',
+    image: '/images/bg4.png',
+    featured: true,
+    author: 'Sunbrilo Editorial',
+    body: `GdaÅ„sk has quietly become one of the most attractive cities in Central Europe for international students. With a blend of historic architecture, a vibrant tech scene, and a cost of living far below Western European capitals, thousands of Erasmus students and young professionals choose it each year.\n\nWe spent time talking to current students, recent graduates, and expat workers to give you an honest, unfiltered picture of life - and work - in this Baltic gem.\n\nBudget roughly â‚¬600â€“â‚¬900/month for a comfortable student lifestyle. Rent for a shared room runs â‚¬250â€“â‚¬400, groceries â‚¬120â€“â‚¬180, a monthly transport pass as little as â‚¬15â€“â‚¬20, and you can enjoy the city's nightlife and culture for â‚¬80â€“â‚¬150 per month.\n\nGdaÅ„sk's economy has diversified rapidly. The tech sector, logistics companies, and customer service firms actively hire students - often with flexible schedules designed around academic commitments. The Young Professional Visa pathway introduced in late 2025 allows non-EU students to work up to 28 hours per week without extra permits.\n\nFor students who prioritise quality of life, career exposure in a growing tech hub, and a manageable budget - yes, GdaÅ„sk is absolutely worth it in 2026. Sort your accommodation before you arrive, learn basic Polish for admin, and tap into the Erasmus community quickly. Do that, and GdaÅ„sk will likely become one of the best decisions you've made.`,
+  },
+  {
+    id: 2,
+<truncated 28500 bytes>
+rkflows to autonomous agents, human capital is instantly unlocked to focus on creative strategy, nuanced client relationships, and high-stakes decision-making.
+However, managing this new reality requires robust governance. Organizations must design tight "human-in-the-loop" protocols, establishing clear guardrails where an agent's autonomy ends and human authorization begins particularly in high-risk areas like financial deployments, legal compliance, and core data privacy.
+The technology powering autonomous agents is no longer a futuristic experiment; it is active, highly capable, and rapidly maturing. The ultimate winners of this economic cycle won't be the companies with the flashiest AI models, but the ones that successfully re-engineer their operational infrastructure to give those models the power to act.
+
+
+
+--------------------------------------
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-13T14:53:19+05:30.
+
+The user's current state is as follows:
+Active Document: e:\DTG\sunbrilo-website\app\lib\blogData.ts (LANGUAGE_TYPESCRIPT)
+Cursor is on line: 15
+Other open documents:
+- e:\DTG\sunbrilo-website\app\lib\blogData.ts (LANGUAGE_TYPESCRIPT)
+- e:\DTG\sunbrilo-website\app\blogs\[slug]\page.tsx (LANGUAGE_TSX)
+- e:\DTG\sunbrilo-website\app\components\Header.tsx (LANGUAGE_TSX)
+- e:\DTG\sunbrilo-website\app\components\testimonials.tsx (LANGUAGE_TSX)
+- e:\DTG\sunbrilo-website\extract_user_input.js (LANGUAGE_JAVASCRIPT)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[app/lib/blogData.ts] is a [File]:
+e:\DTG\sunbrilo-website\app\lib\blogData.ts
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.5 Flash (High) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
