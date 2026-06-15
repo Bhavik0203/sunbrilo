@@ -78,58 +78,85 @@ export default function Footer() {
 
             {/* Contact Info */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="font-semibold mb-4 text-black font-raleway">Contact Info</h3>
-              <ul className="space-y-4 text-sm text-gray-700 font-raleway">
-                <li>
-                  <a href="mailto:info@sunbrilotechnologies.com" className="flex items-start gap-3 hover:text-black transition-colors">
-                    <svg className="w-4 h-4 text-black shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                    </svg>
-                    <span className="break-all leading-snug">info@sunbrilotechnologies.com</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+919545898353" className="flex items-start gap-3 hover:text-black transition-colors">
-                    <svg className="w-4 h-4 text-black shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    <span className="leading-snug">+91-9545898353 (Sales)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="tel:+918788563349" className="flex items-start gap-3 hover:text-black transition-colors">
-                    <svg className="w-4 h-4 text-black shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    <span className="leading-snug">+91-8788563349 (HR)</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://maps.google.com/?q=I-Space+IT+Park,+Ground+Floor,+Pranjali+Patil+Nagar,+Next+to+Seigal+Maruti+Showroom+Bavdhan,+Pune,+MH+Pincode-+411021" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-black transition-colors">
-                    <svg className="w-4 h-4 text-black shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <h3 className="font-semibold mb-6 text-black font-raleway text-lg">Contact Us</h3>
+              
+              <div className="space-y-6 text-sm text-gray-700 font-raleway">
+                {/* India Office */}
+                <div className="space-y-3">
+                  <h4 className="font-bold text-black flex items-center gap-2 text-[15px]">
+                    <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                     </svg>
-                    <span className="leading-snug">I-Space IT Park, Ground Floor, Pranjali Patil Nagar, Next to Seigal Maruti Showroom Bavdhan, Pune, MH Pincode- 411021.</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://maps.google.com/?q=16192+Coastal+Highway,+Lewes,+Delaware,+Zipcode+19956,+USA" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-black transition-colors">
-                    <svg className="w-4 h-4 text-black shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    India Office
+                  </h4>
+                  
+                  <div className="space-y-3 pl-1">
+                    <p className="leading-relaxed">
+                      I-Space IT Park, Ground Floor, Pranjali Patil Nagar, Next to Seigal Maruti Showroom Bavdhan, Pune, MH Pincode- 411021.
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <a href="tel:+919545898353" className="flex items-center gap-3 hover:text-black transition-colors">
+                        <svg className="w-4 h-4 text-gray-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        <span className="font-medium underline decoration-gray-400 hover:decoration-black underline-offset-4">+91 9545898353 (Sales)</span>
+                      </a>
+                      
+                      <a href="tel:+918788563349" className="flex items-center gap-3 hover:text-black transition-colors">
+                        <svg className="w-4 h-4 text-gray-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        <span className="font-medium underline decoration-gray-400 hover:decoration-black underline-offset-4">+91 8788563349 (HR)</span>
+                      </a>
+                      
+                      <a href="mailto:info@sunbrilotechnologies.com" className="flex items-center gap-3 hover:text-black transition-colors pt-1">
+                        <svg className="w-4 h-4 text-gray-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        <span className="whitespace-nowrap">info@sunbrilotechnologies.com</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* USA Office */}
+                <div className="space-y-3">
+                  <h4 className="font-bold text-black flex items-center gap-2 text-[15px]">
+                    <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                     </svg>
-                    <span className="leading-snug">16192 Coastal Highway, Lewes, Delaware, Zipcode 19956, USA</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://maps.google.com/?q=128,+City+Road,+London,+EC1V+2NX,+UNITED+KINGDOM" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-black transition-colors">
-                    <svg className="w-4 h-4 text-black shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    USA Office
+                  </h4>
+                  <div className="pl-1">
+                    <a href="https://maps.google.com/?q=16192+Coastal+Highway,+Lewes,+Delaware,+Zipcode+19956,+USA" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-black transition-colors">
+                      <svg className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                      </svg>
+                      <span className="leading-relaxed">16192 Coastal Highway, Lewes, Delaware, Zipcode 19956, USA</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* UK Office */}
+                <div className="space-y-3">
+                  <h4 className="font-bold text-black flex items-center gap-2 text-[15px]">
+                    <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                     </svg>
-                    <span className="leading-snug">128, City Road, London, EC1V 2NX, UNITED KINGDOM</span>
-                  </a>
-                </li>
-              </ul>
+                    UK Office
+                  </h4>
+                  <div className="pl-1">
+                    <a href="https://maps.google.com/?q=128,+City+Road,+London,+EC1V+2NX,+UNITED+KINGDOM" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-black transition-colors">
+                      <svg className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                      </svg>
+                      <span className="leading-relaxed">128, City Road, London, EC1V 2NX, UNITED KINGDOM</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
 

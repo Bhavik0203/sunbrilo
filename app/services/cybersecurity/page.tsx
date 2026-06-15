@@ -255,13 +255,13 @@ export default function DevelopmentTestingPage() {
                         {faq.question}
                       </span>
                       {/* Circle +/- icon */}
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#2a8a8a] flex items-center justify-center">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#3B3808] flex items-center justify-center">
                         {openFAQ === index ? (
-                          <svg className="w-4 h-4 text-[#2a8a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 text-[#3B3808]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M20 12H4" />
                           </svg>
                         ) : (
-                          <svg className="w-4 h-4 text-[#2a8a8a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-4 h-4 text-[#3B3808]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
                           </svg>
                         )}
@@ -301,10 +301,10 @@ export default function DevelopmentTestingPage() {
 
                 {/* Teal CTA Card - overlaps image bottom-right */}
                 <div
-                  className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#2a8a8a] rounded-2xl p-6 w-52 z-10 shadow-xl"
+                  className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#3B3808] rounded-2xl p-6 w-52 z-10 shadow-xl"
                 >
                   <p className="text-white font-bold text-lg font-raleway leading-snug mb-4">
-                    Get Started<br />contact us .
+                    Connect Now
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">

@@ -360,7 +360,7 @@ export default function LogisticsSolutionsPage() {
 
                 <div className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#FFEE50] rounded-2xl p-6 w-52 z-10 shadow-xl">
                   <p className="text-black font-bold text-lg font-raleway leading-snug mb-4">
-                    Get Started<br />contact us .
+                    Connect Now
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">

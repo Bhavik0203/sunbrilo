@@ -49,11 +49,8 @@ export default function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Show scroll header when:
-      // 1. User has scrolled past hero section
-      // 2. User is scrolling up (current < last)
-      // 3. User is not at the top
-      if (currentScrollY > heroHeight && currentScrollY < lastScrollY && currentScrollY > 100) {
+      // Show scroll header when scrolling past 100px, regardless of direction
+      if (currentScrollY > 100) {
         setShowScrollHeader(true);
       } else {
         setShowScrollHeader(false);
