@@ -39,7 +39,9 @@ export default function ContactUsContent() {
     fullName: '',
     email: '',
     company: '',
-    message: ''
+    message: '',
+    countryCode: '+1',
+    phone: ''
   });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -57,7 +59,7 @@ export default function ContactUsContent() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission here
+    window.location.href = '/thank-you';
   };
 
   return (
@@ -73,10 +75,10 @@ export default function ContactUsContent() {
             }}
           />
         </div>
-        
+
         {/* Overlay */}
         <div className="absolute inset-0 z-1 bg-black/40"></div>
-        
+
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-6 lg:px-12 xl:px-20 flex items-center justify-center">
@@ -131,10 +133,92 @@ export default function ContactUsContent() {
               Please select the area that best describes your needs so we can connect you with the right expert.
             </p>
           </div>
-          
+
           {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Dropdown Menu */}
+
+
+            {/* Standard Fields */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
+                  Corporate Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
+                  Company Name
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway"
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
+                  Phone Number
+                </label>
+                <div className="flex">
+                  <select
+                    id="countryCode"
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleInputChange}
+                    className="px-3 py-3 border border-gray-300 rounded-l-lg border-r-0 focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway bg-gray-50 focus:outline-none"
+                  >
+                    <option value="+1">+1 (US/CA)</option>
+                    <option value="+44">+44 (UK)</option>
+                    <option value="+91">+91 (IN)</option>
+                    <option value="+61">+61 (AU)</option>
+                    <option value="+971">+971 (UAE)</option>
+                  </select>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway focus:outline-none"
+                    placeholder="1234567890"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
             <div>
               <label htmlFor="interest" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
                 I am interested in...
@@ -156,54 +240,6 @@ export default function ContactUsContent() {
               </select>
             </div>
 
-            {/* Standard Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="fullName" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
-                  Corporate Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway"
-                  required
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
-                Company Name
-              </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway"
-                required
-              />
-            </div>
-
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2 font-raleway">
                 Project Brief/Message
@@ -213,7 +249,7 @@ export default function ContactUsContent() {
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
-                rows={6}
+                rows={3}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3B3808] focus:border-transparent font-raleway"
                 required
               ></textarea>
@@ -260,37 +296,31 @@ export default function ContactUsContent() {
               <p className="text-gray-600 leading-relaxed mb-8 font-raleway">
                 Located in the heart of India's technology corridor, our headquarters houses our elite engineering squads and 24/7 Network Operations Center (NOC).
               </p>
-              
+
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 font-raleway">Office Address:</h3>
                   <p className="text-gray-600 font-raleway">Pune, Maharashtra, India</p>
                 </div>
-                
+
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 font-raleway">General Inquiries:</h3>
                   <p className="text-gray-600 font-raleway">info@sunbrilotechnologies.com</p>
                 </div>
-                
+
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 font-raleway">Business Development:</h3>
                   <p className="text-gray-600 font-raleway">sales@sunbrilotechnologies.com</p>
                 </div>
-                
+
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 font-raleway">24/7 Technical Support:</h3>
                   <p className="text-gray-600 font-raleway">support@sunbrilotechnologies.com</p>
                 </div>
               </div>
             </div>
-            
-            <div className="relative">
-              <img
-                src="/images/office.jpg"
-                alt="Sunbrilo Technologies Office"
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
-            </div>
+
+           
           </div>
         </div>
       </section>
@@ -306,7 +336,7 @@ export default function ContactUsContent() {
               We value your time. Here is what you can expect after submitting your inquiry:
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-[#3B3808] rounded-full flex items-center justify-center mx-auto mb-6">
@@ -318,7 +348,7 @@ export default function ContactUsContent() {
                 A dedicated account manager will reach out to understand your technical requirements and business goals.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-20 h-20 bg-[#3B3808] rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white font-raleway">2</span>
@@ -328,7 +358,7 @@ export default function ContactUsContent() {
                 Our lead engineers will review your needs and provide a high-level roadmap or proof-of-concept.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-20 h-20 bg-[#3B3808] rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-white font-raleway">3</span>
@@ -351,7 +381,7 @@ export default function ContactUsContent() {
           <p className="text-lg leading-relaxed mb-8 font-raleway">
             Join the global enterprises that trust Sunbrilo for high-velocity, secure, and scalable technology.
           </p>
-          
+
           <button
             type="button"
             onMouseMove={handleMouseMove}

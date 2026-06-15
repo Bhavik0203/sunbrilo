@@ -68,7 +68,7 @@ At Sunbrilo Technologies, we help businesses transition from data collection to 
 
 But the reality is that relying on legacy, on-premise infrastructure is quietly draining your resources. Between hardware depreciation, expensive maintenance contracts, and the energy required to keep a server room cool, physical infrastructure is becoming an anchor on business agility.
 
-The shift to the Cloud (IaaS, PaaS, and SaaS) is no longer just about remote access—it is a strategic financial decision.
+The shift to the Cloud (IaaS, PaaS, and SaaS) is no longer just about remote access-it is a strategic financial decision.
 
 Here is why forward-thinking enterprises are migrating:
 
@@ -108,7 +108,7 @@ The core philosophy of Zero-Trust is simple: Never trust, always verify. It assu
 
 Why modern businesses are making the shift:
 
-Continuous Identity Verification: Access is granted based on dynamic factors—not just a password, but the user's location, device health, and behavioral patterns.
+Continuous Identity Verification: Access is granted based on dynamic factors-not just a password, but the user's location, device health, and behavioral patterns.
 
 Micro-Segmentation: If a hacker compromises a single employee's account, Zero-Trust prevents them from moving laterally across your network. They are locked into a small, isolated segment.
 

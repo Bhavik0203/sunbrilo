@@ -55,6 +55,25 @@ const PhoneIcon = () => (
 );
 export default function SupportForm() {
     const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+    const [activeTab, setActiveTab] = useState('India');
+
+    const locations = {
+        India: {
+            title: "Sunbrilo Technologies Pvt. Ltd.",
+            address: "I-Space IT Park, Ground Floor, Pranjali Patil Nagar, Next to Seigal Maruti Showroom Bavdhan, Pune - 411021",
+            mapSrc: "https://maps.google.com/maps?q=I-Space%20IT%20Park%20Bavdhan%20Pune&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        },
+        USA: {
+            title: "Sunbrilo Technologies Inc.",
+            address: "16192 Coastal Highway, Lewes, Delaware, Zipcode 19956, USA",
+            mapSrc: "https://maps.google.com/maps?q=16192%20Coastal%20Highway%2C%20Lewes%2C%20Delaware&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        },
+        UK: {
+            title: "Sunbrilo Technologies Ltd.",
+            address: "128, City Road, London, EC1V 2NX, UNITED KINGDOM",
+            mapSrc: "https://maps.google.com/maps?q=128%2C%20City%20Road%2C%20London%2C%20EC1V%202NX&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        }
+    };
 
     const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -207,23 +226,10 @@ export default function SupportForm() {
                         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" as const }}
                     >
                         <div className="bg-white p-8 md:p-10 rounded shadow-[0_10px_40px_rgba(0,0,0,0.08)] w-full">
-                            <form className="flex flex-col space-y-5" onSubmit={(e) => e.preventDefault()}>
+                            <form className="flex flex-col space-y-5" onSubmit={(e) => { e.preventDefault(); window.location.href = '/thank-you'; }}>
 
                                 {/* Select Field */}
-                                <div className="flex flex-col space-y-2">
-                                    <label className="text-sm font-semibold text-gray-800">I am interested in....</label>
-                                    <div className="relative">
-                                        <select className="w-full bg-[#f2f2f2] text-gray-600 p-3.5 appearance-none focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition">
-                                            <option>Custom Software/Product Engineering</option>
-                                            <option>IT Consulting & Strategy</option>
-                                            <option>Cloud Infrastructure</option>
-                                        </select>
-                                        {/* Custom dropdown arrow */}
-                                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
-                                            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                                        </div>
-                                    </div>
-                                </div>
+                                
 
                                 {/* Full Name */}
                                 <div className="flex flex-col space-y-2">
@@ -243,10 +249,48 @@ export default function SupportForm() {
                                     <input type="text" className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition" />
                                 </div>
 
+                                {/* Phone Number */}
+                                <div className="flex flex-col space-y-2">
+                                    <label className="text-sm font-semibold text-gray-800">Phone Number</label>
+                                    <div className="flex">
+                                        <select className="bg-[#e5e5e5] text-gray-700 p-3.5 border-r border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition">
+                                            <option value="+1">+1 (US/CA)</option>
+                                            <option value="+44">+44 (UK)</option>
+                                            <option value="+91">+91 (IN)</option>
+                                            <option value="+61">+61 (AU)</option>
+                                            <option value="+971">+971 (UAE)</option>
+                                        </select>
+                                        <input
+                                            type="tel"
+                                            required
+                                            pattern="\d{10}"
+                                            maxLength={10}
+                                            title="Mobile number must be exactly 10 digits"
+                                            onInput={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/\D/g, '') }}
+                                            placeholder="1234567890"
+                                            className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex flex-col space-y-2">
+                                    <label className="text-sm font-semibold text-gray-800">I am interested in....</label>
+                                    <div className="relative">
+                                        <select className="w-full bg-[#f2f2f2] text-gray-600 p-3.5 appearance-none focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition">
+                                            <option>Custom Software/Product Engineering</option>
+                                            <option>IT Consulting & Strategy</option>
+                                            <option>Cloud Infrastructure</option>
+                                        </select>
+                                        {/* Custom dropdown arrow */}
+                                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
+                                            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 {/* Project Brief/Message */}
                                 <div className="flex flex-col space-y-2">
                                     <label className="text-sm font-semibold text-gray-800">Project Brief/Message</label>
-                                    <textarea rows={4} className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition resize-none"></textarea>
+                                    <textarea rows={3} className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition resize-none"></textarea>
                                 </div>
 
                                 {/* Checkbox */}
@@ -266,7 +310,7 @@ export default function SupportForm() {
                                     type="submit"
                                     className="mt-4 w-full bg-[#56aeff] hover:bg-[#4596e6] text-white font-semibold text-lg py-4 transition duration-200"
                                 >
-                                    Apply
+                                   Submit
                                 </button>
                             </form>
                         </div>
@@ -291,134 +335,100 @@ export default function SupportForm() {
                         </p>
                     </motion.div>
 
-                    {/* Main Content Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    {/* Main Content Grid Replacment - Tabbed Map UI */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden max-w-5xl mx-auto"
+                    >
+                        {/* Tabs */}
+                        <div className="flex bg-[#e5e5e5] text-gray-600 font-semibold text-sm">
+                            <button
+                                onClick={() => setActiveTab('India')}
+                                className={`flex-1 py-4 px-4 flex items-center justify-center space-x-2 transition ${activeTab === 'India' ? 'bg-white text-blue-600 border-t-4 border-blue-600' : 'hover:bg-gray-300'}`}
+                            >
+                                <span className="text-lg">🇮🇳</span>
+                                <span className="uppercase tracking-wider">India</span>
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('USA')}
+                                className={`flex-1 py-4 px-4 flex items-center justify-center space-x-2 transition ${activeTab === 'USA' ? 'bg-white text-blue-600 border-t-4 border-blue-600' : 'hover:bg-gray-300 border-l border-r border-gray-300'}`}
+                            >
+                                <span className="text-lg">🇺🇸</span>
+                                <span className="uppercase tracking-wider">USA</span>
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('UK')}
+                                className={`flex-1 py-4 px-4 flex items-center justify-center space-x-2 transition ${activeTab === 'UK' ? 'bg-white text-blue-600 border-t-4 border-blue-600' : 'hover:bg-gray-300'}`}
+                            >
+                                <span className="text-lg">🇬🇧</span>
+                                <span className="uppercase tracking-wider">UK</span>
+                            </button>
+                        </div>
 
-                        {/* Left Column: Contact Cards */}
-                        <motion.div
-                            variants={containerVariants}
-                            initial="hidden"
-                            animate="visible"
-                            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-                        >
-                            {/* Email Card (With decorative background blocks) */}
-                            <motion.div variants={itemVariants} className="relative z-10">
-                                {/* Decorative Blue Rectangles */}
-                                {/* <div className="absolute -inset-4 bg-[#c0e3ff] rotate-[-8deg] rounded -z-20 hidden md:block"></div> */}
-                                <div className="absolute -inset-2 bg-[#d6edff] rotate-[-4deg] rounded -z-10 hidden md:block"></div>
-
-                                <div className="bg-white p-6 rounded shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col space-y-4 relative z-10">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="bg-[#4a9cf2] p-2.5 rounded text-white flex-shrink-0">
-                                            <MailIcon />
-                                        </div>
-                                        <h3 className="font-semibold text-lg">Email</h3>
-                                    </div>
-                                    <div className="text-[13px] text-black font-medium space-y-3 break-all">
-                                        <p>hr@sunbrilotechnologies.com</p>
-                                        <p>sales@sunbrilotechnologies.<br />com</p>
-                                        <p>info@sunbrilotechnologies.<br />com</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* India Address Card */}
-                            <motion.div variants={itemVariants}>
-                                <div className="bg-white p-6 rounded shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col space-y-4">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="bg-[#4a9cf2] p-2.5 rounded text-white flex-shrink-0">
+                        {/* Content */}
+                        <div className="p-6 md:p-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                                {/* Address */}
+                                <div className="space-y-4">
+                                    <h3 className="font-bold text-gray-800 text-lg">{locations[activeTab as keyof typeof locations].title}</h3>
+                                    <div className="flex items-start space-x-3 text-gray-600">
+                                        <div className="mt-0.5 flex-shrink-0 text-[#4a9cf2]">
                                             <LocationIcon />
                                         </div>
-                                        <h3 className="font-semibold text-lg">India Address</h3>
-                                    </div>
-                                    <div className="text-sm text-black font-medium leading-relaxed">
-                                        <p>I-Space IT Park, Ground Floor, Pranjali Patil Nagar, Next to Seigal Maruti Showroom Bavdhan, Pune - 411021</p>
+                                        <p className="text-sm leading-relaxed">{locations[activeTab as keyof typeof locations].address}</p>
                                     </div>
                                 </div>
-                            </motion.div>
-
-                            {/* Contact Card */}
-                            <motion.div variants={itemVariants}>
-                                <div className="bg-white p-6 rounded shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col space-y-4">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="bg-[#4a9cf2] p-2.5 rounded text-white flex-shrink-0">
-                                            <PhoneIcon />
+                                
+                                {/* Phones */}
+                                <div className="space-y-3 md:mt-11">
+                                   {activeTab === 'India' && (
+                                      <>
+                                        <div className="flex items-center space-x-3 text-gray-600">
+                                            <div className="flex-shrink-0 text-[#4a9cf2]">
+                                                <PhoneIcon />
+                                            </div>
+                                            <p className="text-sm text-[#4a9cf2] font-semibold hover:underline cursor-pointer">+91 9545898353 (Sales)</p>
                                         </div>
-                                        <h3 className="font-semibold text-lg">Contact</h3>
-                                    </div>
-                                    <div className="text-sm text-black font-medium space-y-3">
-                                        <p>HR: +91-8788563349</p>
-                                        <p>Sales: +91-9545898353</p>
-                                        <p>TA: +91-7030662233</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* US Address Card */}
-                            <motion.div variants={itemVariants} className="relative z-10">
-                                {/* Decorative Blue Rectangles */}
-                                {/* <div className="absolute -inset-4 bg-[#c0e3ff] rotate-[-8deg] rounded -z-20 hidden md:block"></div> */}
-                                <div className="absolute -inset-2 bg-[#d6edff] rotate-[-4deg] rounded -z-10 hidden md:block"></div>
-
-                                <div className="bg-white p-6 rounded shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col space-y-4 relative z-10">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="bg-[#4a9cf2] p-2.5 rounded text-white flex-shrink-0">
-                                            <LocationIcon />
+                                        <div className="flex items-center space-x-3 text-gray-600">
+                                            <div className="flex-shrink-0 text-[#4a9cf2]">
+                                                <PhoneIcon />
+                                            </div>
+                                            <p className="text-sm text-[#4a9cf2] font-semibold hover:underline cursor-pointer">+91 8788563349 (HR)</p>
                                         </div>
-                                        <h3 className="font-semibold text-lg">Us Address</h3>
-                                    </div>
-                                    <div className="text-sm text-black font-medium leading-relaxed">
-                                        <p>US Address<br />16192 Coastal Highway, Lewes, Delaware, Zipcode 19956, USA</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-
-                            {/* UK Address Card */}
-                            <motion.div variants={itemVariants}>
-                                <div className="bg-white p-6 rounded shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col space-y-4">
-                                    <div className="flex items-center space-x-3">
-                                        <div className="bg-[#4a9cf2] p-2.5 rounded text-white flex-shrink-0">
-                                            <LocationIcon />
+                                        <div className="flex items-center space-x-3 text-gray-600">
+                                            <div className="flex-shrink-0 text-[#4a9cf2]">
+                                                <PhoneIcon />
+                                            </div>
+                                            <p className="text-sm text-[#4a9cf2] font-semibold hover:underline cursor-pointer">+91 7030662233 (TA)</p>
                                         </div>
-                                        <h3 className="font-semibold text-lg">UK Address</h3>
-                                    </div>
-                                    <div className="text-sm text-black font-medium leading-relaxed">
-                                        <p>UK Address<br />128, City Road, London, EC1V 2NX, UNITED KINGDOM</p>
-                                    </div>
+                                      </>
+                                   )}
                                 </div>
-                            </motion.div>
-                        </motion.div>
-
-                        {/* Right Column: Imagery */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" as const }}
-                            className="relative w-full max-w-lg mx-auto lg:max-w-none mt-12 lg:mt-0"
-                        >
-                            {/* Main Map Image */}
-                            <div className="relative aspect-[4/3] w-full shadow-lg rounded-sm overflow-hidden">
-                                <Image
-                                    src="/images/contact/contact3.png"
-                                    alt="Global Network Map"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                />
                             </div>
-
-                            {/* Overlapping Circular Globe Image */}
-                            <div className="absolute -bottom-10 -left-6 md:-left-12 w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-[8px] border-[#f4f5f7] shadow-xl bg-white z-10">
-                                <Image
-                                    src="/images/contact/contact4.png"
-                                    alt="Global Connection"
-                                    fill
-                                    className="object-cover"
-                                />
+                            
+                            {/* Map */}
+                            <div className="w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden relative shadow-sm border border-gray-100">
+                                <iframe
+                                    src={locations[activeTab as keyof typeof locations].mapSrc}
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen={false}
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                ></iframe>
                             </div>
-                        </motion.div>
+                        </div>
 
-                    </div>
+                        {/* Footer Bar */}
+                        <div className="bg-[#112344] text-white py-5 px-6 flex flex-col md:flex-row justify-around items-center text-sm font-semibold space-y-3 md:space-y-0">
+                            <a href="mailto:info@sunbrilotechnologies.com" className="hover:text-gray-300 transition-colors">info@sunbrilotechnologies.com</a>
+                            <a href="mailto:sales@sunbrilotechnologies.com" className="hover:text-gray-300 transition-colors">sales@sunbrilotechnologies.com</a>
+                            <a href="mailto:careers@sunbrilotechnologies.com" className="hover:text-gray-300 transition-colors">hr@sunbrilotechnologies.com</a>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
             <div className="min-h-screen bg-[#f4f5f7] pt-20 px-6 md:px-12 font-sans text-gray-900 flex flex-col items-center">

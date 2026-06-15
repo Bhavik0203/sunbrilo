@@ -130,6 +130,7 @@ const BenefitsSection = () => {
         success: true,
         message: 'Your application has been submitted successfully!'
       });
+      window.location.href = '/thank-you';
 
       // Reset form after successful submission
       setFormData({
@@ -273,38 +274,38 @@ const BenefitsSection = () => {
       <section className="bg-white rounded-2xl m-4 p-8 md:p-12 shadow-sm">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="mb-12">
-            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-raleway">BENEFITS</h2>
+            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-raleway">Why join us</h2>
             <div className="w-16 h-0.5 bg-[#3B3808] mb-6"></div>
             <h3 className="text-4xl font-bold text-gray-900 leading-tight max-w-xl font-raleway">
-              Your job impacts nearly every facet of your life.
+              Build your IT career where innovation, growth, and opportunity meet.
             </h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: 'Personal Growth',
-                desc: 'Support includes a generous professional development budget',
+                title: 'Work on cutting-edge technology',
+                desc: 'Get hands-on with cloud solutions, cybersecurity, data analytics, and enterprise IT – building real expertise across high-demand domains.',
               },
               {
-                title: 'Full Benefits',
-                desc: 'Top-notch medical, dental, vision, life, disability, and 401k benefits',
+                title: 'Structured career growth',
+                desc: 'Defined growth paths, certifications support, and learning budgets that help you move up – whether in development, managed IT, or consulting.',
               },
               {
-                title: 'Our Culture',
-                desc: 'There are many great reasons to be "OOO" and we support them',
+                title: 'Employee well-being first',
+                desc: 'We care about the people behind the work. A supportive environment, team activities, and a culture of mutual respect keep our team motivated and thriving.',
               },
               {
-                title: 'Equity for All',
-                desc: 'Everyone should feel ownership over their work—literally',
+                title: 'Collaborative, diverse teams',
+                desc: 'Work alongside experienced IT professionals across offshoring, implementation, and managed services – in a culture where every voice matters.',
               },
               {
-                title: 'Collaborative Team',
-                desc: 'Work with a diverse, talented, and supportive team where every voice is valued',
+                title: 'Performance rewards & recognition',
+                desc: 'Competitive salaries, bonuses, and a recognition culture that rewards the results you deliver – not just the hours you log.',
               },
               {
-                title: 'Performance Rewards',
-                desc: 'We offer competitive compensation and recognition for exceptional contributions',
+                title: 'Diverse project exposure',
+                desc: 'Work across multiple domains and industries - gaining broad technical experience that accelerates your skills and keeps every project interesting.',
               },
             ].map((item, index) => (
               <div
@@ -399,10 +400,7 @@ const BenefitsSection = () => {
                   Join our team
                 </h3>
                 <p className="text-gray-600 mb-4 font-raleway text-sm leading-relaxed">
-                  Don't see a position that meets your unique skillset or background?
-                </p>
-                <p className="text-gray-600 font-raleway text-sm leading-relaxed">
-                  Send your resume and cover letter here.
+                 Bring your expertise to a team that values growth, collaboration, and continuous innovation. If no current role matches your profile, submit your application for future consideration.
                 </p>
               </div>
 

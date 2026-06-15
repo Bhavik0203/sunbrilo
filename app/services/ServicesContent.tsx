@@ -37,6 +37,7 @@ const ArrowRightIcon = ({ className }: { className?: string }) => (
 export default function ServicesContent() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const textRef1 = useRef<HTMLHeadingElement>(null);
   const textRef2 = useRef<HTMLHeadingElement>(null);
   const [scrollProgress1, setScrollProgress1] = useState(0);
@@ -47,6 +48,7 @@ export default function ServicesContent() {
   };
 
   const closeModal = () => {
+    setIsSubmitted(false);
     setIsModalOpen(false);
   };
 
@@ -467,7 +469,7 @@ export default function ServicesContent() {
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <h2 className="text-3xl font-bold text-white mb-6 font-raleway">Let's Talk</h2>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); window.location.href = '/thank-you'; }}>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">Name</label>
                 <input type="text" required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="Your Name" />

@@ -156,10 +156,7 @@ function JobTitleContent() {
         const result = await response.json();
         setSubmitMessage('Application submitted successfully!');
 
-        // Redirect or clear form after successful submission
-        setTimeout(() => {
-          router.push('/dashboard/application-success');
-        }, 2000);
+        window.location.href = '/thank-you';
       } else {
         const errorData = await response.json();
         setSubmitMessage(`Submission failed: ${errorData.message || 'Please try again later'}`);

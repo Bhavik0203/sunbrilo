@@ -38,6 +38,7 @@ const ArrowRightIcon = ({ className }: { className?: string }) => (
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showScrollHeader, setShowScrollHeader] = useState(false);
@@ -79,6 +80,7 @@ export default function Header() {
   };
 
   const closeModal = () => {
+    setIsSubmitted(false);
     setIsModalOpen(false);
   };
 
@@ -116,9 +118,16 @@ export default function Header() {
         { name: 'Tablet Biometric Attendance', href: '/solutions/tablet-based-biometric-attendance-system' }
       ]
     },
-    { name: 'Blog', href: '/blogs', hasDropdown: false },
-    { name: 'Newsletters', href: '/newsletters', hasDropdown: false },
-    { name: 'Career', href: '/career', hasDropdown: false },
+    {
+      name: 'Resources',
+      href: '',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Blog', href: '/blogs' },
+        { name: 'Newsletters', href: '/newsletters' },
+        { name: 'Career', href: '/career' }
+      ]
+    },
     { name: 'Contact us', href: '/contact-us', hasDropdown: false },
   ];
 
@@ -166,7 +175,7 @@ export default function Header() {
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
                       <div className="w-[750px] bg-[#0f172a] rounded-2xl shadow-2xl p-8 border border-gray-800">
-                        <div className="grid grid-cols-4 gap-4">
+                        <div className={`grid ${item.dropdownItems.length <= 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-4`}>
                           {item.dropdownItems.map((dropdownItem, idx) => (
                             <Link
                               key={dropdownItem.name}
@@ -277,7 +286,7 @@ export default function Header() {
                       onMouseLeave={() => setOpenDropdown(null)}
                     >
                       <div className="w-[750px] bg-[#0f172a] rounded-2xl shadow-2xl p-8 border border-gray-800">
-                        <div className="grid grid-cols-4 gap-4">
+                        <div className={`grid ${item.dropdownItems.length <= 3 ? 'grid-cols-3' : 'grid-cols-4'} gap-4`}>
                           {item.dropdownItems.map((dropdownItem, idx) => (
                             <Link
                               key={dropdownItem.name}
@@ -454,7 +463,7 @@ export default function Header() {
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <h2 className="text-3xl font-bold text-white mb-6 font-raleway">Let's Talk</h2>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); window.location.href = '/thank-you'; }}>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">Name</label>
                 <input type="text" required className="w-full bg-[#1e293b] border border-gray-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-[#ffee50] focus:ring-1 focus:ring-[#ffee50] transition-colors" placeholder="Your Name" />

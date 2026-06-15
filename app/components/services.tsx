@@ -73,12 +73,14 @@ const Services = () => {
           We offer a comprehensive range of technology services to help your business thrive in the digital age
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          {services.map((service, index) => (
             <Link 
               href={service.link}
               key={service.id}
-              className="group block overflow-hidden transition-shadow duration-300"
+              className={`group block overflow-hidden transition-shadow duration-300 md:col-span-2 lg:col-span-2 ${
+                index === 6 ? 'lg:col-start-2' : ''
+              }`}
             >
               {/* Service Image */}
               <div 
