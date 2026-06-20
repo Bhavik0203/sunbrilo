@@ -1,25 +1,134 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/Header';
-import { blogPosts, gridLayout } from '../lib/blogData';
 
-const topics = [
-  'All Topics',
-  'Cybersecurity',
-  'Cloud & Infrastructure',
-  'AI & Automation',
-  'Managed IT',
+interface BlogApiItem {
+  _id: string;
+  title: string;
+  slug: string;
+  uploadImage?: string;
+  coverImage?: string;
+  excerpt?: string;
+  content?: string;
+  tags?: string[];
+  categories?: string[];
+  readTime?: number;
+  createdAt?: string;
+}
+
+interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  image: string;
+  excerpt: string;
+  tag: string;
+  date: string;
+  readTime: string;
+}
+
+const gridLayout = [
+  'col-span-6 lg:col-span-4 lg:row-span-2',
+  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-1',
+  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3',
+  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-3',
+  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-3',
+  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-5',
+  'col-span-6 lg:col-span-4 lg:row-span-2 lg:col-start-3 lg:row-start-5',
+  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-7',
+  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-7',
+  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-7',
 ];
 
+const normalizeTags = (value: string[] | undefined): string[] => {
+  if (!value) return [];
+  return value
+    .flatMap((item) => {
+      if (!item) return [];
+      try {
+        const parsed = JSON.parse(item);
+        if (Array.isArray(parsed)) return parsed;
+        return [parsed];
+      } catch {
+        return [item];
+      }
+    })
+    .filter(Boolean)
+    .map((tag) => String(tag).replaceAll('"', '').trim())
+    .filter(Boolean);
+};
+
+const formatDate = (value?: string) => {
+  if (!value) return '';
+  return new Date(value).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+};
+
 export default function BlogsPage() {
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState('All Topics');
+  const [loading, setLoading] = useState(true);
 
-  // Filter blog posts by search query and topic
-  const filtered = blogPosts.filter((post) => {
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(
+          'https://sunbrilo-dashboard.onrender.com/api/blogs/',
+          { cache: 'no-store' }
+        );
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch blogs');
+        }
+
+        const data: BlogApiItem[] = await response.json();
+
+        if (!isMounted || !Array.isArray(data)) return;
+
+        const formatted = data.map((post) => {
+          const apiTags = normalizeTags(post.tags || post.categories || []);
+          const tag = apiTags[0] || 'General';
+          const excerpt = post.excerpt || post.content?.replace(/<[^>]+>/g, '').slice(0, 160) || '';
+
+          return {
+            id: post._id,
+            title: post.title,
+            slug: post.slug,
+            image: post.uploadImage || post.coverImage || '/images/blogimage/blog.png',
+            excerpt,
+            tag,
+            date: formatDate(post.createdAt),
+            readTime: post.readTime ? `${post.readTime} min read` : '5 min read',
+          };
+        });
+
+        setBlogs(formatted);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const topics = ['All Topics', ...Array.from(new Set(blogs.map((post) => post.tag)))];
+
+  const filtered = blogs.filter((post) => {
     const matchesTopic = selectedTopic === 'All Topics' || post.tag === selectedTopic;
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -32,7 +141,6 @@ export default function BlogsPage() {
       <div className="bg-[#f5f3f3] p-4">
         <Header />
 
-        {/* ── Hero Banner ─────────────────────────────────────────────── */}
         <section className="relative overflow-hidden rounded-2xl">
           <div className="relative h-[260px] w-full md:h-[420px]">
             <Image
@@ -61,16 +169,11 @@ export default function BlogsPage() {
           </div>
         </section>
 
-        {/* ── Main Section ─────────────────────────────────────────────── */}
         <section className="mx-auto mt-8 w-full max-w-7xl">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-
-            {/* ── Sidebar ─────────────────────────────────────────────── */}
             <aside className="lg:col-span-3">
               <div className="lg:sticky lg:top-6">
                 <div className="rounded-2xl bg-[#f7f5ef] p-5">
-
-                  {/* Search */}
                   <div className="relative">
                     <input
                       type="search"
@@ -86,7 +189,6 @@ export default function BlogsPage() {
                     </div>
                   </div>
 
-                  {/* Topics */}
                   <div className="mt-6">
                     <div className="text-xs cursor-pointer font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Topics</div>
                     <div className="mt-4 flex flex-wrap gap-2">
@@ -95,11 +197,10 @@ export default function BlogsPage() {
                           key={t}
                           type="button"
                           onClick={() => setSelectedTopic(t)}
-                          className={`rounded-xl px-3 py-2 text-xs font-semibold transition-colors font-raleway ${
-                            selectedTopic === t
-                              ? 'bg-[#3b3808] text-[#ffee50]'
-                              : 'bg-[#efe9dd] text-[#3b3808] hover:bg-[#ffee50]'
-                          }`}
+                          className={`rounded-xl px-3 py-2 text-xs font-semibold transition-colors font-raleway ${selectedTopic === t
+                            ? 'bg-[#3b3808] text-[#ffee50]'
+                            : 'bg-[#efe9dd] text-[#3b3808] hover:bg-[#ffee50]'
+                            }`}
                         >
                           {t}
                         </button>
@@ -107,16 +208,11 @@ export default function BlogsPage() {
                     </div>
                   </div>
 
-                  {/* Top Posts */}
                   <div className="mt-6 border-t border-black/10 pt-6">
                     <div className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Top Posts</div>
                     <div className="mt-4 space-y-4">
-                      {blogPosts.slice(0, 5).map((p) => (
-                        <Link
-                          key={p.id}
-                          href={`/blogs/${p.slug}`}
-                          className="block group"
-                        >
+                      {blogs.slice(0, 5).map((p) => (
+                        <Link key={p.id} href={`/blogs/${p.slug}`} className="block group">
                           <div className="mt-1 text-sm font-semibold leading-snug text-[#1b1b1b] group-hover:text-[#3B3808] transition-colors font-raleway">
                             {p.title}
                           </div>
@@ -124,14 +220,16 @@ export default function BlogsPage() {
                       ))}
                     </div>
                   </div>
-
                 </div>
               </div>
             </aside>
 
-            {/* ── Blog Grid ───────────────────────────────────────────── */}
             <div className="lg:col-span-9">
-              {filtered.length === 0 ? (
+              {loading ? (
+                <div className="flex h-64 items-center justify-center rounded-2xl bg-white p-12 text-center shadow-sm">
+                  <p className="text-gray-500 font-raleway">Loading blogs...</p>
+                </div>
+              ) : filtered.length === 0 ? (
                 <div className="flex flex-col items-center justify-center rounded-2xl bg-white p-12 text-center shadow-sm h-64">
                   <svg className="h-12 w-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -151,11 +249,10 @@ export default function BlogsPage() {
                         <Link href={`/blogs/${post.slug}`} className="block h-full">
                           <div className="overflow-hidden rounded-2xl">
                             <div className="relative h-[220px] w-full lg:h-[240px]">
-                              <Image
+                              <img
                                 src={post.image}
                                 alt={post.title}
-                                fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                               />
                             </div>
                           </div>
@@ -164,11 +261,9 @@ export default function BlogsPage() {
                             <div className="inline-flex rounded-md bg-[#ffee50] px-3 py-1 text-xs font-semibold text-[#3B3808]">
                               {post.tag}
                             </div>
-
                             <h3 className="mt-3 text-base font-semibold leading-snug text-[#2b2b2b] group-hover:text-[#3B3808] transition-colors duration-200 md:text-lg font-raleway">
                               {post.title}
                             </h3>
-
                             <div className="mt-3 flex items-center gap-3 text-xs text-[#8b8b8b] font-raleway">
                               <span>{post.date}</span>
                               <span>·</span>
@@ -182,7 +277,6 @@ export default function BlogsPage() {
                 </div>
               )}
             </div>
-
           </div>
         </section>
       </div>

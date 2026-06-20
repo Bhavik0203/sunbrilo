@@ -1,23 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Careers in Real Estate Pune | PropertyDrone' },
-  description:
-    'Join PropertyDrone Realty and grow your career in sales, marketing & consulting. Apply now for exciting opportunities.',
-  keywords: [
-    'real estate jobs Pune',
-    'career in real estate',
-    'PropertyDrone Realty careers',
-    'real estate sales jobs Pune',
-  ],
-  alternates: {
-    canonical: 'https://propertydronerealty.com/career',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
+  title: 'Careers at Sunbrilo Technologies | Join Our Team',
+  description: 'Explore careers at Sunbrilo Technologies. Join a collaborative team building cloud, AI & software solutions with growth, equity & full benefits.',
+  keywords: 'careers in technology, best job opportunities, latest jobs in Pune, equal employment opportunities, healthy work environment, full-time job opportunities, top tech jobs',
+};
 
 export default function CareerLayout({
   children,

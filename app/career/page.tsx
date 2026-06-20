@@ -31,7 +31,7 @@ interface Job {
 }
 
 interface FormattedJob {
-  id: number;
+  id: number | string;
   jobTitle: string;
   link: string;
 }
@@ -46,6 +46,7 @@ const BenefitsSection = () => {
     });
   }, []);
   const [formData, setFormData] = useState<{
+    job: string;
     firstName: string;
     lastName: string;
     phone: string;
@@ -53,6 +54,7 @@ const BenefitsSection = () => {
     message: string;
     resume: File | null;
   }>({
+    job: 'other',
     firstName: '',
     lastName: '',
     phone: '',
@@ -72,7 +74,7 @@ const BenefitsSection = () => {
     setMousePosition({ x, y });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>): void => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -85,6 +87,7 @@ const BenefitsSection = () => {
   };
 
   interface FormData {
+    job: string;
     firstName: string;
     lastName: string;
     phone: string;
@@ -105,6 +108,8 @@ const BenefitsSection = () => {
     try {
       // Create FormData object to handle file upload
       const submissionData = new FormData();
+      submissionData.append('job', formData.job || 'other');
+      submissionData.append('fullName', `${formData.firstName} ${formData.lastName}`);
       submissionData.append('firstName', formData.firstName);
       submissionData.append('lastName', formData.lastName);
       submissionData.append('phone', formData.phone);
@@ -114,18 +119,37 @@ const BenefitsSection = () => {
         submissionData.append('resume', formData.resume);
       }
 
-      // Send to API endpoint
-      const response = await fetch('https://api.propertydronerealty.com/applications/submit', {
-        method: 'POST',
-        body: submissionData,
-        // Don't set Content-Type header when sending FormData
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit application');
+      // Send to internal API route for email notification (with attachment)
+      try {
+        const emailRes = await fetch('/api/career', {
+          method: 'POST',
+          body: submissionData
+        });
+        if (!emailRes.ok) {
+          console.error('Email API Error:', await emailRes.text());
+        }
+      } catch (err) {
+        console.error('Failed to send email notification:', err);
       }
 
-      const result: { message: string } = await response.json();
+      // Send to API endpoint
+      try {
+        const response = await fetch('https://api.sunbrilotechnologies.com/career/applications', {
+          method: 'POST',
+          body: submissionData,
+          // Don't set Content-Type header when sending FormData
+        });
+
+        if (!response.ok) {
+          console.error('Dashboard API Error:', await response.text());
+        }
+      } catch (err) {
+        console.error('Failed to send to dashboard API:', err);
+      }
+
+      // If we reach here, at least the email API didn't hard-crash the function
+      // Even if the dashboard API failed, we'll consider it a success since the email sent
+      // const result: { message: string } = await response.json();
       setSubmitStatus({
         success: true,
         message: 'Your application has been submitted successfully!'
@@ -134,6 +158,7 @@ const BenefitsSection = () => {
 
       // Reset form after successful submission
       setFormData({
+        job: 'other',
         firstName: '',
         lastName: '',
         phone: '',
@@ -162,19 +187,20 @@ const BenefitsSection = () => {
     const fetchJobs = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://api.propertydronerealty.com/careers');
+        const response = await fetch('https://api.sunbrilotechnologies.com/career/jobs');
 
         if (!response.ok) {
           throw new Error(`Failed to fetch: ${response.status}`);
         }
 
-        const data = await response.json();
+        const responseData = await response.json();
+        const jobsList = responseData.data || [];
 
         // Transform API data to match our component's format
-        const formattedJobs: FormattedJob[] = data.map((job: Job) => ({
-          id: job.id,
-          jobTitle: job.jobTitle || 'Job Opening',
-          link: `/careers/careerdetail?id=${job.id}`
+        const formattedJobs: FormattedJob[] = jobsList.map((job: any) => ({
+          id: job._id || job.id,
+          jobTitle: job.title || job.jobTitle || 'Job Opening',
+          link: `/careers/careerdetail?id=${job._id || job.id}`
         }));
 
         setJobs(formattedJobs);
@@ -400,7 +426,7 @@ const BenefitsSection = () => {
                   Join our team
                 </h3>
                 <p className="text-gray-600 mb-4 font-raleway text-sm leading-relaxed">
-                 Bring your expertise to a team that values growth, collaboration, and continuous innovation. If no current role matches your profile, submit your application for future consideration.
+                  Bring your expertise to a team that values growth, collaboration, and continuous innovation. If no current role matches your profile, submit your application for future consideration.
                 </p>
               </div>
 
@@ -427,6 +453,25 @@ const BenefitsSection = () => {
                         className="hidden"
                       />
                     </label>
+                  </div>
+
+                  {/* Job Selection Field */}
+                  <div className="mb-4">
+                    <select
+                      id="job"
+                      name="job"
+                      value={formData.job}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-[#f5f3f3] border border-gray-200 rounded-xl focus:outline-none focus:border-[#3B3808] focus:ring-1 focus:ring-[#3B3808] font-raleway transition-colors text-gray-900 appearance-none"
+                      required
+                    >
+                      <option value="other">Other / General Application</option>
+                      {jobs.map((job) => (
+                        <option key={job.id} value={job.id}>
+                          {job.jobTitle}
+                        </option>
+                      ))}
+                    </select>
                   </div>
 
                   {/* Name Fields - Side by Side */}

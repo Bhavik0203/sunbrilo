@@ -4,6 +4,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/footer";
 import Header from "./components/Header";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +23,12 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Sunbrilo Technologies",
-  description: "Empowering Businesses with Intelligent Technology Solutions",
+  title: "IT Solution Provider & AI-Driven Solutions | Sunbrilo Technologies",
+  description: "Scale your operations with Sunbrilo Technologies. We specialize in robust IT solutions, AI-driven solutions, and cloud-based CRM systems tailored for your business.",
+  keywords: "IT solutions provider, intelligent technology solutions, sunbrilo technologies, IT services, HRMS, crm software, order management software, attendance tracking system, cloud solutions, cyber security, AI automation",
+  verification: {
+    google: "-pXBl4auIE9G6ABwOxZZhovfuzUE6FXvyjVU820rpBA",
+  },
 };
 
 export default function RootLayout({
@@ -37,6 +42,16 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-5L90N8DETE" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-5L90N8DETE');
+          `}
+        </Script>
         <Header/>
         {children}
         <Footer/>

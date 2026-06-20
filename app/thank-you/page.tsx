@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ThankYouPage() {
   return (
-    <div className="min-h-screen bg-blue-900/20 flex flex-col items-center justify-center px-4">
+    <div className="min-h-screen bg-blue-900 flex flex-col items-center justify-center px-4">
       <div className="max-w-2xl w-full bg-white rounded-3xl p-12 text-center shadow-xl border border-gray-100">
         <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm">
           <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

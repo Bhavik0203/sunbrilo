@@ -4,35 +4,36 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import SplitViewGlobalHub from './Split-Screen';
 
 const ArrowUpRightIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`h-4 w-4 ${className || ''}`}
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M7 17L17 7" />
-    <path d="M8 7h9v9" />
-  </svg>
+    <svg
+        viewBox="0 0 24 24"
+        className={`h-4 w-4 ${className || ''}`}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M7 17L17 7" />
+        <path d="M8 7h9v9" />
+    </svg>
 );
 
 const ArrowRightIcon = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 24 24"
-    className={`h-4 w-4 ${className || ''}`}
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M5 12h14" />
-    <path d="M12 5l7 7-7 7" />
-  </svg>
+    <svg
+        viewBox="0 0 24 24"
+        className={`h-4 w-4 ${className || ''}`}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+    >
+        <path d="M5 12h14" />
+        <path d="M12 5l7 7-7 7" />
+    </svg>
 );
 
 const MailIcon = () => (
@@ -56,6 +57,78 @@ const PhoneIcon = () => (
 export default function SupportForm() {
     const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
     const [activeTab, setActiveTab] = useState('India');
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        company_name: '',
+        country_code: '+1',
+        number: '',
+        i_am_interested_in: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState('');
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitError('');
+
+        const fullNumber = `${formData.country_code} ${formData.number}`;
+        const payload = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            number: fullNumber,
+            company_name: formData.company_name,
+            i_am_interested_in: formData.i_am_interested_in
+        };
+
+        try {
+            // Send to internal API route for email notification
+            try {
+                const emailRes = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                if (!emailRes.ok) {
+                    console.error('Email API Error:', await emailRes.text());
+                }
+            } catch (err) {
+                console.error('Failed to send email notification:', err);
+            }
+
+            const response = await fetch('https://api.sunbrilotechnologies.com/forms/forms/69d8da8f74955887675fb7d1/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    data: payload
+                })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.message || 'Form submission failed');
+            }
+
+            window.location.href = '/thank-you';
+        } catch (error: any) {
+            console.error('Error submitting form:', error);
+            setSubmitError(error.message || 'Something went wrong. Please try again.');
+            setIsSubmitting(false);
+        }
+    };
 
     const locations = {
         India: {
@@ -155,24 +228,24 @@ export default function SupportForm() {
                             Contact us
                         </h1>
 
-                    
+
                         {/* Description Paragraph */}
                         <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
                             Transform your business with our cutting-edge technology solutions. Our expert team specializes in custom software development, cloud infrastructure, and digital transformation strategies that drive growth and innovation. Let us help you build the future of your enterprise.
                         </p>
 
                         {/* CTA Buttons */}
-                   
+
                     </motion.div>
                 </div>
 
                 {/* Decorative Cloud/Network Graphics */}
                 <div className="absolute top-10 left-10 w-32 h-32 md:w-48 md:h-48 opacity-20">
                     <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="100" cy="100" r="80" stroke="white" strokeWidth="1" opacity="0.3"/>
-                        <circle cx="100" cy="100" r="60" stroke="white" strokeWidth="1" opacity="0.5"/>
-                        <circle cx="100" cy="100" r="40" stroke="white" strokeWidth="1" opacity="0.7"/>
-                        <path d="M100 20 L100 180 M20 100 L180 100" stroke="white" strokeWidth="1" opacity="0.3"/>
+                        <circle cx="100" cy="100" r="80" stroke="white" strokeWidth="1" opacity="0.3" />
+                        <circle cx="100" cy="100" r="60" stroke="white" strokeWidth="1" opacity="0.5" />
+                        <circle cx="100" cy="100" r="40" stroke="white" strokeWidth="1" opacity="0.7" />
+                        <path d="M100 20 L100 180 M20 100 L180 100" stroke="white" strokeWidth="1" opacity="0.3" />
                     </svg>
                 </div>
             </section>
@@ -226,34 +299,39 @@ export default function SupportForm() {
                         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" as const }}
                     >
                         <div className="bg-white p-8 md:p-10 rounded shadow-[0_10px_40px_rgba(0,0,0,0.08)] w-full">
-                            <form className="flex flex-col space-y-5" onSubmit={(e) => { e.preventDefault(); window.location.href = '/thank-you'; }}>
+                            <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
+                                {submitError && (
+                                    <div className="bg-red-50 text-red-600 p-3 rounded-md text-sm">
+                                        {submitError}
+                                    </div>
+                                )}
 
                                 {/* Select Field */}
-                                
+
 
                                 {/* Full Name */}
                                 <div className="flex flex-col space-y-2">
                                     <label className="text-sm font-semibold text-gray-800">Full Name</label>
-                                    <input type="text" className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition" />
+                                    <input type="text" name="name" value={formData.name} onChange={handleInputChange} required className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition" />
                                 </div>
 
                                 {/* Corporate Email Address */}
                                 <div className="flex flex-col space-y-2">
                                     <label className="text-sm font-semibold text-gray-800">Corporate Email Address</label>
-                                    <input type="email" className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition" />
+                                    <input type="email" name="email" value={formData.email} onChange={handleInputChange} required className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition" />
                                 </div>
 
                                 {/* Company Name */}
                                 <div className="flex flex-col space-y-2">
                                     <label className="text-sm font-semibold text-gray-800">Company Name</label>
-                                    <input type="text" className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition" />
+                                    <input type="text" name="company_name" value={formData.company_name} onChange={handleInputChange} className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition" />
                                 </div>
 
                                 {/* Phone Number */}
                                 <div className="flex flex-col space-y-2">
                                     <label className="text-sm font-semibold text-gray-800">Phone Number</label>
                                     <div className="flex">
-                                        <select className="bg-[#e5e5e5] text-gray-700 p-3.5 border-r border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition">
+                                        <select name="country_code" value={formData.country_code} onChange={handleInputChange} className="bg-[#e5e5e5] text-gray-700 p-3.5 border-r border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition">
                                             <option value="+1">+1 (US/CA)</option>
                                             <option value="+44">+44 (UK)</option>
                                             <option value="+91">+91 (IN)</option>
@@ -262,6 +340,9 @@ export default function SupportForm() {
                                         </select>
                                         <input
                                             type="tel"
+                                            name="number"
+                                            value={formData.number}
+                                            onChange={handleInputChange}
                                             required
                                             pattern="\d{10}"
                                             maxLength={10}
@@ -275,10 +356,29 @@ export default function SupportForm() {
                                 <div className="flex flex-col space-y-2">
                                     <label className="text-sm font-semibold text-gray-800">I am interested in....</label>
                                     <div className="relative">
-                                        <select className="w-full bg-[#f2f2f2] text-gray-600 p-3.5 appearance-none focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition">
-                                            <option>Custom Software/Product Engineering</option>
-                                            <option>IT Consulting & Strategy</option>
-                                            <option>Cloud Infrastructure</option>
+                                        <select name="i_am_interested_in" value={formData.i_am_interested_in} onChange={handleInputChange} required className="w-full bg-[#f2f2f2] text-gray-600 p-3.5 appearance-none focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition">
+                                            <option value="" disabled selected>Select an option</option>
+                                            <optgroup label="Services">
+                                                <option>Development & Testing</option>
+                                                <option>Offshoring Services</option>
+                                                <option>Managed IT Services</option>
+                                                <option>Cloud Solutions</option>
+                                                <option>Data Analytics</option>
+                                                <option>Implementation Services</option>
+                                                <option>Cyber Security</option>
+                                                <option>Monitoring and Support</option>
+                                            </optgroup>
+                                            <optgroup label="Solutions">
+                                                <option>Cognitive Dining & Workforce</option>
+                                                <option>Equipment Leasing Platform</option>
+                                                <option>HRMS Empowering Workforce</option>
+                                                <option>Asset Performance Management</option>
+                                                <option>Logistics & Supply Chain</option>
+                                                <option>Order Management</option>
+                                                <option>Remote Geofencing Attendance</option>
+                                                <option>Tablet Biometric Attendance</option>
+                                            </optgroup>
+                                            <option>Other</option>
                                         </select>
                                         {/* Custom dropdown arrow */}
                                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
@@ -290,7 +390,7 @@ export default function SupportForm() {
                                 {/* Project Brief/Message */}
                                 <div className="flex flex-col space-y-2">
                                     <label className="text-sm font-semibold text-gray-800">Project Brief/Message</label>
-                                    <textarea rows={3} className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition resize-none"></textarea>
+                                    <textarea name="message" value={formData.message} onChange={handleInputChange} required rows={3} className="w-full bg-[#f2f2f2] p-3.5 focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition resize-none"></textarea>
                                 </div>
 
                                 {/* Checkbox */}
@@ -308,19 +408,20 @@ export default function SupportForm() {
                                 {/* Submit Button */}
                                 <button
                                     type="submit"
-                                    className="mt-4 w-full bg-[#56aeff] hover:bg-[#4596e6] text-white font-semibold text-lg py-4 transition duration-200"
+                                    disabled={isSubmitting}
+                                    className="mt-4 w-full bg-[#56aeff] hover:bg-[#4596e6] disabled:bg-[#a5d2ff] text-white font-semibold text-lg py-4 transition duration-200"
                                 >
-                                   Submit
+                                    {isSubmitting ? 'Submitting...' : 'Submit'}
                                 </button>
                             </form>
                         </div>
                     </motion.div>
                 </div>
             </div>
-            <div className="min-h-screen bg-[#f4f5f7] py-6 px-6 md:px-12 font-sans text-gray-900 overflow-hidden">
+            {/* <div className="min-h-screen bg-[#f4f5f7] py-6 px-6 md:px-12 font-sans text-gray-900 overflow-hidden">
                 <div className="max-w-[1200px] mx-auto">
 
-                    {/* Header Section */}
+                    
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -335,14 +436,12 @@ export default function SupportForm() {
                         </p>
                     </motion.div>
 
-                    {/* Main Content Grid Replacment - Tabbed Map UI */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="bg-white rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden max-w-5xl mx-auto"
                     >
-                        {/* Tabs */}
                         <div className="flex bg-[#e5e5e5] text-gray-600 font-semibold text-sm">
                             <button
                                 onClick={() => setActiveTab('India')}
@@ -367,10 +466,8 @@ export default function SupportForm() {
                             </button>
                         </div>
 
-                        {/* Content */}
                         <div className="p-6 md:p-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                                {/* Address */}
                                 <div className="space-y-4">
                                     <h3 className="font-bold text-gray-800 text-lg">{locations[activeTab as keyof typeof locations].title}</h3>
                                     <div className="flex items-start space-x-3 text-gray-600">
@@ -380,8 +477,6 @@ export default function SupportForm() {
                                         <p className="text-sm leading-relaxed">{locations[activeTab as keyof typeof locations].address}</p>
                                     </div>
                                 </div>
-                                
-                                {/* Phones */}
                                 <div className="space-y-3 md:mt-11">
                                    {activeTab === 'India' && (
                                       <>
@@ -408,7 +503,6 @@ export default function SupportForm() {
                                 </div>
                             </div>
                             
-                            {/* Map */}
                             <div className="w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden relative shadow-sm border border-gray-100">
                                 <iframe
                                     src={locations[activeTab as keyof typeof locations].mapSrc}
@@ -422,7 +516,7 @@ export default function SupportForm() {
                             </div>
                         </div>
 
-                        {/* Footer Bar */}
+                        
                         <div className="bg-[#112344] text-white py-5 px-6 flex flex-col md:flex-row justify-around items-center text-sm font-semibold space-y-3 md:space-y-0">
                             <a href="mailto:info@sunbrilotechnologies.com" className="hover:text-gray-300 transition-colors">info@sunbrilotechnologies.com</a>
                             <a href="mailto:sales@sunbrilotechnologies.com" className="hover:text-gray-300 transition-colors">sales@sunbrilotechnologies.com</a>
@@ -430,7 +524,8 @@ export default function SupportForm() {
                         </div>
                     </motion.div>
                 </div>
-            </div>
+            </div> */}
+            <SplitViewGlobalHub />
             <div className="min-h-screen bg-[#f4f5f7] pt-20 px-6 md:px-12 font-sans text-gray-900 flex flex-col items-center">
 
                 {/* Header Section */}
@@ -495,23 +590,7 @@ export default function SupportForm() {
                 {/* <div className="absolute inset-0 bg-white/70 md:bg-white/80"></div> */}
 
                 {/* Content */}
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, ease: "easeOut" as const }}
-                    className="relative z-10 text-center max-w-5xl mx-auto space-y-4 md:space-y-6"
-                >
-                    <h2 className="text-3xl md:text-[44px] leading-tight font-bold text-black tracking-tight">
-                        Ready to Hire Offshore Developers in India?
-                    </h2>
 
-                    <p className="text-base md:text-xl text-black font-medium max-w-3xl mx-auto">
-                        Join the global enterprises that trust Sunbrilo for high-velocity, secure, and scalable technology.
-                    </p>
-
-
-                </motion.div>
             </section>
         </>
     );

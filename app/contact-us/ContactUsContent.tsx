@@ -286,45 +286,7 @@ export default function ContactUsContent() {
       </section>
 
       {/* Section 3: Global Operations & Headquarters */}
-      <section className=" px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-raleway">
-                Visit Our Global Engineering Hub
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-8 font-raleway">
-                Located in the heart of India's technology corridor, our headquarters houses our elite engineering squads and 24/7 Network Operations Center (NOC).
-              </p>
-
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 font-raleway">Office Address:</h3>
-                  <p className="text-gray-600 font-raleway">Pune, Maharashtra, India</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 font-raleway">General Inquiries:</h3>
-                  <p className="text-gray-600 font-raleway">info@sunbrilotechnologies.com</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 font-raleway">Business Development:</h3>
-                  <p className="text-gray-600 font-raleway">sales@sunbrilotechnologies.com</p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 font-raleway">24/7 Technical Support:</h3>
-                  <p className="text-gray-600 font-raleway">support@sunbrilotechnologies.com</p>
-                </div>
-              </div>
-            </div>
-
-           
-          </div>
-        </div>
-      </section>
-
+    
       {/* Section 4: What Happens Next? */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">

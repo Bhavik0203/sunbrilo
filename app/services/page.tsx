@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import ServicesContent from './ServicesContent';
 
 export const metadata: Metadata = {
-  title: 'Enterprise IT Services & Custom Software Solutions | Sunbrilo',
-  description: 'Sunbrilo Technologies is an end-to-end IT solutions provider offering enterprise software development, cloud migration, AI analytics, and offshore staff augmentation.',
-  keywords: 'Enterprise IT services, Custom software development, Cloud migration services, AI implementation, Offshore staff augmentation, IT consulting, Cybersecurity services',
+  title: 'Enterprise IT Services & Software Solutions | Sunbrilo Technologies',
+  description: 'Explore Sunbrilo\'s enterprise IT services, software development, cloud migration, AI analytics, cybersecurity & offshore staffing for global businesses.',
+  keywords: 'custom software development company, enterprise IT services, cloud migration services, offshore staff augmentation, IT consulting firm, IT strategy consulting, software development company, cloud migration, cybersecurity services, data analytics',
 };
 
 export default function Services() {

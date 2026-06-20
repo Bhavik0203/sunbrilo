@@ -1,39 +1,62 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface TeamMember {
-  id: number;
+  id: string | number;
   name: string;
   role: string;
   image: string;
   bgImage: string;
 }
 
-const teamMembers: TeamMember[] = [
-   { id: 1, name: "Sunil Kumar", role: "CEO", image: "Sunil kumar.png", bgImage: "/images/teambg1.png" },
-  { id: 2, name: "Nabin Prasad", role: "CTO", image: "Nabin prasad.png", bgImage: "/images/teambg2.png" },
-  { id: 3, name: "Poornima Poojari", role: "TA Head", image: "Poornima.png", bgImage: "/images/teambg1.png" },
-   { id: 4, name: "Namrata Kamthe", role: "Head HR", image: "Namrata.png", bgImage: "/images/teambg2.png" },
-  { id: 5, name: "Vinod Maru", role: "COO", image: "Vinod maru.png", bgImage: "/images/teambg1.png" },
-];
-
 export default function ExpertTeam() {
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const visibleCount = 3;
 
+  useEffect(() => {
+    async function fetchTeam() {
+      try {
+        const response = await fetch("https://sunbrilo-dashboard.onrender.com/api/team");
+        if (response.ok) {
+          const result = await response.json();
+          if (result.success && Array.isArray(result.data)) {
+            const fetchedMembers = result.data.filter((m: any) => m.isActive).map((member: any, i: number) => ({
+              id: member._id,
+              name: member.fullName,
+              role: member.designation,
+              image: member.photo?.startsWith('http') 
+                ? member.photo 
+                : `https://sunbrilo-dashboard.onrender.com/uploads/team/${member.photo}`,
+              bgImage: i % 2 === 0 ? "/images/teambg1.png" : "/images/teambg2.png",
+            }));
+            setTeamMembers(fetchedMembers);
+          }
+        }
+      } catch (error) {
+        console.error("Failed to fetch team members", error);
+      }
+    }
+    fetchTeam();
+  }, []);
+
   const prev = () => {
+    if (teamMembers.length === 0) return;
     setCurrentIndex((i) => (i - 1 + teamMembers.length) % teamMembers.length);
   };
 
   const next = () => {
+    if (teamMembers.length === 0) return;
     setCurrentIndex((i) => (i + 1) % teamMembers.length);
   };
 
-  const visibleMembers = Array.from({ length: visibleCount }, (_, i) => ({
-    member: teamMembers[(currentIndex + i) % teamMembers.length],
-    position: i, // 0=left, 1=center, 2=right
-  }));
+  const visibleMembers = teamMembers.length > 0 
+    ? Array.from({ length: Math.min(visibleCount, teamMembers.length) }, (_, i) => ({
+        member: teamMembers[(currentIndex + i) % teamMembers.length],
+        position: i, // 0=left, 1=center, 2=right
+      }))
+    : [];
 
   return (
     <section className=" pb-16 px-5 flex flex-col items-center">
@@ -71,7 +94,7 @@ export default function ExpertTeam() {
               {/* Avatar: use background-image cover to ensure consistent fill */}
               <div
                 className="w-40 h-40 sm:w-48 sm:h-48 mx-auto mb-6  overflow-hidden bg-center bg-cover"
-                style={{ backgroundImage: `url('/images/team/${encodeURIComponent(member.image)}')` }}
+                style={{ backgroundImage: `url('${member.image}')` }}
                 aria-hidden="true"
               />
 
