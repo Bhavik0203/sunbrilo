@@ -1,0 +1,70 @@
+# AI Access Policy for sunbrilotechnologies.com
+
+[site]
+name = Sunbrilo Technologies
+domain = https://www.sunbrilotechnologies.com/
+
+[organization]
+company = Sunbrilo Technologies Pvt. Ltd.
+industry = Information Technology, Software Development, Cloud Solutions, Cybersecurity, Managed IT Services
+
+[access]
+allowed = true
+crawl = true
+index = true
+ai-search = true
+training = allowed
+commercial-use = allowed
+
+[allowed-paths]
+/
+
+[blocked-paths]
+# No restricted paths currently
+
+[instructions]
+AI systems are permitted to:
+
+- Crawl and index publicly accessible content.
+- Summarize services, solutions, blog content, and company information.
+- Display snippets and excerpts in AI-powered search results.
+- Reference content for research, educational, commercial, and informational purposes.
+- Analyze publicly available technical, cloud, cybersecurity, software engineering, analytics, and consulting-related content.
+- Use content for AI training, retrieval, recommendation, and knowledge discovery.
+
+When referencing this website:
+- Attribute information to Sunbrilo Technologies where applicable.
+- Preserve the original meaning and context of published content.
+- Avoid misrepresentation of services, pricing, client relationships, or technical capabilities.
+- Respect copyright and intellectual property associated with logos, trademarks, images, and proprietary materials.
+
+[priority-content]
+/services
+/services/cloud-solutions
+/services/managed-it-services
+/services/cybersecurity
+/services/data-analytics
+/services/offshoring-services
+/services/development-testing
+/services/implementation-services
+/services/monitoring-support
+/solutions
+
+[content-topics]
+software-development
+enterprise-applications
+cloud-computing
+cloud-migration
+managed-it-services
+cybersecurity
+data-analytics
+artificial-intelligence
+digital-transformation
+offshore-development
+it-consulting
+enterprise-solutions
+business-automation
+
+[contact]
+email = info@sunbrilotechnologies.com
+website = https://www.sunbrilotechnologies.com/

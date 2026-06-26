@@ -82,8 +82,7 @@ export default function BlogsPage() {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(
-          'https://sunbrilo-dashboard.onrender.com/api/blogs/',
-          { cache: 'no-store' }
+          'https://sunbrilo-dashboard.onrender.com/api/blogs/'
         );
 
         if (!response.ok) {
