@@ -9,6 +9,7 @@ import BlogSection from './components/blog';
 import Banner from "./components/Banner";
 import SolutionsScroll from "./components/Solutionsweprovide";
 import SolutionsWeProvideMobile from "./components/Solutionsweprovidemobile";
+import AnnouncementPopup from './components/AnnouncementPopup';
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
        <ClientsSection/>
        <BlogSection/>
       
+       <AnnouncementPopup />
    </div>
   );
 }

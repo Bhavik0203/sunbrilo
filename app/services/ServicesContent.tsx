@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import EnterpriseCapabilities from './servicesmain';
 import LetsTalkModal from '@/app/components/LetsTalkModal';
+import FAQSection from '@/app/components/FAQSection';
 
 const ArrowUpRightIcon = ({ className }: { className?: string }) => (
   <svg
@@ -458,6 +459,9 @@ export default function ServicesContent() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection category="main service page" />
 
       {/* Modal */}
       <LetsTalkModal isOpen={isModalOpen} onClose={closeModal} />

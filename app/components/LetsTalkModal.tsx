@@ -60,7 +60,7 @@ export default function LetsTalkModal({ isOpen, onClose }: { isOpen: boolean, on
       }
 
       // Original API call
-      const response = await fetch('https://api.sunbrilotechnologies.com/forms/forms/6a311071bc3090a94b103ba2/submit', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/forms/forms/6a4239306ff07752ede5e3e4/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

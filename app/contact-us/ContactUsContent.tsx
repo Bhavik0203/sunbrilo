@@ -43,6 +43,8 @@ export default function ContactUsContent() {
     countryCode: '+1',
     phone: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -56,10 +58,33 @@ export default function ContactUsContent() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    window.location.href = '/thank-you';
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/forms/forms/6a423c6d6ff07752ede5e401/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          data: formData
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      console.log('Form submitted:', formData);
+      window.location.href = '/thank-you';
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError('Something went wrong. Please try again.');
+      setIsSubmitting(false);
+    }
   };
 
   return (

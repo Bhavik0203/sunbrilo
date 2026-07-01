@@ -127,32 +127,41 @@ function JobTitleContent() {
       // Create FormData object to handle file uploads
       const submitData = new FormData();
 
-      // Append all form fields
-      Object.keys(formData).forEach(key => {
-        const value = formData[key as keyof typeof formData];
-        if (key === 'resume') {
-          if (value) {
-            submitData.append(key, value as File);
-          }
-        } else if (key === 'additionalDocuments') {
-          if (value) {
-            const files = value as FileList;
-            Array.from(files).forEach((file, index) => {
-              submitData.append(`${key}[${index}]`, file);
-            });
-          }
-        } else if (value) {
-          submitData.append(key, String(value));
-        }
-      });
+      submitData.append('job', formData.jobId);
+      submitData.append('fullName', `${formData.firstName} ${formData.lastName}`);
+      submitData.append('email', formData.email);
+      submitData.append('phone', formData.phone);
+      submitData.append('currentCompany', formData.currentCompany);
+      submitData.append('linkedinUrl', formData.linkedInProfile);
+      submitData.append('portfolioUrl', formData.portfolioUrl);
+      submitData.append('totalExperience', String(formData.experienceYears));
+      submitData.append('currentSalary', formData.currentSalary);
+      submitData.append('expectedSalary', formData.expectedSalary);
+      submitData.append('noticePeriod', formData.noticePeriod);
+      submitData.append('coverLetter', formData.coverLetter);
+
+      if (formData.resume) {
+        submitData.append('resume', formData.resume);
+      }
 
       // Submit the form data
-      const response = await fetch('api.propertydronerealty.com/applications/submit', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/career/applications`, {
         method: 'POST',
         body: submitData,
       });
 
       if (response.ok) {
+        // Send email via Next.js local API route
+        try {
+          await fetch('/api/career', {
+            method: 'POST',
+            body: submitData,
+          });
+        } catch (emailError) {
+          console.error('Error sending email:', emailError);
+          // Proceed anyway since application was saved
+        }
+
         const result = await response.json();
         setSubmitMessage('Application submitted successfully!');
 
@@ -193,7 +202,7 @@ function JobTitleContent() {
         // Extract the slug from the URL (last part after the final slash)
         const slug = path.substring(path.lastIndexOf('/') + 1);
 
-        const response = await fetch("api.propertydronerealty.com/careers");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/career/jobs`);
         if (!response.ok) {
           throw new Error("Failed to fetch job data");
         }

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/Header';
-import { newsletters } from '../lib/newsletterData';
+import { Newsletter } from '../lib/newsletterData';
 
 const topics = [
   'All Topics',
@@ -28,12 +28,12 @@ const gridLayout = [
   'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-7',
 ];
 
-export default function NewslettersPage() {
+export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Newsletter[] }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState('All Topics');
 
   // Filter newsletters by search query and topic
-  const filtered = newsletters.filter((post) => {
+  const filtered = apiNewsletters.filter((post) => {
     const matchesTopic = selectedTopic === 'All Topics' || post.tag === selectedTopic;
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -126,7 +126,7 @@ export default function NewslettersPage() {
                   <div className="mt-6 border-t border-black/10 pt-6">
                     <div className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Top Newsletters</div>
                     <div className="mt-4 space-y-4">
-                      {newsletters.slice(0, 5).map((p) => (
+                      {apiNewsletters.slice(0, 5).map((p) => (
                         <Link
                           key={p.id}
                           href={`/newsletters/${p.slug}`}
@@ -166,11 +166,10 @@ export default function NewslettersPage() {
                         <Link href={`/newsletters/${post.slug}`} className="block h-full">
                           <div className="overflow-hidden rounded-2xl">
                             <div className="relative h-[220px] w-full lg:h-[240px]">
-                              <Image
+                              <img
                                 src={post.image}
                                 alt={post.title}
-                                fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                               />
                             </div>
                           </div>

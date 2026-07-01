@@ -107,7 +107,7 @@ export default function SupportForm() {
                 console.error('Failed to send email notification:', err);
             }
 
-            const response = await fetch('https://api.sunbrilotechnologies.com/forms/forms/69d8da8f74955887675fb7d1/submit', {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/forms/forms/6a423c6d6ff07752ede5e401/submit`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

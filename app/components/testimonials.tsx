@@ -9,6 +9,7 @@ interface TestimonialItem {
   title?: string;
   testimonial: string;
   image?: string;
+  highlight?: boolean;
 }
 
 const Testimonials = () => {
@@ -22,7 +23,7 @@ const Testimonials = () => {
     const fetchTestimonials = async () => {
       try {
         const response = await fetch(
-          'https://sunbrilo-dashboard.onrender.com/api/testimonials/',
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/testimonials/`,
           { cache: 'no-store' }
         );
 
@@ -33,7 +34,12 @@ const Testimonials = () => {
         const data = await response.json();
 
         if (isMounted && Array.isArray(data)) {
-          setTestimonials(data);
+          const sortedData = data.sort((a, b) => {
+            if (a.highlight && !b.highlight) return -1;
+            if (!a.highlight && b.highlight) return 1;
+            return 0;
+          });
+          setTestimonials(sortedData);
         }
       } catch (error) {
         console.error('Error fetching testimonials:', error);
@@ -56,6 +62,11 @@ const Testimonials = () => {
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
   const t = testimonials[current];
+
+  if (!loading && (!testimonials || testimonials.length === 0)) {
+    return null;
+  }
+
   const content = t?.testimonial?.replace(/^"|"$/g, '') || '';
   const initials =
     t?.name

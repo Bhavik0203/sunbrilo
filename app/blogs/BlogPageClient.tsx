@@ -17,6 +17,7 @@ interface BlogApiItem {
   categories?: string[];
   readTime?: number;
   createdAt?: string;
+  isPublished?: boolean;
 }
 
 interface BlogPost {
@@ -82,7 +83,7 @@ export default function BlogsPage() {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(
-          'https://sunbrilo-dashboard.onrender.com/api/blogs/'
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/blogs/`
         );
 
         if (!response.ok) {
@@ -93,7 +94,9 @@ export default function BlogsPage() {
 
         if (!isMounted || !Array.isArray(data)) return;
 
-        const formatted = data.map((post) => {
+        const publishedBlogs = data.filter((post) => post.isPublished === true);
+
+        const formatted = publishedBlogs.map((post) => {
           const apiTags = normalizeTags(post.tags || post.categories || []);
           const tag = apiTags[0] || 'General';
           const excerpt = post.excerpt || post.content?.replace(/<[^>]+>/g, '').slice(0, 160) || '';

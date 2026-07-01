@@ -1,6 +1,28 @@
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function ThankYouPage() {
+  const router = useRouter();
+  const [countdown, setCountdown] = useState(10);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          router.push('/');
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [router]);
+
   return (
     <div className="min-h-screen bg-blue-900 flex flex-col items-center justify-center px-4">
       <div className="max-w-2xl w-full bg-white rounded-3xl p-12 text-center shadow-xl border border-gray-100">
@@ -27,6 +49,10 @@ export default function ThankYouPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </Link>
+        
+        <p className="mt-6 text-sm text-gray-500 font-raleway animate-pulse">
+          Redirecting to homepage in {countdown} seconds...
+        </p>
       </div>
     </div>
   );

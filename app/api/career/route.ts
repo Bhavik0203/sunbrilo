@@ -9,6 +9,14 @@ export async function POST(request: Request) {
     const phone = formData.get('phone');
     const email = formData.get('email');
     const message = formData.get('message');
+    const coverLetter = formData.get('coverLetter');
+    const currentCompany = formData.get('currentCompany');
+    const linkedinUrl = formData.get('linkedinUrl');
+    const portfolioUrl = formData.get('portfolioUrl');
+    const totalExperience = formData.get('totalExperience');
+    const currentSalary = formData.get('currentSalary');
+    const expectedSalary = formData.get('expectedSalary');
+    const noticePeriod = formData.get('noticePeriod');
     const resume = formData.get('resume') as File | null;
 
     // Create a Nodemailer transporter
@@ -32,8 +40,15 @@ export async function POST(request: Request) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Position:</strong> ${job}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        ${currentCompany ? `<p><strong>Current Company:</strong> ${currentCompany}</p>` : ''}
+        ${totalExperience ? `<p><strong>Total Experience:</strong> ${totalExperience} years</p>` : ''}
+        ${currentSalary ? `<p><strong>Current Salary:</strong> ${currentSalary}</p>` : ''}
+        ${expectedSalary ? `<p><strong>Expected Salary:</strong> ${expectedSalary}</p>` : ''}
+        ${noticePeriod ? `<p><strong>Notice Period:</strong> ${noticePeriod}</p>` : ''}
+        ${linkedinUrl ? `<p><strong>LinkedIn Profile:</strong> <a href="${linkedinUrl}">${linkedinUrl}</a></p>` : ''}
+        ${portfolioUrl ? `<p><strong>Portfolio URL:</strong> <a href="${portfolioUrl}">${portfolioUrl}</a></p>` : ''}
+        ${message ? `<p><strong>Message:</strong></p><p>${message}</p>` : ''}
+        ${coverLetter && coverLetter !== message ? `<p><strong>Cover Letter:</strong></p><p>${coverLetter}</p>` : ''}
       `,
     };
 

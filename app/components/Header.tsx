@@ -94,7 +94,7 @@ export default function Header() {
         console.error('Failed to send email notification:', err);
       }
 
-      const response = await fetch('https://api.sunbrilotechnologies.com/forms/forms/6a311071bc3090a94b103ba2/submit', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/forms/forms/6a311071bc3090a94b103ba2/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -197,7 +197,11 @@ export default function Header() {
       href: '',
       hasDropdown: true,
       dropdownItems: [
+        { name: 'Announcements', href: '/announcements' },
         { name: 'Blog', href: '/blogs' },
+        { name: 'Events', href: '/events' },
+        { name: 'Gallery', href: '/gallery' },
+        { name: 'Media', href: '/media' },
         { name: 'Newsletters', href: '/newsletters' },
         { name: 'Career', href: '/career' }
       ]

@@ -12,13 +12,14 @@ interface TeamMember {
 
 export default function ExpertTeam() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const visibleCount = 3;
 
   useEffect(() => {
     async function fetchTeam() {
       try {
-        const response = await fetch("https://sunbrilo-dashboard.onrender.com/api/team");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/team`);
         if (response.ok) {
           const result = await response.json();
           if (result.success && Array.isArray(result.data)) {
@@ -26,9 +27,9 @@ export default function ExpertTeam() {
               id: member._id,
               name: member.fullName,
               role: member.designation,
-              image: member.photo?.startsWith('http') 
-                ? member.photo 
-                : `https://sunbrilo-dashboard.onrender.com/uploads/team/${member.photo}`,
+              image: member.photo?.startsWith('http')
+                ? member.photo
+                : `${process.env.NEXT_PUBLIC_BASE_URL}/uploads/update/${member.photo}`,
               bgImage: i % 2 === 0 ? "/images/teambg1.png" : "/images/teambg2.png",
             }));
             setTeamMembers(fetchedMembers);
@@ -36,6 +37,8 @@ export default function ExpertTeam() {
         }
       } catch (error) {
         console.error("Failed to fetch team members", error);
+      } finally {
+        setLoading(false);
       }
     }
     fetchTeam();
@@ -51,18 +54,22 @@ export default function ExpertTeam() {
     setCurrentIndex((i) => (i + 1) % teamMembers.length);
   };
 
-  const visibleMembers = teamMembers.length > 0 
+  const visibleMembers = teamMembers.length > 0
     ? Array.from({ length: Math.min(visibleCount, teamMembers.length) }, (_, i) => ({
-        member: teamMembers[(currentIndex + i) % teamMembers.length],
-        position: i, // 0=left, 1=center, 2=right
-      }))
+      member: teamMembers[(currentIndex + i) % teamMembers.length],
+      position: i, // 0=left, 1=center, 2=right
+    }))
     : [];
+
+  if (!loading && (!teamMembers || teamMembers.length === 0)) {
+    return null;
+  }
 
   return (
     <section className=" pb-16 px-5 flex flex-col items-center">
       {/* Label */}
-       <span className="text-sm font py-4 font-semibold text-gray-700 tracking-widest uppercase border-b-2 border-gray-800 pb-1 font-raleway">
-           Team Member
+      <span className="text-sm font py-4 font-semibold text-gray-700 tracking-widest uppercase border-b-2 border-gray-800 pb-1 font-raleway">
+        Team Member
       </span>
 
       {/* Title */}
@@ -86,17 +93,18 @@ export default function ExpertTeam() {
           {visibleMembers.map(({ member, position }) => (
             <div
               key={`${member.id}-${position}`}
-              className={`px-4 sm:px-8 py-10 w-full max-w-[280px] sm:max-w-[320px] flex-shrink-0 text-center transition-all duration-300  hover:shadow-[0_12px_36px_rgba(74,158,245,0.2)] bg-cover bg-center  ${
-                position === 2 ? 'hidden lg:block' : position === 1 ? 'hidden md:block' : ''
-              }`}
+              className={`px-4 sm:px-8 py-10 w-full max-w-[280px] sm:max-w-[320px] flex-shrink-0 text-center transition-all duration-300  hover:shadow-[0_12px_36px_rgba(74,158,245,0.2)] bg-cover bg-center  ${position === 2 ? 'hidden lg:block' : position === 1 ? 'hidden md:block' : ''
+                }`}
               style={{ backgroundImage: `url("${member.bgImage}")` }}
             >
-              {/* Avatar: use background-image cover to ensure consistent fill */}
-              <div
-                className="w-40 h-40 sm:w-48 sm:h-48 mx-auto mb-6  overflow-hidden bg-center bg-cover"
-                style={{ backgroundImage: `url('${member.image}')` }}
-                aria-hidden="true"
-              />
+              {/* Avatar: make entire image visible without cropping */}
+              <div className="w-40 h-40 sm:w-48 sm:h-48 mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-contain"
+                />
+              </div>
 
               {/* Name */}
               <p className="text-base font-semibold text-gray-900 mb-1.5 font-raleway">
@@ -128,9 +136,8 @@ export default function ExpertTeam() {
             key={i}
             onClick={() => setCurrentIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`w-2 h-2 rounded-full border-none p-0 cursor-pointer transition-all duration-200 ${
-              i === currentIndex ? "bg-blue-400 scale-125" : "bg-gray-300"
-            }`}
+            className={`w-2 h-2 rounded-full border-none p-0 cursor-pointer transition-all duration-200 ${i === currentIndex ? "bg-blue-400 scale-125" : "bg-gray-300"
+              }`}
           />
         ))}
       </div>

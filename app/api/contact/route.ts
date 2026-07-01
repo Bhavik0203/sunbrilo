@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     const mailOptions = {
       from: 'sunbrilotechnologies.digital@gmail.com',
       to: 'sunbrilotechnologies.digital@gmail.com',
-      cc: ['sales@sunbrilotechnologies.com'],
+      cc: ['sales@sunbrilotechnologies.com', 'info@sunbrilotechnologies.com'],
       replyTo: email,
       subject: `New Lead: ${name} - ${i_am_interested_in}`,
       html: `

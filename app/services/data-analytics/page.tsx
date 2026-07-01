@@ -1,4 +1,5 @@
 'use client';
+import FAQSection from '../../components/FAQSection';
 
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
@@ -60,7 +61,6 @@ const ChevronDownIcon = ({ className }: { className?: string }) => (
 );
 
 export default function DevelopmentTestingPage() {
-  const [openFAQ, setOpenFAQ] = useState<number>(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -80,26 +80,6 @@ export default function DevelopmentTestingPage() {
     const y = ((e.clientY - rect.top) / rect.height) * 100;
     setMousePosition({ x, y });
   };
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? 0 : index);
-  };
-
-  const faqs = [
-    {
-      question: "What is the difference between Business Intelligence (BI) and Predictive Analytics?",
-      answer: " Business Intelligence (BI) uses historical and current data to show you exactly what is happening in your business right now through visual dashboards. Predictive analytics uses AI and machine learning to analyze that historical data and forecast what will happen in the future."
-    },
-    {
-      question: "How does Sunbrilo handle data migration from complex legacy systems?",
-      answer: "We specialize in large-scale enterprise data warehousing and data unification. Our dedicated data migration methodology utilizes custom-built ETL/ELT pipelines and proprietary cleansing algorithms to extract, standardize, and integrate fragmented data from legacy ERPs, on-premise CRMs, and hundreds of third-party APIs into a harmonized, cloud-native source of truth."
-    },
-    {
-      question: "What is the typical timeframe for implementing a custom BI solution?",
-      answer: "Our implementation timeline is dictated by the complexity of integration and current data quality. Following a foundational assessment, fully functional, customized Business Intelligence BI dashboards are typically architected and deployed within an agile sprint cycle of 6 to 10 weeks, ensuring immediate business impact."
-    }
-  ];
-
   return (
     <>
       <Head>
@@ -231,95 +211,9 @@ export default function DevelopmentTestingPage() {
 
 
         {/* Section 5: FAQ */}
-        <section className="py-20 px-4 bg-[#f5f3f3]">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-10 items-start">
+        
+<FAQSection category="Data Analytics" />
 
-              {/* Left: Image + CTA Card */}
-
-
-              {/* Right: FAQ Accordion */}
-              <div className="flex-1 space-y-3 md:pt-0 pt-8">
-                {faqs.map((faq, index) => (
-                  <div
-                    key={index}
-                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100"
-                  >
-                    <button
-                      onClick={() => toggleFAQ(index)}
-                      className="w-full cursor-pointer px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-                    >
-                      <span className="text-base font-bold text-gray-900 font-raleway pr-4">
-                        {faq.question}
-                      </span>
-                      {/* Circle +/- icon */}
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-[#3B3808] flex items-center justify-center">
-                        {openFAQ === index ? (
-                          <svg className="w-4 h-4 text-[#3B3808]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M20 12H4" />
-                          </svg>
-                        ) : (
-                          <svg className="w-4 h-4 text-[#3B3808]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 4v16m8-8H4" />
-                          </svg>
-                        )}
-                      </span>
-                    </button>
-
-                    {openFAQ === index && (
-                      <>
-                        {/* Dashed divider */}
-                        <div className="mx-6 border-t border-dashed border-gray-300" />
-                        <div className="px-6 py-5">
-                          <p className="text-gray-500 leading-relaxed font-raleway text-sm">
-                            {faq.answer}
-                          </p>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                ))}
-              </div>
-              <div className="relative w-full md:w-[420px] flex-shrink-0 rounded-2xl overflow-visible">
-                {/* Main Image */}
-                <div className="rounded-2xl overflow-hidden w-full h-[360px] relative">
-                  <img
-                    src="/images/faq.png"
-                    alt="Professional"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/60"></div>
-                  {/* Overlay text */}
-                  <div className="absolute top-6 left-6">
-                    <h2 className="text-white font-bold text-3xl leading-tight font-raleway drop-shadow-lg">
-                      Need Help? Start<br />Here..
-                    </h2>
-                  </div>
-                </div>
-
-                {/* Teal CTA Card - overlaps image bottom-right */}
-                <div
-                  className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#3B3808] rounded-2xl p-6 w-52 z-10 shadow-xl"
-                >
-                  <p className="text-white font-bold text-lg font-raleway leading-snug mb-4">
-                    Connect Now
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">
-                      {/* Phone icon */}
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <a href="tel:+918788563349" className="text-white font-semibold text-sm underline font-raleway">
-                      +91-8788563349
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <section className="py-20 px-4 bg-[#f5f3f3]">
           <div className="max-w-6xl mx-auto">

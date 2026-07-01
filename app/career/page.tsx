@@ -36,6 +36,16 @@ interface FormattedJob {
   link: string;
 }
 
+interface CareerFormData {
+  job: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  message: string;
+  resume: File | null;
+}
+
 const BenefitsSection = () => {
   // For TypeScript in Next.js App
   //  Router
@@ -45,16 +55,8 @@ const BenefitsSection = () => {
       once: true,
     });
   }, []);
-  const [formData, setFormData] = useState<{
-    job: string;
-    firstName: string;
-    lastName: string;
-    phone: string;
-    email: string;
-    message: string;
-    resume: File | null;
-  }>({
-    job: 'other',
+  const [formData, setFormData] = useState<CareerFormData>({
+    job: '',
     firstName: '',
     lastName: '',
     phone: '',
@@ -86,15 +88,6 @@ const BenefitsSection = () => {
     }
   };
 
-  interface FormData {
-    job: string;
-    firstName: string;
-    lastName: string;
-    phone: string;
-    email: string;
-    message: string;
-    resume: File | null;
-  }
 
   interface SubmitStatus {
     success: boolean;
@@ -108,65 +101,58 @@ const BenefitsSection = () => {
     try {
       // Create FormData object to handle file upload
       const submissionData = new FormData();
-      submissionData.append('job', formData.job || 'other');
+      submissionData.append('job', formData.job);
       submissionData.append('fullName', `${formData.firstName} ${formData.lastName}`);
-      submissionData.append('firstName', formData.firstName);
-      submissionData.append('lastName', formData.lastName);
       submissionData.append('phone', formData.phone);
       submissionData.append('email', formData.email);
-      submissionData.append('message', formData.message);
+      submissionData.append('coverLetter', formData.message);
+      submissionData.append('message', formData.message); // Required by Next.js /api/career route
       if (formData.resume) {
         submissionData.append('resume', formData.resume);
       }
 
-      // Send to internal API route for email notification (with attachment)
-      try {
-        const emailRes = await fetch('/api/career', {
-          method: 'POST',
-          body: submissionData
-        });
-        if (!emailRes.ok) {
-          console.error('Email API Error:', await emailRes.text());
-        }
-      } catch (err) {
-        console.error('Failed to send email notification:', err);
-      }
-
-      // Send to API endpoint
-      try {
-        const response = await fetch('https://api.sunbrilotechnologies.com/career/applications', {
-          method: 'POST',
-          body: submissionData,
-          // Don't set Content-Type header when sending FormData
-        });
-
-        if (!response.ok) {
-          console.error('Dashboard API Error:', await response.text());
-        }
-      } catch (err) {
-        console.error('Failed to send to dashboard API:', err);
-      }
-
-      // If we reach here, at least the email API didn't hard-crash the function
-      // Even if the dashboard API failed, we'll consider it a success since the email sent
-      // const result: { message: string } = await response.json();
-      setSubmitStatus({
-        success: true,
-        message: 'Your application has been submitted successfully!'
+      // 1. Submit to CMS Backend to save in database
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/career/applications`, {
+        method: 'POST',
+        body: submissionData,
       });
-      window.location.href = '/thank-you';
 
-      // Reset form after successful submission
-      setFormData({
-        job: 'other',
-        firstName: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        message: '',
-        resume: null
-      });
-      setFileName('');
+      if (response.ok) {
+        // 2. Send email via Next.js local API route
+        try {
+          await fetch('/api/career', {
+            method: 'POST',
+            body: submissionData,
+          });
+        } catch (emailError) {
+          console.error('Error sending email:', emailError);
+          // Proceed anyway since application was saved
+        }
+
+        setSubmitStatus({
+          success: true,
+          message: 'Your application has been submitted successfully!'
+        });
+        window.location.href = '/thank-you';
+
+        // Reset form after successful submission
+        setFormData({
+          job: '',
+          firstName: '',
+          lastName: '',
+          phone: '',
+          email: '',
+          message: '',
+          resume: null
+        });
+        setFileName('');
+      } else {
+        console.error('Dashboard API Error:', await response.text());
+        setSubmitStatus({
+          success: false,
+          message: 'There was an error submitting your application. Please try again.'
+        });
+      }
 
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -187,7 +173,7 @@ const BenefitsSection = () => {
     const fetchJobs = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://api.sunbrilotechnologies.com/career/jobs');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/career/jobs`);
 
         if (!response.ok) {
           throw new Error(`Failed to fetch: ${response.status}`);
@@ -465,7 +451,7 @@ const BenefitsSection = () => {
                       className="w-full px-4 py-3 bg-[#f5f3f3] border border-gray-200 rounded-xl focus:outline-none focus:border-[#3B3808] focus:ring-1 focus:ring-[#3B3808] font-raleway transition-colors text-gray-900 appearance-none"
                       required
                     >
-                      <option value="other">Other / General Application</option>
+                      <option value="" disabled>Select a position</option>
                       {jobs.map((job) => (
                         <option key={job.id} value={job.id}>
                           {job.jobTitle}
