@@ -131,9 +131,9 @@ export default function Footer() {
                   </h4>
                   <div className="pl-1">
                     <a href="https://maps.google.com/?q=16192+Coastal+Highway,+Lewes,+Delaware,+Zipcode+19956,+USA" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-black transition-colors">
-                      <svg className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      {/* <svg className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                      </svg>
+                      </svg> */}
                       <span className="leading-relaxed">16192 Coastal Highway, Lewes, Delaware, Zipcode 19956, USA</span>
                     </a>
                   </div>
@@ -149,9 +149,9 @@ export default function Footer() {
                   </h4>
                   <div className="pl-1">
                     <a href="https://maps.google.com/?q=128,+City+Road,+London,+EC1V+2NX,+UNITED+KINGDOM" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 hover:text-black transition-colors">
-                      <svg className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      {/* <svg className="w-4 h-4 text-gray-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                      </svg>
+                      </svg> */}
                       <span className="leading-relaxed">128, City Road, London, EC1V 2NX, UNITED KINGDOM</span>
                     </a>
                   </div>
