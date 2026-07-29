@@ -13,6 +13,7 @@ interface BlogApiItem {
   createdAt?: string;
   readTime?: number;
   isPublished?: boolean;
+  publishedAt?: string;
 }
 
 interface BlogPost {
@@ -60,7 +61,7 @@ export default function BlogSection() {
           title: post.title,
           slug: post.slug,
           image: post.uploadImage || post.coverImage || '/images/blogimage/blog.png',
-          date: formatDate(post.createdAt),
+          date: formatDate(post.publishedAt),
         }));
 
         setBlogs(formatted);
@@ -151,3 +152,5 @@ export default function BlogSection() {
     </section>
   );
 }
+
+

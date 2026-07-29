@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/solutions/cognitive-dining-workforce-orchestration' },
   title: "Smart Cafeteria Management Software | Sunbrilo Technologies",
   description: "Digitise cafeteria operations with Sunbrilo's smart system with digital menus, pre-ordering, dietary tracking, waste reduction analytics & workforce dining.",
   keywords: "cognitive dining, workforce management, dietary tracking, dietary patterns, biometric automation, sunbrilo technologies",

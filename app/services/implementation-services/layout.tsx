@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services/implementation-services' },
   title: "IT Implementation & Integration Services | Sunbrilo Technologies",
   description: "Sunbrilo Technologies provides end-to-end IT implementation, including ERP integration, system migration, legacy modernization, and post-launch performance optimization.",
   keywords: "IT implementation, Software integration, Cloud migration, Enterprise solutions, IT consulting, Digital transformation, API integration, ERP implementation, Change management",

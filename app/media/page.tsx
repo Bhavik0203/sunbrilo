@@ -5,6 +5,7 @@ import ImageWithFallback from '@/app/components/ImageWithFallback';
 import EventMediaBlock from './EventMediaBlock';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/media' },
   title: "Media Center | Sunbrilo",
   description: "Watch the latest event coverage, corporate videos, and YouTube features from Sunbrilo.",
 };

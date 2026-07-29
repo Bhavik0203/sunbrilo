@@ -97,7 +97,7 @@ export default function BlogDetailPage() {
             excerpt,
             content,
             tag,
-            date: formatDate(post.createdAt),
+            date: formatDate(post.publishedAt),
             readTime: post.readTime ? `${post.readTime} min read` : '5 min read',
           };
         });
@@ -216,7 +216,7 @@ export default function BlogDetailPage() {
               <div className="lg:sticky lg:top-6 space-y-4">
                 <div className="rounded-2xl bg-[#f7f5ef] p-5">
                   <div className="mt-6 border-t border-black/10 pt-6">
-                    <div className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Top Posts</div>
+                    <h2 className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Top Posts</h2>
                     <div className="mt-4 space-y-4">
                       {topPosts.map((p) => (
                         <Link key={p.id} href={`/blogs/${p.slug}`} className="block group">
@@ -340,3 +340,6 @@ export default function BlogDetailPage() {
     </div>
   );
 }
+
+
+

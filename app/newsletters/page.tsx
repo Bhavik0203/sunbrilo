@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
-import NewslettersPageClient from './NewslettersPageClient';
-import { fetchNewsletters } from '../lib/newsletterData';
+import NewsletterPageClient from './NewsletterPageClient';
 
 export const metadata: Metadata = {
-  title: 'Sunbrilo Technologies | Newsletters',
-  description: "Get Sunbrilo Technologies' newsletters on cloud solutions, data analytics, cybersecurity & managed IT. Actionable insights for tech-driven businesses worldwide.",
-  keywords: 'IT newsletter, Cloud solutions newsletter, Data analytics updates, Cybersecurity newsletter, Managed IT services insights, Offshoring IT newsletter',
+  alternates: { canonical: '/newsletters' },
+  title: 'Sunbrilo Technologies | Newsletter Archives',
+  description: "Read Sunbrilo Technologies' newsletter for expert insights on AI, cybersecurity, cloud infrastructure & managed IT services. Stay ahead of enterprise tech trends.",
+  keywords: 'IT solutions provider, intelligent technology solutions, sunbrilo technologies, IT services, HRMS, cloud solutions, cyber security, AI automation',
 };
 
-export default async function NewslettersPage() {
-  const mappedNewsletters = await fetchNewsletters();
-  return <NewslettersPageClient apiNewsletters={mappedNewsletters} />;
+export default function NewslettersPage() {
+  return <NewsletterPageClient />;
 }
+

@@ -1,19 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '../components/Header';
-import { Newsletter } from '../lib/newsletterData';
 
-const topics = [
-  'All Topics',
-  'Data Analytics',
-  'Cloud Solutions',
-  'Cybersecurity',
-  'Managed IT Services',
-  'Offshoring Services',
-];
+interface NewsletterApiItem {
+  _id: string;
+  title: string;
+  slug: string;
+  uploadImage?: string;
+  coverImage?: string;
+  excerpt?: string;
+  content?: string;
+  tags?: string[];
+  categories?: string[];
+  readTime?: number;
+  createdAt?: string;
+  isPublished?: boolean;
+  publishedAt?: string;
+}
+
+interface NewsletterPost {
+  id: string;
+  title: string;
+  slug: string;
+  image: string;
+  excerpt: string;
+  tag: string;
+  date: string;
+  readTime: string;
+}
 
 const gridLayout = [
   'col-span-6 lg:col-span-4 lg:row-span-2',
@@ -28,16 +45,96 @@ const gridLayout = [
   'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-7',
 ];
 
-export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Newsletter[] }) {
+const normalizeTags = (value: string[] | undefined): string[] => {
+  if (!value) return [];
+  return value
+    .flatMap((item) => {
+      if (!item) return [];
+      try {
+        const parsed = JSON.parse(item);
+        if (Array.isArray(parsed)) return parsed;
+        return [parsed];
+      } catch {
+        return [item];
+      }
+    })
+    .filter(Boolean)
+    .map((tag) => String(tag).replaceAll('"', '').trim())
+    .filter(Boolean);
+};
+
+const formatDate = (value?: string) => {
+  if (!value) return '';
+  return new Date(value).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+};
+
+export default function NewslettersPage() {
+  const [newsletters, setNewsletters] = useState<NewsletterPost[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState('All Topics');
+  const [loading, setLoading] = useState(true);
 
-  // Filter newsletters by search query and topic
-  const filtered = apiNewsletters.filter((post) => {
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchNewsletters = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/newsletters/`
+        );
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch newsletters');
+        }
+
+        const data: NewsletterApiItem[] = await response.json();
+
+        if (!isMounted || !Array.isArray(data)) return;
+
+        const publishedNewsletters = data.filter((post) => post.isPublished === true);
+
+        const formatted = publishedNewsletters.map((post) => {
+          const apiTags = normalizeTags(post.tags || post.categories || []);
+          const tag = apiTags[0] || 'General';
+          const excerpt = post.excerpt || post.content?.replace(/<[^>]+>/g, '').slice(0, 160) || '';
+
+          return {
+            id: post._id,
+            title: post.title,
+            slug: post.slug,
+            image: post.uploadImage || post.coverImage || '/images/newsletterimage/newsletter.png',
+            excerpt,
+            tag,
+            date: formatDate(post.publishedAt),
+            readTime: post.readTime ? `${post.readTime} min read` : '5 min read',
+          };
+        });
+
+        setNewsletters(formatted);
+      } catch (error) {
+        console.error('Error fetching newsletters:', error);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+
+    fetchNewsletters();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const topics = ['All Topics', ...Array.from(new Set(newsletters.map((post) => post.tag)))];
+
+  const filtered = newsletters.filter((post) => {
     const matchesTopic = selectedTopic === 'All Topics' || post.tag === selectedTopic;
     const matchesSearch =
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.headline.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesTopic && matchesSearch;
   });
@@ -47,12 +144,11 @@ export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Ne
       <div className="bg-[#f5f3f3] p-4">
         <Header />
 
-        {/* ── Hero Banner ─────────────────────────────────────────────── */}
         <section className="relative overflow-hidden rounded-2xl">
           <div className="relative h-[260px] w-full md:h-[420px]">
             <Image
-              src="/images/bg4.png"
-              alt="Newsletters banner"
+              src="/images/bg3.png"
+              alt="Newsletter banner"
               fill
               priority
               className="object-cover"
@@ -65,10 +161,10 @@ export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Ne
               <div className="mx-auto w-full max-w-7xl">
                 <div className="max-w-3xl">
                   <div className="text-sm font-semibold tracking-[0.2em] text-[#ffee50]">
-                    Home / Newsletters
+                    Home / Newsletter
                   </div>
                   <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl font-raleway">
-                    Newsletters
+                    Newsletter
                   </h1>
                 </div>
               </div>
@@ -76,16 +172,11 @@ export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Ne
           </div>
         </section>
 
-        {/* ── Main Section ─────────────────────────────────────────────── */}
         <section className="mx-auto mt-8 w-full max-w-7xl">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-
-            {/* ── Sidebar ─────────────────────────────────────────────── */}
             <aside className="lg:col-span-3">
               <div className="lg:sticky lg:top-6">
                 <div className="rounded-2xl bg-[#f7f5ef] p-5">
-
-                  {/* Search */}
                   <div className="relative">
                     <input
                       type="search"
@@ -101,20 +192,18 @@ export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Ne
                     </div>
                   </div>
 
-                  {/* Topics */}
                   <div className="mt-6">
-                    <div className="text-xs cursor-pointer font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Topics</div>
+                    <h2 className="text-xs cursor-pointer font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Topics</h2>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {topics.map((t) => (
                         <button
                           key={t}
                           type="button"
                           onClick={() => setSelectedTopic(t)}
-                          className={`rounded-xl px-3 py-2 text-xs font-semibold transition-colors font-raleway ${
-                            selectedTopic === t
-                              ? 'bg-[#3b3808] text-[#ffee50]'
-                              : 'bg-[#efe9dd] text-[#3b3808] hover:bg-[#ffee50]'
-                          }`}
+                          className={`rounded-xl px-3 py-2 text-xs font-semibold transition-colors font-raleway ${selectedTopic === t
+                            ? 'bg-[#3b3808] text-[#ffee50]'
+                            : 'bg-[#efe9dd] text-[#3b3808] hover:bg-[#ffee50]'
+                            }`}
                         >
                           {t}
                         </button>
@@ -122,16 +211,11 @@ export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Ne
                     </div>
                   </div>
 
-                  {/* Top Newsletters */}
                   <div className="mt-6 border-t border-black/10 pt-6">
-                    <div className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Top Newsletters</div>
+                    <h2 className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Top Posts</h2>
                     <div className="mt-4 space-y-4">
-                      {apiNewsletters.slice(0, 5).map((p) => (
-                        <Link
-                          key={p.id}
-                          href={`/newsletters/${p.slug}`}
-                          className="block group"
-                        >
+                      {newsletters.slice(0, 5).map((p) => (
+                        <Link key={p.id} href={`/newsletters/${p.slug}`} className="block group">
                           <div className="mt-1 text-sm font-semibold leading-snug text-[#1b1b1b] group-hover:text-[#3B3808] transition-colors font-raleway">
                             {p.title}
                           </div>
@@ -139,19 +223,21 @@ export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Ne
                       ))}
                     </div>
                   </div>
-
                 </div>
               </div>
             </aside>
 
-            {/* ── Blog Grid ───────────────────────────────────────────── */}
             <div className="lg:col-span-9">
-              {filtered.length === 0 ? (
+              {loading ? (
+                <div className="flex h-64 items-center justify-center rounded-2xl bg-white p-12 text-center shadow-sm">
+                  <p className="text-gray-500 font-raleway">Loading newsletters...</p>
+                </div>
+              ) : filtered.length === 0 ? (
                 <div className="flex flex-col items-center justify-center rounded-2xl bg-white p-12 text-center shadow-sm h-64">
                   <svg className="h-12 w-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <p className="text-lg font-semibold text-gray-600 font-raleway">No newsletters found</p>
+                  <p className="text-lg font-semibold text-gray-600 font-raleway">No posts found</p>
                   <p className="text-sm text-gray-500 mt-1 font-raleway">Try adjusting your search query or selecting a different topic.</p>
                 </div>
               ) : (
@@ -178,11 +264,9 @@ export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Ne
                             <div className="inline-flex rounded-md bg-[#ffee50] px-3 py-1 text-xs font-semibold text-[#3B3808]">
                               {post.tag}
                             </div>
-
                             <h3 className="mt-3 text-base font-semibold leading-snug text-[#2b2b2b] group-hover:text-[#3B3808] transition-colors duration-200 md:text-lg font-raleway">
                               {post.title}
                             </h3>
-
                             <div className="mt-3 flex items-center gap-3 text-xs text-[#8b8b8b] font-raleway">
                               <span>{post.date}</span>
                               <span>·</span>
@@ -196,10 +280,13 @@ export default function NewslettersPage({ apiNewsletters }: { apiNewsletters: Ne
                 </div>
               )}
             </div>
-
           </div>
         </section>
       </div>
     </div>
   );
 }
+
+
+
+

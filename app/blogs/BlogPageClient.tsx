@@ -18,6 +18,7 @@ interface BlogApiItem {
   readTime?: number;
   createdAt?: string;
   isPublished?: boolean;
+  publishedAt?: string;
 }
 
 interface BlogPost {
@@ -108,7 +109,7 @@ export default function BlogsPage() {
             image: post.uploadImage || post.coverImage || '/images/blogimage/blog.png',
             excerpt,
             tag,
-            date: formatDate(post.createdAt),
+            date: formatDate(post.publishedAt),
             readTime: post.readTime ? `${post.readTime} min read` : '5 min read',
           };
         });
@@ -192,7 +193,7 @@ export default function BlogsPage() {
                   </div>
 
                   <div className="mt-6">
-                    <div className="text-xs cursor-pointer font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Topics</div>
+                    <h2 className="text-xs cursor-pointer font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Topics</h2>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {topics.map((t) => (
                         <button
@@ -211,7 +212,7 @@ export default function BlogsPage() {
                   </div>
 
                   <div className="mt-6 border-t border-black/10 pt-6">
-                    <div className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Top Posts</div>
+                    <h2 className="text-xs font-semibold uppercase tracking-widest text-[#6b6b6b] font-raleway">Top Posts</h2>
                     <div className="mt-4 space-y-4">
                       {blogs.slice(0, 5).map((p) => (
                         <Link key={p.id} href={`/blogs/${p.slug}`} className="block group">
@@ -285,3 +286,6 @@ export default function BlogsPage() {
     </div>
   );
 }
+
+
+

@@ -130,6 +130,7 @@ export default function GetToKnowUs() {
                   src="/images/hero-img-2.png"
                   alt="Business"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-black/15" />

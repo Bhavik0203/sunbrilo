@@ -4,6 +4,7 @@ import Link from 'next/link';
 import GalleryGrid from './GalleryGrid';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/gallery' },
   title: "Gallery | Sunbrilo",
   description: "Explore the Sunbrilo gallery showcasing our latest events, team culture, and office life.",
 };

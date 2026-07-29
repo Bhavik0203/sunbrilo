@@ -51,6 +51,7 @@ export async function generateMetadata(
     const ogImage = post.ogImage || post.uploadImage || post.coverImage || '/images/blogimage/blog.png';
 
     return {
+      alternates: { canonical: '/blogs/' + slug },
       title,
       description,
       openGraph: {
@@ -73,3 +74,4 @@ export async function generateMetadata(
 export default function Page() {
   return <BlogDetailClient />;
 }
+

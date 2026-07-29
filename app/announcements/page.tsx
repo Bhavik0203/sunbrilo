@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ImageWithFallback from '@/app/components/ImageWithFallback';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/announcements' },
   title: "Announcements | Sunbrilo Updates",
   description: "Stay up to date with the latest company news, branch inaugurations, and service updates from Sunbrilo.",
 };

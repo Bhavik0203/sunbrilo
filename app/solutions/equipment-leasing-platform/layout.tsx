@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/solutions/equipment-leasing-platform' },
   title: "Equipment Leasing Management Platform | Sunbrilo Technologies",
   description: "Manage your entire equipment leasing lifecycle with Sunbrilo’s contract management, asset tracking, billing automation & lessee portal in one platform.",
   keywords: "equipment leasing, equipment financing, equipment leasing software, leasing management",

@@ -23,6 +23,8 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  metadataBase: new URL("https://www.sunbrilotechnologies.com"),
   title: "IT Solution Provider & AI-Driven Solutions | Sunbrilo Technologies",
   description: "Scale your operations with Sunbrilo Technologies. We specialize in robust IT solutions, AI-driven solutions, and cloud-based CRM systems tailored for your business.",
   keywords: "IT solutions provider, intelligent technology solutions, sunbrilo technologies, IT services, HRMS, crm software, order management software, attendance tracking system, cloud solutions, cyber security, AI automation",

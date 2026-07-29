@@ -4,6 +4,7 @@ import RegisterButton from './RegisterButton';
 import ImageWithFallback from '@/app/components/ImageWithFallback';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/events' },
   title: "Expo & Exhibitions | Sunbrilo Events",
   description: "Discover our upcoming events, exhibitions, and programs designed to connect, inspire, and grow together.",
 };
