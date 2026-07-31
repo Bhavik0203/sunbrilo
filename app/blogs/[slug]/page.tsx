@@ -13,6 +13,7 @@ interface BlogApiItem {
   categories?: string[];
   readTime?: number;
   createdAt?: string;
+  publishedAt?: string;
   metaTitle?: string;
   metaDescription?: string;
   ogTitle?: string;
