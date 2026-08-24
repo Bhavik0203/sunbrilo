@@ -260,9 +260,9 @@ export default function SupportForm() {
                         transition={{ duration: 0.6, ease: "easeOut" as const }}
                         className="flex flex-col space-y-6"
                     >
-                        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+                        <h2 className="text-4xl md:text-5xl font-bold leading-tight">
                             How Can We Support <br /> Your Growth?
-                        </h1>
+                        </h2>
                         <p className="text-gray-800 text-lg max-w-md font-medium">
                             Please select the area that best describes your needs so we can connect you with the right expert.
                         </p>
@@ -357,7 +357,7 @@ export default function SupportForm() {
                                     <label className="text-sm font-semibold text-gray-800">I am interested in....</label>
                                     <div className="relative">
                                         <select name="i_am_interested_in" value={formData.i_am_interested_in} onChange={handleInputChange} required className="w-full bg-[#f2f2f2] text-gray-600 p-3.5 appearance-none focus:outline-none focus:ring-2 focus:ring-[#56aeff] transition">
-                                            <option value="" disabled selected>Select an option</option>
+                                            <option value="" disabled>Select an option</option>
                                             <optgroup label="Services">
                                                 <option>Development & Testing</option>
                                                 <option>Offshoring Services</option>
@@ -428,9 +428,7 @@ export default function SupportForm() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16 space-y-4"
                     >
-                        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                            Visit Our Global Engineering Hub
-                        </h1>
+                     
                         <p className="text-gray-700 font-medium max-w-3xl mx-auto text-lg">
                             Located in the heart of India&apos;s technology corridor, our headquarters houses our elite engineering squads and 24/7 Network Operations Center (NOC).
                         </p>
@@ -535,9 +533,9 @@ export default function SupportForm() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16 space-y-4 max-w-3xl"
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                         Visit Our Global Engineering Hub
-                    </h1>
+                    </h2>
                     <p className="text-gray-800 font-medium text-base md:text-lg">
                         We value your time. Here is what you can expect after submitting your inquiry
                     </p>

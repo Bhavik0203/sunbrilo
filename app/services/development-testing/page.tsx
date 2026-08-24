@@ -254,9 +254,9 @@ export default function DevelopmentTestingPage() {
 
               {/* Right Side - Content */}
               <div className="lg:pl-8">
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight font-raleway mb-6 text-gray-900">
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight font-raleway mb-6 text-gray-900">
                   Ready to Build Your Next Enterprise Application?
-                </h1>
+                </h2>
 
                 <p className="text-lg text-gray-600 leading-relaxed mb-8 font-raleway">
                   Partner with a global engineering team that prioritizes code quality, rapid deployment, and uncompromising security.

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { notFound } from 'next/navigation';
@@ -17,6 +17,7 @@ interface NewsletterApiItem {
   categories?: string[];
   readTime?: number;
   createdAt?: string;
+  publishedAt?: string;
 }
 
 interface NewsletterPost {
@@ -87,7 +88,8 @@ export default function NewsletterDetailPage() {
           const apiTags = normalizeTags(post.tags || post.categories || []);
           const tag = apiTags[0] || 'General';
           const excerpt = post.excerpt || post.content?.replace(/<[^>]+>/g, '').slice(0, 180) || '';
-          const content = post.content || '<p>No content available.</p>';
+          const rawContent = post.content || '<p>No content available.</p>';
+          const content = rawContent.replace(/(?:color|background-color):\s*[^;"]+;?/gi, '');
 
           return {
             id: post._id,
@@ -141,7 +143,7 @@ export default function NewsletterDetailPage() {
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#f5f3f3] p-4">
         <p className="text-red-500 font-raleway font-semibold text-lg mb-4 text-center">{error}</p>
         <p className="text-gray-600 font-raleway max-w-md text-center bg-white p-4 rounded-lg shadow-sm">
-          <strong>Quick Fix:</strong> If you just added the <code>.env</code> file, you MUST restart your Next.js development server (press <code>Ctrl + C</code> in your terminal, then type <code>npm run dev</code>).
+          <span className="font-bold">Quick Fix:</span> If you just added the <span className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">.env</span> file, you MUST restart your Next.js development server (press <span className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">Ctrl + C</span> in your terminal, then type <span className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">npm run dev</span>).
         </p>
       </div>
     );
@@ -276,7 +278,7 @@ export default function NewsletterDetailPage() {
                   </div>
                 </div>
                 <div
-                  className="prose max-w-none [&_h1]:text-2xl [&_h2]:text-xl [&_h3]:text-lg [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:leading-relaxed [&_p]:text-[#4b4b4b] [&_p]:font-raleway"
+                  className="prose max-w-none [&_h1]:text-2xl [&_h2]:text-xl [&_h3]:text-lg [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:leading-relaxed [&_p]:text-[#4b4b4b] [&_p]:font-raleway [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-800"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
                 <div className="mt-10 pt-6 border-t border-black/10 flex flex-wrap gap-2">

@@ -16,6 +16,7 @@ interface BlogApiItem {
   publishedAt?: string;
   metaTitle?: string;
   metaDescription?: string;
+  metaKeyword?: string;
   ogTitle?: string;
   ogDescription?: string;
   ogImage?: string;
@@ -47,6 +48,16 @@ export async function generateMetadata(
 
     const title = post.metaTitle || post.title || 'Blog | Sunbrilo';
     const description = post.metaDescription || post.excerpt || '';
+    
+    let keywords = post.metaKeyword || post.tags?.join(', ') || '';
+    try {
+      if (typeof keywords === 'string' && keywords.startsWith('[')) {
+        keywords = JSON.parse(keywords).join(', ');
+      }
+    } catch (e) {
+      // fallback to original string
+    }
+
     const ogTitle = post.ogTitle || title;
     const ogDescription = post.ogDescription || description;
     const ogImage = post.ogImage || post.uploadImage || post.coverImage || '/images/blogimage/blog.png';
@@ -55,6 +66,7 @@ export async function generateMetadata(
       alternates: { canonical: '/blogs/' + slug },
       title,
       description,
+      keywords,
       openGraph: {
         title: ogTitle,
         description: ogDescription,

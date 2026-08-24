@@ -290,9 +290,7 @@ export default function Footer() {
               <p>
                 &copy; 2026 <span className="font-semibold text-black">Sunbrilo Technologies</span>. All rights reserved.
               </p>
-              <p>
-                Carefully Crafted By <a href="https://digitalizetheglobe.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-black hover:text-blue-600 hover:underline transition-colors">Digitalize The Globe</a>
-              </p>
+              
             </div>
 
             {/* Social Icons */}

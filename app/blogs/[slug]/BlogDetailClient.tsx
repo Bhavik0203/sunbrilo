@@ -88,7 +88,8 @@ export default function BlogDetailPage() {
           const apiTags = normalizeTags(post.tags || post.categories || []);
           const tag = apiTags[0] || 'General';
           const excerpt = post.excerpt || post.content?.replace(/<[^>]+>/g, '').slice(0, 180) || '';
-          const content = post.content || '<p>No content available.</p>';
+          const rawContent = post.content || '<p>No content available.</p>';
+          const content = rawContent.replace(/(?:color|background-color):\s*[^;"]+;?/gi, '');
 
           return {
             id: post._id,
@@ -277,7 +278,7 @@ export default function BlogDetailPage() {
                   </div>
                 </div>
                 <div
-                  className="prose max-w-none [&_h1]:text-2xl [&_h2]:text-xl [&_h3]:text-lg [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:leading-relaxed [&_p]:text-[#4b4b4b] [&_p]:font-raleway"
+                  className="prose max-w-none [&_h1]:text-2xl [&_h2]:text-xl [&_h3]:text-lg [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:leading-relaxed [&_p]:text-[#4b4b4b] [&_p]:font-raleway [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-800"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
                 <div className="mt-10 pt-6 border-t border-black/10 flex flex-wrap gap-2">
