@@ -278,7 +278,7 @@ export default function BlogDetailPage() {
                   </div>
                 </div>
                 <div
-                  className="prose max-w-none [&_h1]:text-2xl [&_h2]:text-xl [&_h3]:text-lg [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_p]:leading-relaxed [&_p]:text-[#4b4b4b] [&_p]:font-raleway [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-800"
+                  className="prose max-w-none text-black [&_h1]:text-2xl [&_h1]:text-black [&_h2]:text-xl [&_h2]:text-black [&_h3]:text-lg [&_h3]:text-black [&_h4]:text-black [&_h5]:text-black [&_h6]:text-black [&_strong]:font-semibold [&_strong]:text-black [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_li]:text-black [&_p]:leading-relaxed [&_p]:text-black [&_p]:font-raleway [&_a]:text-blue-600 [&_a]:underline hover:[&_a]:text-blue-800 [&_span]:text-black"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
                 <div className="mt-10 pt-6 border-t border-black/10 flex flex-wrap gap-2">
