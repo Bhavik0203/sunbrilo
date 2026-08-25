@@ -41,9 +41,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-5L90N8DETE" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

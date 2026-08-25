@@ -1,6 +1,12 @@
-'use client';
+import { Metadata } from 'next';
 
-import Head from 'next/head';
+export const metadata: Metadata = {
+  title: 'Terms & Conditions | Sunbrilo Technologies',
+  description: "Read the Terms and Conditions governing your use of Sunbrilo Technologies' website and services.",
+  alternates: {
+    canonical: 'https://www.sunbrilotechnologies.com/terms-and-Condition',
+  },
+};
 
 const sections = [
   {
@@ -202,13 +208,6 @@ const sections = [
 export default function TermsAndConditionsPage() {
   return (
     <>
-      <Head>
-        <title>Terms & Conditions | Sunbrilo Technologies</title>
-        <meta
-          name="description"
-          content="Read the Terms and Conditions governing your use of Sunbrilo Technologies' website and services."
-        />
-      </Head>
 
       <div className="min-h-screen">
 

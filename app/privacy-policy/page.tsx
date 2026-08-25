@@ -1,6 +1,12 @@
-'use client';
+import { Metadata } from 'next';
 
-import Head from 'next/head';
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Sunbrilo Technologies',
+  description: "Read Sunbrilo Technologies' Privacy Policy to understand how we collect, use, and protect your personal information.",
+  alternates: {
+    canonical: 'https://www.sunbrilotechnologies.com/privacy-policy',
+  },
+};
 
 const sections = [
   {
@@ -186,13 +192,6 @@ const sections = [
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <Head>
-        <title>Privacy Policy | Sunbrilo Technologies</title>
-        <meta
-          name="description"
-          content="Read Sunbrilo Technologies' Privacy Policy to understand how we collect, use, and protect your personal information."
-        />
-      </Head>
 
       <div className="min-h-screen">
 
