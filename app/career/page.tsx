@@ -182,8 +182,10 @@ const BenefitsSection = () => {
         const responseData = await response.json();
         const jobsList = responseData.data || [];
 
+        const publishedJobs = jobsList.filter((job: any) => job.isPublished !== false);
+
         // Transform API data to match our component's format
-        const formattedJobs: FormattedJob[] = jobsList.map((job: any) => ({
+        const formattedJobs: FormattedJob[] = publishedJobs.map((job: any) => ({
           id: job._id || job.id,
           jobTitle: job.title || job.jobTitle || 'Job Opening',
           link: `/careers/careerdetail?id=${job._id || job.id}`
@@ -288,7 +290,7 @@ const BenefitsSection = () => {
           <div className="mb-12">
             <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-raleway">Why join us</h2>
             <div className="w-16 h-0.5 bg-[#3B3808] mb-6"></div>
-            <h3 className="text-4xl font-bold text-gray-900 leading-tight max-w-xl font-raleway">
+            <h3 className="text-4xl font-bold text-black leading-tight max-w-xl font-raleway">
               Build your IT career where innovation, growth, and opportunity meet.
             </h3>
           </div>
@@ -326,10 +328,10 @@ const BenefitsSection = () => {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#ffee50] mb-3 font-raleway transition-colors">
+                <h4 className="text-xl font-bold text-black group-hover:text-[#ffee50] mb-3 font-raleway transition-colors">
                   {item.title}
                 </h4>
-                <p className="text-gray-600 group-hover:text-gray-200 leading-relaxed font-raleway text-sm transition-colors">
+                <p className="text-black group-hover:text-gray-200 leading-relaxed font-raleway text-sm transition-colors">
                   {item.desc}
                 </p>
               </div>
@@ -347,7 +349,7 @@ const BenefitsSection = () => {
               <div className="mb-8">
                 <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-raleway">OPEN ROLES</h2>
                 <div className="w-16 h-0.5 bg-[#3B3808] mb-6"></div>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight font-raleway">
+                <h3 className="text-3xl md:text-4xl font-bold text-black leading-tight font-raleway">
                   Find your next opportunity<br />and grow with us.
                 </h3>
               </div>
@@ -373,7 +375,7 @@ const BenefitsSection = () => {
                       href={`/career/${job.jobTitle.toLowerCase().replace(/\s+/g, '-')}?jobId=${job.id}`}
                       className="group flex items-center justify-between p-5 bg-white hover:bg-[#3B3808] hover:text-white transition-all duration-300 rounded-xl mb-4 shadow-sm border border-gray-200/30"
                     >
-                      <span className="text-gray-900 group-hover:text-white font-semibold font-raleway text-lg transition-colors">
+                      <span className="text-black group-hover:text-white font-semibold font-raleway text-lg transition-colors">
                         {job.jobTitle}
                       </span>
                       <div className="bg-[#3B3808] text-white group-hover:bg-[#ffee50] group-hover:text-[#3B3808] p-3 rounded-full transition-colors duration-300">
@@ -408,10 +410,10 @@ const BenefitsSection = () => {
               <div className="w-full md:w-1/3 mb-8 md:mb-0 md:pr-8">
                 <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-raleway">APPLY NOW</h2>
                 <div className="w-16 h-0.5 bg-[#3B3808] mb-6"></div>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6 font-raleway">
+                <h3 className="text-3xl md:text-4xl font-bold text-black leading-tight mb-6 font-raleway">
                   Join our team
                 </h3>
-                <p className="text-gray-600 mb-4 font-raleway text-sm leading-relaxed">
+                <p className="text-black mb-4 font-raleway text-sm leading-relaxed">
                   Bring your expertise to a team that values growth, collaboration, and continuous innovation. If no current role matches your profile, submit your application for future consideration.
                 </p>
               </div>

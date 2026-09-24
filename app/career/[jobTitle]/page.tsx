@@ -211,9 +211,10 @@ function JobTitleContent() {
         
         // The API returns { success: true, data: [...] } instead of just an array
         const jobList = rawData.data ? rawData.data : rawData;
+        const publishedJobs = Array.isArray(jobList) ? jobList.filter((job: any) => job.isPublished !== false) : jobList;
         
         // Map backend API data to match frontend JobData interface
-        const data: JobData[] = Array.isArray(jobList) ? jobList.map((job: any) => ({
+        const data: JobData[] = Array.isArray(publishedJobs) ? publishedJobs.map((job: any) => ({
           jobTitle: job.title || 'Unknown Position',
           location: job.location || 'Not Specified',
           jobType: job.jobType || 'Full-time',
@@ -375,23 +376,23 @@ function JobTitleContent() {
                 </h2>
                 <div className="w-16 h-0.5 bg-[#3B3808] mb-6"></div>
 
-                <div className="prose prose-slate max-w-none font-raleway text-gray-650 leading-relaxed space-y-6">
+                <div className="prose prose-slate max-w-none font-raleway text-black leading-relaxed space-y-6">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Overview</h3>
-                    <p className="whitespace-pre-wrap break-words">{jobData.jobDescription}</p>
+                    <h3 className="text-xl font-bold text-black mb-2">Overview</h3>
+                    <p className="whitespace-pre-wrap break-words text-black">{jobData.jobDescription}</p>
                   </div>
 
                   {jobData.requirements && (
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Requirements</h3>
-                      <p className="whitespace-pre-wrap break-words">{jobData.requirements}</p>
+                      <h3 className="text-xl font-bold text-black mb-2">Requirements</h3>
+                      <p className="whitespace-pre-wrap break-words text-black">{jobData.requirements}</p>
                     </div>
                   )}
 
                   {jobData.benefits && (
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Benefits</h3>
-                      <p className="whitespace-pre-wrap break-words">{jobData.benefits}</p>
+                      <h3 className="text-xl font-bold text-black mb-2">Benefits</h3>
+                      <p className="whitespace-pre-wrap break-words text-black">{jobData.benefits}</p>
                     </div>
                   )}
                 </div>
@@ -406,34 +407,34 @@ function JobTitleContent() {
                 </h2>
                 <div className="w-16 h-0.5 bg-[#3B3808] mb-6"></div>
 
-                <div className="space-y-4 text-sm text-gray-600">
+                <div className="space-y-4 text-sm text-black">
                   <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="font-semibold text-gray-800">Job ID</span>
-                    <span>{jobData.jobId}</span>
+                    <span className="font-semibold text-black">Job ID</span>
+                    <span className="text-black">{jobData.jobId}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="font-semibold text-gray-800">Location</span>
-                    <span>{jobData.location}</span>
+                    <span className="font-semibold text-black">Location</span>
+                    <span className="text-black">{jobData.location}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="font-semibold text-gray-800">Type</span>
-                    <span>{jobData.jobType}</span>
+                    <span className="font-semibold text-black">Type</span>
+                    <span className="text-black">{jobData.jobType}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="font-semibold text-gray-800">Experience</span>
-                    <span>{jobData.experienceLevel}</span>
+                    <span className="font-semibold text-black">Experience</span>
+                    <span className="text-black">{jobData.experienceLevel}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="font-semibold text-gray-800">Salary Range</span>
-                    <span>{jobData.salaryRange}</span>
+                    <span className="font-semibold text-black">Salary Range</span>
+                    <span className="text-black">{jobData.salaryRange}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="font-semibold text-gray-800">Posted</span>
-                    <span>{formatDate(jobData.postedDate)}</span>
+                    <span className="font-semibold text-black">Posted</span>
+                    <span className="text-black">{formatDate(jobData.postedDate)}</span>
                   </div>
                   <div className="flex justify-between py-2">
-                    <span className="font-semibold text-gray-800">Deadline</span>
-                    <span>{formatDate(jobData.applicationDeadline)}</span>
+                    <span className="font-semibold text-black">Deadline</span>
+                    <span className="text-black">{formatDate(jobData.applicationDeadline)}</span>
                   </div>
                 </div>
               </div>
