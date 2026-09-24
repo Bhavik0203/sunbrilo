@@ -19,7 +19,7 @@ export default function FAQSection({ category }: { category: string }) {
   useEffect(() => {
     async function fetchFaqs() {
       try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:5000';
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
         const response = await fetch(`${baseUrl}/api/faqs`);
         if (!response.ok) throw new Error('Failed to fetch FAQs');
         

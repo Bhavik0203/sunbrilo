@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | Sunbrilo Technologies',
   description: "Read Sunbrilo Technologies' Privacy Policy to understand how we collect, use, and protect your personal information.",
   alternates: {
-    canonical: 'https://www.sunbrilotechnologies.com/privacy-policy',
+    canonical: 'https://sunbrilotechnologies.com/privacy-policy',
   },
 };
 
@@ -183,7 +183,7 @@ const sections = [
       },
       {
         subtitle: 'Sunbrilo Technologies',
-        body: 'Email: privacy@sunbrilotechnologies.com\nPhone:+91-8788563349\nWebsite: www.sunbrilotechnologies.com',
+        body: 'Email: privacy@sunbrilotechnologies.com\nPhone:+91-8788563349\nWebsite: sunbrilotechnologies.com',
       },
     ],
   },
@@ -254,8 +254,8 @@ export default function PrivacyPolicyPage() {
                 <div className="p-6 bg-[#ffee50]/10 border-l-4 border-[#ffee50] rounded-r-2xl">
                   <p className="text-base text-gray-700 leading-relaxed font-raleway">
                     Sunbrilo Technologies (&quot;Sunbrilo&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy describes how we collect, use, store, share, and safeguard your personal information when you visit{' '}
-                    <a href="https://www.sunbrilotechnologies.com" className="text-[#3B3808] font-semibold underline underline-offset-2">
-                      www.sunbrilotechnologies.com
+                    <a href="https://sunbrilotechnologies.com" className="text-[#3B3808] font-semibold underline underline-offset-2">
+                      sunbrilotechnologies.com
                     </a>{' '}
                     or engage with our services. By using our website, you agree to the terms outlined in this policy.
                   </p>

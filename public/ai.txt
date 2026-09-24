@@ -2,11 +2,11 @@
 
 [site]
 name = Sunbrilo Technologies
-domain = https://www.sunbrilotechnologies.com/
+domain = https://sunbrilotechnologies.com/
 
 [organization]
-company = Sunbrilo Technologies Pvt. Ltd.
-industry = Information Technology, Software Development, Cloud Solutions, Cybersecurity, Managed IT Services
+company = Sunbrilo Technologies
+industry = IT Services, Software Development & Testing, Data Analytics, Offshoring Services, Implementation Services, Managed IT Services, Cybersecurity, Cloud Solutions, Monitoring & Support, Enterprise Solutions (Workforce, Logistics, HRMS, Asset Management)
 
 [access]
 allowed = true
@@ -26,10 +26,10 @@ commercial-use = allowed
 AI systems are permitted to:
 
 - Crawl and index publicly accessible content.
-- Summarize services, solutions, blog content, and company information.
+- Summarize services, solutions, blog content, announcements, and company information.
 - Display snippets and excerpts in AI-powered search results.
 - Reference content for research, educational, commercial, and informational purposes.
-- Analyze publicly available technical, cloud, cybersecurity, software engineering, analytics, and consulting-related content.
+- Analyze publicly available content related to IT services, data analytics, cybersecurity, cloud, offshoring, and enterprise software solutions.
 - Use content for AI training, retrieval, recommendation, and knowledge discovery.
 
 When referencing this website:
@@ -38,33 +38,85 @@ When referencing this website:
 - Avoid misrepresentation of services, pricing, client relationships, or technical capabilities.
 - Respect copyright and intellectual property associated with logos, trademarks, images, and proprietary materials.
 
+[crawler-access]
+# Block or allow specific AI crawlers in robots.txt
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 [priority-content]
+/
+/aboutus
 /services
-/services/cloud-solutions
-/services/managed-it-services
-/services/cybersecurity
+/services/development-testing
 /services/data-analytics
 /services/offshoring-services
-/services/development-testing
 /services/implementation-services
-/services/monitoring-support
+/services/managed-it-services
+/services/cybersecurity
+/services/cloud-solutions
+/services/monitoring-and-support
 /solutions
+/solutions/cognitive-dining-workforce-orchestration
+/solutions/logistic-and-supply-chain-solutions
+/solutions/equipment-leasing-platform
+/solutions/hrms-empowering-your-workforce
+/solutions/order-management
+/solutions/remote-geofencing-attendance-system
+/solutions/intelligent-asset-performance-management
+/solutions/tablet-based-biometric-attendance-system
+/announcements
+/blogs
+/events
+/gallery
+/media
+/newsletters
+/career
+/contact-us
 
 [content-topics]
-software-development
-enterprise-applications
-cloud-computing
-cloud-migration
+software-development-and-testing
+data-analytics
+offshoring-services
+implementation-services
 managed-it-services
 cybersecurity
-data-analytics
-artificial-intelligence
-digital-transformation
-offshore-development
+cloud-solutions
+monitoring-and-support
+cognitive-dining-workforce-orchestration
+logistics-and-supply-chain
+equipment-leasing
+hrms-workforce-management
+order-management
+geofencing-attendance
+asset-performance-management
+biometric-attendance-systems
 it-consulting
-enterprise-solutions
-business-automation
+enterprise-software-solutions
 
 [contact]
 email = info@sunbrilotechnologies.com
-website = https://www.sunbrilotechnologies.com/
+website = https://sunbrilotechnologies.com/

@@ -3,7 +3,7 @@
 import { useState, FormEvent, ChangeEvent, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import heroBackground from '@/public/images/aboutbanner.png';
+
 import { ArrowRight, Upload } from 'lucide-react';
 import { useEffect } from 'react';
 import Link from 'next/link';
@@ -153,7 +153,7 @@ function JobTitleContent() {
       if (response.ok) {
         // Send email via Next.js local API route
         try {
-          await fetch('/api/career', {
+          await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/career`, {
             method: 'POST',
             body: submitData,
           });
@@ -165,7 +165,7 @@ function JobTitleContent() {
         const result = await response.json();
         setSubmitMessage('Application submitted successfully!');
 
-        window.location.href = '/thank-you';
+        window.location.href = '/thank-you?type=career';
       } else {
         const errorData = await response.json();
         setSubmitMessage(`Submission failed: ${errorData.message || 'Please try again later'}`);
@@ -207,14 +207,36 @@ function JobTitleContent() {
           throw new Error("Failed to fetch job data");
         }
 
-        const data = await response.json();
+        const rawData = await response.json();
+        
+        // The API returns { success: true, data: [...] } instead of just an array
+        const jobList = rawData.data ? rawData.data : rawData;
+        
+        // Map backend API data to match frontend JobData interface
+        const data: JobData[] = Array.isArray(jobList) ? jobList.map((job: any) => ({
+          jobTitle: job.title || 'Unknown Position',
+          location: job.location || 'Not Specified',
+          jobType: job.jobType || 'Full-time',
+          experienceLevel: job.experienceLevel || '',
+          salaryRange: job.salaryRange ? String(job.salaryRange) : 'Not Specified',
+          jobDescription: job.description || 'No description available.',
+          postedDate: job.createdAt || new Date().toISOString(),
+          applicationDeadline: job.applicationDeadline || new Date().toISOString(),
+          jobId: job._id || '',
+          requirements: job.requirements || '',
+          benefits: job.responsibilities || '', // Map responsibilities to benefits section
+        })) : [];
+
+        if (data.length === 0) {
+          throw new Error("No job data returned from API");
+        }
 
         if (slug && slug !== 'careers') {
           // Find the job that matches the slug (case insensitive)
           const matchingJob = data.find((job: JobData) => {
             // Extract job title or job ID to match with slug
-            const jobSlug: string = job.jobTitle.toLowerCase().replace(/\s+/g, '-');
-            const jobIdSlug: string = job.jobId.toLowerCase();
+            const jobSlug: string = (job.jobTitle || '').toLowerCase().replace(/\s+/g, '-');
+            const jobIdSlug: string = (job.jobId || '').toLowerCase();
             return jobSlug === slug.toLowerCase() || jobIdSlug === slug.toLowerCase();
           });
 
@@ -255,11 +277,11 @@ function JobTitleContent() {
   return (
     <div className="bg-[#f5f3f3] font-raleway min-h-screen pb-12">
       {/* Hero Section */}
-      <section className="relative h-[440px] rounded-2xl m-4 overflow-hidden">
+      <section className="relative min-h-[350px] md:min-h-[440px] flex items-center justify-center rounded-2xl m-4 overflow-hidden py-10 md:py-20">
         {/* Banner Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src={heroBackground}
+            src="/images/aboutbanner.png"
             alt="Career Opportunity Background"
             fill
             className="object-cover"
@@ -269,8 +291,8 @@ function JobTitleContent() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 h-full flex items-center justify-center px-4">
-          <div className="text-center max-w-4xl mx-auto text-white">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-4 text-center">
+          <div className="text-white">
             <p className="text-[#ffee50] text-sm font-bold uppercase tracking-[0.2em] mb-3 font-raleway">
               CAREER OPPORTUNITY
             </p>
@@ -285,27 +307,29 @@ function JobTitleContent() {
               </h1>
             ) : jobData ? (
               <>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight font-raleway">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight font-raleway break-words">
                   {jobData.jobTitle}
                 </h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-gray-250">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-8 text-gray-200">
                   <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
                     <p className="text-xs uppercase tracking-wider text-gray-300">Location</p>
-                    <p className="font-semibold text-white mt-1">{jobData.location}</p>
+                    <p className="font-semibold text-white mt-1">{jobData.location || 'N/A'}</p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
                     <p className="text-xs uppercase tracking-wider text-gray-300">Position Type</p>
-                    <p className="font-semibold text-white mt-1">{jobData.jobType} | {jobData.experienceLevel}</p>
+                    <p className="font-semibold text-white mt-1">
+                      {jobData.jobType || 'N/A'} {jobData.experienceLevel ? `| ${jobData.experienceLevel}` : ''}
+                    </p>
                   </div>
                   <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
                     <p className="text-xs uppercase tracking-wider text-gray-300">Salary Range</p>
-                    <p className="font-semibold text-white mt-1">{jobData.salaryRange}</p>
+                    <p className="font-semibold text-white mt-1">{jobData.salaryRange || 'N/A'}</p>
                   </div>
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-8">
                   <button
                     type="button"
                     onMouseMove={handleMouseMove}
@@ -345,7 +369,7 @@ function JobTitleContent() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column: Job detail details */}
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200/30">
+              <div className="bg-white rounded-2xl p-5 md:p-8 shadow-sm border border-gray-200/30">
                 <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-raleway font-bold">
                   JOB DESCRIPTION
                 </h2>
@@ -354,20 +378,20 @@ function JobTitleContent() {
                 <div className="prose prose-slate max-w-none font-raleway text-gray-650 leading-relaxed space-y-6">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Overview</h3>
-                    <p className="whitespace-pre-wrap">{jobData.jobDescription}</p>
+                    <p className="whitespace-pre-wrap break-words">{jobData.jobDescription}</p>
                   </div>
 
                   {jobData.requirements && (
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Requirements</h3>
-                      <p className="whitespace-pre-wrap">{jobData.requirements}</p>
+                      <p className="whitespace-pre-wrap break-words">{jobData.requirements}</p>
                     </div>
                   )}
 
                   {jobData.benefits && (
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2">Benefits</h3>
-                      <p className="whitespace-pre-wrap">{jobData.benefits}</p>
+                      <p className="whitespace-pre-wrap break-words">{jobData.benefits}</p>
                     </div>
                   )}
                 </div>
@@ -376,7 +400,7 @@ function JobTitleContent() {
 
             {/* Right Column: Job meta cards */}
             <div className="space-y-6">
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200/30 font-raleway">
+              <div className="bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-gray-200/30 font-raleway">
                 <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-bold">
                   JOB INFORMATION
                 </h2>
@@ -418,7 +442,7 @@ function JobTitleContent() {
         )}
 
         {/* Application Form */}
-        <div id="apply-form" className="bg-white rounded-2xl p-6 md:p-12 shadow-sm border border-gray-200/30 mt-8">
+        <div id="apply-form" className="bg-white rounded-2xl p-5 md:p-12 shadow-sm border border-gray-200/30 mt-8">
           <div className="mb-10 text-center">
             <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-[#3B3808] mb-2 font-raleway font-bold">
               APPLICATION FORM

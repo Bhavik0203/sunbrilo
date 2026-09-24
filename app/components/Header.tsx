@@ -80,7 +80,7 @@ export default function Header() {
 
       // Send to internal API route for email notification
       try {
-        const emailRes = await fetch('/api/contact', {
+        const emailRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

@@ -45,7 +45,7 @@ export default function LetsTalkModal({ isOpen, onClose }: { isOpen: boolean, on
 
       // Send to internal API route for email notification
       try {
-        const emailRes = await fetch('/api/contact', {
+        const emailRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ export default function LetsTalkModal({ isOpen, onClose }: { isOpen: boolean, on
       }
 
       // Original API call
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/forms/6a4239306ff07752ede5e3e4/submit`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/forms/forms/6a4239306ff07752ede5e3e4/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

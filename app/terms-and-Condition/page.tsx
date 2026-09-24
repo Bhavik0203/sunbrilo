@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Terms & Conditions | Sunbrilo Technologies',
   description: "Read the Terms and Conditions governing your use of Sunbrilo Technologies' website and services.",
   alternates: {
-    canonical: 'https://www.sunbrilotechnologies.com/terms-and-Condition',
+    canonical: 'https://sunbrilotechnologies.com/terms-and-Condition',
   },
 };
 
@@ -15,7 +15,7 @@ const sections = [
     content: [
       {
         subtitle: '',
-        body: 'By accessing or using the website at www.sunbrilotechnologies.com ("Website") or engaging with any services provided by Sunbrilo Technologies ("Sunbrilo", "we", "our", or "us"), you agree to be legally bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please discontinue use of our Website and services immediately.',
+        body: 'By accessing or using the website at sunbrilotechnologies.com ("Website") or engaging with any services provided by Sunbrilo Technologies ("Sunbrilo", "we", "our", or "us"), you agree to be legally bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please discontinue use of our Website and services immediately.',
       },
       {
         subtitle: '',
@@ -199,7 +199,7 @@ const sections = [
       },
       {
         subtitle: 'Sunbrilo Technologies',
-        body: 'Email: legal@sunbrilotechnologies.com\nPhone:+91-8788563349\nWebsite: www.sunbrilotechnologies.com',
+        body: 'Email: legal@sunbrilotechnologies.com\nPhone:+91-8788563349\nWebsite: sunbrilotechnologies.com',
       },
     ],
   },

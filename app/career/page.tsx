@@ -120,7 +120,7 @@ const BenefitsSection = () => {
       if (response.ok) {
         // 2. Send email via Next.js local API route
         try {
-          await fetch('/api/career', {
+          await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/career`, {
             method: 'POST',
             body: submissionData,
           });
@@ -133,7 +133,7 @@ const BenefitsSection = () => {
           success: true,
           message: 'Your application has been submitted successfully!'
         });
-        window.location.href = '/thank-you';
+        window.location.href = '/thank-you?type=career';
 
         // Reset form after successful submission
         setFormData({

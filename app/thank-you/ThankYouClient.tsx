@@ -2,26 +2,26 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function ThankYouClient() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const type = searchParams.get('type');
   const [countdown, setCountdown] = useState(10);
 
   useEffect(() => {
+    if (countdown <= 0) {
+      router.push('/');
+      return;
+    }
+
     const timer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(timer);
-          router.push('/');
-          return 0;
-        }
-        return prev - 1;
-      });
+      setCountdown((prev) => prev - 1);
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [router]);
+  }, [countdown, router]);
 
   return (
     <div className="min-h-screen bg-blue-900 flex flex-col items-center justify-center px-4">
@@ -37,7 +37,9 @@ export default function ThankYouClient() {
         </h1>
         
         <p className="text-lg text-gray-600 mb-10 font-raleway leading-relaxed max-w-lg mx-auto">
-          We have received your message and appreciate you reaching out. One of our experts will get back to you shortly to discuss your needs.
+          {type === 'career'
+            ? 'Thank you for applying! We have received your application and our HR team will review it shortly. If your profile matches our requirements, we will get in touch with you.'
+            : 'We have received your message and appreciate you reaching out. One of our experts will get back to you shortly to discuss your needs.'}
         </p>
 
         <Link

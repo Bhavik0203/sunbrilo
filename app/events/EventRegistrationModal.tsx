@@ -47,7 +47,7 @@ export default function EventRegistrationModal({ isOpen, onClose, eventName }: {
           message: `Job Title: ${formData.jobTitle || 'N/A'}`
         };
 
-        const emailRes = await fetch('/api/contact', {
+        const emailRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

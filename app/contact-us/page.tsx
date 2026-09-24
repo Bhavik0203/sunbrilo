@@ -90,10 +90,19 @@ export default function SupportForm() {
             i_am_interested_in: formData.i_am_interested_in
         };
 
+        const apiPayload = {
+            name: formData.name,
+            email: formData.email,
+            mobile_number: fullNumber,
+            massage: formData.message,
+            i_am_interested_in: formData.i_am_interested_in,
+            company_name: formData.company_name
+        };
+
         try {
             // Send to internal API route for email notification
             try {
-                const emailRes = await fetch('/api/contact', {
+                const emailRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -113,7 +122,7 @@ export default function SupportForm() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    data: payload
+                    data: apiPayload
                 })
             });
 
