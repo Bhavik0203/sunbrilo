@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import FAQSection from '../components/FAQSection';
+import LetsTalkModal from '../components/LetsTalkModal';
 
 export default function SolutionsPage() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [activeStep, setActiveStep] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -56,6 +58,7 @@ export default function SolutionsPage() {
               <button
                 type="button"
                 onMouseMove={handleMouseMove}
+                onClick={() => setIsModalOpen(true)}
                 className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
               >
                 <span
@@ -72,24 +75,7 @@ export default function SolutionsPage() {
                 </span>
               </button>
 
-              <button
-                type="button"
-                onMouseMove={handleMouseMove}
-                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-[#ffee50] px-8 py-4 text-base font-semibold text-[#3B3808] transition-all cursor-pointer font-raleway"
-              >
-                <span
-                  className="absolute z-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3B3808] transition-transform duration-700 delay-100 ease-[cubic-bezier(0.19,1,0.22,1)] scale-0 group-hover:scale-[4]"
-                  style={{
-                    left: `${mousePosition.x}%`,
-                    top: `${mousePosition.y}%`,
-                    width: '100px',
-                    height: '100px',
-                  }}
-                />
-                <span className="relative z-10 flex items-center gap-2 transition-colors duration-500 group-hover:text-[#FFEE50]">
-                  View Core CRM Features
-                </span>
-              </button>
+             
             </div>
           </div>
         </section>
@@ -263,6 +249,12 @@ export default function SolutionsPage() {
 
         {/* Additional content sections can be added here */}
       </div>
+      
+      <LetsTalkModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        initialMessage="Request a Custom CRM Demo" 
+      />
     </>
   );
 }

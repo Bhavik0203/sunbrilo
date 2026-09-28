@@ -200,7 +200,7 @@ export default function BlogsPage() {
                           key={t}
                           type="button"
                           onClick={() => setSelectedTopic(t)}
-                          className={`rounded-xl px-3 py-2 text-xs font-semibold transition-colors font-raleway ${selectedTopic === t
+                          className={`capitalize rounded-xl px-3 py-2 text-xs font-semibold transition-colors font-raleway ${selectedTopic === t
                             ? 'bg-[#3b3808] text-[#ffee50]'
                             : 'bg-[#efe9dd] text-[#3b3808] hover:bg-[#ffee50]'
                             }`}
@@ -261,7 +261,7 @@ export default function BlogsPage() {
                           </div>
 
                           <div className="px-2 pb-2 pt-5">
-                            <div className="inline-flex rounded-md bg-[#ffee50] px-3 py-1 text-xs font-semibold text-[#3B3808]">
+                            <div className="capitalize inline-flex rounded-md bg-[#ffee50] px-3 py-1 text-xs font-semibold text-[#3B3808]">
                               {post.tag}
                             </div>
                             <h3 className="mt-3 text-base font-semibold leading-snug text-[#2b2b2b] group-hover:text-[#3B3808] transition-colors duration-200 md:text-lg font-raleway">

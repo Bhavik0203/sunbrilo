@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Terms & Conditions | Sunbrilo Technologies',
   description: "Read the Terms and Conditions governing your use of Sunbrilo Technologies' website and services.",
   alternates: {
-    canonical: 'https://sunbrilotechnologies.com/terms-and-Condition',
+    canonical: 'https://sunbrilotechnologies.com/terms-and-conditions',
   },
 };
 

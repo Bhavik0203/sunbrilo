@@ -3,15 +3,23 @@
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
-export default function LetsTalkModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
+export default function LetsTalkModal({ isOpen, onClose, initialMessage }: { isOpen: boolean, onClose: () => void, initialMessage?: string }) {
   const pathname = usePathname();
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     number: '',
-    message: ''
+    message: initialMessage || ''
   });
+
+  React.useEffect(() => {
+    if (isOpen) {
+      if (initialMessage) {
+        setFormData(prev => ({ ...prev, message: initialMessage }));
+      }
+    }
+  }, [isOpen, initialMessage]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
@@ -42,22 +50,6 @@ export default function LetsTalkModal({ isOpen, onClose }: { isOpen: boolean, on
         message: formData.message,
         i_am_interested_in: getInterestFromPath(pathname)
       };
-
-      // Send to internal API route for email notification
-      try {
-        const emailRes = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
-        if (!emailRes.ok) {
-          console.error('Email API Error:', await emailRes.text());
-        }
-      } catch (err) {
-        console.error('Failed to send email notification:', err);
-      }
 
       // Original API call
       const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/forms/forms/6a4239306ff07752ede5e3e4/submit`, {
