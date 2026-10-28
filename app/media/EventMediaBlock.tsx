@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import ImageWithFallback from '@/app/components/ImageWithFallback';
+import { getYouTubeEmbedUrl } from './YouTubeSection';
 
 export default function EventMediaBlock({ event }: { event: any }) {
   // Combine videos and images into a single media array for the lightbox
@@ -74,12 +75,14 @@ export default function EventMediaBlock({ event }: { event: any }) {
       // Video rendering
       const video = item.rawSrc;
       if (video.includes('youtube.com') || video.includes('youtu.be')) {
-        const embedUrl = video.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/');
+        const embedUrl = getYouTubeEmbedUrl(video, true);
         return (
           <iframe
             src={embedUrl}
             title="Event Video"
             className="w-full h-full shadow-2xl"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
         );
@@ -163,9 +166,11 @@ export default function EventMediaBlock({ event }: { event: any }) {
                   
                   {video.includes('youtube.com') || video.includes('youtu.be') ? (
                     <iframe
-                      src={video.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/')}
+                      src={getYouTubeEmbedUrl(video)}
                       title="Event Video"
                       className="w-full h-full pointer-events-none"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
                       allowFullScreen
                     ></iframe>
                   ) : video.includes('vimeo.com') ? (

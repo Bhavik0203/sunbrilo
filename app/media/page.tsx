@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import ImageWithFallback from '@/app/components/ImageWithFallback';
 import EventMediaBlock from './EventMediaBlock';
+import YouTubeSection from './YouTubeSection';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/media' },
@@ -86,37 +87,7 @@ export default async function MediaPage() {
                <div className="h-px bg-gray-300 flex-grow"></div>
              </div>
              
-             {youtubeVideos.length > 0 ? (
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                 {youtubeVideos.map((yt, index) => {
-                   const embedUrl = yt.url?.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/');
-                   return (
-                     <div key={`yt-${index}`} className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                       <div className="w-full aspect-video bg-black relative">
-                         <iframe
-                           src={embedUrl}
-                           title={yt.title || "YouTube Video"}
-                           className="w-full h-full absolute inset-0"
-                           allowFullScreen
-                         ></iframe>
-                       </div>
-                       <div className="p-5">
-                         <h3 className="font-bold text-[#1b1b1b] text-lg font-raleway group-hover:text-[#3B3808] transition-colors line-clamp-2">
-                           {yt.title}
-                         </h3>
-                         {yt.description && (
-                           <p className="text-gray-600 text-sm mt-2 line-clamp-2">
-                             {yt.description}
-                           </p>
-                         )}
-                       </div>
-                     </div>
-                   )
-                 })}
-               </div>
-             ) : (
-               <p className="text-gray-500 font-raleway text-lg">No YouTube videos available at the moment.</p>
-             )}
+             <YouTubeSection videos={youtubeVideos} />
           </section>
 
           {/* Event Media Section */}

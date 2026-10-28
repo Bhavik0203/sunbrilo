@@ -88,23 +88,51 @@ export default function FAQSection({ category }: { category: string }) {
               </div>
             </div>
 
-            {/* Teal CTA Card - overlaps image bottom-right */}
-            <div className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#FFEE50] rounded-2xl p-6 w-52 z-10 shadow-xl">
-              <p className="text-black font-bold text-lg font-raleway leading-snug mb-4">
+            {/* CTA Card - overlaps image bottom-right */}
+            <div className="absolute bottom-0 right-0 translate-x-4 translate-y-6 bg-[#FFEE50] rounded-2xl p-5 sm:p-6 w-60 sm:w-64 z-10 shadow-xl">
+              <p className="text-black font-bold text-lg font-raleway leading-snug mb-3">
                 Connect Now
               </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+              <div className="space-y-3">
+                {/* HR */}
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold text-gray-800 uppercase tracking-wider block font-raleway">
+                      HR
+                    </span>
+                    <a
+                      href={`tel:${contactInfo?.hrPhone?.replace(/\s+/g, '') || '+918788563349'}`}
+                      className="text-black font-semibold text-xs sm:text-sm underline font-raleway whitespace-nowrap block hover:text-gray-700 transition-colors"
+                    >
+                      {contactInfo?.hrPhone || '+91 8788563349'}
+                    </a>
+                  </div>
                 </div>
-                <a
-                  href={`tel:${contactInfo?.hrPhone?.replace(/\s+/g, '') || '+918788563349'}`}
-                  className="text-black font-semibold text-sm underline font-raleway"
-                >
-                  {contactInfo?.hrPhone || '+91 8788563349'}
-                </a>
+
+                {/* Sales */}
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold text-gray-800 uppercase tracking-wider block font-raleway">
+                      Sales
+                    </span>
+                    <a
+                      href={`tel:${contactInfo?.salesPhone?.replace(/\s+/g, '') || '+919545898353'}`}
+                      className="text-black font-semibold text-xs sm:text-sm underline font-raleway whitespace-nowrap block hover:text-gray-700 transition-colors"
+                    >
+                      {contactInfo?.salesPhone || '+91 9545898353'}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
