@@ -161,12 +161,12 @@ export default function NewsletterDetailPage() {
     <div className="bg-[#f5f3f3]">
       <div className="bg-[#f5f3f3] p-4">
         <section className="relative overflow-hidden rounded-2xl">
-          <div className="relative h-[260px] w-full md:h-[420px]">
+          <div className="absolute inset-0">
             <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-black/65" />
           </div>
 
-          <div className="absolute inset-0 flex items-center">
+          <div className="relative z-10 flex min-h-[280px] md:min-h-[420px] items-center pt-24 pb-10">
             <div className="w-full px-6">
               <div className="mx-auto w-full max-w-7xl">
                 <div className="max-w-3xl">

@@ -34,15 +34,15 @@ interface BlogPost {
 
 const gridLayout = [
   'col-span-6 lg:col-span-4 lg:row-span-2',
-  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-1',
-  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-3',
-  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-3',
-  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-3',
-  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-5',
-  'col-span-6 lg:col-span-4 lg:row-span-2 lg:col-start-3 lg:row-start-5',
-  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-7',
-  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-7',
-  'col-span-6 lg:col-span-2 lg:row-span-2 lg:col-start-5 lg:row-start-7',
+  'col-span-6 lg:col-span-2 lg:row-span-2',
+  'col-span-6 lg:col-span-2 lg:row-span-2',
+  'col-span-6 lg:col-span-2 lg:row-span-2',
+  'col-span-6 lg:col-span-2 lg:row-span-2',
+  'col-span-6 lg:col-span-2 lg:row-span-2',
+  'col-span-6 lg:col-span-4 lg:row-span-2',
+  'col-span-6 lg:col-span-2 lg:row-span-2',
+  'col-span-6 lg:col-span-2 lg:row-span-2',
+  'col-span-6 lg:col-span-2 lg:row-span-2',
 ];
 
 const normalizeTags = (value: string[] | undefined): string[] => {
@@ -95,7 +95,14 @@ export default function BlogsPage() {
 
         if (!isMounted || !Array.isArray(data)) return;
 
-        const publishedBlogs = data.filter((post) => post.isPublished === true);
+        let publishedBlogs = data.filter((post) => post.isPublished === true);
+
+        // Sort by date descending (latest first)
+        publishedBlogs.sort((a, b) => {
+          const dateA = new Date(a.publishedAt || a.createdAt || 0).getTime();
+          const dateB = new Date(b.publishedAt || b.createdAt || 0).getTime();
+          return dateB - dateA;
+        });
 
         const formatted = publishedBlogs.map((post) => {
           const apiTags = normalizeTags(post.tags || post.categories || []);
@@ -241,7 +248,7 @@ export default function BlogsPage() {
                   <p className="text-sm text-gray-500 mt-1 font-raleway">Try adjusting your search query or selecting a different topic.</p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-2 lg:grid-cols-6 lg:grid-rows-8">
+                <div className="grid grid-cols-1 gap-2 lg:grid-cols-6 auto-rows-min">
                   {filtered.map((post, idx) => {
                     const layoutClass = gridLayout[idx % gridLayout.length];
                     return (

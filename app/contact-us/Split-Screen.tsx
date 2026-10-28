@@ -1,5 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+interface ContactDetails {
+  indiaOfficeAddress: string;
+  salesPhone: string;
+  hrPhone: string;
+  email: string;
+  usaOfficeAddress: string;
+  ukOfficeAddress: string;
+  facebookUrl: string;
+  instagramUrl: string;
+  linkedinUrl: string;
+  youtubeUrl: string;
+  pinterestUrl: string;
+}
+
 
 // Mock data included so the component works immediately
 type LocationData = {
@@ -32,6 +47,40 @@ const locations: Record<string, LocationData> = {
 
 export default function SplitViewGlobalHub() {
   const [activeTab, setActiveTab] = useState('India');
+  const [contactInfo, setContactInfo] = useState<ContactDetails | null>(null);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:5000'}/api/contact-details`)
+      .then(res => res.json())
+      .then(data => {
+        if (!data.message) {
+          setContactInfo(data);
+        }
+      })
+      .catch(err => console.error('Error fetching contact details:', err));
+  }, []);
+
+  const dynamicLocations: Record<string, LocationData> = {
+    India: {
+      title: 'Pune Engineering Hub',
+      address: contactInfo?.indiaOfficeAddress || locations.India.address,
+      mapSrc: locations.India.mapSrc,
+      flag: '🇮🇳',
+    },
+    USA: {
+      title: 'US Operations Center',
+      address: contactInfo?.usaOfficeAddress || locations.USA.address,
+      mapSrc: locations.USA.mapSrc,
+      flag: '🇺🇸',
+    },
+    UK: {
+      title: 'European Headquarters',
+      address: contactInfo?.ukOfficeAddress || locations.UK.address,
+      mapSrc: locations.UK.mapSrc,
+      flag: '🇬🇧',
+    },
+  };
+
 
   return (
     <div className="min-h-screen bg-[#f4f5f7] py-12 px-4 sm:px-6 lg:px-8 font-sans flex items-center justify-center">
@@ -58,7 +107,7 @@ export default function SplitViewGlobalHub() {
 
             {/* Vertical Navigation */}
             <div className="space-y-3 relative z-10">
-              {Object.keys(locations).map((key) => (
+              {Object.keys(dynamicLocations).map((key) => (
                 <button
                   key={key}
                   onClick={() => setActiveTab(key)}
@@ -69,7 +118,7 @@ export default function SplitViewGlobalHub() {
                   }`}
                 >
                   <div className="flex items-center space-x-4">
-                    <span className="text-2xl">{locations[key].flag}</span>
+                    <span className="text-2xl">{dynamicLocations[key].flag}</span>
                     <span className="font-semibold tracking-wide uppercase">{key}</span>
                   </div>
                   {activeTab === key && (
@@ -87,9 +136,9 @@ export default function SplitViewGlobalHub() {
           {/* Email Contacts directly in Sidebar */}
           <div className="mt-16 space-y-4 relative z-10 border-t border-white/10 pt-8">
             <h4 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">Direct Inquiries</h4>
-            <a href="mailto:info@sunbrilotechnologies.com" className="flex items-center space-x-3 text-sm text-blue-200 hover:text-white transition-colors group">
+            <a href={`mailto:${contactInfo?.email || 'info@sunbrilotechnologies.com'}`} className="flex items-center space-x-3 text-sm text-blue-200 hover:text-white transition-colors group">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400 group-hover:text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              <span>info@sunbrilotechnologies.com</span>
+              <span>{contactInfo?.email || 'info@sunbrilotechnologies.com'}</span>
             </a>
             <a href="mailto:sales@sunbrilotechnologies.com" className="flex items-center space-x-3 text-sm text-blue-200 hover:text-white transition-colors group">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400 group-hover:text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -121,11 +170,11 @@ export default function SplitViewGlobalHub() {
                     <span>{activeTab} Office</span>
                   </div>
                   <h3 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight">
-                    {locations[activeTab].title}
+                    {dynamicLocations[activeTab].title}
                   </h3>
                   <div className="flex items-start space-x-3 text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                    <p className="text-base leading-relaxed">{locations[activeTab].address}</p>
+                    <p className="text-base leading-relaxed">{dynamicLocations[activeTab].address}</p>
                   </div>
                 </div>
 
@@ -138,7 +187,7 @@ export default function SplitViewGlobalHub() {
                       </div>
                       <div>
                         <p className="text-xs text-gray-500 font-semibold uppercase">Sales</p>
-                        <p className="text-sm font-bold text-gray-900">+91 9545898353</p>
+                        <p className="text-sm font-bold text-gray-900">{contactInfo?.salesPhone || '+91 9545898353'}</p>
                       </div>
                     </div>
                     <div className="bg-gray-50 border border-gray-100 px-4 py-2 rounded-lg flex items-center space-x-3 hover:bg-gray-100 transition-colors">
@@ -147,7 +196,7 @@ export default function SplitViewGlobalHub() {
                       </div>
                       <div>
                         <p className="text-xs text-gray-500 font-semibold uppercase">HR</p>
-                        <p className="text-sm font-bold text-gray-900">+91 8788563349</p>
+                        <p className="text-sm font-bold text-gray-900">{contactInfo?.hrPhone || '+91 8788563349'}</p>
                       </div>
                     </div>
                   </div>
@@ -157,7 +206,7 @@ export default function SplitViewGlobalHub() {
               {/* Map Container */}
               <div className="flex-grow w-full min-h-[350px] rounded-2xl overflow-hidden relative shadow-inner ring-1 ring-black/5 bg-gray-100">
                 <iframe
-                  src={locations[activeTab].mapSrc}
+                  src={dynamicLocations[activeTab].mapSrc}
                   className="absolute inset-0 w-full h-full"
                   style={{ border: 0 }}
                   allowFullScreen={false}

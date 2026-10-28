@@ -11,10 +11,28 @@ interface FAQ {
   order: number;
 }
 
+interface ContactDetails {
+  hrPhone?: string;
+  salesPhone?: string;
+  email?: string;
+}
+
 export default function FAQSection({ category }: { category: string }) {
   const [faqs, setFaqs] = useState<FAQ[]>([]);
+  const [contactInfo, setContactInfo] = useState<ContactDetails | null>(null);
   const [openFAQ, setOpenFAQ] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:5000'}/api/contact-details`)
+      .then(res => res.json())
+      .then(data => {
+        if (!data.message) {
+          setContactInfo(data);
+        }
+      })
+      .catch(err => console.error('Error fetching contact details:', err));
+  }, []);
 
   useEffect(() => {
     async function fetchFaqs() {
@@ -81,8 +99,11 @@ export default function FAQSection({ category }: { category: string }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <a href="tel:+918788563349" className="text-black font-semibold text-sm underline font-raleway">
-                  +91-8788563349
+                <a
+                  href={`tel:${contactInfo?.hrPhone?.replace(/\s+/g, '') || '+918788563349'}`}
+                  className="text-black font-semibold text-sm underline font-raleway"
+                >
+                  {contactInfo?.hrPhone || '+91 8788563349'}
                 </a>
               </div>
             </div>
